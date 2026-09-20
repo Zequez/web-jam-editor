@@ -13,6 +13,8 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/legacy-modes": "^6.5.4",
     "@iconify-json/fa7-brands": "^1.2.4",
     "@iconify-json/fa7-solid": "^1.2.5",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
@@ -23,6 +25,7 @@
     "idb-keyval": "^6.3.0",
     "pug": "^3.0.4",
     "svelte": "^5.57.0",
+    "svelte-codemirror-editor": "^2.1.0",
     "unocss": "^66.10.5",
     "vite": "^8.3.0"
   }
