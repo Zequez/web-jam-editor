@@ -1,0 +1,63 @@
+mixin Page() doctype html head meta(name="viewport" content="width=device-width,
+initial-scale=1") meta(charset="utf-8") title Ezequiel Adrián Schwartzman block
+mixin Item(title, description, href) a( bg-gray-200 bg-linear-to-b
+from="white/100" to="white/0" rounded-2 aspect="100/162" cursor-pointer
+shadow="[0_1px_0_#000]" sm:hover:scale-102 transition-transform duration-500
+relative class="group" overflow-hidden href=href ) span(block h-full w-full
+overflow-auto p4 sm:p6) strong(text="5/12" tracking-wider uppercase)= title br
+span(font-sans text="4.3/6")= description block span( absolute block
+transition-opacity duration-750 inset-0 opacity-0 pointer-events-none
+group-hover:opacity-100 rounded-2 shadow="[inset_0_0_5px_4px_#fff]" ) +Page()
+body( p4 sm:p6 relative min-h-screen w-full bg-gray-950 style="background-image:
+url(./images/noise20/4.webp)" ) div( absolute z-9 top-0 left-0 h-100 w-full
+bg-linear-to-b from="white/5" to="white/0" pointer-events-none) main(relative
+z-10) div( max-w-screen-lg mx-auto bg-gray-200 flex-cs mb4 sm:mb6 p0
+overflow-hidden rounded-2 relative h28 sm:h-36 bg-linear-to-b from="white/100"
+to="white/0" shadow="[0_1px_0_#000]" ) img(aspect-square object-cover w-28
+sm:w-36 src="images/ezequiel/1.webp") div(flex-cs h-full w-full pl-2 sm:pl-4
+b="8 black/10" b-r-0) div( text="4.8/8 sm:7/8 black/82" font="serif bold
+sm:thin" uppercase tracking-widest rounded-.5) span Ezequiel<br />
+span Adrián<br />
+span Schwartzman div( mx-auto max-w-screen-lg bg-gray-200 h-12 flex-ce space-x-1
+px1 mb4 sm:mb6 rounded-2 shadow="[0_1px_0_#000]" )
+a(href="https://github.com/zequez" target="_blank" rounded-2 p1
+hover:bg="black/10") span(block i-fa-brands-github h8 w8) a(flex-cc uppercase
+h10 font-semibold pl-1 pr-2 cursor-pointer rounded-2 text="3/6" b="1 black/5"
+bg="black/10" hover:bg="sky/70" hover:text="white shadow-[0_1px_0_#0006]"
+href="https://t.me/ezequielschwartzman" target="_blank") span(block
+i-fa-brands-telegram h8 w8 mr1) | Contact div(grid gap-4 sm:gap-6 cols-1
+sm:cols-2 md:cols-3 max-w-screen-lg mx-auto) +Item(`Web Engineering`,` Asses my
+compatibility to your engineering needs, explore my craft porfolio and career
+path as a programmer and web engineer. US$ 45 / hour of my focused time in your
+arbitrary engineering project. Includes time-tracking spreadsheet with tasks
+worked on and willingness to engage with others logistically for creative
+collaboration through calls or shared documents or coordination apps`,
+'/web-engineering') +Item(`Own Websites Setup`, ` Schedule a live programming
+session with me where we'll set up and collaboratively code together your
+website building environment and live publishing circuits so you can learn how
+to own and maintain your own websites for yourself, your peers and your
+projects. No previous programming skills needed. I'll share with you the same
+tools I use for myself. US$100 international flat payment, US$50 for locals to
+latin america. Includes website system documentation, up to 3 hours of live
+coding sessions together, messaging support, updates to your website system,
+invitations to weekly indie web meetings in my house, website backlinking from
+my own website, discounted extra hours of live collaborative coding, and access
+to cheap hosting on my self-managed community web server.`, `/build-with-me`)
++Item(`Chapaticeada`, ` Colaboración creativa de mesa de chapatis caseros,
+salsas, hummus y rellenos para tu evento, feria o festival. 80 chapatis caseros
+de harina de trigo y 13 rellenos: $100,000 `, `/chapaticeada`) +Item(`Imágenes
+de Gaia`, `Impresión y venta de imágenes con fotos reales de Gaia sacadas desde
+el espacio, para promover la consciencia planetaria y el vincularnos con Gaia
+como colega y como nuestra empleadora. Para quienes nos consideramos en servicio
+en el Equipo de Gaia. Stickers normales $500, vinilos $1000, posters A4 $2000,
+tarjetas plastificadas $2000, posters A3 $3000, posters A4 encuadrados $4000,
+posters A3 encuadrados $6000 `, '/imagenes-gaia') +Item(`Cuadernos de Bolsillo`,
+` Encuadernación artesanal de cuadernos de investigación de bolsillo para todos
+tus experimentos, observaciones, y notas en tu camino evolutivo. $10,000 cada
+cuaderno de 9x13cm de 80 páginas `, '/cuadernos') +Item('Co-living at Casa
+Nami', `I'm currently stewarding and holding space for a co-living house with 6
+extra bedrooms in Mar del Plata, Argentian. You can rent a room, and get access
+all the shared failities. Parents with children are welcome. Rooms start from
+US$ 300 / month; all services included. Kitchen stocking is separate and shared
+so you will need extra money for collab purchases to participate there.`,
+'/casa-nami')

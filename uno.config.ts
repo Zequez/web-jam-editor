@@ -1,7 +1,6 @@
 import { readFileSync, existsSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "node:url";
-import { parse } from "yaml";
 
 import { defineConfig, presetWind4, transformerDirectives } from "unocss";
 import transformerVariantGroup from "@unocss/transformer-variant-group";

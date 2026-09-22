@@ -1,6 +1,5 @@
 <script lang="ts">
   import CodeMirror from "svelte-codemirror-editor";
-  // import { javascript } from "@codemirror/lang-javascript";
   import { StreamLanguage } from "@codemirror/language";
   import { pug as langPug } from "@codemirror/legacy-modes/mode/pug";
   import UNO from "./uno.ts";
@@ -69,24 +68,43 @@
   }
 </script>
 
-<div class="flex h-screen w-full">
-  <div class="w-1/2 h-full bg-gray-200">
-    {#if loaded}
-      <!-- <textarea
+<div class="h-screen w-full flex flex-col">
+  <div class="flex flex-grow w-full h-100">
+    <div class="w-1/2 h-full bg-gray-200">
+      {#if loaded}
+        <!-- <textarea
         class="w-full h-full font-mono p2 block"
         value={indexFile}
         oninput={(e) => updateIndexPug(e.currentTarget.value)}
       ></textarea> -->
-      <CodeMirror
-        class="h-full w-full block"
-        bind:value={indexFile}
-        onchange={updateIndexPug}
-        extensions={[codeMirrorPug]}
-      />
-    {/if}
+        <CodeMirror
+          class="h-full w-full block"
+          bind:value={indexFile}
+          onchange={updateIndexPug}
+          extensions={[codeMirrorPug]}
+        />
+      {/if}
+    </div>
+    <div class="w-1/2 h-full bg-gray-300">
+      <iframe title="Preview" class="w-full h-full" srcdoc={outputFile}
+      ></iframe>
+    </div>
   </div>
-  <div class="w-1/2 h-full bg-gray-300">
-    <iframe title="Preview" class="w-full h-full" srcdoc={outputFile}></iframe>
+  <div class="h-10 p2 bg-gray-800 text-white flex shrink-0 gap-2">
+    <div class="font-mono bg-white/10 rounded-1 px1">{projectName}</div>
+    <div class="font-mono bg-emerald-400 px-2 text-white text-3/6 rounded-1">
+      Browser FS (OK)
+    </div>
+    <button
+      onclick={() => FS.requestDir()}
+      class="font-mono bg-gray-400 px-2 text-white text-3/6 rounded-1 cursor-pointer"
+    >
+      {#if FS.isLocallyMounted}
+        Local FS ({FS.localDirName})
+      {:else}
+        Pick Local FS
+      {/if}
+    </button>
   </div>
 </div>
 
