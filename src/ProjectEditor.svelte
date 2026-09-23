@@ -2,12 +2,12 @@
   import CodeMirror from "svelte-codemirror-editor";
   import { StreamLanguage } from "@codemirror/language";
   import { pug as langPug } from "@codemirror/legacy-modes/mode/pug";
-  import UNO from "./uno.ts";
+  import UNO from "./lib/uno.ts";
   const uno = UNO.uno;
 
   const STILLNESS = 500;
 
-  import pug from "./pug-browser.ts";
+  import pug from "./lib/pug-browser.ts";
   const projectName = document.location.hash.slice(1);
 
   const codeMirrorPug = StreamLanguage.define(langPug);

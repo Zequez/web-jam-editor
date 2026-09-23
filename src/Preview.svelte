@@ -1,13 +1,15 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
+  let { initialValue } = $props<{ initialValue: string }>();
   let scale = $state(1);
   let containerWidth = $state(0);
   let containerHeight = $state(0);
   let width = $derived(containerWidth / scale);
   let height = $derived(containerHeight / scale);
   let address = $state(
-    "https://www.openstreetmap.org/export/embed.html?bbox=-57.57,-38.02,-57.54,-37.99&layer=mapnik",
+    //"https://www.openstreetmap.org/export/embed.html?bbox=-57.57,-38.02,-57.54,-37.99&layer=mapnik",
+    initialValue,
   );
   let src = $state(address);
   let container: HTMLElement = $state(null!);
@@ -29,7 +31,7 @@
 </script>
 
 <div class="h-full w-full flex flex-col bg-gray-300">
-  <div class="flex p1">
+  <div class="flex p1 overflow-hidden">
     <input
       onkeyup={(e) => e.key === "Enter" && go()}
       bind:value={address}

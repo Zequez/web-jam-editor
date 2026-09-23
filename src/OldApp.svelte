@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import pug from "./pug-browser.ts";
+  import pug from "./lib/pug-browser.ts";
   import { get, set } from "idb-keyval";
 
   import { configureSingle, fs } from "@zenfs/core";

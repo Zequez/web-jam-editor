@@ -1,12 +1,12 @@
 import "virtual:uno.css";
 import { mount } from "svelte";
-// import App from "./App.svelte";
-import App from "./App.svelte";
+import SystemFrame from "./SystemFrame.svelte";
+import OldApp from "./OldApp.svelte";
 import Preview from "./Preview.svelte";
 import SingleFileCoder from "./SingleFileCoder";
 import ProjectEditor from "./ProjectEditor.svelte";
 
-import { init } from "./uno";
+import { init } from "./lib/uno";
 
 import { configureSingle } from "@zenfs/core";
 import { IndexedDB } from "@zenfs/dom";
@@ -19,7 +19,11 @@ let props = {};
 
 switch (location.pathname) {
   case "/": {
-    Comp = App;
+    Comp = SystemFrame;
+    break;
+  }
+  case "/old-app": {
+    Comp = OldApp;
     break;
   }
   case "/preview": {
