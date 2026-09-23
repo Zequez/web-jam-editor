@@ -30,6 +30,8 @@ export function createSystemFs() {
       } catch (e) {
         await clearSessionHandler();
       }
+    } else {
+      DIR = { status: "empty" };
     }
   }
 
@@ -44,6 +46,7 @@ export function createSystemFs() {
       sessionStorage.removeItem("session-dir-handler");
     }
     DIR = { status: "empty" };
+    console.log("Session cleared", DIR);
   }
 
   async function pickSessionFolder() {

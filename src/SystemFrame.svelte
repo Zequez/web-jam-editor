@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { WebAccess, type WebAccessFS } from "@zenfs/dom";
-  import { get, set } from "idb-keyval";
   import { createSystemFs } from "./systemFs.svelte";
 
   import Preview from "./Preview.svelte";
-  import SingleFileCoder from "./SingleFileCoder";
-  import { onMount } from "svelte";
+  import CoderFrame from "./CoderFrame.svelte";
+  import Loader from "./Loader.svelte";
 
   const systemFs = createSystemFs();
+
+  $effect(() => {
+    console.log("Status", systemFs.status);
+  });
 
   let content = $state("");
 </script>
@@ -37,17 +39,14 @@
   </div>
   <div class="flex flex-grow w-full h-100">
     {#if systemFs.status === "loading"}
-      <div class="size-full bg-gray-200 flex-cc">Loading...</div>
+      <Loader />
     {:else if systemFs.status === "empty"}
       <div class="size-full bg-gray-200 flex-cc">
         <span class="text-3/6">Open a folder to start</span>
       </div>
     {:else if systemFs.status === "ready" && systemFs.fs}
       <div class="w-1/2 h-full bg-gray-200">
-        <SingleFileCoder
-          initialValue={content}
-          onChange={(v) => (content = v)}
-        />
+        <CoderFrame fs={systemFs.fs} />
       </div>
       <div class="w-1/2 h-full bg-gray-300">
         <Preview initialValue="about:blank" />

@@ -11,7 +11,7 @@ import { init } from "./lib/uno";
 import { configureSingle } from "@zenfs/core";
 import { IndexedDB } from "@zenfs/dom";
 
-await configureSingle({ backend: IndexedDB });
+// await configureSingle({ backend: IndexedDB });
 await init();
 
 let Comp;
