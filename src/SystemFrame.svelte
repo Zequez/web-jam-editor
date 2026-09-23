@@ -10,8 +10,6 @@
   $effect(() => {
     console.log("Status", systemFs.status);
   });
-
-  let content = $state("");
 </script>
 
 <div class="h-screen w-full flex flex-col">
@@ -36,6 +34,16 @@
         {systemFs.dirName}
       </span>
     {/if}
+    <div class="grow"></div>
+    <a
+      href="http://github.com/zequez/web-jam-editor"
+      target="_blank"
+      class="h-full flex-cc hover:bg-white/20 cursor-pointer px2"
+    >
+      <span class="i-fa-brands-github h-full w-5 mr1"></span>
+      <span>Ezequiel's Web Jam Editor</span>
+      <span class="i-fa-up-right-from-square h-full w-3 ml1"></span>
+    </a>
   </div>
   <div class="flex flex-grow w-full h-100">
     {#if systemFs.status === "loading"}
