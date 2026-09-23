@@ -38,6 +38,7 @@
       await set(handlerKey, null);
       sessionStorage.removeItem("session-dir-handler");
     }
+    localFs = null;
   }
 
   async function pickSessionFolder() {
@@ -69,14 +70,24 @@
 </script>
 
 <div class="h-screen w-full flex flex-col">
-  <div class="bg-gray-800 text-white flex shrink-0">
-    <button
-      class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
-      onclick={pickSessionFolder}
-    >
-      <span class="i-fa-folder-open inline-block relative -bottom-2px"></span>
-      Open Folder...
-    </button>
+  <div class="bg-gray-800 text-white flex shrink-0 h-6">
+    {#if !localFs}
+      <button
+        class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
+        onclick={pickSessionFolder}
+      >
+        <span class="i-fa-folder-open inline-block relative -bottom-2px"></span>
+        Open Folder...
+      </button>
+    {:else}
+      <button
+        onclick={clearSessionHandler}
+        class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
+      >
+        <span class="i-fa-close inline-block relative -bottom-2px"></span>
+        Close
+      </button>
+    {/if}
   </div>
   <div class="flex flex-grow w-full h-100">
     {#if loading}
