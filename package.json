@@ -6,7 +6,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "vite dev"
+    "start": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@types/bun": "latest"
