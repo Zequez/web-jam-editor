@@ -1,19 +1,19 @@
-import {
-  PREVIEW_NAMESPACE,
-  isPreviewClientRefreshMessage,
-} from "./lib/preview-protocol";
+import { PREVIEW_NAMESPACE, isPreviewClientRefreshMessage } from "./protocol";
 
 const sessionId = getSessionId(location.pathname);
 
 if (sessionId && "serviceWorker" in navigator) {
-  navigator.serviceWorker.addEventListener("message", (event: MessageEvent<unknown>) => {
-    if (
-      isPreviewClientRefreshMessage(event.data) &&
-      event.data.sessionId === sessionId
-    ) {
-      location.reload();
-    }
-  });
+  navigator.serviceWorker.addEventListener(
+    "message",
+    (event: MessageEvent<unknown>) => {
+      if (
+        isPreviewClientRefreshMessage(event.data) &&
+        event.data.sessionId === sessionId
+      ) {
+        location.reload();
+      }
+    },
+  );
 
   void joinPreviewSession(sessionId);
 }
@@ -27,7 +27,9 @@ async function joinPreviewSession(sessionId: string): Promise<void> {
 function getSessionId(pathname: string): string | null {
   if (!pathname.startsWith(PREVIEW_NAMESPACE)) return null;
 
-  const encodedSessionId = pathname.slice(PREVIEW_NAMESPACE.length).split("/", 1)[0];
+  const encodedSessionId = pathname
+    .slice(PREVIEW_NAMESPACE.length)
+    .split("/", 1)[0];
   if (!encodedSessionId) return null;
 
   try {

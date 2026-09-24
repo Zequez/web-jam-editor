@@ -10,7 +10,7 @@ import {
   type PreviewSessionRefreshMessage,
   type ProviderRegistrationMessage,
   type ProviderUnregistrationMessage,
-} from "./lib/preview-protocol";
+} from "./protocol";
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -89,10 +89,13 @@ async function handlePreviewRequest(request: Request): Promise<Response> {
   );
   for (const candidate of candidates) {
     const file = await requestProviderFile(previewRequest.sessionId, candidate);
-    if (file.status === "ok") return fileResponse(file.body, candidate, 200, isHeadRequest);
-    if (file.status === "unavailable") return plainResponse(503, "Preview provider unavailable", isHeadRequest);
+    if (file.status === "ok")
+      return fileResponse(file.body, candidate, 200, isHeadRequest);
+    if (file.status === "unavailable")
+      return plainResponse(503, "Preview provider unavailable", isHeadRequest);
     // A filesystem error is not a missing path, so do not hide it as a 404.
-    if (file.status === "error") return plainResponse(500, "Unable to read preview file", isHeadRequest);
+    if (file.status === "error")
+      return plainResponse(500, "Unable to read preview file", isHeadRequest);
   }
 
   const notFoundPage = await requestProviderFile(
@@ -138,7 +141,10 @@ function parsePreviewRequest(
 }
 
 /** Candidate order: exact extensionless path, directory index, then .html. */
-function resolveCandidates(path: string[], hasTrailingSlash: boolean): string[] {
+function resolveCandidates(
+  path: string[],
+  hasTrailingSlash: boolean,
+): string[] {
   if (path.length === 0 || hasTrailingSlash) {
     return [[...path, "index.html"].join("/")];
   }
@@ -180,10 +186,7 @@ async function requestProviderFile(
 
     channel.port1.onmessage = (event: MessageEvent<unknown>) => {
       const response = event.data as FileReadResponse;
-      if (
-        !isFileReadResponse(response) ||
-        response.requestId !== requestId
-      ) {
+      if (!isFileReadResponse(response) || response.requestId !== requestId) {
         return;
       }
       self.clearTimeout(timeout);
@@ -244,10 +247,14 @@ function injectRefreshClient(body: ArrayBuffer): ArrayBuffer {
   const closingBody = /<\/body\s*>/i;
 
   if (closingHead.test(html)) {
-    return new TextEncoder().encode(html.replace(closingHead, `${script}</head>`)).buffer;
+    return new TextEncoder().encode(
+      html.replace(closingHead, `${script}</head>`),
+    ).buffer;
   }
   if (closingBody.test(html)) {
-    return new TextEncoder().encode(html.replace(closingBody, `${script}</body>`)).buffer;
+    return new TextEncoder().encode(
+      html.replace(closingBody, `${script}</body>`),
+    ).buffer;
   }
   return new TextEncoder().encode(`${html}${script}`).buffer;
 }
@@ -313,7 +320,9 @@ function isProviderUnregistration(
   );
 }
 
-function isPreviewClientJoin(value: unknown): value is PreviewClientJoinMessage {
+function isPreviewClientJoin(
+  value: unknown,
+): value is PreviewClientJoinMessage {
   return (
     isObject(value) &&
     value.type === "preview-client-join" &&
@@ -385,7 +394,8 @@ function removePreviewClient(sessionId: string, clientId: string) {
   const clients = previewClients.get(sessionId);
   clients?.delete(clientId);
   if (clients?.size === 0) previewClients.delete(sessionId);
-  if (clientSessions.get(clientId) === sessionId) clientSessions.delete(clientId);
+  if (clientSessions.get(clientId) === sessionId)
+    clientSessions.delete(clientId);
 }
 
 function getClientId(

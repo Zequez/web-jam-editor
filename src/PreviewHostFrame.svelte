@@ -8,7 +8,7 @@
     isProviderRegistrationReply,
     normalizeFilesystemPath,
     type FileReadResponse,
-  } from "./lib/preview-protocol";
+  } from "./lib/preview-virtual-server/protocol";
   import Preview from "./Preview.svelte";
 
   const { fs, servePath }: { fs: Fs; servePath: string } = $props();
