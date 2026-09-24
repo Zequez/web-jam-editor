@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import type { Fs } from "./lib/zen-fs-type";
+  import type { Fs } from "@/lib/zen-fs-type";
   import {
     PREVIEW_NAMESPACE,
     isFileReadRequest,
@@ -8,7 +8,7 @@
     isProviderRegistrationReply,
     normalizeFilesystemPath,
     type FileReadResponse,
-  } from "./lib/preview-virtual-server/protocol";
+  } from "@/lib/preview-virtual-server/protocol";
   import Preview from "./Preview.svelte";
 
   const { fs, servePath }: { fs: Fs; servePath: string } = $props();

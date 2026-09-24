@@ -1,8 +1,8 @@
 import "virtual:uno.css";
 import { mount } from "svelte";
-import SystemFrame from "./SystemFrame.svelte";
-import Preview from "./Preview.svelte";
-import SingleFileCoder from "./SingleFileCoder";
+import SystemFrame from "./components/SystemFrame.svelte";
+import Preview from "./components/Preview.svelte";
+import SingleFileCoder from "./components/SingleFileCoder";
 
 let Comp;
 let props = {};

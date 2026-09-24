@@ -2,8 +2,8 @@
   import { onMount } from "svelte";
   import SingleFileCoder from "./SingleFileCoder";
   import Loader from "./Loader.svelte";
-  import { INPUT_FILE, build } from "./lib/pure-pug-compiler";
-  import type { Fs } from "./lib/zen-fs-type";
+  import { INPUT_FILE, build } from "@/lib/pure-pug-compiler";
+  import type { Fs } from "@/lib/zen-fs-type";
   import BuildProgressBar from "./BuildProgressBar.svelte";
 
   const AUTO_SAVE_DEBOUNCE = 300;
