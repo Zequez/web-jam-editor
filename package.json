@@ -1,5 +1,7 @@
 {
-  "name": "ebuwe",
+  "name": "web-jam-editor",
+  "author": "Ezequiel Adrian Schwartzman",
+  "contributors": ["Gaia"],
   "module": "index.ts",
   "type": "module",
   "private": true,
