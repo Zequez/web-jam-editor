@@ -5,7 +5,8 @@
   async function handleFilesAdded(files: File[]) {
     for (const file of files) {
       const data = new Uint8Array(await file.arrayBuffer());
-      fs.writeFileSync(`/assets/${file.name}`, data);
+      fs.mkdirSync("/www/assets", { recursive: true });
+      fs.writeFileSync(`/www/assets/${file.name}`, data);
     }
   }
 </script>
