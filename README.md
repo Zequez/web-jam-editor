@@ -1,4 +1,15 @@
-# ebuwe
+# Web Jam Editor
+
+A web builder based on Pug,
+atomic CSS (using UnoCSS with Tailwind preset and attributify enabled)
+that runs entirely only-child: the browser.
+
+Works directly with your local filesystem, and builds output to `/www`.
+
+Uses a serviceworker for live previews that can even run o a separate tab without needing to run
+anything on your computer.
+
+## Development
 
 To install dependencies:
 
@@ -9,7 +20,5 @@ bun install
 To run:
 
 ```bash
-bun run index.ts
+bun start
 ```
-
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
