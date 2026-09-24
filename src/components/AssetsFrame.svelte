@@ -5,7 +5,7 @@
   async function handleFilesAdded(files: File[]) {
     for (const file of files) {
       const data = new Uint8Array(await file.arrayBuffer());
-      fs.writeFileSync(file.name, data);
+      fs.writeFileSync(`/assets/${file.name}`, data);
     }
   }
 </script>
