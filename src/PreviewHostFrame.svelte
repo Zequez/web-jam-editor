@@ -19,10 +19,10 @@
   const PROVIDER_TIMEOUT_MS = 5_000;
 
   let initializationError = $state<string | null>(null);
+  let refreshSession: (() => Promise<void>) | null = null;
 
   export function refresh() {
-    console.log("Refreshing preview");
-    previewEl.refresh();
+    void refreshSession?.().catch(reportInitializationError);
   }
 
   onMount(() => {
@@ -41,6 +41,12 @@
       if (destroyed || !registration || rootPath === null) return;
       const worker = await waitForActiveWorker(registration);
       await sendProviderRegistration(worker, sessionId);
+    };
+
+    const requestSessionRefresh = async () => {
+      if (destroyed || !registration) return;
+      const worker = await waitForActiveWorker(registration);
+      worker.postMessage({ type: "preview-session-refresh", sessionId });
     };
 
     const onServiceWorkerMessage = (event: MessageEvent<unknown>) => {
@@ -70,6 +76,7 @@
         { scope: PREVIEW_NAMESPACE, type: "module" },
       );
       await registerProvider();
+      refreshSession = requestSessionRefresh;
 
       if (!destroyed) {
         previewEl.go(
@@ -82,6 +89,7 @@
 
     return () => {
       destroyed = true;
+      refreshSession = null;
       navigator.serviceWorker.removeEventListener("message", onServiceWorkerMessage);
       navigator.serviceWorker.removeEventListener("message", onProviderRequest);
       registration?.active?.postMessage({

@@ -1,5 +1,6 @@
 /** Shared, structured messages for the virtual preview Service Worker. */
 export const PREVIEW_NAMESPACE = "/__preview/";
+export const PREVIEW_REFRESH_CLIENT_PATH = "/__preview/refresh-client.js";
 
 export type ProviderRegistrationMessage = {
   type: "preview-provider-register";
@@ -18,6 +19,21 @@ export type ProviderNeededMessage = {
 
 export type ProviderRegistrationReply = {
   type: "preview-provider-registered";
+  sessionId: string;
+};
+
+export type PreviewClientJoinMessage = {
+  type: "preview-client-join";
+  sessionId: string;
+};
+
+export type PreviewSessionRefreshMessage = {
+  type: "preview-session-refresh";
+  sessionId: string;
+};
+
+export type PreviewClientRefreshMessage = {
+  type: "preview-client-refresh";
   sessionId: string;
 };
 
@@ -68,6 +84,36 @@ export function isProviderRegistrationReply(
   return (
     isRecord(value) &&
     value.type === "preview-provider-registered" &&
+    typeof value.sessionId === "string"
+  );
+}
+
+export function isPreviewClientJoinMessage(
+  value: unknown,
+): value is PreviewClientJoinMessage {
+  return (
+    isRecord(value) &&
+    value.type === "preview-client-join" &&
+    typeof value.sessionId === "string"
+  );
+}
+
+export function isPreviewSessionRefreshMessage(
+  value: unknown,
+): value is PreviewSessionRefreshMessage {
+  return (
+    isRecord(value) &&
+    value.type === "preview-session-refresh" &&
+    typeof value.sessionId === "string"
+  );
+}
+
+export function isPreviewClientRefreshMessage(
+  value: unknown,
+): value is PreviewClientRefreshMessage {
+  return (
+    isRecord(value) &&
+    value.type === "preview-client-refresh" &&
     typeof value.sessionId === "string"
   );
 }

@@ -3,8 +3,11 @@
 import mime from "mime";
 import {
   PREVIEW_NAMESPACE,
+  PREVIEW_REFRESH_CLIENT_PATH,
   type FileReadResponse,
   type FileReadRequest,
+  type PreviewClientJoinMessage,
+  type PreviewSessionRefreshMessage,
   type ProviderRegistrationMessage,
   type ProviderUnregistrationMessage,
 } from "./lib/preview-protocol";
@@ -13,6 +16,8 @@ declare const self: ServiceWorkerGlobalScope;
 
 const PROVIDER_TIMEOUT_MS = 5_000;
 const providers = new Map<string, string>();
+const previewClients = new Map<string, Set<string>>();
+const clientSessions = new Map<string, string>();
 
 self.addEventListener("install", (event) => {
   event.waitUntil(self.skipWaiting());
@@ -41,6 +46,17 @@ self.addEventListener("message", (event) => {
     if (clientId && providers.get(message.sessionId) === clientId) {
       providers.delete(message.sessionId);
     }
+    return;
+  }
+
+  if (isPreviewClientJoin(message)) {
+    const clientId = getClientId(event.source);
+    if (clientId) joinPreviewClient(message.sessionId, clientId);
+    return;
+  }
+
+  if (isPreviewSessionRefresh(message)) {
+    event.waitUntil(refreshPreviewClients(message.sessionId));
   }
 });
 
@@ -48,7 +64,8 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   if (
     !url.pathname.startsWith(PREVIEW_NAMESPACE) ||
-    url.pathname === `${PREVIEW_NAMESPACE}service-worker.js`
+    url.pathname === `${PREVIEW_NAMESPACE}service-worker.js` ||
+    url.pathname === PREVIEW_REFRESH_CLIENT_PATH
   ) {
     return;
   }
@@ -204,13 +221,39 @@ function fileResponse(
   status: number,
   isHeadRequest: boolean,
 ): Response {
-  return new Response(isHeadRequest ? null : body, {
+  const contentType = mime.getType(path) ?? "application/octet-stream";
+  const responseBody = isHeadRequest
+    ? null
+    : isHtml(contentType)
+      ? injectRefreshClient(body)
+      : body;
+
+  return new Response(responseBody, {
     status,
     headers: {
-      "Content-Type": mime.getType(path) ?? "application/octet-stream",
+      "Content-Type": contentType,
       "Cache-Control": "no-store",
     },
   });
+}
+
+function injectRefreshClient(body: ArrayBuffer): ArrayBuffer {
+  const script = `<script type="module" src="${PREVIEW_REFRESH_CLIENT_PATH}"></script>`;
+  const html = new TextDecoder().decode(body);
+  const closingHead = /<\/head\s*>/i;
+  const closingBody = /<\/body\s*>/i;
+
+  if (closingHead.test(html)) {
+    return new TextEncoder().encode(html.replace(closingHead, `${script}</head>`)).buffer;
+  }
+  if (closingBody.test(html)) {
+    return new TextEncoder().encode(html.replace(closingBody, `${script}</body>`)).buffer;
+  }
+  return new TextEncoder().encode(`${html}${script}`).buffer;
+}
+
+function isHtml(contentType: string): boolean {
+  return contentType.split(";", 1)[0] === "text/html";
 }
 
 function plainResponse(
@@ -270,6 +313,24 @@ function isProviderUnregistration(
   );
 }
 
+function isPreviewClientJoin(value: unknown): value is PreviewClientJoinMessage {
+  return (
+    isObject(value) &&
+    value.type === "preview-client-join" &&
+    typeof value.sessionId === "string"
+  );
+}
+
+function isPreviewSessionRefresh(
+  value: unknown,
+): value is PreviewSessionRefreshMessage {
+  return (
+    isObject(value) &&
+    value.type === "preview-session-refresh" &&
+    typeof value.sessionId === "string"
+  );
+}
+
 function isFileReadResponse(value: unknown): value is FileReadResponse {
   if (!isObject(value) || value.type !== "preview-file-result") return false;
   if (typeof value.requestId !== "string" || typeof value.status !== "string") {
@@ -287,6 +348,44 @@ async function waitForProvider(sessionId: string): Promise<string | null> {
     await new Promise<void>((resolve) => self.setTimeout(resolve, 25));
   }
   return null;
+}
+
+function joinPreviewClient(sessionId: string, clientId: string) {
+  const previousSessionId = clientSessions.get(clientId);
+  if (previousSessionId && previousSessionId !== sessionId) {
+    removePreviewClient(previousSessionId, clientId);
+  }
+
+  clientSessions.set(clientId, sessionId);
+  let clients = previewClients.get(sessionId);
+  if (!clients) {
+    clients = new Set();
+    previewClients.set(sessionId, clients);
+  }
+  clients.add(clientId);
+}
+
+async function refreshPreviewClients(sessionId: string): Promise<void> {
+  const clientIds = previewClients.get(sessionId);
+  if (!clientIds) return;
+
+  await Promise.all(
+    [...clientIds].map(async (clientId) => {
+      const client = await self.clients.get(clientId);
+      if (!client) {
+        removePreviewClient(sessionId, clientId);
+        return;
+      }
+      client.postMessage({ type: "preview-client-refresh", sessionId });
+    }),
+  );
+}
+
+function removePreviewClient(sessionId: string, clientId: string) {
+  const clients = previewClients.get(sessionId);
+  clients?.delete(clientId);
+  if (clients?.size === 0) previewClients.delete(sessionId);
+  if (clientSessions.get(clientId) === sessionId) clientSessions.delete(clientId);
 }
 
 function getClientId(

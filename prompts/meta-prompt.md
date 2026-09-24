@@ -1,1 +1,3 @@
-Read prompts/virtual-static-web-server.md as the authoritative specification and execute it completely. Inspect the repository first, implement the feature, validate it, and fix any resulting errors. Do not ask for clarification unless you encounter a genuine contradiction or an essential missing requirement.
+Read prompts/self-refreshing-previews.md as the authoritative specification and execute it completely. Inspect the repository first, implement the feature, validate it, and fix any resulting errors. Do not ask for clarification unless you encounter a genuine contradiction or an essential missing requirement.
+
+Before running complex validations by running a Vite server and booting a virtual browser pause and let me check manually if it works before validating it yourself, and wait for my feedback.
