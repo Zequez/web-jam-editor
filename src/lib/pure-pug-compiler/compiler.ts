@@ -1,6 +1,6 @@
 import { fs } from "@zenfs/core";
 import pug from "./pug-browser.ts";
-import { extractAtomicCss } from "./extractAtomicCss.ts";
+import { extract } from "../atomic-css-extractor/extractAtomicCss.ts";
 
 export const INPUT_FILE = "index.pug";
 export const OUTPUT_DIR = "www";
@@ -29,7 +29,7 @@ export async function build() {
 
   // console.log(output);
 
-  const css = await extractAtomicCss(output);
+  const css = await extract(output);
   // console.log(css);
 
   const styleImport = `<link rel="stylesheet" href="style.css">`;

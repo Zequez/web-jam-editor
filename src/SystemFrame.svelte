@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { createSystemFs } from "./systemFs.svelte";
+  import { createSystemFs } from "./stores/systemFs.svelte";
 
   import CoderFrame from "./CoderFrame.svelte";
   import Loader from "./Loader.svelte";
-  import { OUTPUT_DIR } from "./lib/compiler";
+  import { OUTPUT_DIR } from "./lib/pure-pug-compiler";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);

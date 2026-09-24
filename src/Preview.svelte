@@ -7,15 +7,14 @@
   let containerHeight = $state(0);
   let width = $derived(containerWidth / scale);
   let height = $derived(containerHeight / scale);
-  let address = $state(
-    //"https://www.openstreetmap.org/export/embed.html?bbox=-57.57,-38.02,-57.54,-37.99&layer=mapnik",
-    initialValue,
-  );
+  let address = $state(initialValue);
   let src = $state(address);
   let container: HTMLElement = $state(null!);
   let iframe: HTMLIFrameElement = $state(null!);
 
-  onMount(() => {
+  //localhost:5173/__preview/dadb69d0-d47e-46c9-9168-710335910188/
+
+  http: onMount(() => {
     const resizeObserver = new ResizeObserver(([entry]) => {
       containerWidth = entry!.contentRect.width;
       containerHeight = entry!.contentRect.height;
@@ -57,7 +56,7 @@
     >
     <div class="grow"></div>
     <div class="flex">
-      <div class="mr2">{width}&times;{height}</div>
+      <div class="mr2">{Math.round(width)}&times;{Math.round(height)}</div>
 
       <div class="mr-2">{Math.round(scale * 100)}%</div>
       <input type="range" bind:value={scale} min="0.1" max="2" step="0.1" />
