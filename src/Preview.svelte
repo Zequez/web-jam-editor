@@ -13,6 +13,7 @@
   );
   let src = $state(address);
   let container: HTMLElement = $state(null!);
+  let iframe: HTMLIFrameElement = $state(null!);
 
   onMount(() => {
     const resizeObserver = new ResizeObserver(([entry]) => {
@@ -25,21 +26,34 @@
     return () => resizeObserver.disconnect();
   });
 
-  function go() {
+  export function go(newSrc: string) {
+    const isChanging = newSrc !== src;
+    src = newSrc;
+    address = newSrc;
+    if (isChanging) {
+      refresh();
+    }
+  }
+
+  function handleGo() {
     src = address;
+  }
+
+  export function refresh() {
+    iframe.contentWindow?.location.reload();
   }
 </script>
 
 <div class="h-full w-full flex flex-col bg-gray-300">
   <div class="flex p1 overflow-hidden">
     <input
-      onkeyup={(e) => e.key === "Enter" && go()}
+      onkeyup={(e) => e.key === "Enter" && handleGo()}
       bind:value={address}
       class="bg-white px2 rounded-1 shrink-0 mr-1"
     />
     <button
       class="bg-gray-400 text-white rounded-1 font-semibold px2 cursor-pointer"
-      onclick={() => go()}>GO</button
+      onclick={() => handleGo()}>GO</button
     >
     <div class="grow"></div>
     <div class="flex">
@@ -51,6 +65,7 @@
   </div>
   <div class="w-full h-full flex-grow relative" bind:this={container}>
     <iframe
+      bind:this={iframe}
       title="Preview"
       class="bg-white absolute"
       {src}

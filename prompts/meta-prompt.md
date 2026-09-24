@@ -1,0 +1,1 @@
+Read prompts/virtual-static-web-server.md as the authoritative specification and execute it completely. Inspect the repository first, implement the feature, validate it, and fix any resulting errors. Do not ask for clarification unless you encounter a genuine contradiction or an essential missing requirement.

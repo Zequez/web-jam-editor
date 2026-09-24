@@ -1,4 +1,5 @@
-import { WebAccess, type WebAccessFS } from "@zenfs/dom";
+import { configureSingle, fs } from "@zenfs/core";
+import { WebAccess } from "@zenfs/dom";
 import { get, set } from "idb-keyval";
 import { onMount } from "svelte";
 
@@ -8,7 +9,7 @@ type FsState =
   | {
       status: "ready";
       handler: FileSystemDirectoryHandle;
-      fs: WebAccessFS;
+      fs: typeof fs;
     };
 
 export function createSystemFs() {
@@ -35,8 +36,10 @@ export function createSystemFs() {
     }
   }
 
-  function createFilesystem(dir: FileSystemDirectoryHandle) {
-    return WebAccess.create({ handle: dir });
+  async function createFilesystem(dir: FileSystemDirectoryHandle) {
+    const webAccessFs = await WebAccess.create({ handle: dir });
+    await configureSingle(webAccessFs); // This actually sets the global filesystem
+    return fs; // Let's pretend
   }
 
   async function clearSessionHandler() {

@@ -3,7 +3,7 @@ import pug from "./pug-browser.ts";
 import { extractAtomicCss } from "./extractAtomicCss.ts";
 
 export const INPUT_FILE = "index.pug";
-const OUTPUT_DIR = "www";
+export const OUTPUT_DIR = "www";
 
 export async function build() {
   let index = fs.readFileSync(INPUT_FILE, "utf-8");

@@ -1,20 +1,18 @@
 <script lang="ts">
-  import { fs, configureSingle } from "@zenfs/core";
-  import { type WebAccessFS } from "@zenfs/dom";
   import { onMount } from "svelte";
   import SingleFileCoder from "./SingleFileCoder";
   import Loader from "./Loader.svelte";
   import { INPUT_FILE, build } from "./lib/compiler";
+  import type { Fs } from "./lib/zen-fs-type";
 
   const AUTO_SAVE_DEBOUNCE = 300;
 
   let loading = $state(true);
-  let { fs: propsFs }: { fs: WebAccessFS } = $props();
+  let { fs, onBuildEnds }: { fs: Fs; onBuildEnds: () => void } = $props();
 
   let content = $state("");
 
   onMount(async () => {
-    await configureSingle(propsFs);
     content = fs.readFileSync(INPUT_FILE, "utf-8");
 
     loading = false;
@@ -46,6 +44,7 @@
       buildScheduleProgress = calculateBuildScheduleProgress();
 
       await build();
+      onBuildEnds();
     }, AUTO_SAVE_DEBOUNCE);
   }
 

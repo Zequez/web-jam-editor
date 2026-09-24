@@ -1,15 +1,22 @@
 <script lang="ts">
   import { createSystemFs } from "./systemFs.svelte";
 
-  import Preview from "./Preview.svelte";
   import CoderFrame from "./CoderFrame.svelte";
   import Loader from "./Loader.svelte";
+  import { OUTPUT_DIR } from "./lib/compiler";
+  import PreviewHostFrame from "./PreviewHostFrame.svelte";
+
+  let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
   const systemFs = createSystemFs();
 
   $effect(() => {
     console.log("Status", systemFs.status);
   });
+
+  function afterBuild() {
+    previewHostFrameEl?.refresh();
+  }
 </script>
 
 <div class="h-screen w-full flex flex-col">
@@ -54,10 +61,14 @@
       </div>
     {:else if systemFs.status === "ready" && systemFs.fs}
       <div class="w-1/2 h-full bg-gray-200">
-        <CoderFrame fs={systemFs.fs} />
+        <CoderFrame fs={systemFs.fs} onBuildEnds={afterBuild} />
       </div>
       <div class="w-1/2 h-full bg-gray-300">
-        <Preview initialValue="about:blank" />
+        <PreviewHostFrame
+          fs={systemFs.fs}
+          servePath={OUTPUT_DIR}
+          bind:this={previewHostFrameEl}
+        />
       </div>
     {/if}
   </div>
