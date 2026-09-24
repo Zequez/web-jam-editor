@@ -2,6 +2,8 @@
 
 A small, inspectable, browser-native web-making environment that helps ordinary people create real websites without either becoming developers or surrendering the creation process to a black-box website generator.
 
+![Screenshot](screenshot.png)
+
 ## Purpose
 
 And there are really **three overlapping purposes**.
@@ -51,11 +53,11 @@ I'm experimenting with a thing that could become **infrastructure for a communit
 
 Pug-based coding space,
 atomic CSS (using UnoCSS with Tailwind preset and attributify enabled)
-that runs entirely only-child: the browser.
+that runs entirely on the browser.
 
 Works directly with your local filesystem, and builds output to `/www`.
 
-Uses a serviceworker for live previews that can even run o a separate tab without needing to run
+Uses a Service-Worker for live previews that can even run o a separate tab without needing to run
 anything on your computer.
 
 ## Development
