@@ -1,5 +1,6 @@
 <script lang="ts">
   import CodeMirror from "svelte-codemirror-editor";
+  import { EditorView } from "@codemirror/view";
   import { StreamLanguage } from "@codemirror/language";
   import { pug as langPug } from "@codemirror/legacy-modes/mode/pug";
   import { solarizedLight } from "thememirror";
@@ -7,8 +8,9 @@
 
   const codeMirrorPug = StreamLanguage.define(langPug);
 
-  let { onChange, initialValue } = $props<{
+  let { onChange, initialValue, onTyping } = $props<{
     onChange: (value: string) => void;
+    onTyping: () => void;
     initialValue: string;
   }>();
 
@@ -17,14 +19,21 @@
   function handleOnChange() {
     if (onChange) onChange(content);
   }
+
+  const immediateChange = EditorView.updateListener.of((update) => {
+    if (update.docChanged) {
+      onTyping();
+    }
+  });
 </script>
 
 <CodeMirror
   class="h-full w-full block"
   bind:value={content}
   onchange={handleOnChange}
+  nodebounce={false}
   theme={solarizedLight}
-  extensions={[codeMirrorPug, foldingOnIndent]}
+  extensions={[codeMirrorPug, foldingOnIndent, immediateChange]}
 />
 
 <style>

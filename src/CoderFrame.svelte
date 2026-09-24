@@ -28,6 +28,10 @@
     scheduleSave();
   }
 
+  function handleChanging() {
+    buildScheduleProgress = 0;
+  }
+
   let buildScheduleProgressTicker: ReturnType<typeof setInterval> | null = null;
   let buildScheduleProgress = $state(1);
   let savingAt = $state(-1);
@@ -77,6 +81,10 @@
       <span class="mr2">{INPUT_FILE}</span>
       <BuildProgressBar progress={buildScheduleProgress} />
     </div>
-    <SingleFileCoder initialValue={content} onChange={handleChange} />
+    <SingleFileCoder
+      initialValue={content}
+      onChange={handleChange}
+      onTyping={handleChanging}
+    />
   </div>
 {/if}
