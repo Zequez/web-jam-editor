@@ -5,6 +5,7 @@
   import Loader from "./Loader.svelte";
   import { OUTPUT_DIR } from "@/lib/pure-pug-compiler";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
+  import AssetsFrame from "./AssetsFrame.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
@@ -60,8 +61,17 @@
         <span class="text-3/6">Open a folder to start</span>
       </div>
     {:else if systemFs.status === "ready" && systemFs.fs}
-      <div class="w-1/2 h-full bg-gray-200">
-        <CoderFrame fs={systemFs.fs} onBuildEnds={afterBuild} />
+      <div class="w-1/2 h-full bg-gray-200 flex-ss flex-col">
+        <div class="h-1000 w-full">
+          <AssetsFrame />
+        </div>
+        <div class="h-3000 w-full p1.5 bg-gray-300">
+          <div
+            class="size-full rounded-1 overflow-hidden shadow-[0_1px_0_#0007]"
+          >
+            <CoderFrame fs={systemFs.fs} onBuildEnds={afterBuild} />
+          </div>
+        </div>
       </div>
       <div class="w-1/2 h-full bg-gray-300">
         <PreviewHostFrame
