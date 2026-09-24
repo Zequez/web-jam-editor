@@ -4,6 +4,7 @@
   import Loader from "./Loader.svelte";
   import { INPUT_FILE, build } from "./lib/compiler";
   import type { Fs } from "./lib/zen-fs-type";
+  import BuildProgressBar from "./BuildProgressBar.svelte";
 
   const AUTO_SAVE_DEBOUNCE = 300;
 
@@ -56,7 +57,7 @@
     buildScheduleProgress = calculateBuildScheduleProgress();
     buildScheduleProgressTicker = setInterval(() => {
       buildScheduleProgress = calculateBuildScheduleProgress();
-    }, 50);
+    }, 20);
   }
 
   function calculateBuildScheduleProgress() {
@@ -74,19 +75,7 @@
   <div class="size-full flex flex-col">
     <div class="h-6 bg-gray-700 font-mono text-3/6 flex-cs px-2 text-white">
       <span class="mr2">{INPUT_FILE}</span>
-      <span
-        class="inline-block h-4 rounded-1 b-1 b-white/70 w-10 mr2 relative overflow-hidden"
-      >
-        <span
-          class={[
-            "transform-origin-left bg-green-400 absolute inset-0",
-            {
-              "opacity-50": buildScheduleProgress < 1,
-            },
-          ]}
-          style={`transform: scaleX(${buildScheduleProgress})`}
-        ></span>
-      </span>
+      <BuildProgressBar progress={buildScheduleProgress} />
     </div>
     <SingleFileCoder initialValue={content} onChange={handleChange} />
   </div>
