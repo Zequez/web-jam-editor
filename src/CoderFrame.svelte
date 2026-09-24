@@ -13,7 +13,11 @@
   let content = $state("");
 
   onMount(async () => {
-    content = fs.readFileSync(INPUT_FILE, "utf-8");
+    try {
+      content = fs.readFileSync(INPUT_FILE, "utf-8");
+    } catch (e) {
+      fs.writeFileSync(INPUT_FILE, "");
+    }
 
     loading = false;
   });
