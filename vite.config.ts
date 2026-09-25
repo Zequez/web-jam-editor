@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import uno from "unocss/vite";
+import { visualizer } from "rollup-plugin-visualizer";
 
 const previewServiceWorkerPath = "/__preview/service-worker.js";
 const previewRefreshClientPath = "/__preview/refresh-client.js";
@@ -55,7 +56,18 @@ function previewServiceWorker(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [svelte(), uno(), previewServiceWorker()],
+  plugins: [
+    svelte(),
+    uno(),
+    previewServiceWorker(),
+    visualizer({
+      filename: "bundle-analysis.html",
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+      template: "treemap",
+    }),
+  ],
   resolve: {
     alias: {
       "@/lib": fileURLToPath(new URL("./src/lib", import.meta.url)),
