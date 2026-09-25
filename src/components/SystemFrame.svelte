@@ -5,7 +5,7 @@
   import Loader from "./Loader.svelte";
   import { OUTPUT_DIR } from "@/lib/pure-pug-compiler";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
-  import AssetsFrame from "./AssetsFrame.svelte";
+  import AssetsFrame from "./AssetsFrame/AssetsFrame.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
