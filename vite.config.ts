@@ -5,8 +5,8 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 import uno from "unocss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 
-const previewServiceWorkerPath = "/__preview/service-worker.js";
-const previewRefreshClientPath = "/__preview/refresh-client.js";
+const previewServiceWorkerPath = "/preview__/service-worker.js";
+const previewRefreshClientPath = "/preview__/refresh-client.js";
 const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 
 function previewServiceWorker(): Plugin {
@@ -93,9 +93,9 @@ export default defineConfig({
       output: {
         entryFileNames: (chunk) =>
           chunk.name === "service-worker"
-            ? "__preview/service-worker.js"
+            ? "preview__/service-worker.js"
             : chunk.name === "refresh-client"
-              ? "__preview/refresh-client.js"
+              ? "preview__/refresh-client.js"
               : "assets/[name]-[hash].js",
       },
     },

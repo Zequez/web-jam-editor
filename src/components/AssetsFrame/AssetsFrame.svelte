@@ -4,7 +4,7 @@
   import ImagesProcessor from "./ImagesProcessor.svelte";
   import { onMount } from "svelte";
 
-  // http://localhost:5173/__preview/eafec662-0bc3-4d81-bd00-59281e3b0696/images/ezequiel/sm.webp
+  // http://localhost:5173/preview__/eafec662-0bc3-4d81-bd00-59281e3b0696/images/ezequiel/sm.webp
 
   let images = $state<{ [key: string]: string }>({});
   let imagesProcessor: ImagesProcessor;

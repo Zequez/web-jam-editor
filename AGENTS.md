@@ -14,7 +14,7 @@ The project is not a traditional SPA with a server-side app backend. It is a loc
 - reads `index.pug` from the selected directory;
 - compiles it into HTML and extracted CSS;
 - writes the result into a `www` directory inside that same filesystem;
-- serves the generated output through a virtual preview URL under `/__preview/<session-id>/`;
+- serves the generated output through a virtual preview URL under `/preview__/<session-id>/`;
 - refreshes previews when the filesystem changes, even in another tab/window.
 
 The README describes the project as "A web builder based on Pug, atomic CSS, that runs entirely in the browser" and explicitly calls out live previews via a Service Worker. That is consistent with the surrounding code.
@@ -109,14 +109,14 @@ This is the most important subsystem in the repository.
 
 The preview system uses a dedicated namespace in the browser origin:
 
-- `PREVIEW_NAMESPACE = "/__preview/"`
-- preview URLs look like `/__preview/<session-id>/...`
+- `PREVIEW_NAMESPACE = "/preview__/"`
+- preview URLs look like `/preview__/<session-id>/...`
 
 The session identifier is generated in the host component and remains stable for a browser tab or preview session. All preview requests for that session are routed to the same provider and the same Service Worker registration.
 
 The service worker is responsible for:
 
-- accepting preview requests under `/__preview/*`
+- accepting preview requests under `/preview__/*`
 - excluding the injected script endpoints from serving as files
 - resolving candidates like `/`, `/about/`, `/about`, `/about/index.html`, and `/about.html`
 - returning 404s and `404.html` when applicable
@@ -127,7 +127,7 @@ The service worker is responsible for:
 
 The conceptual flow is:
 
-- browser iframe or standalone tab requests a virtual URL under `/__preview/...`
+- browser iframe or standalone tab requests a virtual URL under `/preview__/...`
 - the Service Worker decides whether the request belongs to a preview route
 - the Service Worker sends a `preview-file-read` message to the page-side provider for the matching session
 - the provider reads the file from the current ZenFS filesystem at the requested `servePath`
@@ -164,7 +164,7 @@ These are the assumptions that appear to matter for the system to keep working:
 - The selected project directory is the canonical project root; most file operations happen relative to it.
 - The app deliberately uses the browser filesystem and local session persistence rather than a Node server or backend.
 - The preview virtual server must live under the application origin, not on a separate TCP port.
-- Preview URLs must remain under a dedicated `/__preview/` namespace so they do not collide with the application’s own routes.
+- Preview URLs must remain under a dedicated `/preview__/` namespace so they do not collide with the application’s own routes.
 - The Service Worker is the router and boundary; it must not directly access `fs`.
 - `servePath` is a filesystem path inside the chosen project, not a URL path.
 - The preview system must normalize paths carefully to prevent traversal outside `servePath`.
@@ -194,7 +194,7 @@ Future agents should be conservative about changing these parts of the architect
 
 - `systemFs.svelte.ts` and the filesystem/provider boundary
 - `build()` in the Pug compiler and the `www` output contract
-- the `/__preview/` Service Worker namespace and protocol types
+- the `/preview__/` Service Worker namespace and protocol types
 - the injection of the refresh client into HTML
 - any code that ties preview refreshes to a single iframe instead of a preview session
 

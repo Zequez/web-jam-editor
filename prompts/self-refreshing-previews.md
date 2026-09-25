@@ -138,7 +138,7 @@ Do not make unrelated changes to `Preview.svelte` unless they are genuinely requ
 Preserve the existing session URL architecture:
 
 ```text
-/__preview/<session-id>/...
+/preview__/<session-id>/...
 ```
 
 A session should remain valid across navigation within that preview.
@@ -146,9 +146,9 @@ A session should remain valid across navigation within that preview.
 For example:
 
 ```text
-/__preview/abc/
-/__preview/abc/about/
-/__preview/abc/contact/
+/preview__/abc/
+/preview__/abc/about/
+/preview__/abc/contact/
 ```
 
 are all clients of session `abc`.
@@ -156,7 +156,7 @@ are all clients of session `abc`.
 If the editor has the preview iframe open and the user separately opens:
 
 ```text
-/__preview/abc/
+/preview__/abc/
 ```
 
 in another tab, both should receive the same refresh event.

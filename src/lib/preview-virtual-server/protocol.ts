@@ -1,6 +1,6 @@
 /** Shared, structured messages for the virtual preview Service Worker. */
-export const PREVIEW_NAMESPACE = "/__preview/";
-export const PREVIEW_REFRESH_CLIENT_PATH = "/__preview/refresh-client.js";
+export const PREVIEW_NAMESPACE = "/preview__/";
+export const PREVIEW_REFRESH_CLIENT_PATH = "/preview__/refresh-client.js";
 
 export type ProviderRegistrationMessage = {
   type: "preview-provider-register";

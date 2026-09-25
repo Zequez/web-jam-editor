@@ -12,7 +12,7 @@
   let container: HTMLElement = $state(null!);
   let iframe: HTMLIFrameElement = $state(null!);
 
-  //localhost:5173/__preview/dadb69d0-d47e-46c9-9168-710335910188/
+  //localhost:5173/preview__/dadb69d0-d47e-46c9-9168-710335910188/
 
   http: onMount(() => {
     const resizeObserver = new ResizeObserver(([entry]) => {

@@ -72,7 +72,7 @@ Do NOT use query parameters such as `/?host=foo` as the primary namespace.
 Use a dedicated path namespace on the same origin, for example:
 
 ```text
-/__preview/<session-id>/
+/preview__/<session-id>/
 ```
 
 The exact internal naming can be chosen sensibly, but it must:
@@ -89,7 +89,7 @@ The URL representing the virtual site's root should end in `/`, so that relative
 For example:
 
 ```text
-http://localhost:5173/__preview/abc123/
+http://localhost:5173/preview__/abc123/
 ```
 
 should represent:
@@ -107,7 +107,7 @@ servePath === "www"
 A request for:
 
 ```text
-/__preview/abc123/style.css
+/preview__/abc123/style.css
 ```
 
 should therefore read:
@@ -178,10 +178,10 @@ For example:
 ```text
 virtual URL                     filesystem path
 
-/__preview/abc/                 www/
-/__preview/abc/index.html      www/index.html
-/__preview/abc/style.css       www/style.css
-/__preview/abc/assets/x.png    www/assets/x.png
+/preview__/abc/                 www/
+/preview__/abc/index.html      www/index.html
+/preview__/abc/style.css       www/style.css
+/preview__/abc/assets/x.png    www/assets/x.png
 ```
 
 Use the existing `Fs` interface rather than reconfiguring ZenFS globally.
@@ -441,7 +441,7 @@ When finished, the following should work:
 3. The iframe navigates to a URL similar to:
 
 ```text
-http://localhost:5173/__preview/<session-id>/
+http://localhost:5173/preview__/<session-id>/
 ```
 
 4. If `www/index.html` contains:

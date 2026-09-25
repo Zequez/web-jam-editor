@@ -112,7 +112,7 @@
           <div class="flex-cs">
             <img
               class="w-10 h-10 bg-gray-200 rounded-1 mr1.5"
-              src="/__preview/9c808fae-d0c0-4cf2-8f68-609d9d2db12e/images/{img}/sm.webp"
+              src="/preview__/9c808fae-d0c0-4cf2-8f68-609d9d2db12e/images/{img}/sm.webp"
             />
             {img}
             <button onclick={() => onDeleteImage(img)}>[Del]</button>
