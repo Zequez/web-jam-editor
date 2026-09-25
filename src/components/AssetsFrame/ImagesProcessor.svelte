@@ -16,6 +16,21 @@
     }
   }
 
+  export function isImageFile(filePath: string) {
+    const mimeType = detectMimeType(filePath);
+    return !!mimeType;
+  }
+
+  export function imageRoutes(name: string) {
+    return {
+      dir: `/images/${name}`,
+      original: `/images/${name}.webp`,
+      sm: `/images/${name}/sm.webp`,
+      md: `/images/${name}/md.webp`,
+      lg: `/images/${name}/lg.webp`,
+    };
+  }
+
   function processQueue() {
     if (isProcessing) return;
     isProcessing = true;
@@ -47,8 +62,12 @@
     if (!fileName) return;
 
     const source = fs.readFileSync(filePath);
+    const mimeType = detectMimeType(filePath);
+
+    if (!mimeType) return;
+
     const imageBlob = new Blob([new Uint8Array(source).slice().buffer], {
-      type: detectMimeType(filePath),
+      type: mimeType,
     });
     const image = await loadImage(imageBlob);
 
@@ -108,17 +127,7 @@
     fs.writeFileSync(outputPath, data);
   }
 
-  function toUint8Array(value: Uint8Array | ArrayBuffer | string): Uint8Array {
-    if (typeof value === "string") {
-      return new TextEncoder().encode(value);
-    }
-    if (value instanceof Uint8Array) {
-      return value;
-    }
-    return new Uint8Array(value);
-  }
-
-  function detectMimeType(filePath: string): string {
+  function detectMimeType(filePath: string): string | null {
     const ext = filePath.split(".").pop()?.toLowerCase();
     switch (ext) {
       case "png":
@@ -133,7 +142,7 @@
       case "bmp":
         return "image/bmp";
       default:
-        return "image/png";
+        return null;
     }
   }
 
@@ -169,7 +178,7 @@
     });
   }
 
-  function extractFileName(filePath: string) {
+  export function extractFileName(filePath: string) {
     const parts = filePath.split(/[\\/]/);
     const fileName = parts[parts.length - 1] ?? "";
     return fileName.replace(/\.[^.]+$/, "");
@@ -177,7 +186,7 @@
 </script>
 
 <div
-  class="absolute bottom-0 right-0 bg-red-400/50 w-100 h-100 z-1000 pointer-events-none"
+  class="hidden absolute bottom-0 right-0 bg-red-400/50 w-100 h-100 z-1000 pointer-events-none"
 >
   <canvas class="" bind:this={canvas}></canvas>
 </div>

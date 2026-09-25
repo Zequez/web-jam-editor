@@ -1,14 +1,22 @@
 <script lang="ts">
   type Tabs = "Syntax" | "Images" | "Publishing";
-  let currentTab = $state<Tabs>("Syntax");
-  let bodyColor = $state("bg-sky-200");
+  let currentTab = $state<Tabs>("Images");
+  let bodyColor = $state("bg-amber-200");
 
   function setTab(tab: Tabs, newBodyColor: string) {
     currentTab = tab;
     bodyColor = newBodyColor;
   }
 
-  const { onFilesAdded }: { onFilesAdded: (files: File[]) => void } = $props();
+  const {
+    onFilesAdded,
+    imagesList,
+    onDeleteImage,
+  }: {
+    onFilesAdded: (files: File[]) => void;
+    imagesList: string[];
+    onDeleteImage: (name: string) => void;
+  } = $props();
 
   function openFilePicker() {
     const input = document.createElement("input");
@@ -54,13 +62,13 @@
       gap-1
       text-3/6 tracking-1.5px uppercase font-mono font-semibold"
   >
-    {@render Tab(
+    <!-- {@render Tab(
       "Syntax",
       "i-fa-code",
       "bg-sky-100",
       "bg-sky-50 hover:bg-sky-100",
       "bg-sky-200",
-    )}
+    )} -->
     {@render Tab(
       "Images",
       "i-fa-images",
@@ -86,16 +94,31 @@
     >
       <div class="i-fa-folder-open scale-150"></div>
     </button>
-    <button
+    <!-- <button
       title="Import assets from web"
       class="px1.5 h-5 mb1 flex-cc
       bg-white/80 hover:bg-white/100 shadow-[0_1px_0_#0006]
       rounded-1 cursor-pointer"
     >
       <div class="i-fa-clipboard scale-150"></div>
-    </button>
+    </button> -->
   </div>
   <div
-    class="{bodyColor} shadow-[0_1px_0_#0007] size-full rounded-1 rounded-tl-0"
-  ></div>
+    class="{bodyColor} shadow-[0_1px_0_#0007] size-full rounded-1 rounded-tl-0 p1.5 max-h-40 overflow-auto"
+  >
+    {#if currentTab === "Images"}
+      <div class="font-mono grid gap-1.5 cols-2">
+        {#each imagesList as img}
+          <div class="flex-cs">
+            <img
+              class="w-10 h-10 bg-gray-200 rounded-1 mr1.5"
+              src="/__preview/9c808fae-d0c0-4cf2-8f68-609d9d2db12e/images/{img}/sm.webp"
+            />
+            {img}
+            <button onclick={() => onDeleteImage(img)}>[Del]</button>
+          </div>
+        {/each}
+      </div>
+    {/if}
+  </div>
 </div>
