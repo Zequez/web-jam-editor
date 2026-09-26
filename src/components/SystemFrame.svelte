@@ -6,6 +6,7 @@
   import { OUTPUT_DIR } from "@/lib/pure-pug-compiler";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import AssetsFrame from "./AssetsFrame/AssetsFrame.svelte";
+  import Sustainers from "./Sustainers.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
@@ -42,14 +43,16 @@
         {systemFs.dirName}
       </span>
     {/if}
-    <div class="grow"></div>
+    <div class="grow flex-cc">
+      <Sustainers />
+    </div>
     <a
       href="http://github.com/zequez/web-jam-editor"
       target="_blank"
-      class="h-full flex-cc hover:bg-white/20 cursor-pointer px2"
+      class="h-full flex-cc whitespace-nowrap hover:bg-white/20 cursor-pointer px2"
     >
       <span class="i-fa-brands-github h-full w-5 mr1"></span>
-      <span>Ezequiel's Web Jam Editor</span>
+      <span>Web Jam Editor</span>
       <span class="i-fa-up-right-from-square h-full w-3 ml1"></span>
     </a>
   </div>

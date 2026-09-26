@@ -62,7 +62,7 @@ export default defineConfig({
     previewServiceWorker(),
     visualizer({
       filename: "bundle-analysis.html",
-      open: true,
+      open: false,
       gzipSize: true,
       brotliSize: true,
       template: "treemap",
