@@ -50,6 +50,19 @@ You can't see what's the project for until you
 
 -- Work unfinished, this might change.
 
+--- UP NEXT!
+
+- I should be able to move frames around; at the least I should be able to resize them
+- If the frame on the right side (the preview) is sufficiently minimized, it should vanish (the person can see the preview on another tab!)
+- The images thumbnails on the images folder should actually work
+- Images tab text too dark, lighter, darker background
+- Preview UI elements can be greatly aesthetically improved
+- Should be able to inspect on the screen the output files
+- More tabs for the Assets frames of treasures!
+- A great default project pre-loaded!
+- Something from the assets frame
+
+-- GOTTA RUN MY LOVER AWAITS!
     </div>
   </div>
 </div>

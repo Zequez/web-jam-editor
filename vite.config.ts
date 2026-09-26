@@ -61,7 +61,7 @@ export default defineConfig({
     uno(),
     previewServiceWorker(),
     visualizer({
-      filename: "bundle-analysis.html",
+      filename: "dist/bundle-analysis.html",
       open: false,
       gzipSize: true,
       brotliSize: true,
