@@ -4,19 +4,20 @@
 
 <div
   class={[
-    "absolute top-0 z-11 left-1/2 -translate-x-1/2 duration-1000 transition-transform",
+    "absolute px6 top-0 z-11 left-1/2 -translate-x-1/2 duration-1000 transition-transform",
     {
       [`-translate-y-100%
-        transition-delay-500
-        peer-hover:(translate-y-0 transition-delay-0)
-        hover:(translate-y-0 transition-delay-0)`]: !isOpen,
+        transition-delay-0
+        peer-hover/green:(translate-y-0 transition-delay-0)
+        ho:(translate-y-0 transition-delay-0)`]: !isOpen,
       "translate-y-0": isOpen,
     },
   ]}
 >
   <div
     class={[
-      `w-200
+      `w-screen md:w-screen-md
+      max-h-screen
         overflow-auto
         px3 pb3 pt-8
         bg-gray-50
@@ -36,7 +37,7 @@
         system.
       </div>
     </div>
-    <div class="flex">
+    <div class="flex flex-col md:flex-row">
       <div
         class="text-shadow-[0_1px_0_#0007] uppercase text-white font-mono font-semibold"
       >
@@ -105,7 +106,7 @@
           </div>
         </div>
       </div>
-      <div class="grow flex-shrink-0 flex-cc flex-col text-center text-4/6">
+      <div class="grow flex-shrink-0 flex-cc flex-col text-center text-4/6 p6">
         <div>
           Become the first backer
           <br />

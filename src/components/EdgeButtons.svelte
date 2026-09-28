@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="pb.8 h-full relative z-1000 flex-cc gap-0.8">
+<div class="h-full relative z-1000 flex-cc gap-0.8">
   <EdgeButton
     label="Awareness"
     closedIcon="i-fa-eye-slash"
@@ -27,7 +27,6 @@
     isOpen={tab === "sustainers"}
     onclick={() => selectTab("sustainers")}
   />
-  <div class="group"></div>
   <SustainersFrame isOpen={tab === "sustainers"} />
   <AwarenessFrame isOpen={tab === "awareness"} />
   <!-- {#if tab === "awareness"} -->

@@ -7,16 +7,17 @@
     "absolute top-0 z-11 left-1/2 -translate-x-1/2 duration-1000 transition-transform",
     {
       [`-translate-y-100%
-        transition-delay-500
-        peer-hover:(translate-y-0 transition-delay-0)
-        hover:(translate-y-0 transition-delay-0)`]: !isOpen,
+        transition-delay-0
+        peer-hover/purple:(translate-y-0 transition-delay-0)
+        ho:(translate-y-0 transition-delay-0)`]: !isOpen,
       "translate-y-0": isOpen,
     },
   ]}
 >
   <div
     class={[
-      `w-100 max-w-screen-md
+      `w-screen md:w-screen-md
+      max-h-screen
         overflow-auto
         px3 pb3 pt-8
         bg-gray-50

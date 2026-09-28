@@ -16,12 +16,14 @@
 
   const colorClasses = {
     purple: {
+      peer: "peer/null",
       background: "bg-purple-400",
       openShadow: "shadow-purple-800",
       closedShadow:
         "shadow-transparent hover:shadow-purple-800 group-hover:shadow-purple-800",
     },
     green: {
+      peer: "peer/null",
       background: "bg-green-400",
       openShadow: "shadow-green-800",
       closedShadow:
@@ -32,7 +34,7 @@
   const iconClasses = {
     "i-fa-eye": {
       hover: "group-hover:i-fa-eye",
-      openColor: "text-purple-400",
+      openColor: "text-fuchsia-400",
     },
     "i-fa-heart": {
       hover: "group-hover:i-fa-heart",
@@ -47,12 +49,13 @@
     `
       relative z-12 flex-cc
       h-full px1.5 pt-0.5
-      group peer cursor-pointer
+      group cursor-pointer
       font-mono font-semibold text-3.1 uppercase tracking-0.5px
       text-white text-shadow-[0_1px_0_#0007]
       rounded-b-.5 shadow-[0_0.5px_0px_0.5px]
       duration-0 transition-delay-100 transition-shadow
     `,
+    colorClasses[color].peer,
     colorClasses[color].background,
     {
       [colorClasses[color].openShadow]: isOpen,

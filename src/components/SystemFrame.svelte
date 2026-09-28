@@ -6,7 +6,7 @@
   import { OUTPUT_DIR } from "@/lib/pure-pug-compiler";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import AssetsFrame from "./AssetsFrame/AssetsFrame.svelte";
-  import Sustainers from "./EdgeButtons.svelte";
+  import EdgeButtons from "./EdgeButtons.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
@@ -20,6 +20,10 @@
     previewHostFrameEl?.refresh();
   }
 </script>
+
+<div class="fixed top-0 left-1/2 w-40 h-5.2 -translate-x-20 z-1000">
+  <EdgeButtons />
+</div>
 
 <div class="h-screen w-full flex flex-col">
   <div class="bg-gray-800 text-white flex shrink-0 h-6 text-3/6">
@@ -43,9 +47,8 @@
         {systemFs.dirName}
       </span>
     {/if}
-    <div class="grow flex-cc">
-      <Sustainers />
-    </div>
+
+    <div class="flex-grow"></div>
     <a
       href="http://github.com/zequez/web-jam-editor"
       target="_blank"
