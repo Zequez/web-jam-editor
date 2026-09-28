@@ -64,13 +64,13 @@
         <span class="text-3/6">Open a folder to start</span>
       </div>
     {:else if systemFs.status === "ready" && systemFs.fs}
-      <div class="w-1/2 h-full bg-gray-200 flex-ss flex-col">
-        <div class="h-1000 w-full">
+      <div class="w-1/2 h-full bg-gray-200 flex flex-col">
+        <div class="h-20% flex-shrink-0 w-full">
           <AssetsFrame />
         </div>
-        <div class="h-3000 w-full p1.5 bg-gray-300">
+        <div class="h-80% grow w-full p1.5 bg-gray-300">
           <div
-            class="size-full rounded-1 overflow-hidden shadow-[0_1px_0_#0007]"
+            class="h-full w-full relative rounded-1 overflow-hidden shadow-[0_1px_0_#0007] bg-red"
           >
             <CoderFrame fs={systemFs.fs} onBuildEnds={afterBuild} />
           </div>
