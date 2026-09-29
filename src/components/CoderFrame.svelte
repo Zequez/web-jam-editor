@@ -5,11 +5,13 @@
   import { INPUT_FILE, build } from "@/lib/pure-pug-compiler";
   import type { Fs } from "@/lib/zen-fs-type";
   import BuildProgressBar from "./BuildProgressBar.svelte";
+  import PublishingNote from "./PublishingNote.svelte";
 
   const AUTO_SAVE_DEBOUNCE = 300;
 
   let loading = $state(true);
   let { fs, onBuildEnds }: { fs: Fs; onBuildEnds: () => void } = $props();
+  let showPublishingNote = $state(false);
 
   let content = $state("");
 
@@ -77,9 +79,20 @@
   <Loader />
 {:else}
   <div class="size-full flex flex-col">
-    <div class="h-6 bg-gray-700 font-mono text-3/6 flex-cs px-2 text-white">
+    <div
+      class="h-6 bg-gray-700 font-mono text-3/6 flex-cs pl-2 text-white relative"
+    >
       <span class="mr2">{INPUT_FILE}</span>
       <BuildProgressBar progress={buildScheduleProgress} />
+      <span class="grow"></span>
+      <button
+        class="cursor-pointer hover:bg-white/20 px-2"
+        onclick={() => (showPublishingNote = true)}>Publish</button
+      >
+
+      {#if showPublishingNote}
+        <PublishingNote onClose={() => (showPublishingNote = false)} />
+      {/if}
     </div>
     <SingleFileCoder
       initialValue={content}
