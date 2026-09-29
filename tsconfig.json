@@ -10,11 +10,10 @@
 
     // Bundler mode
     "moduleResolution": "bundler",
-    "baseUrl": ".",
     "paths": {
-      "@/lib/*": ["src/lib/*"],
-      "@/stores/*": ["src/stores/*"],
-      "@/components/*": ["src/components/*"]
+      "@/lib/*": ["./src/lib/*"],
+      "@/stores/*": ["./src/stores/*"],
+      "@/components/*": ["./src/components/*"]
     },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -34,6 +33,7 @@
   },
   "include": [
     "src/**/*.ts",
+    "src-meta/**/*.ts",
     "src/**/*.svelte",
     "vite-env.d.ts",
     "vite.config.ts",

@@ -63,8 +63,17 @@
     {#if systemFs.status === "loading"}
       <Loader />
     {:else if systemFs.status === "empty"}
-      <div class="size-full bg-gray-200 flex-cc">
-        <span class="text-3/6">Open a folder to start</span>
+      <div class="size-full bg-gray-200 flex-cc flex-col">
+        <button
+          class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
+          onclick={systemFs.pickSessionFolder}>Open a folder</button
+        >
+        <span class="text-3/6 my1.5">or</span>
+        <button
+          class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
+          onclick={() => systemFs.loadEmptyFilesystem()}
+          >Use a virtual filesystem</button
+        >
       </div>
     {:else if systemFs.status === "ready" && systemFs.fs}
       <div class="w-1/2 h-full bg-gray-200 flex flex-col">

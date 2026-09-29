@@ -1,14 +1,16 @@
-import { configureSingle, fs } from "@zenfs/core";
-import { WebAccess } from "@zenfs/dom";
+import { configureSingle, fs, InMemory } from "@zenfs/core";
+import { WebAccess, IndexedDB } from "@zenfs/dom";
 import { get, set } from "idb-keyval";
 import { onMount } from "svelte";
+import { Zip } from "@zenfs/archives";
 
 type FsState =
   | { status: "loading" }
   | { status: "empty" }
   | {
       status: "ready";
-      handler: FileSystemDirectoryHandle;
+      handler: FileSystemDirectoryHandle | null;
+      fsType: "web-access" | "indexed-db";
       fs: typeof fs;
     };
 
@@ -26,6 +28,7 @@ export function createSystemFs() {
         DIR = {
           status: "ready",
           handler: dir,
+          fsType: "web-access",
           fs: await createFilesystem(dir),
         };
       } catch (e) {
@@ -57,7 +60,12 @@ export function createSystemFs() {
       mode: "readwrite",
     });
     await storeSessionHandler(dir);
-    DIR = { status: "ready", handler: dir, fs: await createFilesystem(dir) };
+    DIR = {
+      status: "ready",
+      handler: dir,
+      fs: await createFilesystem(dir),
+      fsType: "web-access",
+    };
   }
 
   async function storeSessionHandler(dir: FileSystemDirectoryHandle) {
@@ -79,9 +87,34 @@ export function createSystemFs() {
     }
   }
 
+  async function loadEmptyFilesystem() {
+    DIR = {
+      status: "ready",
+      handler: null,
+      fsType: "indexed-db",
+      fs: await createEmptyFilesystem(),
+    };
+  }
+
+  async function createEmptyFilesystem() {
+    const indexedFs = await IndexedDB.create({ storeName: "default" });
+    await configureSingle(indexedFs);
+    return fs;
+  }
+
+  // async function loadFromZip() {
+
+  //   const res = await fetch("/default-webjam.zip");
+  //   zip.loadFromUrl("/webjam.zip");
+  //   zip.extractAll();
+  // }
+
+  function loadDefault() {}
+
   return {
     pickSessionFolder,
     clearSession: clearSessionHandler,
+    loadEmptyFilesystem,
     get status() {
       return DIR.status;
     },
@@ -92,7 +125,7 @@ export function createSystemFs() {
       return DIR.status === "ready" ? DIR.fs : null;
     },
     get dirName() {
-      return DIR.status === "ready" ? DIR.handler.name : null;
+      return DIR.status === "ready" ? DIR.handler?.name : null;
     },
   };
 }

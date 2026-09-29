@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import uno from "unocss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
+import { defaultWebjamZip } from "./src-meta/vite-plugin-default-webjam.ts";
 
 const previewServiceWorkerPath = "/preview__/service-worker.js";
 const previewRefreshClientPath = "/preview__/refresh-client.js";
@@ -67,6 +68,7 @@ export default defineConfig({
       brotliSize: true,
       template: "treemap",
     }),
+    defaultWebjamZip(),
   ],
   resolve: {
     alias: {

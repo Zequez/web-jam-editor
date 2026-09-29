@@ -44,7 +44,7 @@
 </script>
 
 <div class="h-full w-full flex flex-col bg-gray-300">
-  <div class="flex p1 overflow-hidden">
+  <div class="flex p1 overflow-hidden shrink-0">
     <input
       onkeyup={(e) => e.key === "Enter" && handleGo()}
       bind:value={address}
@@ -61,6 +61,15 @@
       <div class="mr-2">{Math.round(scale * 100)}%</div>
       <input type="range" bind:value={scale} min="0.1" max="2" step="0.1" />
     </div>
+  </div>
+  <div
+    title="Service-workers are complex"
+    class="shrink-0 h-6 bg-amber-200 text-center text-3/6 flex-cc text-black b-b b-black/10"
+  >
+    <span class="i-fa-warning h-6 w-6 inline-block scale-80"></span>
+    <span
+      >Bug alert: If the preview does not refresh just reload the whole page
+    </span>
   </div>
   <div class="w-full h-full flex-grow relative" bind:this={container}>
     <iframe

@@ -39,10 +39,12 @@
     // Also, what happens if someone uploads an image
     // with the same name but different formats? foo.png + foo.jpg?
 
-    const files = fs.readdirSync(UPLOAD_PATH);
-    for (const file of files) {
-      const filePath = `${UPLOAD_PATH}/${file}`;
-      processSingleFile(filePath);
+    if (fs.existsSync(UPLOAD_PATH)) {
+      const files = fs.readdirSync(UPLOAD_PATH);
+      for (const file of files) {
+        const filePath = `${UPLOAD_PATH}/${file}`;
+        processSingleFile(filePath);
+      }
     }
   }
 
