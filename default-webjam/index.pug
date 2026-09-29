@@ -1,0 +1,51 @@
+mixin SeedBox(colorSeed)
+  // This is only possible because Pug is compiled to HTML
+  // BEFORE UnoCSS parses it! Isn't it neat?
+  div(
+    w-full aspect-square bg-linear-to-br
+    from="white/20" text-black rounded-2 flex-cc
+    hover="scale-110 duration-0" transition-transform
+    duration-1000
+    shadow=`${colorSeed}-600 [0_1.6px_0_0.8px]`
+    class=`bg-${colorSeed}-400`
+  )
+
+
+html
+  head
+    title Webjam Website
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="icon" type="image/webp" href="images/gaia/sm.webp")
+  body(bg-black text-white p6 text-center)
+    main(mx-auto max-w-screen-sm space-y-6)
+      img(src="images/gaia.webp" w-full)
+      div(bg-white rounded-1 text-12 font-mono text-black)
+        | Hello world
+      div(grid gap-3 cols-7)
+        +SeedBox('red')
+        +SeedBox('orange')
+        +SeedBox('amber')
+        +SeedBox('yellow')
+        +SeedBox('lime')
+        +SeedBox('green')
+        +SeedBox('emerald')
+        +SeedBox('teal')
+        +SeedBox('cyan')
+        +SeedBox('sky')
+        +SeedBox('blue')
+        +SeedBox('indigo')
+        +SeedBox('violet')
+        +SeedBox('purple')
+        +SeedBox('fuchsia')
+        +SeedBox('pink')
+        +SeedBox('rose')
+        +SeedBox('slate')
+        +SeedBox('gray')
+        +SeedBox('mist')
+        +SeedBox('olive')
+        
+      div(uppercase text-center mt12 tracking-wider text-12 font-serif)
+        | Visibility
+      p(mb-6 -mt6 text-center) For the steward, in service of the future of this project
+      div( sm:max-w-screen-sm -mx-6 sm:mx-0 sm:mx-auto relative)
+        iframe(src="https://ezequielschwartzman.org" w-full h-500px)
