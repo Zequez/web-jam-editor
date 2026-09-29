@@ -73,3 +73,7 @@ To run:
 ```bash
 bun start
 ```
+
+# License
+
+Web Jam is open source software licensed under the Mozilla Public License 2.0.
