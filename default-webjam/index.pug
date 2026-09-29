@@ -1,14 +1,19 @@
-mixin SeedBox(colorSeed)
+mixin SeedBox(seed)
   // This is only possible because Pug is compiled to HTML
   // BEFORE UnoCSS parses it! Isn't it neat?
   div(
     w-full aspect-square bg-linear-to-br
-    from="white/20" text-black rounded-2 flex-cc
+    p1
+    from="white/20" rounded-2 flex-cc
     hover="scale-110 duration-0" transition-transform
     duration-1000
-    shadow=`${colorSeed}-600 [0_1.6px_0_0.8px]`
-    class=`bg-${colorSeed}-400`
+    shadow=`${seed}-600 [0_1.6px_0_0.8px]`
+    class=`bg-${seed}-400 text-${seed}-300`
+
   )
+    - svgPath = (() => { let h=[...seed].reduce((h,c)=>(h*31+c.charCodeAt(0))|0,0), n=5+(Math.abs(h)%6), p=[]; for(let i=0;i<n;i++){let a=i*2*Math.PI/n,r=35+Math.abs((h=h*1664525+1013904223|0))%20;p.push(`${50+Math.cos(a)*r} ${50+Math.sin(a)*r}`)} return `M${p.join(' L')}Z` })()
+    svg(h-full w-full viewBox="0 0 100 100")
+      path(d=svgPath fill="currentColor")
 
 
 html
@@ -43,7 +48,7 @@ html
         +SeedBox('gray')
         +SeedBox('mist')
         +SeedBox('olive')
-        
+
       div(uppercase text-center mt12 tracking-wider text-12 font-serif)
         | Visibility
       p(mb-6 -mt6 text-center) For the steward, in service of the future of this project

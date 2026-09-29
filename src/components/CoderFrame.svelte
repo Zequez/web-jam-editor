@@ -22,6 +22,7 @@
       fs.writeFileSync(INPUT_FILE, "");
     }
 
+    await initialBuild();
     loading = false;
   });
 
@@ -57,6 +58,11 @@
       await build();
       onBuildEnds();
     }, AUTO_SAVE_DEBOUNCE);
+  }
+
+  async function initialBuild() {
+    await build();
+    onBuildEnds();
   }
 
   function beginBuildScheduleProgressTicker() {

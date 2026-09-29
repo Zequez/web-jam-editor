@@ -22,6 +22,7 @@
   let refreshSession: (() => Promise<void>) | null = null;
 
   export function refresh() {
+    console.log("Refreshing preview");
     void refreshSession?.().catch(reportInitializationError);
   }
 
@@ -50,7 +51,10 @@
     };
 
     const onServiceWorkerMessage = (event: MessageEvent<unknown>) => {
-      if (!isProviderNeededMessage(event.data) || event.data.sessionId !== sessionId) {
+      if (
+        !isProviderNeededMessage(event.data) ||
+        event.data.sessionId !== sessionId
+      ) {
         return;
       }
       void registerProvider().catch(reportInitializationError);
@@ -90,7 +94,10 @@
     return () => {
       destroyed = true;
       refreshSession = null;
-      navigator.serviceWorker.removeEventListener("message", onServiceWorkerMessage);
+      navigator.serviceWorker.removeEventListener(
+        "message",
+        onServiceWorkerMessage,
+      );
       navigator.serviceWorker.removeEventListener("message", onProviderRequest);
       registration?.active?.postMessage({
         type: "preview-provider-unregister",
@@ -101,7 +108,9 @@
 
   function reportInitializationError(error: unknown) {
     initializationError =
-      error instanceof Error ? error.message : "Unable to start preview server.";
+      error instanceof Error
+        ? error.message
+        : "Unable to start preview server.";
     console.error("Unable to start preview server", error);
   }
 
@@ -139,7 +148,9 @@
       const channel = new MessageChannel();
       const timeout = window.setTimeout(() => {
         channel.port1.close();
-        reject(new Error("Preview Service Worker did not acknowledge its provider."));
+        reject(
+          new Error("Preview Service Worker did not acknowledge its provider."),
+        );
       }, PROVIDER_TIMEOUT_MS);
 
       channel.port1.onmessage = (event: MessageEvent<unknown>) => {
@@ -153,10 +164,9 @@
         }
       };
 
-      worker.postMessage(
-        { type: "preview-provider-register", sessionId },
-        [channel.port2],
-      );
+      worker.postMessage({ type: "preview-provider-register", sessionId }, [
+        channel.port2,
+      ]);
     });
   }
 
@@ -178,14 +188,18 @@
     } else {
       const path = [rootPath, relativePath].filter(Boolean).join("/");
       try {
-        if (!filesystem.existsSync(path) || !filesystem.statSync(path).isFile()) {
+        if (
+          !filesystem.existsSync(path) ||
+          !filesystem.statSync(path).isFile()
+        ) {
           response = {
             type: "preview-file-result",
             requestId: request.requestId,
             status: "missing",
           };
         } else {
-          const body = new Uint8Array(filesystem.readFileSync(path)).slice().buffer;
+          const body = new Uint8Array(filesystem.readFileSync(path)).slice()
+            .buffer;
           response = {
             type: "preview-file-result",
             requestId: request.requestId,
@@ -199,7 +213,8 @@
           type: "preview-file-result",
           requestId: request.requestId,
           status: "error",
-          error: error instanceof Error ? error.message : "Filesystem read failed",
+          error:
+            error instanceof Error ? error.message : "Filesystem read failed",
         };
       }
     }

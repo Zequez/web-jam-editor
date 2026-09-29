@@ -7,6 +7,7 @@
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import AssetsFrame from "./AssetsFrame/AssetsFrame.svelte";
   import EdgeButtons from "./EdgeButtons.svelte";
+  import WebJamName from "./WebJamName.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
@@ -61,9 +62,13 @@
   </div>
   <div class="flex flex-grow w-full h-100">
     {#if systemFs.status === "loading"}
-      <Loader />
+      <div class="flex flex-col">
+        <WebJamName />
+        <Loader />
+      </div>
     {:else if systemFs.status === "empty"}
       <div class="size-full bg-gray-200 flex-cc flex-col">
+        <WebJamName />
         <button
           class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
           onclick={systemFs.pickSessionFolder}>Open a folder</button

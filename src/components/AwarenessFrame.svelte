@@ -22,12 +22,10 @@
         px3 pb3 pt-8
         bg-gray-50
         text-black/70
-        b-t-0 b-green-700/70 b-b-green-800/70
-        shadow-[inset_0_0_30px_0] shadow-green-500/5`,
-      {
-        "b-2 b-b-4  rounded-b-1.5": isOpen,
-        "b-1 b-b-2  rounded-b-1": !isOpen,
-      },
+        b-t-0 b-purple-700/70 b-b-purple-800/70
+        shadow-[inset_0_0_30px_0] shadow-green-500/5
+        b-1 b-b-2  rounded-b-1
+        `,
     ]}
   >
     <div>

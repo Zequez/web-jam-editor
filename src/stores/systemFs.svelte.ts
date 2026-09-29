@@ -92,32 +92,47 @@ export function createSystemFs() {
       status: "ready",
       handler: null,
       fsType: "indexed-db",
-      fs: await createEmptyFilesystem(),
+      fs: await createDefaultFilesystem(),
     };
   }
 
   async function createEmptyFilesystem() {
-    const indexedFs = await IndexedDB.create({ storeName: "default" });
+    const indexedFs = await IndexedDB.create({ storeName: "default2" });
     await configureSingle(indexedFs);
 
     return fs;
   }
 
   async function createDefaultFilesystem() {
-    const indexedFs = await IndexedDB.create({ storeName: "default" });
+    const indexedFs = await IndexedDB.create({ storeName: "default2" });
     await configureSingle(indexedFs);
 
+    if (!fs.existsSync("/assets")) {
+      await fs.promises.mkdir("/assets");
+    }
+
     for (const [path, data] of Object.entries(defaultFiles)) {
-      await fs.writeFile(
+      const awaitedData = await data;
+      console.log(path, data, awaitedData);
+      await fs.promises.writeFile(
         path,
-        await data,
-        typeof data === "string" ? "utf8" : undefined,
+        awaitedData,
+        typeof awaitedData === "string" ? "utf8" : undefined,
       );
     }
 
-    console.log("Loaded!", defaultFiles);
-
     return fs;
+  }
+
+  function _debug_readAllFiles(dirPath: string) {
+    const entries = fs.readdirSync(dirPath, {
+      withFileTypes: true,
+      recursive: true,
+    });
+
+    for (const entry of entries) {
+      console.log(entry);
+    }
   }
 
   // async function loadFromZip() {

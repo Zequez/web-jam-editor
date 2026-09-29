@@ -94,8 +94,8 @@
 			"typeName": "pointer"
 		},
 		{
-			"x": 610.336675218528,
-			"y": 812.0276052141577,
+			"x": 537.8158563437299,
+			"y": -415.7645084237379,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -196,9 +196,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 726.7867128599281,
-			"y": 615.1198084835451,
-			"z": 0.4384902930857358,
+			"x": 1236.8651880168914,
+			"y": 560.4632862662885,
+			"z": 0.8566951646056462,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -348,8 +348,59 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 549.9929315878085,
-			"y": -325.9915064072821,
+			"x": -507.0076527630714,
+			"y": -174.23225815360826,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:1B4vs3RYin-vZ7QKmuEOt",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-green",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "New folder needs an asset folder otherwise it does not load with an empty folder"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aN7xX",
+			"typeName": "shape"
+		},
+		{
+			"x": 549.7511264173452,
+			"y": -269.13476805427956,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -399,12 +450,54 @@
 			"typeName": "shape"
 		},
 		{
+			"x": -1027.8205182999,
+			"y": -419.6194251487614,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Vc9AU_dGo3aDdFc22Zgu3",
+			"type": "text",
+			"props": {
+				"color": "light-green",
+				"size": "xl",
+				"w": 453.6328125,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "DONE un-planned ✔"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aPTor",
+			"typeName": "shape"
+		},
+		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:fHo_IYiLDdnf9dMibeBFs"
+				"shape:WD9pki7XiF6fZrh9AHHq2"
 			],
-			"hoveredShapeId": "shape:fHo_IYiLDdnf9dMibeBFs",
+			"hoveredShapeId": "shape:WD9pki7XiF6fZrh9AHHq2",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -516,6 +609,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": -1025.2363508084914,
+			"y": -311.7624042319371,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:hJ2frZtRngZjxopV4WfbF",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-green",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Added Publishing note"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aOgNA",
+			"typeName": "shape"
+		},
+		{
 			"x": 622.1795835596126,
 			"y": 381.9349920097363,
 			"rotation": 0,
@@ -567,8 +711,59 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 502.5053370231558,
-			"y": -450.8327661059745,
+			"x": -1026.119075045981,
+			"y": -165.58049195279972,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:WD9pki7XiF6fZrh9AHHq2",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-green",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "You can now use a virtual filesystem also in additional to opening a folder"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aQnxM",
+			"typeName": "shape"
+		},
+		{
+			"x": 504.41306155158645,
+			"y": -492.57331498377994,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -803,6 +998,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 64.88261518318791,
+			"y": -345.7439552800432,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:RNieHkCIW1oWmVkfQPPFn",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "red",
+				"labelColor": "black",
+				"fill": "pattern",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Show the default-webjam folder as a preloaded ZenFS"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aMG0I",
+			"typeName": "shape"
+		},
+		{
 			"x": 993.2280084686242,
 			"y": -357.84885690775843,
 			"rotation": 0,
@@ -880,7 +1126,9 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {},
+			"stylesForNextShape": {
+				"tldraw:color": "light-green"
+			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -922,57 +1170,6 @@
 			"id": "instance:instance",
 			"currentPageId": "page:page",
 			"typeName": "instance"
-		},
-		{
-			"x": 50.00085228618991,
-			"y": -200.24533636512223,
-			"rotation": 0,
-			"isLocked": false,
-			"opacity": 1,
-			"meta": {},
-			"id": "shape:tQTJOmof-vN7iFYau3P7X",
-			"type": "geo",
-			"props": {
-				"w": 386,
-				"h": 130.25384521484378,
-				"geo": "rectangle",
-				"dash": "draw",
-				"growY": 0,
-				"url": "",
-				"scale": 1,
-				"flipX": false,
-				"flipY": false,
-				"color": "red",
-				"labelColor": "black",
-				"fill": "solid",
-				"size": "s",
-				"font": "draw",
-				"align": "start",
-				"verticalAlign": "start",
-				"richText": {
-					"type": "doc",
-					"attrs": {
-						"dir": "auto"
-					},
-					"content": [
-						{
-							"type": "paragraph",
-							"attrs": {
-								"dir": "auto"
-							},
-							"content": [
-								{
-									"type": "text",
-									"text": "New folder needs an asset folder otherwise it does not load with an empty folder"
-								}
-							]
-						}
-					]
-				}
-			},
-			"parentId": "page:page",
-			"index": "aKyH2",
-			"typeName": "shape"
 		},
 		{
 			"x": 64.88261518318791,

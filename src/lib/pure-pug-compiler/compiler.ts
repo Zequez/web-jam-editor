@@ -65,9 +65,10 @@ export async function build() {
     output = `<!DOCTYPE html>${output}`;
   }
 
-  console.log(output);
-
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.writeFileSync(`${OUTPUT_DIR}/index.html`, output);
   fs.writeFileSync(`${OUTPUT_DIR}/style.css`, css);
+
+  // console.log(output);
+  console.log("Finished build!");
 }

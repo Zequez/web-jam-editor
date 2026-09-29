@@ -30,6 +30,7 @@
   }
 
   function scanAssets() {
+    console.log("Scanning assets");
     // TODO: Optimize the images processing
     // by storing a hash of the original file along the .webp files
     // Then compare the hash with the original file to see if
@@ -39,7 +40,9 @@
     // Also, what happens if someone uploads an image
     // with the same name but different formats? foo.png + foo.jpg?
 
+    console.log(UPLOAD_PATH, "Hey");
     if (fs.existsSync(UPLOAD_PATH)) {
+      console.log("It exists");
       const files = fs.readdirSync(UPLOAD_PATH);
       for (const file of files) {
         const filePath = `${UPLOAD_PATH}/${file}`;
