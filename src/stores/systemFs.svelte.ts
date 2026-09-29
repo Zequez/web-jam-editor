@@ -2,7 +2,7 @@ import { configureSingle, fs, InMemory } from "@zenfs/core";
 import { WebAccess, IndexedDB } from "@zenfs/dom";
 import { get, set } from "idb-keyval";
 import { onMount } from "svelte";
-import { Zip } from "@zenfs/archives";
+import { defaultFiles } from "../lib/default-import";
 
 type FsState =
   | { status: "loading" }
@@ -99,6 +99,24 @@ export function createSystemFs() {
   async function createEmptyFilesystem() {
     const indexedFs = await IndexedDB.create({ storeName: "default" });
     await configureSingle(indexedFs);
+
+    return fs;
+  }
+
+  async function createDefaultFilesystem() {
+    const indexedFs = await IndexedDB.create({ storeName: "default" });
+    await configureSingle(indexedFs);
+
+    for (const [path, data] of Object.entries(defaultFiles)) {
+      await fs.writeFile(
+        path,
+        await data,
+        typeof data === "string" ? "utf8" : undefined,
+      );
+    }
+
+    console.log("Loaded!", defaultFiles);
+
     return fs;
   }
 
