@@ -9,7 +9,8 @@
     "start": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist -b www"
+    "deploy": "gh-pages -d dist -b www",
+    "publish": "bun run build && bun run deploy"
   },
   "devDependencies": {
     "@types/bun": "latest"

@@ -11,15 +11,20 @@
   } from "@/lib/preview-virtual-server/protocol";
   import Preview from "./Preview.svelte";
 
-  const { fs, servePath }: { fs: Fs; servePath: string } = $props();
+  const {
+    fs,
+    servePath,
+    hiddenMode,
+  }: { fs: Fs; servePath: string; hiddenMode: boolean } = $props();
 
   let previewEl: Preview;
 
-  const URL = "about:blank";
+  let initialUrl = $state("/");
   const PROVIDER_TIMEOUT_MS = 5_000;
 
   let initializationError = $state<string | null>(null);
   let refreshSession: (() => Promise<void>) | null = null;
+  let sessionId = createSessionId();
 
   export function refresh() {
     console.log("Refreshing preview");
@@ -34,7 +39,6 @@
     }
 
     let destroyed = false;
-    const sessionId = createSessionId();
     const rootPath = normalizeFilesystemPath(servePath);
     let registration: ServiceWorkerRegistration | null = null;
 
@@ -83,9 +87,8 @@
       refreshSession = requestSessionRefresh;
 
       if (!destroyed) {
-        previewEl.go(
-          `${location.origin}${PREVIEW_NAMESPACE}${encodeURIComponent(sessionId)}/`,
-        );
+        initialUrl = "/";
+        previewEl?.go("/");
       }
     };
 
@@ -105,6 +108,10 @@
       });
     };
   });
+
+  export function generateUrl() {
+    return `${location.origin}${PREVIEW_NAMESPACE}${encodeURIComponent(sessionId)}`;
+  }
 
   function reportInitializationError(error: unknown) {
     initializationError =
@@ -233,8 +240,14 @@
 </script>
 
 <div class="size-full">
-  <Preview initialValue={URL} bind:this={previewEl} />
-  {#if initializationError}
-    <div class="text-red-700 text-3/6 p-1">{initializationError}</div>
+  {#if !hiddenMode}
+    <Preview
+      previewPathPart={generateUrl()}
+      initialValue={initialUrl}
+      bind:this={previewEl}
+    />
+    {#if initializationError}
+      <div class="text-red-700 text-3/6 p-1">{initializationError}</div>
+    {/if}
   {/if}
 </div>

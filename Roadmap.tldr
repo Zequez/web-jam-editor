@@ -35,8 +35,8 @@
 	},
 	"records": [
 		{
-			"x": 555.169988833049,
-			"y": -142.0969121035725,
+			"x": 530.0928340068431,
+			"y": 609.2501516138324,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -94,8 +94,8 @@
 			"typeName": "pointer"
 		},
 		{
-			"x": 537.8158563437299,
-			"y": -415.7645084237379,
+			"x": 507.7115140556833,
+			"y": 305.0142684732859,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -104,7 +104,7 @@
 			"type": "geo",
 			"props": {
 				"w": 386,
-				"h": 130.25384521484378,
+				"h": 104,
 				"geo": "rectangle",
 				"dash": "draw",
 				"growY": 0,
@@ -133,7 +133,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "The awareness frame should have an SVG miniature version of this Roadmap and also a link to the TLDraw full version."
+									"text": "The awareness frame should have an SVG miniature version of the /roadmap"
 								}
 							]
 						}
@@ -196,16 +196,16 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1236.8651880168914,
-			"y": 560.4632862662885,
-			"z": 0.8566951646056462,
+			"x": 1422.8494807527477,
+			"y": 519.3679931868537,
+			"z": 0.4342025655946479,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": 122.25554959198087,
-			"y": 340.10877567597754,
+			"x": 55.850534913678416,
+			"y": -66.95434118750666,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -297,8 +297,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 564.3391664789083,
-			"y": 19.42607294268933,
+			"x": 532.6095909140947,
+			"y": 755.2878095775129,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -399,8 +399,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 549.7511264173452,
-			"y": -269.13476805427956,
+			"x": 511.90137952448845,
+			"y": -458.4812060990715,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -412,7 +412,7 @@
 				"h": 130.25384521484378,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 0,
+				"growY": 21.74615478515622,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
@@ -438,7 +438,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Make the two columns resizable"
+									"text": "Make the code and preview separator draggable to resize them. Make the code column have a minimum width, and allow the preview to shrink until it dissapears."
 								}
 							]
 						}
@@ -447,6 +447,38 @@
 			},
 			"parentId": "page:page",
 			"index": "aBxk6",
+			"typeName": "shape"
+		},
+		{
+			"x": 495.50705419103826,
+			"y": 46.125845808871645,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:1oMyGkaD2kPj57uzMAakL",
+			"type": "draw",
+			"props": {
+				"segments": [
+					{
+						"type": "free",
+						"path": "AAAAAAAAAAAAuAVAAABcPAC4CkAAAL1DAADFRVK6Tki4viRLPbpNSADBqkopwYRM7L79TD3Bdk17vj9JFMGdSzjBOU24viRLpL6qSki+TUiPujJKpLoySgAAuEkpuqlHAADFRQAAP0kAAKlHAACpR486uEkzOcNDPTpOSD0+TUjIQMZIFDgKQABBqkofPqlHPT5NSHs+QEnDPcVFe0C2RoU91EQIRNdI+0G4RgA8BUDDP8NDCjwKQIVBIUQpQXZCUjzDOQ1FyEEKQAo80kQfQLZG9j24RgA+qkoAQSRLuD6ETOE+qUcAAMhNHzs5TQAAdk0AAJ1LAAAjSwAAMkoAAD9JAAC6SQAAtkYAutJEAADGSFy+uEYAujFKmr4LTAAAxkgAAE5IPbq4SQAATUhIvtREhbkFQAC4qUcfvrhGALrDRcO5w0MfueZBuLjDQzO5qUcpusVFw7nhQbi4CkAAuMVFw729QzO9qUcfvgpAALipRx++4UG4uOZBuLzmQRS/ezh7tLhAFL8hRlzFw0PDv+FBFL8KPgq+uECzwBQ/uMC4OObBwz/Dw7g44cGuPObBzT3FxXE50sQAANTEAAC9wwAAxcVxvkDJw7nFxQAAqccAAD/JAADGyGa6xsjDucXF7Lm4xo++uMkfvqnHhb64yXu6P8kAAMPDAABOyAAAxsiPurjJAABAyTM5vcNmOkDJKTqpx1w+xsiPPrjJFDqpx48+uMkAAMbIpDqqygAAqce4OObBPT5NyGY6xsiFOdTEuDjhwQAAxcUAANTEAADSxAAAxcW4OObBAADFxQAA4cEAALjGAAC2xgAAUrwAANTEAAAFwAAAw8PDtVK8w7VSvOy1XLwKv+HBFL+4wLjAuMB2winB5sEUvyHEhcG2xvbBuMb2wcPDM72pxx/CqccfwrbGe8Cpxx++uMZ7wKnHH74/ydzAw8MfuT/Je7qpxym6uMbsucXFAAC2xgAAqccAAMbIZrpAyQAAP8kAALrJAADSxAAAMsoAALjJAAAjywAAqsoAACTLAACqygAAuMkAALrJAAA/yQAAqccpOkDJAAC2xuw5QMl7OuHBAADDwzM55sG4OOHBAADDwx855sG4OMXFAADSxIU5qccpOsXFwzlSvMM11MSFOeHBuDjUxIU94cGkOObBuDjhwbg4CsAKPOHBuDgKwAo8e7QAAKS0ezR7tAAAe7h7NKS0pDR7uHs0j7h7NI+4jzhSvMM5e7R7NI+4pDR7uHs0j7iPOHu0ezSktHs0e7R7NHu0pDSktAAAe7h7NHu0ezSPuKQ0e7R7NKS0ezR7tKQ0e7R7NArAADh7uKQ0Cr4KPly8wzl7tHs0AAB7NI+4pDR7tHs0j7iPOAAAezR7uHs0e7SkNI+4ezR7tHs0pLQAAFK8wzl7tAAAj7ikNAAAezR7tAAAe7QAAKS0AAB7tAAAe7QAAFy8AAB7tAAA",
+						"dim": 2
+					}
+				],
+				"color": "violet",
+				"fill": "solid",
+				"dash": "draw",
+				"size": "m",
+				"isComplete": true,
+				"isClosed": true,
+				"isPen": false,
+				"scale": 1,
+				"scaleX": 1,
+				"scaleY": 1
+			},
+			"parentId": "page:page",
+			"index": "a0T56",
 			"typeName": "shape"
 		},
 		{
@@ -495,9 +527,13 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:WD9pki7XiF6fZrh9AHHq2"
+				"shape:gdl3-1Qr6H46G7ppfuJ0f",
+				"shape:fHo_IYiLDdnf9dMibeBFs",
+				"shape:Dm6QuOd_7Z2b9xJ5RLJQY",
+				"shape:NWg3MW5GOfqDv3d_YPQSe",
+				"shape:668Y3-lZ0ZM-Swb3BpxHT"
 			],
-			"hoveredShapeId": "shape:WD9pki7XiF6fZrh9AHHq2",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -507,8 +543,8 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 603.8949225945048,
-			"y": 577.8910060797072,
+			"x": 562.4996000309959,
+			"y": 1230.0284344811573,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -558,8 +594,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 63.71561384630098,
-			"y": -35.356110483163036,
+			"x": 59.093316364131226,
+			"y": -347.02413093579617,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -660,8 +696,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 622.1795835596126,
-			"y": 381.9349920097363,
+			"x": 533.014654234632,
+			"y": 1056.2833171480002,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -762,8 +798,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 504.41306155158645,
-			"y": -492.57331498377994,
+			"x": 535.4033257178235,
+			"y": -533.0507635032909,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -854,6 +890,57 @@
 			"typeName": "user"
 		},
 		{
+			"x": 513.1458113100147,
+			"y": -276.8819784960145,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:HBKw40v40lcWEVwYVuF0Y",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "When the preview disappears, the app should automatically open a secondary window with the preview URL"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aTw2M",
+			"typeName": "shape"
+		},
+		{
 			"x": 1021.7413546899702,
 			"y": -448.56488357324395,
 			"rotation": 0,
@@ -896,8 +983,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 564.8538456169106,
-			"y": 178.9981883526341,
+			"x": 533.3699224468398,
+			"y": 904.9307378360286,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -947,8 +1034,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 71.22061587755763,
-			"y": 150.5819424791972,
+			"x": 57.717214880577785,
+			"y": -218.14394066238935,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -998,8 +1085,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 64.88261518318791,
-			"y": -345.7439552800432,
+			"x": -491.5786222122982,
+			"y": -13.940952223337263,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1016,7 +1103,7 @@
 				"scale": 1,
 				"flipX": false,
 				"flipY": false,
-				"color": "red",
+				"color": "light-green",
 				"labelColor": "black",
 				"fill": "pattern",
 				"size": "s",
@@ -1037,7 +1124,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Show the default-webjam folder as a preloaded ZenFS"
+									"text": "Show the default-webjam folder as a preloaded ZenFS when using virtual filesystem"
 								}
 							]
 						}
@@ -1126,9 +1213,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:color": "light-green"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -1172,17 +1257,17 @@
 			"typeName": "instance"
 		},
 		{
-			"x": 64.88261518318791,
-			"y": -345.7439552800432,
+			"x": 512.1069433537165,
+			"y": 76.03829234052603,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
 			"meta": {},
-			"id": "shape:grsVy3JX__Yet4I6pF-GU",
+			"id": "shape:qi-CHiey2nHnxFN0mhC5w",
 			"type": "geo",
 			"props": {
 				"w": 386,
-				"h": 130.25384521484378,
+				"h": 80,
 				"geo": "rectangle",
 				"dash": "draw",
 				"growY": 0,
@@ -1190,9 +1275,9 @@
 				"scale": 1,
 				"flipX": false,
 				"flipY": false,
-				"color": "red",
+				"color": "light-blue",
 				"labelColor": "black",
-				"fill": "pattern",
+				"fill": "solid",
 				"size": "s",
 				"font": "draw",
 				"align": "start",
@@ -1211,7 +1296,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Show the default-webjam folder as a preloaded ZenFS"
+									"text": "The /roadmap address should render a TLDraw of the roadmap"
 								}
 							]
 						}
@@ -1219,7 +1304,58 @@
 				}
 			},
 			"parentId": "page:page",
-			"index": "a77OE",
+			"index": "aRfJb",
+			"typeName": "shape"
+		},
+		{
+			"x": 516.6733955058247,
+			"y": 185.77150623453826,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:wglTIeMx3_ErzQVKGKuaL",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 80,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The Awareness frame should link to /roadmap"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aStu2",
 			"typeName": "shape"
 		}
 	]
