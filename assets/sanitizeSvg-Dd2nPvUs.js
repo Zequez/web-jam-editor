@@ -1,0 +1,1 @@
+import{t as e}from"./sanitizeSvg-4GCavoTn.js";export{e as sanitizeSvg};
