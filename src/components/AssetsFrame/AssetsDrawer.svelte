@@ -55,7 +55,7 @@
   </button>
 {/snippet}
 
-<div class="size-full bg-gray-300 flex-cc p1.5 pr0 flex-col">
+<div class="size-full flex-cc flex-col">
   <div
     class="
       w-full h-6 shrink-0 flex-cs

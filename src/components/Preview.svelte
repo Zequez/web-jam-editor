@@ -52,13 +52,13 @@
   });
 </script>
 
-<div class="h-full w-full flex flex-col bg-gray-300">
-  <div class="flex py-1.5 overflow-hidden shrink-0">
+<div class="h-full w-full flex flex-col bg-gray-200 rounded-1 b b-black/10">
+  <div class="flex p1.5 overflow-hidden shrink-0">
     <input
       onkeyup={(e) => e.key === "Enter" && handleGo()}
       value={address}
       oninput={(e) => (address = e.currentTarget.value)}
-      class="bg-white b-2 b-black/30 focus:b-blue-500 outline-0 px2 rounded-1 shrink-0 mr-1 block flex-grow"
+      class="bg-white b-2 b-black/30 focus:b-violet-500 outline-0 px2 rounded-1 shrink-0 mr-1 block flex-grow"
     />
     <button
       class="bg-blue-400 hover:bg-blue-500 mr-1 text-white rounded-1 font-semibold px2 cursor-pointer"

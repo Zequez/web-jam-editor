@@ -92,6 +92,15 @@ export function createSystemFs() {
       status: "ready",
       handler: null,
       fsType: "indexed-db",
+      fs: await createEmptyFilesystem(),
+    };
+  }
+
+  async function loadDefaultFilesystem() {
+    DIR = {
+      status: "ready",
+      handler: null,
+      fsType: "indexed-db",
       fs: await createDefaultFilesystem(),
     };
   }
@@ -148,6 +157,7 @@ export function createSystemFs() {
     pickSessionFolder,
     clearSession: clearSessionHandler,
     loadEmptyFilesystem,
+    loadDefaultFilesystem,
     get status() {
       return DIR.status;
     },

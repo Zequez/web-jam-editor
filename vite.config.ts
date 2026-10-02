@@ -79,6 +79,11 @@ export default defineConfig({
       ),
     },
   },
+  server: {
+    watch: {
+      ignored: [resolve(projectRoot, "default-webjam/**")],
+    },
+  },
   build: {
     rollupOptions: {
       input: {

@@ -6,8 +6,8 @@
   import { OUTPUT_DIR } from "@/lib/pure-pug-compiler";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import AssetsFrame from "./AssetsFrame/AssetsFrame.svelte";
-  import EdgeButtons from "./EdgeButtons.svelte";
   import WebJamName from "./WebJamName.svelte";
+  import WrapAroundBar from "./WrapAroundBar/WrapAroundBar.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
@@ -61,15 +61,11 @@
   }
 </script>
 
-<div class="fixed top-0 left-1/2 w-40 h-5.2 -translate-x-20 z-1000">
-  <EdgeButtons />
-</div>
-
 {#if resizing}
   <div class="fixed size-full bg-black/0 z-1000 cursor-ew-resize"></div>
 {/if}
-<div class="h-screen w-full flex flex-col">
-  <div class="bg-gray-800 text-white flex shrink-0 h-6 text-3/6">
+<WrapAroundBar>
+  <div slot="menu">
     {#if systemFs.status === "empty"}
       <button
         class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
@@ -90,26 +86,17 @@
         {systemFs.dirName}
       </span>
     {/if}
-
-    <div class="flex-grow"></div>
-    <a
-      href="http://github.com/zequez/web-jam-editor"
-      target="_blank"
-      class="h-full flex-cc whitespace-nowrap hover:bg-white/20 cursor-pointer px2"
-    >
-      <span class="i-fa-brands-github h-full w-5 mr1"></span>
-      <span>Web Jam Editor</span>
-      <span class="i-fa-up-right-from-square h-full w-3 ml1"></span>
-    </a>
   </div>
-  <div class="flex flex-grow w-full h-100">
-    {#if systemFs.status === "loading"}
-      <div class="flex flex-col">
-        <WebJamName />
+  {#if systemFs.status === "loading"}
+    <div class="bg-gray-200 rounded-1 size-full flex-cc flex-col">
+      <WebJamName />
+      <div class="w-70 h-30 flex-cc">
         <Loader />
       </div>
-    {:else if systemFs.status === "empty"}
-      <div class="size-full bg-gray-200 flex-cc flex-col space-y-3">
+    </div>
+  {:else if systemFs.status === "empty"}
+    <div class="bg-gray-200 rounded-1 size-full overflow-auto">
+      <div class="py-6 md:py-24 max-w-screen-sm mx-auto text-center">
         <WebJamName />
         <button
           class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
@@ -121,56 +108,51 @@
         >
         <button
           class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-          onclick={() => systemFs.loadEmptyFilesystem()}>Example project</button
+          onclick={() => systemFs.loadDefaultFilesystem()}
+          >Example project</button
         >
       </div>
-    {:else if systemFs.status === "ready" && systemFs.fs}
-      <div class="flex w-full relative">
-        <div
-          style={`width: calc(${codePanelSize * 100}% - 12px);`}
-          class="shrink-0 h-full bg-gray-200 flex flex-col pr0"
-        >
-          <div class="h-20% flex-shrink-0 w-full">
-            <AssetsFrame />
-          </div>
-          <div class="h-80% grow w-full p1.5 pr-0 bg-gray-300">
-            <div
-              class="h-full w-full relative rounded-1 overflow-hidden shadow-[0_1px_0_#0007] bg-red"
-            >
-              <CoderFrame fs={systemFs.fs} onBuildEnds={afterBuild} />
-            </div>
-          </div>
+    </div>
+  {:else if systemFs.status === "ready" && systemFs.fs}
+    <div class="flex w-full h-full relative">
+      <div
+        style={`width: calc(${codePanelSize * 100}% - 12px);`}
+        class="shrink-0 h-full flex flex-col space-y-1.5"
+      >
+        <div class="h-20% flex-shrink-0 w-full">
+          <AssetsFrame />
         </div>
-        <button
-          aria-label="Drag"
-          class={[
-            "group bg-gray-300 relative h-full cursor-ew-resize w-12px shrink-0",
-            {},
-          ]}
-          onmousedown={handleStartDragResize}
-        >
+        <div class="h-40% grow w-full">
           <div
-            class={[
-              "absolute group-hover:block top-2 bottom-2 left-1/2 -translate-x-1/2 rounded-full  w-1",
-              {
-                "block bg-purple-500": resizing,
-                "hidden bg-black/30": !resizing,
-              },
-            ]}
-          ></div>
-        </button>
-        <div
-          class="h-full bg-gray-300"
-          style={`width: ${(1 - codePanelSize) * 100}%;`}
-        >
-          <PreviewHostFrame
-            fs={systemFs.fs}
-            hiddenMode={codePanelSize === 1}
-            servePath={OUTPUT_DIR}
-            bind:this={previewHostFrameEl}
-          />
+            class="h-full w-full relative rounded-1 overflow-hidden shadow-[0_1px_0_#0007] bg-red"
+          >
+            <CoderFrame fs={systemFs.fs} onBuildEnds={afterBuild} />
+          </div>
         </div>
       </div>
-    {/if}
-  </div>
-</div>
+      <button
+        aria-label="Drag"
+        class={["group relative h-full cursor-ew-resize w-12px shrink-0", {}]}
+        onmousedown={handleStartDragResize}
+      >
+        <div
+          class={[
+            "absolute group-hover:block top-2 bottom-2 left-1/2 -translate-x-1/2 rounded-full  w-1",
+            {
+              "block bg-violet-500": resizing,
+              "hidden bg-black/30": !resizing,
+            },
+          ]}
+        ></div>
+      </button>
+      <div class="h-full" style={`width: ${(1 - codePanelSize) * 100}%;`}>
+        <PreviewHostFrame
+          fs={systemFs.fs}
+          hiddenMode={codePanelSize === 1}
+          servePath={OUTPUT_DIR}
+          bind:this={previewHostFrameEl}
+        />
+      </div>
+    </div>
+  {/if}
+</WrapAroundBar>
