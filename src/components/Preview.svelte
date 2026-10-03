@@ -38,7 +38,11 @@
   }
 
   function handleGo() {
-    src = address;
+    if (src === address) {
+      refresh();
+    } else {
+      src = address;
+    }
   }
 
   export function refresh() {

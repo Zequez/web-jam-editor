@@ -29,6 +29,18 @@
     ]}
   >
     <div>
+      <a
+        href="/roadmap"
+        target="_blank"
+        class="
+        block mx-auto w-100
+        my6 p3
+        font-mono font-bold text-4/6 uppercase text-center
+        text-white text-shadow-[0_1px_0_#0007]
+        bg-yellow-400 hover:bg-yellow-300 bg-linear-to-br from-white/10
+        rounded-1 b b-black/10
+        ">Project Roadmap</a
+      >
       <h2>
         IF YOU ARE READING THIS YOU ARE USING THE LATEST VERSION OF THE JAM
         EDITOR
@@ -97,11 +109,12 @@
 
 What is the irreducible thing this commons exists to make possible?
 
-- A financially remunerated job for the human steward of the project.
-- Multiple people sharing the Jam Editor to build their own websites.
+- A financially backed job for the human steward of the project.
+- People are sharing the Jam Editor to build their own websites.
 - Gaia's Infinity Web Ring; the archan web on the Internet,
   made of humans, and human-stewarded intelligent agents. A kind of big hug
   over the Internet.
+- Archan Web Culture
 
 
 

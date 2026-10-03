@@ -88,6 +88,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(projectRoot, "index.html"),
+        roadmap: resolve(projectRoot, "roadmap.html"),
         "service-worker": resolve(
           projectRoot,
           "src/lib/preview-virtual-server/service-worker.ts",

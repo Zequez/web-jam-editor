@@ -1,16 +1,18 @@
 <script lang="ts">
   import CodeMirror from "svelte-codemirror-editor";
-  import { EditorView } from "@codemirror/view";
+  import { EditorView, keymap } from "@codemirror/view";
   import { StreamLanguage } from "@codemirror/language";
   import { pug as langPug } from "@codemirror/legacy-modes/mode/pug";
+  import { Prec } from "@codemirror/state";
   import { solarizedLight } from "thememirror";
   import { foldingOnIndent } from "./foldingService";
 
   const codeMirrorPug = StreamLanguage.define(langPug);
 
-  let { onChange, initialValue, onTyping } = $props<{
+  let { onChange, initialValue, onTyping, onBuildAction } = $props<{
     onChange: (value: string) => void;
     onTyping: () => void;
+    onBuildAction: () => void;
     initialValue: string;
   }>();
 
@@ -21,10 +23,34 @@
   }
 
   const immediateChange = EditorView.updateListener.of((update) => {
+    console.log("Immediate change");
     if (update.docChanged) {
       onTyping();
     }
   });
+
+  const debugKey = EditorView.domEventHandlers({
+    keydown(event) {
+      console.log("NEIARNSIEARS", event);
+      if (event.key === "Enter" && event.shiftKey) {
+        console.log("DOM Shift-Enter", event);
+      }
+      return false;
+    },
+  });
+
+  const buildOnShiftEnter = Prec.highest(
+    keymap.of([
+      {
+        key: "Shift-Enter",
+        run: () => {
+          console.log("Command");
+          onBuildAction();
+          return true;
+        },
+      },
+    ]),
+  );
 </script>
 
 <CodeMirror
@@ -33,7 +59,13 @@
   onchange={handleOnChange}
   nodebounce={false}
   theme={solarizedLight}
-  extensions={[codeMirrorPug, foldingOnIndent, immediateChange]}
+  extensions={[
+    debugKey,
+    buildOnShiftEnter,
+    codeMirrorPug,
+    foldingOnIndent,
+    immediateChange,
+  ]}
 />
 
 <style>

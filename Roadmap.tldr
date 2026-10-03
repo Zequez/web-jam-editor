@@ -35,8 +35,8 @@
 	},
 	"records": [
 		{
-			"x": 530.0928340068431,
-			"y": 609.2501516138324,
+			"x": 537.1192007713641,
+			"y": -85.8613132666531,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -94,8 +94,8 @@
 			"typeName": "pointer"
 		},
 		{
-			"x": 507.7115140556833,
-			"y": 305.0142684732859,
+			"x": -475.4502222062516,
+			"y": 486.08792528689645,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -196,16 +196,67 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1422.8494807527477,
-			"y": 519.3679931868537,
-			"z": 0.4342025655946479,
+			"x": 1547.2463534473782,
+			"y": 645.8197864346993,
+			"z": 0.4266981298967619,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": 55.850534913678416,
-			"y": -66.95434118750666,
+			"x": 1484.5374739046488,
+			"y": 543.28260316641,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:NATfDp8ZjFaEenMhWH_aj",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "grey",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Turns out this is just bad UX"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aWYTX",
+			"typeName": "shape"
+		},
+		{
+			"x": 56.56774687490952,
+			"y": 136.02911192962875,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -217,7 +268,7 @@
 				"h": 130.25384521484378,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 0,
+				"growY": 189.74615478515622,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
@@ -246,6 +297,40 @@
 									"text": "The preview should never stop working, it should be solidly reliable"
 								}
 							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "bulletList",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Try not triggering a full reload of the page whenver something changes, but actually just swapping the body, so the code on the iframe that connects to the service worker does not have any downtime in-between reloads, which might be the cause of the issue."
+												}
+											]
+										}
+									]
+								}
+							]
 						}
 					]
 				}
@@ -255,8 +340,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 70.93922969521896,
-			"y": -469.16446805942667,
+			"x": 132.1112353157191,
+			"y": -430.0934855795208,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -297,8 +382,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 532.6095909140947,
-			"y": 755.2878095775129,
+			"x": 525.1160021969827,
+			"y": 681.0408904607248,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -399,8 +484,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 511.90137952448845,
-			"y": -458.4812060990715,
+			"x": 522.292344043931,
+			"y": -413.94890389616535,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -450,8 +535,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 495.50705419103826,
-			"y": 46.125845808871645,
+			"x": -487.6546820708967,
+			"y": 227.1995026224822,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -527,11 +612,7 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:gdl3-1Qr6H46G7ppfuJ0f",
-				"shape:fHo_IYiLDdnf9dMibeBFs",
-				"shape:Dm6QuOd_7Z2b9xJ5RLJQY",
-				"shape:NWg3MW5GOfqDv3d_YPQSe",
-				"shape:668Y3-lZ0ZM-Swb3BpxHT"
+				"shape:-5xYZi2l2V1yaRZ3yz2ej"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -594,8 +675,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 59.093316364131226,
-			"y": -347.02413093579617,
+			"x": 59.81052832536233,
+			"y": -144.04067781866075,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -696,8 +777,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 533.014654234632,
-			"y": 1056.2833171480002,
+			"x": 531.3167673377998,
+			"y": 1020.6282016551281,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -798,18 +879,18 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 535.4033257178235,
-			"y": -533.0507635032909,
+			"x": 1530.8468220504155,
+			"y": 367.478764177038,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
 			"meta": {},
-			"id": "shape:aN3AEqxsah7ExA4foa4YU",
+			"id": "shape:EJ0ExiEQ5ZGWLNNx3bXph",
 			"type": "text",
 			"props": {
-				"color": "light-blue",
+				"color": "grey",
 				"size": "l",
-				"w": 330.078125,
+				"w": 169.125,
 				"font": "draw",
 				"textAlign": "start",
 				"autoSize": true,
@@ -828,7 +909,170 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "More feature-like"
+									"text": "Canceled"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aVxbn",
+			"typeName": "shape"
+		},
+		{
+			"x": 533.3059506729635,
+			"y": 480.6400877861119,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:FIXeWVoLrKz65IvEjTGCU",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "ESC should close the Awareness and Sustainers frames"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aaz5H",
+			"typeName": "shape"
+		},
+		{
+			"x": 61.656250746287185,
+			"y": -323.1895981728472,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:CVRTl_vKoe7pw_-UbWzhJ",
+			"type": "geo",
+			"props": {
+				"w": 395,
+				"h": 103.66240368875927,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0.33759631124073053,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "red",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The preview should be displayed on the iframe on the production "
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://webjam.space",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "webjam.space"
+								},
+								{
+									"type": "text",
+									"text": " domain (the URL"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aZ2Hb",
+			"typeName": "shape"
+		},
+		{
+			"x": 546.227308937921,
+			"y": -495.8308469109086,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:aN3AEqxsah7ExA4foa4YU",
+			"type": "text",
+			"props": {
+				"color": "light-blue",
+				"size": "l",
+				"w": 404.671875,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "More normal / known"
 								}
 							]
 						}
@@ -837,6 +1081,57 @@
 			},
 			"parentId": "page:page",
 			"index": "aH1fj",
+			"typeName": "shape"
+		},
+		{
+			"x": 1090.4250428806838,
+			"y": -206.96469281800626,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:5MnTJcBC6Ux_WAcTN2ucW",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Auto-sort and prettify the HTML attributes; with atomic CSS awareness"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aUDf6",
 			"typeName": "shape"
 		},
 		{
@@ -882,6 +1177,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1089.0168573786673,
+			"y": -55.00697063897519,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:tusUv1BhewDQMk8Uf9TGq",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Font-based icons generated on-the-fly by static analysis of the Pug output using `i-fa-<icon>` for Font-Awesome"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "ac3Mv",
+			"typeName": "shape"
+		},
+		{
 			"name": "",
 			"color": "#11B3A3",
 			"imageUrl": "",
@@ -890,8 +1236,8 @@
 			"typeName": "user"
 		},
 		{
-			"x": 513.1458113100147,
-			"y": -276.8819784960145,
+			"x": 1431.3602838464703,
+			"y": 435.9542278328346,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -908,7 +1254,7 @@
 				"scale": 1,
 				"flipX": false,
 				"flipY": false,
-				"color": "light-blue",
+				"color": "grey",
 				"labelColor": "black",
 				"fill": "solid",
 				"size": "s",
@@ -941,8 +1287,59 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1021.7413546899702,
-			"y": -448.56488357324395,
+			"x": 542.5287375252128,
+			"y": 51.68144735320226,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:-5xYZi2l2V1yaRZ3yz2ej",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Replace [del] with an actual icon"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "abg3X",
+			"typeName": "shape"
+		},
+		{
+			"x": 1037.5530681674977,
+			"y": -445.0154116703258,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -952,7 +1349,7 @@
 			"props": {
 				"color": "yellow",
 				"size": "l",
-				"w": 353.046875,
+				"w": 688.859375,
 				"font": "draw",
 				"textAlign": "start",
 				"autoSize": true,
@@ -971,7 +1368,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "More experimental"
+									"text": "More delightful / unknown / exciting"
 								}
 							]
 						}
@@ -983,8 +1380,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 533.3699224468398,
-			"y": 904.9307378360286,
+			"x": 532.7790024583967,
+			"y": 842.6439849556624,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1034,8 +1431,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 57.717214880577785,
-			"y": -218.14394066238935,
+			"x": 58.434426841808886,
+			"y": -15.160487545253943,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1082,6 +1479,126 @@
 			},
 			"parentId": "page:page",
 			"index": "a6rZM",
+			"typeName": "shape"
+		},
+		{
+			"x": 559.8657114066157,
+			"y": 209.98187682651331,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:tlQgtthXyMTjkUHUIFrZT",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 69.74615478515622,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The auto-build should be optional, and I should be able to command a build by cmd+enter"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "(would be a temporary relief to the preview not being reliable on subsequent reloads)"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aYzWzV",
+			"typeName": "shape"
+		},
+		{
+			"x": -431.94431349259264,
+			"y": 564.9360787757769,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:rLrjrKvckii9pP7Gvpq8h",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "grey",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "I don’t really care that much"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aXReI",
 			"typeName": "shape"
 		},
 		{
@@ -1136,8 +1653,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 993.2280084686242,
-			"y": -357.84885690775843,
+			"x": 1084.6169218917323,
+			"y": -357.9147101859316,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1228,7 +1745,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 945
+				"h": 920
 			},
 			"insets": [
 				false,
@@ -1245,7 +1762,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": null,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -1257,8 +1774,8 @@
 			"typeName": "instance"
 		},
 		{
-			"x": 512.1069433537165,
-			"y": 76.03829234052603,
+			"x": -471.0547929082185,
+			"y": 257.1119491541366,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1275,7 +1792,7 @@
 				"scale": 1,
 				"flipX": false,
 				"flipY": false,
-				"color": "light-blue",
+				"color": "light-green",
 				"labelColor": "black",
 				"fill": "solid",
 				"size": "s",
@@ -1308,8 +1825,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 516.6733955058247,
-			"y": 185.77150623453826,
+			"x": -466.48834075611023,
+			"y": 366.84516304814883,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1326,7 +1843,7 @@
 				"scale": 1,
 				"flipX": false,
 				"flipY": false,
-				"color": "light-blue",
+				"color": "light-green",
 				"labelColor": "black",
 				"fill": "solid",
 				"size": "s",

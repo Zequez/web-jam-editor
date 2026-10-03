@@ -104,6 +104,7 @@
       initialValue={content}
       onChange={handleChange}
       onTyping={handleChanging}
+      onBuildAction={initialBuild}
     />
   </div>
 {/if}

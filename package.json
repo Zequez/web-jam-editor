@@ -9,6 +9,8 @@
     "start": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
     "deploy": "gh-pages -d dist -b www",
     "publish": "bun run build && bun run deploy"
   },
@@ -21,6 +23,7 @@
   "dependencies": {
     "@codemirror/language": "^6.12.4",
     "@codemirror/legacy-modes": "^6.5.4",
+    "@fortawesome/fontawesome-free": "^7.3.1",
     "@iconify-json/fa7-brands": "^1.2.4",
     "@iconify-json/fa7-solid": "^1.2.5",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
@@ -32,8 +35,11 @@
     "fflate": "^0.8.3",
     "gh-pages": "^6.3.0",
     "idb-keyval": "^6.3.0",
+    "linkedom": "^0.18.13",
     "mime": "^4.1.0",
     "pug": "^3.0.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "rollup-plugin-visualizer": "^7.1.1",
     "svelte": "^5.57.0",
     "svelte-codemirror-editor": "^2.1.0",
