@@ -1,13 +1,25 @@
 <script lang="ts">
   import CodeMirror from "svelte-codemirror-editor";
-  import { EditorView, keymap } from "@codemirror/view";
+  import {
+    Decoration,
+    EditorView,
+    MatchDecorator,
+    ViewPlugin,
+    keymap,
+  } from "@codemirror/view";
   import { StreamLanguage } from "@codemirror/language";
   import { pug as langPug } from "@codemirror/legacy-modes/mode/pug";
   import { Prec } from "@codemirror/state";
   import { solarizedLight } from "thememirror";
   import { foldingOnIndent } from "./foldingService";
+  import { specialCommentExtension } from "./specialCommentExtension";
+  import { mixinHighlightExtension } from "./mixinHighlightExtension";
+  import { duplicateLine } from "./duplicateLineExtension";
 
   const codeMirrorPug = StreamLanguage.define(langPug);
+  const whitespaceChar = "░";
+  const whitespaceColor = "#4d5666";
+  const whitespaceOpacity = 0.4;
 
   let { onChange, initialValue, onTyping, onBuildAction } = $props<{
     onChange: (value: string) => void;
@@ -51,6 +63,67 @@
       },
     ]),
   );
+
+  const indentWhitespaceDecorator = new MatchDecorator({
+    regexp: /^(?:[ \t]+)/gm,
+    decorate: (add, from, _to, match) => {
+      const marker = Decoration.mark({ class: "cm-indentWhitespace" });
+      for (let pos = from; pos < from + match[0].length; pos++) {
+        add(pos, pos + 1, marker);
+      }
+    },
+  });
+
+  const indentWhitespacePlugin = ViewPlugin.fromClass(
+    class {
+      decorations;
+
+      constructor(view: EditorView) {
+        this.decorations = indentWhitespaceDecorator.createDeco(view);
+      }
+
+      update(update: any) {
+        this.decorations = indentWhitespaceDecorator.updateDeco(
+          update,
+          this.decorations,
+        );
+      }
+    },
+    {
+      decorations: (value) => value.decorations,
+    },
+  );
+
+  const whitespaceTheme = EditorView.theme({
+    "&": {
+      "--whitespace-char": `'${whitespaceChar}'`,
+      "--whitespace-color": whitespaceColor,
+      "--whitespace-opacity": String(whitespaceOpacity),
+    },
+    ".cm-indentWhitespace": {
+      position: "relative",
+      color: "transparent",
+      overflow: "visible",
+      background: "transparent !important",
+      backgroundImage: "none !important",
+      backgroundSize: "auto !important",
+      backgroundPosition: "initial !important",
+    },
+    ".cm-indentWhitespace::before": {
+      content: "var(--whitespace-char)",
+      position: "absolute",
+      inset: "0 0 0 0",
+      display: "inline-block",
+      color: "var(--whitespace-color)",
+      opacity: "var(--whitespace-opacity)",
+      fontFamily: "monospace",
+      fontSize: "inherit",
+      lineHeight: "1",
+      pointerEvents: "none",
+      userSelect: "none",
+      textAlign: "center",
+    },
+  });
 </script>
 
 <CodeMirror
@@ -65,6 +138,10 @@
     codeMirrorPug,
     foldingOnIndent,
     immediateChange,
+    whitespaceTheme,
+    indentWhitespacePlugin,
+    specialCommentExtension,
+    mixinHighlightExtension,
   ]}
 />
 

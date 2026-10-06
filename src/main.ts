@@ -1,4 +1,5 @@
 import "virtual:uno.css";
+import "./lib/markdown.css";
 import { mount } from "svelte";
 import SystemFrame from "./components/SystemFrame.svelte";
 import Preview from "./components/Preview.svelte";

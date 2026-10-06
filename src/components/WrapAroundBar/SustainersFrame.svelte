@@ -4,7 +4,7 @@
 
 <div
   class={[
-    "absolute px6 top-0 z-11 left-1/2 -translate-x-1/2 duration-1000 transition-transform",
+    "absolute top-0 z-11 left-1/2 -translate-x-1/2 duration-1000 transition-transform",
     {
       [`-translate-y-100%
         transition-delay-0

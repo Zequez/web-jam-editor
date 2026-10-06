@@ -133,6 +133,8 @@ export function createSystemFs() {
     return fs;
   }
 
+  async function saveToFolder() {}
+
   function _debug_readAllFiles(dirPath: string) {
     const entries = fs.readdirSync(dirPath, {
       withFileTypes: true,

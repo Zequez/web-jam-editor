@@ -2,9 +2,11 @@
   import EdgeButtons from "./EdgeButtons.svelte";
 </script>
 
-<div class="h-screen w-full bg-violet-200 p1.5 pt-7.5 overflow-auto relative">
+<div
+  class="h-screen w-full bg-violet-200 p1.5 pt13.5 md:pt-7.5 overflow-auto relative"
+>
   <div
-    class="absolute top-0 left-0 w-full bg-violet-800 h-6 flex text-white text-3/6"
+    class="absolute top-0 left-0 w-full bg-violet-800 h-12 pt-6 md:h-6 md:pt-0 flex text-white text-3/6"
   >
     <slot name="menu"></slot>
     <div class="flex-grow"></div>

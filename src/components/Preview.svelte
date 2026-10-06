@@ -69,7 +69,7 @@
       onclick={() => handleGo()}>GO</button
     >
     <a
-      href={src}
+      href={derivedSrc}
       class="w-7 shrink-0 bg-blue-400 hover:bg-blue-500 px-2 text-white rounded-1 mr2"
       target="_blank"
       title="Open in external tab"

@@ -612,7 +612,7 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:-5xYZi2l2V1yaRZ3yz2ej"
+				"shape:Lo3iy-ZWbujYgCnKP7f5N"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -1602,6 +1602,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1301.0866815542568,
+			"y": 988.605726940544,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Vib7KSvtr_V0fFsR-1kML",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Make viewport shortcuts for the preview (320px and 768px)"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "adzse",
+			"typeName": "shape"
+		},
+		{
 			"x": -491.5786222122982,
 			"y": -13.940952223337263,
 			"rotation": 0,
@@ -1720,6 +1771,57 @@
 			"typeName": "document"
 		},
 		{
+			"x": 62.10983248688575,
+			"y": 543.6009599337369,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Lo3iy-ZWbujYgCnKP7f5N",
+			"type": "geo",
+			"props": {
+				"w": 395,
+				"h": 103.66240368875927,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "red",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Backticks not working on editor"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aeTQX",
+			"typeName": "shape"
+		},
+		{
 			"name": "Ezequiel Schwartzman",
 			"color": "#E34BA9",
 			"imageUrl": "",
@@ -1745,7 +1847,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 920
+				"h": 945
 			},
 			"insets": [
 				false,
@@ -1762,7 +1864,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": null,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,

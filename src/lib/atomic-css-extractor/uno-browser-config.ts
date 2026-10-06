@@ -50,6 +50,21 @@ const config: UserConfig = {
       };
     },
     (matcher) => {
+      if (matcher.startsWith("interact:")) {
+        return {
+          matcher: matcher.slice(9),
+          selector: (s) => `${s}:is(:hover, :focus-visible)`,
+        };
+      }
+
+      if (matcher.startsWith("group-interact:")) {
+        return {
+          matcher: matcher.slice(15),
+          selector: (s) => `.group:is(:hover, :focus-visible) ${s}`,
+        };
+      }
+    },
+    (matcher) => {
       const variant = "placeholder-shown";
       if (!matcher.includes(variant)) return matcher;
       const isNot = matcher.startsWith("not-");

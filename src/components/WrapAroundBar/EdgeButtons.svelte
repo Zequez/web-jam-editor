@@ -27,9 +27,10 @@
     isOpen={tab === "sustainers"}
     onclick={() => selectTab("sustainers")}
   />
-  <SustainersFrame isOpen={tab === "sustainers"} />
-  <AwarenessFrame isOpen={tab === "awareness"} />
+
   <!-- {#if tab === "awareness"} -->
   <div></div>
   <!-- {/if} -->
 </div>
+<SustainersFrame isOpen={tab === "sustainers"} />
+<AwarenessFrame isOpen={tab === "awareness"} />
