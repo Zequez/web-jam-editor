@@ -196,16 +196,16 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1547.2463534473782,
-			"y": 645.8197864346993,
-			"z": 0.4266981298967619,
+			"x": -183.3065118353028,
+			"y": 494.64767359251215,
+			"z": 0.7603969842610139,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": 1484.5374739046488,
-			"y": 543.28260316641,
+			"x": 1740.5434353739552,
+			"y": 710.6175542152976,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -379,6 +379,57 @@
 			},
 			"parentId": "page:page",
 			"index": "a2Ndf",
+			"typeName": "shape"
+		},
+		{
+			"x": 1099.6011794783467,
+			"y": 207.04624548412272,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:sB0uDKqlMU9BrpS-p4zKv",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Add a custom lexer to pre-processes atomic CSS syntax in Pug"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "afzhq",
 			"typeName": "shape"
 		},
 		{
@@ -611,9 +662,7 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:Lo3iy-ZWbujYgCnKP7f5N"
-			],
+			"selectedShapeIds": [],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -879,8 +928,59 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1530.8468220504155,
-			"y": 367.478764177038,
+			"x": 1121.9597385538698,
+			"y": 359.7778563133616,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:qFPlTYjixbHQnNd28Ch4V",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Self-embedding the editor and source code on every static page deployment for fully self-editable deployments."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "agHrQ",
+			"typeName": "shape"
+		},
+		{
+			"x": 1786.852783519722,
+			"y": 534.8137152259255,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1236,8 +1336,8 @@
 			"typeName": "user"
 		},
 		{
-			"x": 1431.3602838464703,
-			"y": 435.9542278328346,
+			"x": 1687.3662453157767,
+			"y": 603.2891788817221,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,

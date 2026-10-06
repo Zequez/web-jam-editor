@@ -1,10 +1,19 @@
 <script lang="ts">
-  type Tabs = "Syntax" | "Images" | "Publishing";
+  import { getPreviewUrlStore } from "@/stores/previewUrlStore.svelte";
+  import ImagesBox from "./ImagesBox.svelte";
+
+  type Tabs = "Syntax" | "Images" | "Publishing" | "none";
   let currentTab = $state<Tabs>("Images");
   let bodyColor = $state("bg-amber-200");
 
+  const { url: previewUrl } = getPreviewUrlStore();
+
   function setTab(tab: Tabs, newBodyColor: string) {
-    currentTab = tab;
+    if (tab === currentTab) {
+      currentTab = "none";
+    } else {
+      currentTab = tab;
+    }
     bodyColor = newBodyColor;
   }
 
@@ -39,13 +48,16 @@
   bodyColor: string,
 )}
   {@const isActive = name === currentTab}
+  {@const isNone = currentTab === "none"}
   <button
     class={[
-      `w-30 h-full flex-cc rounded-t-1 cursor-pointer uppercase`,
+      `w-30 h-full flex-cc cursor-pointer uppercase b-1.5 b-black/15`,
       {
-        [`${colorActive} opacity-100 text-black/80`]: isActive,
-        [`${colorInactive} opacity-60 hover:opacity-100 text-black/50 hover:text-black/80 shadow-[inset_0_-3px_2px_#0001]`]:
+        [`${colorActive} opacity-100 text-black/70`]: isActive,
+        [`${colorInactive} opacity-60 hover:opacity-100 text-black/50 hover:text-black/70`]:
           !isActive,
+        ["rounded-1"]: isNone,
+        ["shadow-[inset_0_-3px_2px_#0001] rounded-t-1 b-b-0"]: !isNone,
       },
     ]}
     onclick={() => setTab(name, bodyColor)}
@@ -103,22 +115,13 @@
       <div class="i-fa-clipboard scale-150"></div>
     </button> -->
   </div>
-  <div
-    class="{bodyColor} shadow-[0_1px_0_#0007] size-full rounded-1 rounded-tl-0 p1.5 max-h-40 overflow-auto"
-  >
-    {#if currentTab === "Images"}
-      <div class="font-mono grid gap-1.5 cols-2">
-        {#each imagesList as img}
-          <div class="flex-cs">
-            <img
-              class="w-10 h-10 bg-gray-200 rounded-1 mr1.5"
-              src="/preview__/9c808fae-d0c0-4cf2-8f68-609d9d2db12e/images/{img}/sm.webp"
-            />
-            {img}
-            <button onclick={() => onDeleteImage(img)}>[Del]</button>
-          </div>
-        {/each}
-      </div>
-    {/if}
-  </div>
+  {#if currentTab !== "none"}
+    <div
+      class="{bodyColor} shadow-[0_1px_0_#0007] size-full rounded-1 rounded-tl-0 p1.5 max-h-40 overflow-auto"
+    >
+      {#if currentTab === "Images"}
+        <ImagesBox {imagesList} {onDeleteImage} />
+      {/if}
+    </div>
+  {/if}
 </div>

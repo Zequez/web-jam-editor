@@ -8,10 +8,13 @@
   import AssetsFrame from "./AssetsFrame/AssetsFrame.svelte";
   import WebJamName from "./WebJamName.svelte";
   import WrapAroundBar from "./WrapAroundBar/WrapAroundBar.svelte";
+  import { setPreviewUrlStore } from "@/stores/previewUrlStore.svelte";
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
   const systemFs = createSystemFs();
+
+  setPreviewUrlStore();
 
   $effect(() => {
     console.log("Status", systemFs.status);
@@ -123,7 +126,7 @@
         style={`width: calc(${codePanelSize * 100}% - 12px);`}
         class="shrink-0 h-full flex flex-col space-y-1.5"
       >
-        <div class="h-20% flex-shrink-0 w-full">
+        <div class="flex-shrink-0 w-full">
           <AssetsFrame />
         </div>
         <div class="h-40% grow w-full">

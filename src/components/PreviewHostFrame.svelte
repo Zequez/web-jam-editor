@@ -10,6 +10,7 @@
     type FileReadResponse,
   } from "@/lib/preview-virtual-server/protocol";
   import Preview from "./Preview.svelte";
+  import { getPreviewUrlStore } from "@/stores/previewUrlStore.svelte";
 
   const {
     fs,
@@ -112,6 +113,11 @@
   export function generateUrl() {
     return `${location.origin}${PREVIEW_NAMESPACE}${encodeURIComponent(sessionId)}`;
   }
+
+  const { updateUrl } = getPreviewUrlStore();
+  $effect(() => {
+    updateUrl(generateUrl());
+  });
 
   function reportInitializationError(error: unknown) {
     initializationError =
