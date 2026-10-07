@@ -39,7 +39,7 @@ const metaTag = document.getElementById("world-icon")!;
 
 let phase = Math.floor(Math.random() * phases.length);
 
-setInterval(() => {
+function doChange() {
   phase = (phase + 1) % phases.length;
 
   const svg = `
@@ -49,4 +49,10 @@ setInterval(() => {
   `;
 
   metaTag.setAttribute("href", `data:image/svg+xml,${encodeURIComponent(svg)}`);
+}
+
+setInterval(() => {
+  doChange();
 }, 60000);
+
+doChange();
