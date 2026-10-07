@@ -1,22 +1,34 @@
 import { fs } from "@zenfs/core";
-import { buildCompiler, INPUT_FILE, OUTPUT_DIR } from "./compiler";
+import {
+  buildCompiler,
+  INPUT_FILE,
+  OUTPUT_DIR,
+  type CompileResult,
+} from "./compiler";
 import pug from "./pug-browser.ts";
 
 export { INPUT_FILE, OUTPUT_DIR };
 
 export const compile = buildCompiler(pug);
 
-export async function build() {
+export async function build(): Promise<CompileResult> {
   let index = fs.readFileSync(INPUT_FILE, "utf-8");
-  const files = await compile(index);
+  const result = await compile(index);
 
-  for (let file in files) {
-    let pathName = file.split("/");
-    pathName.pop();
-    fs.mkdirSync(`${OUTPUT_DIR}/${pathName.join("/")}`, { recursive: true });
-    fs.writeFileSync(`${OUTPUT_DIR}/${file}`, files[file]!);
+  if (result.type === "pug-error") {
+    console.error("Build error", result.error);
+    return result;
+  } else if (result.type === "success") {
+    const files = result.files;
+    for (let file in files) {
+      let pathName = file.split("/");
+      pathName.pop();
+      fs.mkdirSync(`${OUTPUT_DIR}/${pathName.join("/")}`, { recursive: true });
+      fs.writeFileSync(`${OUTPUT_DIR}/${file}`, files[file]!);
+    }
+    console.log("Build successful!", files);
+    return result;
+  } else {
+    throw "Unhandled error type";
   }
-
-  // console.log(output);
-  console.log("Finished build!");
 }

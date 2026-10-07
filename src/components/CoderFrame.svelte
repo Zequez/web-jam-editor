@@ -2,7 +2,11 @@
   import { onMount } from "svelte";
   import SingleFileCoder from "./SingleFileCoder";
   import Loader from "./Loader.svelte";
-  import { INPUT_FILE, build } from "@/lib/pure-pug-compiler";
+  import {
+    INPUT_FILE,
+    build,
+    type CompileResult,
+  } from "@/lib/pure-pug-compiler";
   import type { Fs } from "@/lib/zen-fs-type";
   import BuildProgressBar from "./BuildProgressBar.svelte";
   import PublishingNote from "./PublishingNote.svelte";
@@ -10,7 +14,17 @@
   const AUTO_SAVE_DEBOUNCE = 300;
 
   let loading = $state(true);
-  let { fs, onBuildEnds }: { fs: Fs; onBuildEnds: () => void } = $props();
+  let {
+    fs,
+    onBuildEnds,
+    onBuildError,
+  }: {
+    fs: Fs;
+    onBuildEnds: () => void;
+    onBuildError: (
+      error: Extract<CompileResult, { type: "pug-error" }>,
+    ) => void;
+  } = $props();
   let showPublishingNote = $state(false);
 
   let content = $state("");
@@ -22,11 +36,12 @@
       fs.writeFileSync(INPUT_FILE, "");
     }
 
-    await initialBuild();
+    await doBuild();
     loading = false;
   });
 
   function handleChange(newContent: string) {
+    console.log("Handling change");
     content = newContent;
     scheduleSave();
   }
@@ -40,6 +55,7 @@
   let savingAt = $state(-1);
   let saveTimer: ReturnType<typeof setTimeout> | null = null;
   function scheduleSave() {
+    console.log("Scheduling save");
     if (saveTimer) clearTimeout(saveTimer);
     savingAt = Date.now() + AUTO_SAVE_DEBOUNCE;
     if (!buildScheduleProgressTicker) {
@@ -53,16 +69,19 @@
         clearInterval(buildScheduleProgressTicker);
         buildScheduleProgressTicker = null;
       }
+      doBuild();
       buildScheduleProgress = calculateBuildScheduleProgress();
-
-      await build();
-      onBuildEnds();
     }, AUTO_SAVE_DEBOUNCE);
   }
 
-  async function initialBuild() {
-    await build();
-    onBuildEnds();
+  async function doBuild() {
+    console.log("Doing build");
+    const result = await build();
+    if (result.type === "pug-error") {
+      onBuildError(result);
+    } else if (result.type === "success") {
+      onBuildEnds();
+    }
   }
 
   function beginBuildScheduleProgressTicker() {
@@ -104,7 +123,7 @@
       initialValue={content}
       onChange={handleChange}
       onTyping={handleChanging}
-      onBuildAction={initialBuild}
+      onBuildAction={doBuild}
     />
   </div>
 {/if}

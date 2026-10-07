@@ -3,7 +3,7 @@
 
   import CoderFrame from "./CoderFrame.svelte";
   import Loader from "./Loader.svelte";
-  import { OUTPUT_DIR } from "@/lib/pure-pug-compiler";
+  import { OUTPUT_DIR, type CompileResult } from "@/lib/pure-pug-compiler";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import AssetsFrame from "./AssetsFrame/AssetsFrame.svelte";
   import WebJamName from "./WebJamName.svelte";
@@ -20,8 +20,16 @@
     console.log("Status", systemFs.status);
   });
 
+  type CompileError = Extract<CompileResult, { type: "pug-error" }>;
+  let currentBuildError = $state<CompileError | null>(null);
   function afterBuild() {
+    currentBuildError = null;
     previewHostFrameEl?.refresh();
+  }
+
+  function handleBuildError(buildError: CompileError) {
+    console.log("Handling build errror", buildError);
+    currentBuildError = buildError;
   }
 
   let codePanelSize = $state(0.6);
@@ -133,7 +141,11 @@
           <div
             class="h-full w-full relative rounded-1 overflow-hidden shadow-[0_1px_0_#0007] bg-red"
           >
-            <CoderFrame fs={systemFs.fs} onBuildEnds={afterBuild} />
+            <CoderFrame
+              fs={systemFs.fs}
+              onBuildEnds={afterBuild}
+              onBuildError={handleBuildError}
+            />
           </div>
         </div>
       </div>
@@ -152,13 +164,50 @@
           ]}
         ></div>
       </button>
-      <div class="h-full" style={`width: ${(1 - codePanelSize) * 100}%;`}>
+      <div
+        class="h-full relative"
+        style={`width: ${(1 - codePanelSize) * 100}%;`}
+      >
         <PreviewHostFrame
           fs={systemFs.fs}
           hiddenMode={codePanelSize === 1}
           servePath={OUTPUT_DIR}
           bind:this={previewHostFrameEl}
         />
+        {#if currentBuildError}
+          <div
+            class="absolute overflow-auto inset-4 bg-black/80 b b-4 b-red-500 rounded-2 text-white font-mono whitespace-pre p6"
+          >
+            <div class="text-7">
+              Error
+              {#if currentBuildError.type === "pug-error"}
+                <span>on Pug code</span>
+              {/if}
+            </div>
+
+            {#if currentBuildError.error.code}
+              <div>{currentBuildError.error.code}</div>
+            {/if}
+
+            {#if currentBuildError.error.message}
+              {#if currentBuildError.error.stack}
+                <div class="text-0.7em text-red-400">
+                  {currentBuildError.error.stack}
+                </div>
+              {:else}
+                <div>{currentBuildError.error.message}</div>
+              {/if}
+
+              <!-- {#if currentBuildError.error.stack}
+                <div class="text-0.7em">{currentBuildError.error.stack}</div>
+              {/if} -->
+            {:else if currentBuildError.error.msg}
+              <div>{currentBuildError.error.msg}</div>
+            {/if}
+
+            <!-- {JSON.stringify(currentBuildError, null, 2)} -->
+          </div>
+        {/if}
       </div>
     </div>
   {/if}

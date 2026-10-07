@@ -13,7 +13,7 @@
   $effect(() => {
     const images = imagesList;
     untrack(() => {
-      console.log("Regenerating images");
+      // console.log("Regenerating images");
       let keys = Array.from(imagesThumbnailUrls.keys());
 
       for (let img of images) {
@@ -38,8 +38,6 @@
 
         imagesThumbnailUrls.delete(key);
       }
-
-      console.log(imagesThumbnailUrls);
     });
   });
 

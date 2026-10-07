@@ -1,38 +1,39 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { onMount } from "svelte";
 
-  const props: { class?: any; density?: number; upscale?: number } = $props()
+  const props: { class?: any; density?: number; upscale?: number } = $props();
 
-  let canvas: HTMLCanvasElement
+  let canvas: HTMLCanvasElement;
 
   onMount(() => {
-    const ctx = canvas.getContext('2d')!
-    ctx.fillStyle = 'black'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    const ctx = canvas.getContext("2d")!;
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    let w: number, h: number
+    let w: number, h: number;
     let stars: {
-      x: number
-      y: number
-      r: number
-      hue: number
-      twinkle: number
-    }[]
-    let upscale = props.upscale || 1
-    let density = (props.density || 50) / upscale
+      x: number;
+      y: number;
+      r: number;
+      hue: number;
+      twinkle: number;
+    }[];
+    let upscale = props.upscale || 1;
+    let density = (props.density || 50) / upscale;
 
     function resize() {
-      const { width, height } = canvas.getBoundingClientRect()
-      w = width
-      h = height
-      canvas.width = w
-      canvas.height = h
-      makeStars()
+      if (!canvas) return;
+      const { width, height } = canvas.getBoundingClientRect();
+      w = width;
+      h = height;
+      canvas.width = w;
+      canvas.height = h;
+      makeStars();
     }
-    window.addEventListener('resize', resize)
+    window.addEventListener("resize", resize);
 
     function makeStars() {
-      const count = Math.floor((w * h) / density) // density-based
+      const count = Math.floor((w * h) / density); // density-based
       stars = new Array(count).fill(null).map(() => ({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -42,30 +43,30 @@
             ? Math.random() * 60 + 200
             : Math.random() * 40 + 0, // bluish to whitish
         twinkle: Math.random() * Math.PI * 2,
-      }))
+      }));
     }
 
     function draw() {
-      ctx.fillStyle = 'black'
-      ctx.fillRect(0, 0, w, h)
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, w, h);
 
       for (const s of stars) {
         const intensity =
-          0.5 + 0.5 * Math.sin((s.twinkle += 0.02 + Math.random() * 0.01))
-        ctx.beginPath()
-        ctx.fillStyle = `hsl(${s.hue}, 100%, ${70 * intensity}%)`
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
-        ctx.fill()
+          0.5 + 0.5 * Math.sin((s.twinkle += 0.02 + Math.random() * 0.01));
+        ctx.beginPath();
+        ctx.fillStyle = `hsl(${s.hue}, 100%, ${70 * intensity}%)`;
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
       }
       // requestAnimationFrame(draw)
     }
 
-    resize()
-    draw()
-  })
+    resize();
+    draw();
+  });
 </script>
 
 <canvas
-  class={['absolute top-0 left-0 w-full h-full', props.class]}
+  class={["absolute top-0 left-0 w-full h-full", props.class]}
   bind:this={canvas}
 ></canvas>

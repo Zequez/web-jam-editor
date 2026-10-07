@@ -27,10 +27,12 @@ const filters = {
   },
 };
 
+export type CompileResult =
+  | { type: "pug-error"; error: any }
+  | { type: "success"; files: Record<string, string> };
+
 export function buildCompiler(pug: typeof Pug) {
-  return async function compile(
-    pugCode: string,
-  ): Promise<{ [key: string]: string }> {
+  return async function compile(pugCode: string): Promise<CompileResult> {
     const files: { [key: string]: string } = {};
 
     pugCode = processYaml(pugCode);
@@ -49,8 +51,11 @@ export function buildCompiler(pug: typeof Pug) {
       });
       output = renderTemplate({});
     } catch (e) {
-      console.error("Pug error!", e);
-      return {};
+      // console.error("Pug error!", e);
+      return {
+        type: "pug-error",
+        error: e,
+      };
     }
 
     output = output.replace("<!DOCTYPE html>", "");
@@ -96,6 +101,6 @@ export function buildCompiler(pug: typeof Pug) {
     files["index.html"] = output;
     files["style.css"] = css;
 
-    return files;
+    return { type: "success", files };
   };
 }

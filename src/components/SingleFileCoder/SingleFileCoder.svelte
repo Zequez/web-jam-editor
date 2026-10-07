@@ -43,7 +43,6 @@
 
   const debugKey = EditorView.domEventHandlers({
     keydown(event) {
-      console.log("NEIARNSIEARS", event);
       if (event.key === "Enter" && event.shiftKey) {
         console.log("DOM Shift-Enter", event);
       }
