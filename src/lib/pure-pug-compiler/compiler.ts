@@ -35,7 +35,14 @@ export function buildCompiler(pug: typeof Pug) {
   return async function compile(pugCode: string): Promise<CompileResult> {
     const files: { [key: string]: string } = {};
 
-    pugCode = processYaml(pugCode);
+    try {
+      pugCode = processYaml(pugCode);
+    } catch (e) {
+      return {
+        type: "pug-error",
+        error: e,
+      };
+    }
 
     if (!pugCode.startsWith("doctype\n")) {
       pugCode = "doctype\n" + pugCode;

@@ -17,6 +17,15 @@
 
   //localhost:5173/preview__/dadb69d0-d47e-46c9-9168-710335910188/
 
+  let bugAlertDismessed = $state(
+    localStorage.getItem("bug-alert-dismessed") === "true",
+  );
+  $effect(() => {
+    if (bugAlertDismessed) {
+      localStorage.setItem("bug-alert-dismessed", "true");
+    }
+  });
+
   http: onMount(() => {
     const resizeObserver = new ResizeObserver(([entry]) => {
       containerWidth = entry!.contentRect.width;
@@ -99,15 +108,23 @@
       >
     </div>
   </div>
-  <div
-    title="Service-workers are complex"
-    class="shrink-0 px-3 bg-amber-200 text-center text-3/6 flex-cc text-black b-b b-black/10"
-  >
-    <span class="i-fa-warning h-6 w-6 inline-block scale-80"></span>
-    <span
-      >Bug alert: If the preview does not refresh just reload the whole page
-    </span>
-  </div>
+  {#if !bugAlertDismessed}
+    <div
+      title="Service-workers are complex"
+      class="shrink-0 px-3 bg-amber-200 text-center text-3/6 flex-cc text-black b-b b-black/10"
+    >
+      <span class="i-fa-warning h-6 w-6 inline-block scale-80"></span>
+
+      <span class="flex-cc"
+        >Bug alert: If the preview does not refresh just reload the whole page
+        <button
+          onclick={() => (bugAlertDismessed = true)}
+          class="mx-auto uppercase bg-blue-400 text-white hover:bg-blue-300 rounded-1 ml1 cursor-pointer text-2 h4 flex-cc px-1"
+          >Understood</button
+        >
+      </span>
+    </div>
+  {/if}
   <div class="w-full h-full flex-grow relative" bind:this={container}>
     <iframe
       bind:this={iframe}
