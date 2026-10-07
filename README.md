@@ -2,7 +2,7 @@
 
 A small, inspectable, browser-native web-making environment that helps ordinary people create real websites without either becoming developers or surrendering the creation process to a black-box website generator.
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.webp)
 
 ## Purpose
 
