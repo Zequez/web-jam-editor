@@ -4,7 +4,7 @@
 
 <span
   class={[
-    "inline-block h-3.5 b rounded-1 bg-white/10 w-10 mr2 relative overflow-hidden text-2.5 font-mono font-bold",
+    "inline-block h-3.5 b rounded-.5 bg-white/10 w-10 mr2 relative overflow-hidden text-2.5 font-mono font-bold",
     {
       "b-white": progress > 0,
       "b-white/25": progress === 0,

@@ -20,13 +20,13 @@ export async function build(): Promise<CompileResult> {
     return result;
   } else if (result.type === "success") {
     const files = result.files;
+    console.log("Saving files", files);
     for (let file in files) {
       let pathName = file.split("/");
       pathName.pop();
       fs.mkdirSync(`${OUTPUT_DIR}/${pathName.join("/")}`, { recursive: true });
       fs.writeFileSync(`${OUTPUT_DIR}/${file}`, files[file]!);
     }
-    console.log("Build successful!", files);
     return result;
   } else {
     throw "Unhandled error type";

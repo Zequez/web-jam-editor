@@ -12,7 +12,7 @@ export const duplicateLine = Prec.high(
         for (const range of view.state.selection.ranges) {
           const line = view.state.doc.lineAt(range.from);
 
-          const insert = line.text + "\n";
+          const insert = "\n" + line.text;
           const pos = line.to + 1;
 
           changes.push({

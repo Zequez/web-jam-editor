@@ -59,6 +59,7 @@
 <div class="h-full w-full flex flex-col bg-gray-200 rounded-1 b b-black/10">
   <div class="flex p1.5 overflow-hidden shrink-0">
     <input
+      onkeydown={(e) => console.log(e)}
       onkeyup={(e) => e.key === "Enter" && handleGo()}
       value={address}
       oninput={(e) => (address = e.currentTarget.value)}

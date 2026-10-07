@@ -1,12 +1,6 @@
 <script lang="ts">
   import CodeMirror from "svelte-codemirror-editor";
-  import {
-    Decoration,
-    EditorView,
-    MatchDecorator,
-    ViewPlugin,
-    keymap,
-  } from "@codemirror/view";
+  import { EditorView, keymap } from "@codemirror/view";
   import { StreamLanguage } from "@codemirror/language";
   import { pug as langPug } from "@codemirror/legacy-modes/mode/pug";
   import { Prec } from "@codemirror/state";
@@ -15,11 +9,12 @@
   import { specialCommentExtension } from "./specialCommentExtension";
   import { mixinHighlightExtension } from "./mixinHighlightExtension";
   import { duplicateLine } from "./duplicateLineExtension";
+  import {
+    indentWhitespacePlugin,
+    whitespaceTheme,
+  } from "./whitespaceHighlighter";
 
   const codeMirrorPug = StreamLanguage.define(langPug);
-  const whitespaceChar = "░";
-  const whitespaceColor = "#4d5666";
-  const whitespaceOpacity = 0.4;
 
   let { onChange, initialValue, onTyping, onBuildAction } = $props<{
     onChange: (value: string) => void;
@@ -41,14 +36,25 @@
     }
   });
 
-  const debugKey = EditorView.domEventHandlers({
-    keydown(event) {
-      if (event.key === "Enter" && event.shiftKey) {
-        console.log("DOM Shift-Enter", event);
-      }
-      return false;
-    },
-  });
+  const debugKey = Prec.highest(
+    EditorView.domEventHandlers({
+      keydown(event) {
+        console.log({
+          key: event.key,
+          code: event.code,
+          altKey: event.altKey,
+          ctrlKey: event.ctrlKey,
+          shiftKey: event.shiftKey,
+          metaKey: event.metaKey,
+          defaultPrevented: event.defaultPrevented,
+        });
+        if (event.key === "Enter" && event.shiftKey) {
+          console.log("DOM Shift-Enter", event);
+        }
+        return false;
+      },
+    }),
+  );
 
   const buildOnShiftEnter = Prec.highest(
     keymap.of([
@@ -62,67 +68,6 @@
       },
     ]),
   );
-
-  const indentWhitespaceDecorator = new MatchDecorator({
-    regexp: /^(?:[ \t]+)/gm,
-    decorate: (add, from, _to, match) => {
-      const marker = Decoration.mark({ class: "cm-indentWhitespace" });
-      for (let pos = from; pos < from + match[0].length; pos++) {
-        add(pos, pos + 1, marker);
-      }
-    },
-  });
-
-  const indentWhitespacePlugin = ViewPlugin.fromClass(
-    class {
-      decorations;
-
-      constructor(view: EditorView) {
-        this.decorations = indentWhitespaceDecorator.createDeco(view);
-      }
-
-      update(update: any) {
-        this.decorations = indentWhitespaceDecorator.updateDeco(
-          update,
-          this.decorations,
-        );
-      }
-    },
-    {
-      decorations: (value) => value.decorations,
-    },
-  );
-
-  const whitespaceTheme = EditorView.theme({
-    "&": {
-      "--whitespace-char": `'${whitespaceChar}'`,
-      "--whitespace-color": whitespaceColor,
-      "--whitespace-opacity": String(whitespaceOpacity),
-    },
-    ".cm-indentWhitespace": {
-      position: "relative",
-      color: "transparent",
-      overflow: "visible",
-      background: "transparent !important",
-      backgroundImage: "none !important",
-      backgroundSize: "auto !important",
-      backgroundPosition: "initial !important",
-    },
-    ".cm-indentWhitespace::before": {
-      content: "var(--whitespace-char)",
-      position: "absolute",
-      inset: "0 0 0 0",
-      display: "inline-block",
-      color: "var(--whitespace-color)",
-      opacity: "var(--whitespace-opacity)",
-      fontFamily: "monospace",
-      fontSize: "inherit",
-      lineHeight: "1",
-      pointerEvents: "none",
-      userSelect: "none",
-      textAlign: "center",
-    },
-  });
 </script>
 
 <CodeMirror
@@ -131,8 +76,9 @@
   onchange={handleOnChange}
   nodebounce={false}
   theme={solarizedLight}
+  autocompletion={false}
   extensions={[
-    debugKey,
+    // debugKey,
     buildOnShiftEnter,
     codeMirrorPug,
     foldingOnIndent,
@@ -141,6 +87,7 @@
     indentWhitespacePlugin,
     specialCommentExtension,
     mixinHighlightExtension,
+    duplicateLine,
   ]}
 />
 

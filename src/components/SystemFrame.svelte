@@ -145,6 +145,7 @@
               fs={systemFs.fs}
               onBuildEnds={afterBuild}
               onBuildError={handleBuildError}
+              project={systemFs.dirName || "default"}
             />
           </div>
         </div>
