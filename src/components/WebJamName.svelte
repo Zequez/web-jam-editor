@@ -7,7 +7,11 @@
   <div
     class="max-h-62 max-w-full aspect-ratio-[162/100] bg-gray-950 flex-cc rounded-md relative b-8 b-white/20 mx-auto"
   >
-    <img src="/gaia.webp" alt="Earth from space" class="w-1/2 z-11" />
+    <img
+      src="./gaia.webp"
+      alt="Earth from space"
+      class="w-1/2 z-11 hover:scale-150 transition-all duration-2000"
+    />
     <StarrySky class="z-10" density={150} />
   </div>
   <h1 class="text-12 sm:text-16 md:text-24 font-serif">Web Jam</h1>

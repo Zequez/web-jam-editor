@@ -58,7 +58,7 @@
               <div class="flex-cc w-full">
                 <img
                   class="block rounded-full bg-gray-400 h-24 w-24 b-3 b-green-600"
-                  src="/steward.webp"
+                  src="./steward.webp"
                   alt="Steward face photography"
                 />
               </div>

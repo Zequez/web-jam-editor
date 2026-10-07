@@ -1,14 +1,39 @@
 import type * as Pug from "pug";
+import YAML from "yaml";
 import { extract } from "../atomic-css-extractor/extractAtomicCss.ts";
+import MarkdownIt from "markdown-it";
+
+const md = new MarkdownIt();
 
 export const INPUT_FILE = "index.pug";
 export const OUTPUT_DIR = "www";
+
+function processYaml(pugCode: string) {
+  // crude first experiment
+  return pugCode.replace(/^:yaml\n((?: {2}.*\n?)*)/gm, (_, body) => {
+    const value = YAML.parse(body);
+
+    return (
+      Object.entries(value)
+        .map(([key, value]) => `- const ${key} = ${JSON.stringify(value)}`)
+        .join("\n") + "\n"
+    );
+  });
+}
+
+const filters = {
+  markdown(text: string) {
+    return md.render(text);
+  },
+};
 
 export function buildCompiler(pug: typeof Pug) {
   return async function compile(
     pugCode: string,
   ): Promise<{ [key: string]: string }> {
     const files: { [key: string]: string } = {};
+
+    pugCode = processYaml(pugCode);
 
     if (!pugCode.startsWith("doctype\n")) {
       pugCode = "doctype\n" + pugCode;
@@ -20,6 +45,7 @@ export function buildCompiler(pug: typeof Pug) {
         compileDebug: false,
         inlineRuntimeFunctions: true,
         name: "template",
+        filters,
       });
       output = renderTemplate({});
     } catch (e) {

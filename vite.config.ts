@@ -7,8 +7,6 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { defaultWebjamZip } from "./src-meta/vite-plugin-default-webjam.ts";
 import { plugin as mdPlugin, Mode } from "vite-plugin-markdown";
 
-console.log(mdPlugin);
-
 const previewServiceWorkerPath = "/preview__/service-worker.js";
 const previewRefreshClientPath = "/preview__/refresh-client.js";
 const projectRoot = fileURLToPath(new URL(".", import.meta.url));
@@ -60,6 +58,7 @@ function previewServiceWorker(): Plugin {
 }
 
 export default defineConfig({
+  base: "./",
   plugins: [
     svelte(),
     uno(),

@@ -22,6 +22,9 @@ switch (location.pathname) {
     props = { value: "" };
     break;
   }
+  default: {
+    Comp = SystemFrame;
+  }
 }
 
 if (Comp) {
