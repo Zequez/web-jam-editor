@@ -13,6 +13,9 @@
     indentWhitespacePlugin,
     whitespaceTheme,
   } from "./whitespaceHighlighter";
+  import { arbitraryStyleExtension, setStyledRanges } from "./arbitraryStyle";
+  import { onMount } from "svelte";
+  import { lex } from "@/lib/pure-pug-compiler/atomic-class-lexer";
 
   const codeMirrorPug = StreamLanguage.define(langPug);
 
@@ -24,9 +27,52 @@
   }>();
 
   let content: string = $state(initialValue || "");
+  let view: EditorView = $state(null!);
+
+  function handleReady(gotView: EditorView) {
+    view = gotView;
+
+    lexPug();
+  }
+
+  function lexPug() {
+    if (!view) return;
+
+    let ranges: { from: number; to: number; className: string }[] = [];
+    function addRange(from: number, to: number) {
+      ranges.push({ from, to, className: "atomic-class" });
+    }
+    const result = lex(content);
+    let pos = 0;
+    for (let i = 0; i < result.length; i++) {
+      const declaration = result[i]!;
+      if (declaration.type === "relevant") {
+        pos += declaration.indentation.length + declaration.elementPart.length;
+        addRange(pos + 1, pos + declaration.atomicClassSegment.length - 1);
+        pos += declaration.atomicClassSegment.length + declaration.rest.length;
+      } else {
+        pos += declaration.raw.length;
+      }
+    }
+
+    view.dispatch({
+      effects: setStyledRanges.of(ranges),
+    });
+  }
 
   function handleOnChange() {
     if (onChange) onChange(content);
+    debouncedLexPug();
+  }
+
+  let debouncedLexPugTimeout: ReturnType<typeof setTimeout> = null!;
+  function debouncedLexPug() {
+    if (debouncedLexPugTimeout) {
+      clearTimeout(debouncedLexPugTimeout);
+    }
+    debouncedLexPugTimeout = setTimeout(() => {
+      lexPug();
+    }, 400);
   }
 
   const immediateChange = EditorView.updateListener.of((update) => {
@@ -68,11 +114,40 @@
       },
     ]),
   );
+
+  function onSave() {
+    const result = lex(content);
+    let prettified = "";
+    for (let i = 0; i < result.length; i++) {
+      const declaration = result[i]!;
+      if (declaration.type === "relevant") {
+        prettified += declaration.indentation;
+        prettified += declaration.elementPart;
+        prettified += declaration.atomicClassSegment;
+        prettified += declaration.rest;
+      } else {
+        prettified += declaration.raw;
+      }
+    }
+
+    console.log(prettified);
+  }
+
+  const interceptSave = keymap.of([
+    {
+      key: "Mod-s",
+      run: () => {
+        onSave();
+        return true; // prevent the browser's default Save dialog
+      },
+    },
+  ]);
 </script>
 
 <CodeMirror
   class="h-full w-full block"
   bind:value={content}
+  onready={handleReady}
   onchange={handleOnChange}
   nodebounce={false}
   theme={solarizedLight}
@@ -88,6 +163,8 @@
     specialCommentExtension,
     mixinHighlightExtension,
     duplicateLine,
+    arbitraryStyleExtension,
+    interceptSave,
   ]}
 />
 

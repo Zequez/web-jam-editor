@@ -126,8 +126,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -684.1707439774798,
-			"y": 864.0747331718794,
+			"x": -848.07893091981,
+			"y": 1193.9440692443038,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -177,8 +177,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1160.0597171483175,
-			"y": 454.2930116282673,
+			"x": 1126.171243058767,
+			"y": 271.8267446051227,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -228,8 +228,59 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -173.71960633883208,
-			"y": 1027.6106813211045,
+			"x": 1085.0312534946227,
+			"y": -363.53918226583437,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:kPmh0o_eQkJmWwOuF60dG",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Save the toggled parts of the code so that they persist on reload"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "akryj",
+			"typeName": "shape"
+		},
+		{
+			"x": -101.19264717265213,
+			"y": 1521.8062573309319,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -279,9 +330,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 320.5315422664503,
-			"y": 236.50660861132303,
-			"z": 0.666324798148878,
+			"x": -29.548540248766475,
+			"y": 534.7421353178537,
+			"z": 0.6454997041824665,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -497,8 +548,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1099.6011794783467,
-			"y": 207.04624548412272,
+			"x": -644.4675793846129,
+			"y": 136.23039755958638,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -599,8 +650,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -183.21127169931685,
-			"y": 1189.640877590959,
+			"x": -110.6843125331369,
+			"y": 1683.8364536007864,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -650,8 +701,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -611.738070204161,
-			"y": 51.963215638842655,
+			"x": -272.5575656857477,
+			"y": 1038.1327576046876,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -701,8 +752,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -698.2656298847097,
-			"y": 616.9330415229044,
+			"x": -862.1738168270399,
+			"y": 946.8023775953288,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -778,7 +829,7 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:Vg-IL3K3f8sIjy0Lz_Yla"
+				"shape:xmFNTsLttGyhKXI_A8jSP"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -841,8 +892,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -691.8272509236841,
-			"y": 1291.5218342953133,
+			"x": -973.404201838134,
+			"y": 1559.6852917800327,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -940,6 +991,57 @@
 			},
 			"parentId": "page:page",
 			"index": "aOgNA",
+			"typeName": "shape"
+		},
+		{
+			"x": 1502.2193607235063,
+			"y": -207.43779823125146,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:xmFNTsLttGyhKXI_A8jSP",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Adapt the atomic CSS Pug lexer and use it so that CodeMirror highlights the atomic CSS differently"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "alUMP",
 			"typeName": "shape"
 		},
 		{
@@ -1045,8 +1147,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1121.9597385538698,
-			"y": 359.7778563133616,
+			"x": 1088.0712644643193,
+			"y": 177.311589290217,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1189,8 +1291,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -691.9487555306246,
-			"y": 1410.327290676025,
+			"x": -973.5257064450744,
+			"y": 1678.4907481607445,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1504,8 +1606,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -638.1821517662156,
-			"y": -82.67415774522004,
+			"x": -308.7604491449963,
+			"y": 850.3205877136506,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1648,8 +1750,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -650.7471107643175,
-			"y": 1119.8568170445371,
+			"x": -1088.3014796467855,
+			"y": 1382.612417422987,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1699,8 +1801,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -694.5997742027314,
-			"y": 216.62809167497318,
+			"x": -867.2218923285214,
+			"y": 698.2046581874722,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1768,8 +1870,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -633.9259296710487,
-			"y": 939.3452525565938,
+			"x": -797.8341166133789,
+			"y": 1269.2145886290182,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1870,8 +1972,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -167.78224114854368,
-			"y": 1349.93218352123,
+			"x": -95.25528198236373,
+			"y": 1844.1277595310573,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1921,8 +2023,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1084.6169218917323,
-			"y": -357.9147101859316,
+			"x": -624.0476348571783,
+			"y": 302.7551052693479,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1988,8 +2090,8 @@
 			"typeName": "document"
 		},
 		{
-			"x": -687.8518630238491,
-			"y": 1547.646160277808,
+			"x": -969.428813938299,
+			"y": 1815.8096177625273,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2096,8 +2198,8 @@
 			"typeName": "instance"
 		},
 		{
-			"x": -679.094478812436,
-			"y": 645.4882490563649,
+			"x": -843.0026657547662,
+			"y": 975.3575851287893,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2147,8 +2249,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -673.8206999808759,
-			"y": 750.2424587376491,
+			"x": -837.7288869232061,
+			"y": 1080.1117948100737,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
