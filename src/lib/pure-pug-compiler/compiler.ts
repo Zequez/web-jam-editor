@@ -46,7 +46,15 @@ export function buildCompiler(pug: typeof Pug) {
     }
 
     pugCode = forceDoctype(pugCode);
-    pugCode = preprocessPug(pugCode);
+
+    try {
+      pugCode = preprocessPug(pugCode);
+    } catch (e) {
+      return {
+        type: "pug-error",
+        error: e,
+      };
+    }
 
     let output = "";
     try {
