@@ -90,7 +90,13 @@ async function handlePreviewRequest(request: Request): Promise<Response> {
   for (const candidate of candidates) {
     const file = await requestProviderFile(previewRequest.sessionId, candidate);
     if (file.status === "ok")
-      return fileResponse(file.body, candidate, 200, isHeadRequest);
+      return fileResponse(
+        file.body,
+        candidate,
+        previewRequest.sessionId,
+        200,
+        isHeadRequest,
+      );
     if (file.status === "unavailable")
       return plainResponse(503, "Preview provider unavailable", isHeadRequest);
     // A filesystem error is not a missing path, so do not hide it as a 404.
@@ -103,7 +109,13 @@ async function handlePreviewRequest(request: Request): Promise<Response> {
     "404.html",
   );
   if (notFoundPage.status === "ok") {
-    return fileResponse(notFoundPage.body, "404.html", 404, isHeadRequest);
+    return fileResponse(
+      notFoundPage.body,
+      "404.html",
+      previewRequest.sessionId,
+      404,
+      isHeadRequest,
+    );
   }
   if (notFoundPage.status === "unavailable") {
     return plainResponse(503, "Preview provider unavailable", isHeadRequest);
@@ -221,6 +233,7 @@ async function requestProviderRegistration(sessionId: string): Promise<void> {
 function fileResponse(
   body: ArrayBuffer,
   path: string,
+  sessionId: string,
   status: number,
   isHeadRequest: boolean,
 ): Response {
@@ -228,7 +241,7 @@ function fileResponse(
   const responseBody = isHeadRequest
     ? null
     : isHtml(contentType)
-      ? injectRefreshClient(body)
+      ? injectRefreshClient(body, sessionId)
       : body;
 
   return new Response(responseBody, {
@@ -240,23 +253,28 @@ function fileResponse(
   });
 }
 
-function injectRefreshClient(body: ArrayBuffer): ArrayBuffer {
+function injectRefreshClient(body: ArrayBuffer, sessionId: string): ArrayBuffer {
+  const base = `<base href="${PREVIEW_NAMESPACE}${encodeURIComponent(sessionId)}/">`;
   const script = `<script type="module" src="${PREVIEW_REFRESH_CLIENT_PATH}"></script>`;
   const html = new TextDecoder().decode(body);
+  const openingHead = /<head(?:\s[^>]*)?>/i;
   const closingHead = /<\/head\s*>/i;
   const closingBody = /<\/body\s*>/i;
 
   if (closingHead.test(html)) {
+    const htmlWithBase = openingHead.test(html)
+      ? html.replace(openingHead, (head) => `${head}${base}`)
+      : html.replace(closingHead, `${base}</head>`);
     return new TextEncoder().encode(
-      html.replace(closingHead, `${script}</head>`),
+      htmlWithBase.replace(closingHead, `${script}</head>`),
     ).buffer;
   }
   if (closingBody.test(html)) {
     return new TextEncoder().encode(
-      html.replace(closingBody, `${script}</body>`),
+      html.replace(closingBody, `${base}${script}</body>`),
     ).buffer;
   }
-  return new TextEncoder().encode(`${html}${script}`).buffer;
+  return new TextEncoder().encode(`${html}${base}${script}`).buffer;
 }
 
 function isHtml(contentType: string): boolean {

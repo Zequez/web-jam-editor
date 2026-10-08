@@ -4,6 +4,15 @@ import { extract } from "../atomic-css-extractor/extractAtomicCss.ts";
 import MarkdownIt from "markdown-it";
 import { preprocessPug } from "./atomic-class-transformer.ts";
 
+import * as htmlparser2 from "htmlparser2";
+import {
+  Element,
+  type ChildNode,
+  type ParentNode,
+  type Document,
+} from "domhandler";
+import { render } from "dom-serializer";
+
 const md = new MarkdownIt();
 
 export const INPUT_FILE = "index.pug";
@@ -74,48 +83,83 @@ export function buildCompiler(pug: typeof Pug) {
 
     output = stripDoctypes(output);
 
-    // console.log(output);
+    const dom = htmlparser2.parseDocument(output);
+    const roots = ensureHTMLRoot(dom);
+
+    for (const root of roots) {
+      const embodiedRoot = ensureHeadAndBody(root as Element);
+      const rootWithStylesheet = injectStylesheetTagBeforeHead(
+        embodiedRoot,
+        "style.css",
+      );
+      const pageName =
+        htmlparser2.DomUtils.getAttributeValue(rootWithStylesheet, "name") ||
+        "index";
+      const outputHtml = render(rootWithStylesheet);
+
+      files[pageName === "index" ? "index.html" : `${pageName}/index.html`] =
+        `<!DOCTYPE html>${outputHtml}`;
+    }
 
     const [tokens, css] = await extract(output);
 
-    const styleImport = `<link rel="stylesheet" href="style.css">`;
-
-    const hasHtml = output.match("<html>");
-    const hasBody = output.match("<body");
-    const hasHead = output.match("<head>");
-
-    if (!hasHead && !hasBody) {
-      output = `<head>${styleImport}</head><body>${output}</body>`;
-    } else if (!hasHead && hasBody) {
-      output = `<head>${styleImport}</head>${output}`;
-    } else if (hasHead && !hasBody) {
-      output = output.replace(/<\/head>/, `${styleImport}</head>`);
-      const i = output.indexOf("</head>");
-      output = output.slice(0, i) + `<body>${output.slice(i + 7)}</body>`;
-    } else {
-      output = output.replace(/<\/head>/, `${styleImport}</head>`);
-    }
-
-    if (!hasHtml) {
-      output = `<html>${output}</html>`;
-    }
-
-    // if (!output.match("<body>"))
-    //   if (!output.match("<head>")) {
-    //     output = output.replace("<html>", `<html><head>${styleImport}</head>`);
-    //   } else {
-    //     output = output.replace("</head>", `${styleImport}</head>`);
-    //   }
-
-    if (!output.startsWith("<!DOCTYPE")) {
-      output = `<!DOCTYPE html>${output}`;
-    }
-
-    files["index.html"] = output;
     files["style.css"] = css;
 
     return { type: "success", files };
   };
+}
+
+function injectStylesheetTagBeforeHead(root: Element, href: string) {
+  const head = root.children.find(
+    (child) => child instanceof Element && child.name === "head",
+  )!;
+
+  if (!head) {
+    throw new Error("Expected <head> to exist");
+  }
+
+  const link = new Element("link", {
+    rel: "stylesheet",
+    href,
+  });
+
+  htmlparser2.DomUtils.prependChild(head as ParentNode, link);
+
+  return root;
+}
+
+function ensureHeadAndBody(root: Element) {
+  let head = htmlparser2.DomUtils.getElementsByTagName(
+    "head",
+    root.children,
+    true,
+  )[0];
+
+  let body = htmlparser2.DomUtils.getElementsByTagName(
+    "body",
+    root.children,
+    true,
+  )[0];
+
+  if (!head) {
+    head = new Element("head", {});
+    htmlparser2.DomUtils.prependChild(root, head);
+  }
+
+  if (!body) {
+    body = new Element("body", {});
+    htmlparser2.DomUtils.appendChild(root, body);
+  }
+
+  // Move every direct child that isn't <head> or <body> into <body>.
+  for (const child of [...root.children]) {
+    if (child !== head && child !== body) {
+      htmlparser2.DomUtils.removeElement(child);
+      htmlparser2.DomUtils.appendChild(body, child);
+    }
+  }
+
+  return root;
 }
 
 function forceDoctype(code: string) {
@@ -127,4 +171,25 @@ function forceDoctype(code: string) {
 
 function stripDoctypes(code: string) {
   return code.replace(/<!DOCTYPE html>/g, "");
+}
+
+function ensureHTMLRoot(dom: Document): ChildNode[] {
+  const existingHTMLs = dom.children.filter(
+    (node) => node instanceof Element && node.name === "html",
+  );
+
+  if (existingHTMLs.length > 0) {
+    return existingHTMLs;
+  }
+
+  const html = new Element("html", {});
+
+  for (const child of [...dom.children]) {
+    htmlparser2.DomUtils.removeElement(child);
+    htmlparser2.DomUtils.appendChild(html, child);
+  }
+
+  htmlparser2.DomUtils.appendChild(dom, html);
+
+  return [html];
 }

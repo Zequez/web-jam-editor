@@ -55,7 +55,9 @@
   }
 
   export function refresh() {
-    iframe.contentWindow?.location.reload();
+    if (iframe.contentWindow) {
+      iframe.contentWindow.location.href = derivedSrc;
+    }
   }
 
   let derivedSrc = $derived(src.startsWith("/") ? previewPathPart + src : src);
@@ -72,7 +74,7 @@
       onkeyup={(e) => e.key === "Enter" && handleGo()}
       value={address}
       oninput={(e) => (address = e.currentTarget.value)}
-      class="bg-white b-2 b-black/30 focus:b-violet-500 outline-0 px2 rounded-1 shrink-0 mr-1 block flex-grow"
+      class="bg-white b-2 font-mono b-black/30 focus:b-violet-500 outline-0 px1 rounded-1 shrink-0 mr-1 block flex-grow"
     />
     <button
       class="bg-blue-400 hover:bg-blue-500 mr-1 text-white rounded-1 font-semibold px2 cursor-pointer"

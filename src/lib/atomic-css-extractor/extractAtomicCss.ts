@@ -10,8 +10,6 @@ export async function extract(html: string): Promise<[Set<string>, string]> {
     tokens.add(token);
   }
 
-  tokens.add(`[text-6/30=""]`);
-
   const { css } = await uno.generate([...tokens], {
     preflights: true,
     minify: false,
