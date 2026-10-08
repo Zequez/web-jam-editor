@@ -2,7 +2,7 @@ import unoConfig from "./uno-browser-config.ts";
 import { createGenerator } from "@unocss/core";
 const uno = await createGenerator(unoConfig);
 
-export async function extract(html: string) {
+export async function extract(html: string): Promise<[Set<string>, string]> {
   const tokens = new Set<string>();
 
   const result = await uno.applyExtractors(html);
@@ -10,10 +10,12 @@ export async function extract(html: string) {
     tokens.add(token);
   }
 
+  tokens.add(`[text-6/30=""]`);
+
   const { css } = await uno.generate([...tokens], {
     preflights: true,
     minify: false,
   });
 
-  return css;
+  return [tokens, css];
 }

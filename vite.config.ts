@@ -71,7 +71,21 @@ export default defineConfig({
       brotliSize: true,
       template: "treemap",
     }),
-    defaultWebjamZip(),
+    // defaultWebjamZip(),
+    {
+      name: "goatcounter-production-only",
+
+      transformIndexHtml(html, ctx) {
+        if (ctx.server) {
+          return html.replace(
+            /<script\s+data-goatcounter[\s\S]*?<\/script>/,
+            "",
+          );
+        }
+
+        return html;
+      },
+    },
   ],
   resolve: {
     alias: {

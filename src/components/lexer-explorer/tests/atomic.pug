@@ -1,0 +1,8 @@
+- const color = 'sky'
+
+html
+  head
+  body[font-mono text-${color}-500 md-4 bg-white/40 text-5/12 sm:text-10/20 text-shadow-[0_1px_5px_#000]]
+    div[bg-white](title="This should work") Hello world
+    div[bg-white](title="This should be silently ignored and end up with two class attributes", class="something") Hello world
+    div[bg-blue]() This should not be an issue

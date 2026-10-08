@@ -2,6 +2,7 @@ import type * as Pug from "pug";
 import YAML from "yaml";
 import { extract } from "../atomic-css-extractor/extractAtomicCss.ts";
 import MarkdownIt from "markdown-it";
+import { preprocessPug } from "./atomic-class-transformer.ts";
 
 const md = new MarkdownIt();
 
@@ -44,9 +45,8 @@ export function buildCompiler(pug: typeof Pug) {
       };
     }
 
-    if (!pugCode.startsWith("doctype\n")) {
-      pugCode = "doctype\n" + pugCode;
-    }
+    pugCode = forceDoctype(pugCode);
+    pugCode = preprocessPug(pugCode);
 
     let output = "";
     try {
@@ -58,19 +58,17 @@ export function buildCompiler(pug: typeof Pug) {
       });
       output = renderTemplate({});
     } catch (e) {
-      // console.error("Pug error!", e);
       return {
         type: "pug-error",
         error: e,
       };
     }
 
-    output = output.replace("<!DOCTYPE html>", "");
+    output = stripDoctypes(output);
 
     // console.log(output);
 
-    const css = await extract(output);
-    // console.log(css);
+    const [tokens, css] = await extract(output);
 
     const styleImport = `<link rel="stylesheet" href="style.css">`;
 
@@ -110,4 +108,15 @@ export function buildCompiler(pug: typeof Pug) {
 
     return { type: "success", files };
   };
+}
+
+function forceDoctype(code: string) {
+  if (!code.startsWith("doctype\n")) {
+    return "doctype\n" + code;
+  }
+  return code;
+}
+
+function stripDoctypes(code: string) {
+  return code.replace(/<!DOCTYPE html>/g, "");
 }
