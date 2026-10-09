@@ -5,7 +5,7 @@ import { Tldraw, parseTldrawJsonFile, type Editor } from "tldraw";
 import "tldraw/tldraw.css";
 
 async function loadRoadmap(editor: Editor) {
-  const response = await fetch("./Architecture.tldr");
+  const response = await fetch("./docs/Architecture.tldr");
   if (!response.ok) {
     throw new Error(`Could not load Roadmap.tldr (${response.status}).`);
   }

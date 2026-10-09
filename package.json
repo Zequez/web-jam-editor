@@ -1,6 +1,7 @@
 {
   "name": "web-jam-editor",
-  "author": "Ezequiel Adrian Schwartzman",
+  "author": "Ezequiel Adrián Schwartzman",
+  "version": "0.1.0",
   "contributors": ["Gaia"],
   "module": "index.ts",
   "type": "module",
@@ -52,6 +53,7 @@
     "unocss": "^66.10.5",
     "vite": "^8.3.0",
     "vite-plugin-markdown": "^2.2.0",
+    "vite-plugin-static-copy": "^4.1.1",
     "yaml": "^2.9.1"
   }
 }

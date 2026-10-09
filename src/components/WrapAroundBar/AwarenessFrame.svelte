@@ -1,6 +1,6 @@
 <script lang="ts">
   let { isOpen }: { isOpen: boolean } = $props();
-  import {html as noteHtml} from './note.md'
+  import { html as noteHtml } from "./note.md";
 </script>
 
 <div
@@ -30,18 +30,32 @@
     ]}
   >
     <div>
-      <a
-        href="/roadmap"
-        target="_blank"
-        class="
-        block mx-auto w-100
+      <div class="grid gap-4 cols-2">
+        <a
+          href="/roadmap"
+          target="_blank"
+          class="
+        flex-cc mx-auto justify-self-right
         my6 p3
         font-mono font-bold text-4/6 uppercase text-center
         text-white text-shadow-[0_1px_0_#0007]
         bg-yellow-400 hover:bg-yellow-300 bg-linear-to-br from-white/10
         rounded-1 b b-black/10
-        ">Project Roadmap</a
-      >
+        ">Web Jam Roadmap</a
+        >
+        <a
+          href="/architecture"
+          target="_blank"
+          class="
+        flex-cc mx-auto justify-self-left
+        my6 p3
+        font-mono font-bold text-4/6 uppercase text-center
+        text-white text-shadow-[0_1px_0_#0007]
+        bg-blue-400 hover:bg-blue-300 bg-linear-to-br from-white/10
+        rounded-1 b b-black/10
+        ">Web Jam Architecture</a
+        >
+      </div>
       <div class="markdown">
         {@html noteHtml}
       </div>

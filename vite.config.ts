@@ -6,6 +6,7 @@ import uno from "unocss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 import { defaultWebjamZip } from "./src-meta/vite-plugin-default-webjam.ts";
 import { plugin as mdPlugin, Mode } from "vite-plugin-markdown";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 const previewServiceWorkerPath = "/preview__/service-worker.js";
 const previewRefreshClientPath = "/preview__/refresh-client.js";
@@ -86,6 +87,12 @@ export default defineConfig({
         return html;
       },
     },
+    viteStaticCopy({
+      targets: [
+        { src: "docs/Roadmap.tldr", dest: "./" },
+        { src: "docs/Architecture.tldr", dest: "./" },
+      ],
+    }),
   ],
   resolve: {
     alias: {

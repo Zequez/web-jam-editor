@@ -564,12 +564,54 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 201.2025373029468,
-			"y": 218.69226382556533,
-			"z": 0.580173389562741,
+			"x": 4443.733820178623,
+			"y": 1534.0467986162348,
+			"z": 0.20569127010225788,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
+		},
+		{
+			"x": -3665.344253174339,
+			"y": 15.764903166855902,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:J7D1fuidX_aaTj0xsgy_B",
+			"type": "text",
+			"props": {
+				"color": "green",
+				"size": "xl",
+				"w": 199.45901782025837,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 2.6507046044022275,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "v0.1.0"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b09FbQ",
+			"typeName": "shape"
 		},
 		{
 			"x": 1297.401770572533,
@@ -1140,12 +1182,10 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": "shape:kz2t7frAy-sCwhnzzHYcX",
+			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:kz2t7frAy-sCwhnzzHYcX"
-			],
-			"hoveredShapeId": "shape:kz2t7frAy-sCwhnzzHYcX",
+			"selectedShapeIds": [],
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -2598,8 +2638,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3484.434041739826,
-			"y": -240.13162139724636,
+			"x": -3547.53763574255,
+			"y": -230.49733087952131,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -3112,15 +3152,7 @@
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:color": "grey",
-				"tldraw:size": "s",
-				"tldraw:geo": "rectangle",
-				"tldraw:fill": "solid",
-				"tldraw:textAlign": "middle",
-				"tldraw:dash": "draw",
-				"tldraw:horizontalAlign": "start",
-				"tldraw:verticalAlign": "middle",
-				"tldraw:font": "mono"
+				"tldraw:color": "green"
 			},
 			"brush": null,
 			"scribbles": [],

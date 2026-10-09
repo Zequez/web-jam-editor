@@ -4,6 +4,14 @@ A small, inspectable, browser-native web-making environment that helps ordinary 
 
 ![Screenshot](screenshot.webp)
 
+## Useful Links
+
+- Project Roadmap & Canvas-based Kanban board `docs/Roadmap.tldr` on [webjam.space/roadmap](https://webjam.space/roadmap).
+- Web Jam Architecture at `docs/Architecture.tldr` on [webjam.space/architecture](https://webjam.space/roadmap)
+- [Release checklist](docs/release.md)
+- [CHANGELOG.md](CHANGELOG.md)
+- [AGENTS.md](AGENTS.md)
+
 ## Purpose
 
 And there are really **three overlapping purposes**.
@@ -76,4 +84,4 @@ bun start
 
 # License
 
-Web Jam is open source software licensed under the Mozilla Public License 2.0.
+Web Jam is open source software licensed under the [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/).

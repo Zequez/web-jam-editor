@@ -634,9 +634,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 2157.858069063677,
-			"y": 2372.95133247524,
-			"z": 0.2375132775412739,
+			"x": -1043.6493916659635,
+			"y": 1873.8421263392574,
+			"z": 0.43760105712196856,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -1011,10 +1011,61 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 3357.355858224385,
+			"y": -1036.3819599634978,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:FrYIAnS9u1nA_Ht8DhFNz",
+			"type": "geo",
+			"props": {
+				"w": 186,
+				"h": 80,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Free Software Foundation"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0fGdE",
+			"typeName": "shape"
+		},
+		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:jOUQ4IYusaXpUF4gwPbJm"
+				"shape:FrYIAnS9u1nA_Ht8DhFNz"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -2060,7 +2111,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "ns-resize",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -2098,6 +2149,57 @@
 			"id": "instance:instance",
 			"currentPageId": "page:page",
 			"typeName": "instance"
+		},
+		{
+			"x": 3295.174071899076,
+			"y": -920.4573559836049,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:YdaKkU8EcePzbJA3qA8vS",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Mozilla"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0e6xb",
+			"typeName": "shape"
 		},
 		{
 			"x": 1661.1088074363684,
