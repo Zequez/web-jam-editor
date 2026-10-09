@@ -3,7 +3,6 @@
 
   let { onClose } = $props<{ onClose: () => void }>();
 
-  // function handleClickOut(ev: MouseEvent) {}
   onMount(() => {
     function esc(ev: KeyboardEvent) {
       if (ev.key === "Escape") {

@@ -145,6 +145,57 @@
 			"typeName": "pointer"
 		},
 		{
+			"x": 1547.0601267202144,
+			"y": 1001.5954527186416,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:r5ozBYhA8dUp6f9BTsOGO",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "CodeMirror highlighter that I fully understand and it’s not hacked together through complex vibe coded fragments"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b08i3X",
+			"typeName": "shape"
+		},
+		{
 			"x": 2419.07,
 			"y": 1976.47,
 			"rotation": 0,
@@ -513,9 +564,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 4544.450713644274,
-			"y": 2778.75470909534,
-			"z": 0.17642770904319247,
+			"x": 201.2025373029468,
+			"y": 218.69226382556533,
+			"z": 0.580173389562741,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -1006,6 +1057,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1606.4840045374003,
+			"y": 227.82361597886643,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:X7BuBW-Go6MBPsqg5Fy3D",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Custom Atomic CSS lexer so that different categories of properties are hightlighted with different colors"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b06qt2",
+			"typeName": "shape"
+		},
+		{
 			"x": -3153.3180678601407,
 			"y": 494.0711268034513,
 			"rotation": 0,
@@ -1038,10 +1140,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:kz2t7frAy-sCwhnzzHYcX",
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
-			"hoveredShapeId": null,
+			"selectedShapeIds": [
+				"shape:kz2t7frAy-sCwhnzzHYcX"
+			],
+			"hoveredShapeId": "shape:kz2t7frAy-sCwhnzzHYcX",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -1319,8 +1423,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1669.3073161063298,
-			"y": -175.73469273053524,
+			"x": -882.574823717428,
+			"y": 127.03657852538004,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2580,6 +2684,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1547.4566314686992,
+			"y": 851.415044866432,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:kz2t7frAy-sCwhnzzHYcX",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Extend the Pug Lexer for real; take a stand for integrating first class Atomic CSS language support for Pug 4.0 features"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b07Uqy",
+			"typeName": "shape"
+		},
+		{
 			"x": 158.93997541066904,
 			"y": 18.16386294539427,
 			"rotation": 0,
@@ -2970,7 +3125,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "ew-resize",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
