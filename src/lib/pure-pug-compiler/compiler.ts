@@ -4,6 +4,8 @@ import { extract } from "../atomic-css-extractor/extractAtomicCss.ts";
 import MarkdownIt from "markdown-it";
 import { preprocessPug } from "./atomic-class-transformer.ts";
 
+const $ = htmlparser2.DomUtils;
+
 import * as htmlparser2 from "htmlparser2";
 import {
   Element,
@@ -55,6 +57,7 @@ export function buildCompiler(pug: typeof Pug) {
     }
 
     pugCode = forceDoctype(pugCode);
+    pugCode += `\nmeta(name="cname" value=CNAME)`;
 
     try {
       pugCode = preprocessPug(pugCode);
@@ -81,9 +84,23 @@ export function buildCompiler(pug: typeof Pug) {
       };
     }
 
-    output = stripDoctypes(output);
+    console.log(output);
 
     const dom = htmlparser2.parseDocument(output);
+    const cname = $.findOne(
+      (elem) =>
+        elem.type === "tag" &&
+        elem.name === "meta" &&
+        elem.attribs.name === "cname",
+      dom,
+    );
+
+    if (cname && cname.attribs.value) {
+      files["CNAME"] = cname.attribs.value;
+      $.removeElement(cname);
+    }
+
+    output = stripDoctypes(output);
     const roots = ensureHTMLRoot(dom);
 
     for (const root of roots) {

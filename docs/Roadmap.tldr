@@ -381,6 +381,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": -850.9990714581379,
+			"y": 440.61575047355916,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:4-OmdHjx4dxJ3ya3JYFmT",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "red",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Ensure /roadmap and /architecture load; make sure Roadmap.tldr and Architecture.tldr are bundled"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0Ac0M",
+			"typeName": "shape"
+		},
+		{
 			"x": 789.0296280992445,
 			"y": -265.4138507306694,
 			"rotation": 0,
@@ -564,9 +615,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 4443.733820178623,
-			"y": 1534.0467986162348,
-			"z": 0.20569127010225788,
+			"x": 1133.7099971721427,
+			"y": 952.8980967233913,
+			"z": 0.47337413815709684,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -1184,8 +1235,10 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
-			"hoveredShapeId": null,
+			"selectedShapeIds": [
+				"shape:4-OmdHjx4dxJ3ya3JYFmT"
+			],
+			"hoveredShapeId": "shape:4-OmdHjx4dxJ3ya3JYFmT",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -3151,9 +3204,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:color": "green"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
