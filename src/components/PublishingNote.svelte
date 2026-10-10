@@ -27,38 +27,53 @@
   <div
     class="block space-y-3 w-100 mx-auto bg-white rounded-2 z-800 shadow-lg text-black p6 z-11 relative"
   >
-    <h2 class="text-6/12">Note on publishing</h2>
+    <h2 class="text-6/12">A note on publishing</h2>
+    <p class="font-bold">Your website. Your domain. Your sovereignty.</p>
     <p>
-      <em>Soverign publishing</em> of a website is a non-trivial matter and a valuable
-      skill for an edgeworker.
+      Publishing a website under your own domain is a valuable skill for any
+      <a
+        class="text-blue underline"
+        href="https://edgeworker.startover.world/"
+        target="_blank">Edgeworker</a
+      >. It's a step toward owning your presence on the Internet rather than
+      depending entirely on platforms that someone else controls.
     </p>
+    <p>There are a few things to learn along the way:</p>
 
     <ul class="pl6 list-disc">
-      <li>Choose a domain name</li>
-      <li>Choose a domain name registrar provider</li>
-      <li>Choose a hosting provider</li>
-      <li>Choose the website you will publish</li>
-      <li>Learn how to connect all these</li>
+      <li>Choose a domain name that feels right for you.</li>
+      <li>Find a domain registrar to register it.</li>
+      <li>Choose where to host your website.</li>
+      <li>Prepare the website you want to publish.</li>
+      <li>Learn how to connect everything together.</li>
     </ul>
 
     <p>
-      No one can do this for you; more interestingly, no one can stop you from
-      doing it.
+      These pieces might seem intimidating at first, but they're not beyond your
+      reach. Once you understand how they fit together, publishing a website can
+      be surprisingly simple — and can cost you nothing beyond the domain
+      itself, if you choose your tools wisely.
+    </p>
+
+    <p class="font-bold">
+      No one can do this for you; more interestingly, none can stop you from
+      learning to do it.
     </p>
 
     <p>
-      And this can all be done for free and effortlessly <em
-        >once you know what you are doing</em
-      >.
+      You can explore it on your own, ask a synthetic intelligence to guide you,
+      or learn alongside another human.
     </p>
 
-    <p class="bg-yellow-100">
-      Schedule a call with me and I'll share with you what I know.
+    <h3 class="text-5/12">Let's figure it out together</h3>
+
+    <p>
+      If you'd like a hand, schedule a one-hour call with me. Bring your
+      questions, your website, or simply your curiosity. I'll share what I know
+      and help you find a path that works for you.
     </p>
 
-    <p>For one hour together, paid at your convenience.</p>
-
-    <p class="font-bold">4-tier pricing:</p>
+    <p class="font-bold">One hour together, paid at your convenience.</p>
 
     {#snippet Tier(colorClass: string, color: string)}
       <span
@@ -94,7 +109,7 @@
       target="_blank"
       class="block my-12 bg-gradient-to-br from-white/10 shadow-[0_1.5px_0] shadow-amber-600 bg-amber-400 font-bold text-white text-shadow-[0_1px_0_#0004] hover:bg-amber-300 rounded-full p3 text-center"
     >
-      Schedule a 1hr call with me
+      Schedule a one-hour call
     </a>
 
     <p>
@@ -103,11 +118,6 @@
         target="_blank"
         href="https://ezequielschwartzman.org">Ezequiel</a
       >
-    </p>
-
-    <p class="italic">
-      Or ask any synthetic intelligece for advice and discover it at your own
-      pace.
     </p>
   </div>
 </div>

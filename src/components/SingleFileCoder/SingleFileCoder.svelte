@@ -77,7 +77,7 @@
   }
 
   const immediateChange = EditorView.updateListener.of((update) => {
-    console.log("Immediate change");
+    // console.log("Immediate change");
     if (update.docChanged) {
       onTyping();
     }

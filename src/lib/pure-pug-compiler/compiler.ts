@@ -85,7 +85,7 @@ export function buildCompiler(pug: typeof Pug) {
       };
     }
 
-    console.log(output);
+    // console.log(output);
 
     let iconsFileName: string = "";
     const foundIcons = scanForIcons(output);

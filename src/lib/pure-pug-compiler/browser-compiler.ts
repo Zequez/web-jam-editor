@@ -20,7 +20,7 @@ export async function build(): Promise<CompileResult> {
     return result;
   } else if (result.type === "success") {
     const files = result.files;
-    console.log("Saving files", files);
+    // console.log("Saving files", files);
     for (let file in files) {
       let pathName = file.split("/");
       pathName.pop();
