@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getPreviewUrlStore } from "@/stores/previewUrlStore.svelte";
   import ImagesBox from "./ImagesBox.svelte";
+  import GlobalFilesDrop from "./GlobalFilesDrop.svelte";
 
   type Tabs = "Syntax" | "Images" | "Publishing" | "Icons" | "none";
   let currentTab = $state<Tabs>("Images");
@@ -38,6 +39,10 @@
     };
     input.click();
   }
+
+  function handleDroppedImages(files: FileList) {
+    onFilesAdded(Array.from(files));
+  }
 </script>
 
 {#snippet Tab(
@@ -66,6 +71,8 @@
     {name}
   </button>
 {/snippet}
+
+<GlobalFilesDrop onFilesDrop={handleDroppedImages} />
 
 <div class="size-full flex-cc flex-col">
   <div
