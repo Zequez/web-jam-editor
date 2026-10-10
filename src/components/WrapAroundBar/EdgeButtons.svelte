@@ -8,7 +8,17 @@
   function selectTab(nextTab: "sustainers" | "awareness") {
     tab = tab === nextTab ? "none" : nextTab;
   }
+
+  function handleEscKey(ev: KeyboardEvent) {
+    if (tab !== "none") {
+      if (ev.key === "Escape") {
+        tab = "none";
+      }
+    }
+  }
 </script>
+
+<svelte:window on:keydown={tab === "none" ? undefined : handleEscKey} />
 
 <div class="h-full relative z-1000 flex-cc gap-0.8">
   <EdgeButton
