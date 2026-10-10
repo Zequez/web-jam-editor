@@ -13,7 +13,9 @@
     "test": "bun test",
     "test:watch": "bun test --watch",
     "deploy": "gh-pages -d dist -b www",
-    "publish": "bun run build && bun run deploy"
+    "publish": "bun run build && bun run deploy",
+    "gen:icons": "bun run src-meta/setup-icons.ts && bun run src-meta/gen-icons-map.ts",
+    "postinstall": "bun run gen:icons"
   },
   "devDependencies": {
     "@types/bun": "latest"

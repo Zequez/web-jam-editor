@@ -32,6 +32,19 @@ export const iconsMaps: Record<IconsAvailable, Record<string, string>> = {
   faBrands: brands,
 };
 
+let fonts = {} as Record<IconsAvailable, opentype.Font>;
+
+async function fetchFonts() {
+  if (Object.keys(fonts).length > 0) {
+    return;
+  }
+  fonts = {
+    faSolid: await fetchFont("/font-awesome/fa-solid-900.ttf"),
+    faRegular: await fetchFont("/font-awesome/fa-regular-400.ttf"),
+    faBrands: await fetchFont("/font-awesome/fa-brands-400.ttf"),
+  };
+}
+
 async function fetchFont(path: string) {
   const response = await fetch(path);
   if (response.ok) {
@@ -46,12 +59,7 @@ async function fetchFont(path: string) {
 export async function generateIconsFontCss(
   iconsExtracts: Record<IconsAvailable, string[]>,
 ) {
-  const fonts: Record<IconsAvailable, opentype.Font> = {
-    faSolid: await fetchFont("/font-awesome/fa-solid-900.ttf"),
-    faRegular: await fetchFont("/font-awesome/fa-regular-400.ttf"),
-    faBrands: await fetchFont("/font-awesome/fa-brands-400.ttf"),
-  };
-
+  await fetchFonts();
   const icons: { [key: string]: opentype.Path } = {};
 
   Object.entries(iconsExtracts).forEach(([iconFontName, iconsToExtract]) => {
