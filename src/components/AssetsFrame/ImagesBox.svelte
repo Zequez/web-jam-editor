@@ -49,6 +49,9 @@
   }
 </script>
 
+{#if imagesList.length === 0}
+  <div class="text-center w-full my-4 font-mono">Drop some images</div>
+{/if}
 <div class="font-mono grid gap-1.5 cols-2">
   {#each imagesList as img}
     <div class="flex-cs">

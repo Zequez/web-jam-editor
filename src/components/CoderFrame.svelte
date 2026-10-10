@@ -149,9 +149,8 @@
 {:else}
   <div class="size-full flex flex-col">
     <div
-      class="h-6 bg-gray-700 font-mono text-3/6 flex-cs pl-2 text-white relative"
+      class="h-6 shrink-0 bg-gray-700 font-mono text-3/6 flex-cs pl-2 text-white relative"
     >
-      <span class="mr2">{INPUT_FILE}</span>
       <BuildProgressBar progress={buildScheduleProgress} />
       <AutoBuildBtn
         onManualBuild={doBuild}
@@ -168,11 +167,14 @@
         <PublishingNote onClose={() => (showPublishingNote = false)} />
       {/if}
     </div>
-    <SingleFileCoder
-      initialValue={content}
-      onChange={handleChange}
-      onTyping={handleChanging}
-      onBuildAction={doBuild}
-    />
+    <!-- <div class="h-20 shrink-0 bg-green-600"></div> -->
+    <div class="flex-grow h-1">
+      <SingleFileCoder
+        initialValue={content}
+        onChange={handleChange}
+        onTyping={handleChanging}
+        onBuildAction={doBuild}
+      />
+    </div>
   </div>
 {/if}

@@ -14,6 +14,7 @@ import {
   type Document,
 } from "domhandler";
 import { render } from "dom-serializer";
+import { generateIconsFontCss, scanForIcons } from "../icons-engine.ts";
 
 const md = new MarkdownIt();
 
@@ -86,6 +87,26 @@ export function buildCompiler(pug: typeof Pug) {
 
     console.log(output);
 
+    let iconsFileName: string = "";
+    const foundIcons = scanForIcons(output);
+    if (Object.values(foundIcons).some((icons) => icons.length)) {
+      const startTime = Date.now();
+      let iconsCss: string;
+      try {
+        iconsCss = await generateIconsFontCss(foundIcons);
+      } catch (e) {
+        return {
+          type: "pug-error",
+          error: e,
+        };
+      }
+      const endTime = Date.now();
+      console.log("Generated icons font in ", endTime - startTime, "ms");
+
+      iconsFileName = "icons.css";
+      files[iconsFileName] = iconsCss;
+    }
+
     const dom = htmlparser2.parseDocument(output);
     const cname = $.findOne(
       (elem) =>
@@ -104,15 +125,14 @@ export function buildCompiler(pug: typeof Pug) {
     const roots = ensureHTMLRoot(dom);
 
     for (const root of roots) {
-      const embodiedRoot = ensureHeadAndBody(root as Element);
-      const rootWithStylesheet = injectStylesheetTagBeforeHead(
-        embodiedRoot,
-        "style.css",
-      );
+      let outputRoot = ensureHeadAndBody(root as Element);
+      outputRoot = injectStylesheetTagBeforeHead(outputRoot, "style.css");
+      if (iconsFileName) {
+        outputRoot = injectStylesheetTagBeforeHead(outputRoot, iconsFileName);
+      }
       const pageName =
-        htmlparser2.DomUtils.getAttributeValue(rootWithStylesheet, "name") ||
-        "index";
-      const outputHtml = render(rootWithStylesheet);
+        htmlparser2.DomUtils.getAttributeValue(outputRoot, "name") || "index";
+      const outputHtml = render(outputRoot);
 
       files[pageName === "index" ? "index.html" : `${pageName}/index.html`] =
         `<!DOCTYPE html>${outputHtml}`;

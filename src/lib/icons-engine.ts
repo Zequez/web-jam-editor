@@ -24,6 +24,8 @@ export const iconsFontsNames: Record<IconsAvailable, string> = {
   faBrands: "Font Awesome 7 Brands",
 };
 
+export type IconsDeclaration = Record<IconsAvailable, string[]>;
+
 export const iconsMaps: Record<IconsAvailable, Record<string, string>> = {
   faSolid: solid,
   faRegular: regular,
@@ -68,4 +70,23 @@ export async function generateIconsFontCss(
   const { css } = generateIconFont(icons);
 
   return css;
+}
+
+export function scanForIcons(text: string): IconsDeclaration {
+  const icons: IconsDeclaration = {
+    faSolid: [],
+    faRegular: [],
+    faBrands: [],
+  };
+
+  Object.entries(iconsPrefixes).forEach(([iconFontName, prefix]) => {
+    // const names = Object.keys(iconsMaps[iconFontName as IconsAvailable]);
+
+    const regex = new RegExp(`\\bicon-${prefix}-([a-zA-Z0-9-]+)\\b`, "g");
+    text.matchAll(regex).forEach((match) => {
+      icons[iconFontName as IconsAvailable].push(match[1]!);
+    });
+  });
+
+  return icons;
 }

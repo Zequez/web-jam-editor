@@ -6,7 +6,7 @@ const FONT_MIME = "font/otf";
 const UNITS_PER_EM = 1000;
 const ASCENDER = 800;
 const DESCENDER = -200;
-const ADVANCE_WIDTH = 1000;
+const ADVANCE_WIDTH = 530;
 
 export type IconPaths = Record<string, string | opentype.Path>;
 
@@ -75,10 +75,12 @@ export function generateIconFont(icons: IconPaths): IconFontResult {
       path = iconPath;
     }
 
+    const advanceWidth = path.getBoundingBox().x2;
+
     const glyph = new opentype.Glyph({
       name,
       unicode,
-      advanceWidth: ADVANCE_WIDTH,
+      advanceWidth,
       path,
     });
 
