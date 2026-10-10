@@ -1208,9 +1208,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 428.6728320415301,
-			"y": -989.6513938919632,
-			"z": 0.42848553227095637,
+			"x": 5781.223977786822,
+			"y": 1301.0660085753052,
+			"z": 0.15494494646457802,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -2633,10 +2633,8 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:tusUv1BhewDQMk8Uf9TGq"
-			],
-			"hoveredShapeId": "shape:tusUv1BhewDQMk8Uf9TGq",
+			"selectedShapeIds": [],
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -4320,8 +4318,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1325.850492431158,
-			"y": 1429.3849829322562,
+			"x": 1281.063030248249,
+			"y": 1223.0853992002187,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4333,7 +4331,7 @@
 				"h": 130.25384521484378,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 0,
+				"growY": 597.7461547851562,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
@@ -4359,7 +4357,168 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Font-based icons generated on-the-fly by static analysis of the Pug output using `i-fa-<icon>` for Font-Awesome"
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Font Icons Engine"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": " With built in support for Font-Awesome 7 using the glyph names"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "It takes a list of gliphs names from one of the preset fonts or SVG paths and generates a custom font using opentype.js and then it generates a stylesheet with that urlencoded font that can be embedded and used."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "There is an Icons tab on the Assets box that lists all the icons found in the Pug code. You can also add a FONTS_ICONS:"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "  potato: <svg_path>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "to the :yaml and the icon becomes available"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "icon-fab-github"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "icon-fab-chrome"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "icon-far-home"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "icon-fa-arrow-right"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "icon-potato"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "All the icons are the usable from the icon font; which is awesome according to Ezequiel because you can use text-shadow with them."
 								}
 							]
 						}
@@ -5797,16 +5956,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:geo": "rectangle",
-				"tldraw:fill": "solid",
-				"tldraw:size": "l",
-				"tldraw:font": "draw",
-				"tldraw:color": "blue",
-				"tldraw:dash": "draw",
-				"tldraw:horizontalAlign": "start",
-				"tldraw:verticalAlign": "start"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -5821,7 +5971,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 945
+				"h": 920
 			},
 			"insets": [
 				false,
@@ -5838,7 +5988,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": null,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,

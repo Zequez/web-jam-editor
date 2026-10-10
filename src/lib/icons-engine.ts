@@ -34,7 +34,6 @@ async function fetchFont(path: string) {
   const response = await fetch(path);
   if (response.ok) {
     const buffer = await response.arrayBuffer();
-    console.log(path);
     const font = opentype.parse(buffer);
     return font;
   } else {
