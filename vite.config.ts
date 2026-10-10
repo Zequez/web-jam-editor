@@ -7,6 +7,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { defaultWebjamZip } from "./src-meta/vite-plugin-default-webjam.ts";
 import { plugin as mdPlugin, Mode } from "vite-plugin-markdown";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import ViteYaml from "@modyfi/vite-plugin-yaml";
 
 const previewServiceWorkerPath = "/preview__/service-worker.js";
 const previewRefreshClientPath = "/preview__/refresh-client.js";
@@ -64,6 +65,7 @@ export default defineConfig({
     svelte(),
     uno(),
     mdPlugin({ mode: [Mode.HTML] }),
+    ViteYaml(),
     previewServiceWorker(),
     visualizer({
       filename: "dist/bundle-analysis.html",
