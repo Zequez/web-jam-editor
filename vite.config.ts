@@ -115,6 +115,7 @@ export default defineConfig({
       input: {
         index: resolve(projectRoot, "index.html"),
         roadmap: resolve(projectRoot, "roadmap.html"),
+        architecture: resolve(projectRoot, "architecture.html"),
         "service-worker": resolve(
           projectRoot,
           "src/lib/preview-virtual-server/service-worker.ts",
