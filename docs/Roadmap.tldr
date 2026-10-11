@@ -1617,8 +1617,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1416.7013327108357,
-			"y": 1052.7736159682975,
+			"x": -1313.9090218789738,
+			"y": 1049.4327231608265,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1937,9 +1937,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 225.36729189765856,
-			"y": 1211.9312387635275,
-			"z": 0.5270416616495726,
+			"x": 5781.223977786822,
+			"y": 1301.0660085753052,
+			"z": 0.15494494646457802,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -2072,8 +2072,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1056.4299867259851,
-			"y": 54.43041451332806,
+			"x": -938.2496989369531,
+			"y": 480.1902367789023,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2085,7 +2085,7 @@
 				"h": 107.57313088204397,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 20.42686911795603,
+				"growY": 68.42686911795603,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
@@ -2165,14 +2165,68 @@
 											]
 										}
 									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Piano easter egg"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Link to Telegram"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Improved buttons and styling"
+												}
+											]
+										}
+									]
 								}
 							]
-						},
-						{
-							"type": "paragraph",
-							"attrs": {
-								"dir": "auto"
-							}
 						}
 					]
 				}
@@ -2718,6 +2772,264 @@
 			"parentId": "page:page",
 			"index": "aH1fj",
 			"props": {},
+			"typeName": "shape"
+		},
+		{
+			"x": 231.5100929242563,
+			"y": -55.97784387006868,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:cf1sX2iDGUBzfsT4snbJP",
+			"type": "geo",
+			"props": {
+				"w": 472,
+				"h": 107.57313088204397,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 332.426869117956,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Persistent Virtual Filesystem Projects"
+								}
+							]
+						},
+						{
+							"type": "bulletList",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Always start project empty"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Add Examples on Assets Box"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Click on example to load the whole example into the current project"
+												}
+											]
+										},
+										{
+											"type": "bulletList",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "listItem",
+													"attrs": {
+														"dir": "auto"
+													},
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "Delete images, add the new images"
+																}
+															]
+														}
+													]
+												},
+												{
+													"type": "listItem",
+													"attrs": {
+														"dir": "auto"
+													},
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "Replace all the code"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Buttons [Open on Virtual FS] | [Open on OS Folder]"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Below each button the FS known and available to mount"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Below that a list of examples that you can click and it mounts them on the Virtual FS “scratchpad” project"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Add renaming of Virtual FS and moving a Virtual FS into a folder"
+												}
+											]
+										},
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3C2Cf",
 			"typeName": "shape"
 		},
 		{
@@ -4181,8 +4493,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 479.06479870892633,
-			"y": -150.46049069650468,
+			"x": -1224.8140733996486,
+			"y": 1435.2760884758588,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5583,8 +5895,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 6.772416915902227,
-			"y": -106.2901305068487,
+			"x": -1342.9965166184306,
+			"y": 1241.1109905317214,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6010,8 +6322,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1698.681799910096,
-			"y": -204.55204093070324,
+			"x": 925.726571453122,
+			"y": -5.726055345473242,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -7631,8 +7943,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1083.8411631278902,
-			"y": -152.3135513483212,
+			"x": 530.9863892519047,
+			"y": -291.0502024987027,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8742,8 +9054,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 452.21588213635096,
-			"y": -18.20437728197021,
+			"x": -923.2161540771954,
+			"y": 1239.8749722460445,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8999,6 +9311,38 @@
 			},
 			"parentId": "page:page",
 			"index": "b23EAQ",
+			"typeName": "shape"
+		},
+		{
+			"x": -761.7769291217198,
+			"y": 1100.664927656264,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:xn-be5y38H-8SIg2p8wC4",
+			"type": "draw",
+			"props": {
+				"segments": [
+					{
+						"type": "free",
+						"path": "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",
+						"dim": 2
+					}
+				],
+				"color": "grey",
+				"fill": "solid",
+				"dash": "draw",
+				"size": "l",
+				"isComplete": true,
+				"isClosed": false,
+				"isPen": false,
+				"scale": 1,
+				"scaleX": 1,
+				"scaleY": 1
+			},
+			"parentId": "page:page",
+			"index": "b3B3Rv",
 			"typeName": "shape"
 		},
 		{
@@ -9923,6 +10267,48 @@
 			"typeName": "shape"
 		},
 		{
+			"x": -796.7766525877116,
+			"y": 1089.6907092530805,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:scN4_YkPYR864rxH49xPI",
+			"type": "text",
+			"props": {
+				"color": "grey",
+				"size": "xl",
+				"w": 323.63050699103957,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1.8495648923897425,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Images"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3AGSr",
+			"typeName": "shape"
+		},
+		{
 			"meta": {},
 			"id": "page:page",
 			"name": "Page 1",
@@ -10078,15 +10464,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:fill": "solid",
-				"tldraw:color": "black",
-				"tldraw:geo": "rectangle",
-				"tldraw:horizontalAlign": "start",
-				"tldraw:size": "s",
-				"tldraw:textAlign": "start",
-				"tldraw:font": "draw"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -10101,7 +10479,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 945
+				"h": 920
 			},
 			"insets": [
 				false,
@@ -10118,7 +10496,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": null,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -10940,6 +11318,74 @@
 			},
 			"parentId": "page:page",
 			"index": "aRfJb",
+			"typeName": "shape"
+		},
+		{
+			"x": -78.92582797451928,
+			"y": 2285.207358806626,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:jASv0y9LqiBstKdbKrZOE",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 79.97974868901932,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0.020251310980683,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "/docs"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Dedicated documentation page"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3DbrA",
 			"typeName": "shape"
 		},
 		{
