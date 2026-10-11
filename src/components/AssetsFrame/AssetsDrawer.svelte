@@ -8,14 +8,21 @@
   import ImagesBox from "./tabs/ImagesBox.svelte";
   import SyntaxBox from "./tabs/SyntaxBox.svelte";
   import IconsBox from "./tabs/IconsBox.svelte";
+  import DocumentsBox from "./tabs/DocumentsBox.svelte";
 
-  type Tabs = "Syntax" | "Images" | "Publishing" | "Icons" | "none";
+  type Tabs =
+    | "Syntax"
+    | "Images"
+    | "Publishing"
+    | "Documents"
+    | "Icons"
+    | "none";
 
   let config = persistedState<{
     order: Tabs[];
     tab: Tabs;
   }>("assets-drawer-tabs", {
-    order: ["Images", "Syntax", "Icons"],
+    order: ["Images", "Syntax", "Icons", "Documents"],
     tab: "Images",
   });
 
@@ -117,6 +124,12 @@
         "bg-rose-100",
         "bg-rose-50 hover:bg-rose-100",
       )}
+      {@render Tab(
+        "Documents",
+        "i-fa-file",
+        "bg-indigo-100",
+        "bg-indigo-50 hover:bg-indigo-100",
+      )}
     </div>
     <!-- {@render Tab(
       "Publishing",
@@ -149,6 +162,10 @@
     {:else if config.current.tab === "Syntax"}
       <BoxWrapper color="bg-sky-200">
         <SyntaxBox />
+      </BoxWrapper>
+    {:else if config.current.tab === "Documents"}
+      <BoxWrapper color="bg-indigo-200">
+        <DocumentsBox />
       </BoxWrapper>
     {/if}
   {/if}

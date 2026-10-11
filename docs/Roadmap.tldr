@@ -145,8 +145,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 652.3525188340539,
-			"y": 920.194688579851,
+			"x": -1289.1893956354097,
+			"y": 1640.1320223086836,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2011,9 +2011,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 223.82816277538495,
-			"y": 802.46494776037,
-			"z": 0.5147525096377045,
+			"x": 242.56529608664366,
+			"y": -285.41642329930704,
+			"z": 0.5319075599703633,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -4584,57 +4584,6 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 704.9559269565761,
-			"y": 1034.7313122704254,
-			"rotation": 0,
-			"isLocked": false,
-			"opacity": 1,
-			"meta": {},
-			"id": "shape:FNPPAsygczHY-wCigmWaS",
-			"type": "geo",
-			"props": {
-				"w": 386,
-				"h": 56,
-				"geo": "rectangle",
-				"dash": "draw",
-				"growY": 0,
-				"url": "",
-				"scale": 1,
-				"flipX": false,
-				"flipY": false,
-				"color": "grey",
-				"labelColor": "black",
-				"fill": "solid",
-				"size": "s",
-				"font": "draw",
-				"align": "start",
-				"verticalAlign": "start",
-				"richText": {
-					"type": "doc",
-					"attrs": {
-						"dir": "auto"
-					},
-					"content": [
-						{
-							"type": "paragraph",
-							"attrs": {
-								"dir": "auto"
-							},
-							"content": [
-								{
-									"type": "text",
-									"text": "There is just one tab right now"
-								}
-							]
-						}
-					]
-				}
-			},
-			"parentId": "page:page",
-			"index": "anAzw",
-			"typeName": "shape"
-		},
-		{
 			"x": 1831.1254375197905,
 			"y": 368.91603239917004,
 			"rotation": 0,
@@ -5056,9 +5005,9 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:nIEf-ZO55FS-YW5LnbUbi"
+				"shape:gdl3-1Qr6H46G7ppfuJ0f"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:gdl3-1Qr6H46G7ppfuJ0f",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -5100,8 +5049,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1313.9538843825087,
-			"y": 875.2864864335969,
+			"x": 1234.8259526051665,
+			"y": 1128.9619272811437,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6424,6 +6373,74 @@
 			},
 			"parentId": "page:page",
 			"index": "alUMP",
+			"typeName": "shape"
+		},
+		{
+			"x": -863.8753894460976,
+			"y": 1618.342876809169,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:2owdkGs-byizH7VEt6P3S",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Assets Box - Persisted State"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Assets box tabs state should be persisted between reloads"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3HzPR",
 			"typeName": "shape"
 		},
 		{
@@ -7851,6 +7868,69 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 2952.0493323862374,
+			"y": 1845.9598817713998,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Ry1W2eVBigTtZBSCj4Cqe",
+			"type": "geo",
+			"props": {
+				"w": 446,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 24,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "grey",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "I added a syntax guide that includes Pug"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "and atomic CSS, so I’ll be icing this for now"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3J4mv",
+			"typeName": "shape"
+		},
+		{
 			"x": 115.93119927232594,
 			"y": 19.34369117271592,
 			"rotation": 0,
@@ -9181,8 +9261,76 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1272.6053960828795,
-			"y": 1135.9123724087285,
+			"x": -1200.4232021479247,
+			"y": 1814.8269793600557,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:CUbLNO2v-PsfND0IniAkY",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Assets Box - Syntax"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Added a small syntax guide to the assets box"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3IuAn",
+			"typeName": "shape"
+		},
+		{
+			"x": 2898.2235559664605,
+			"y": 1692.1916630673088,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,

@@ -4,7 +4,7 @@ const FONT_NAME = "WebJamIcons";
 const FONT_MIME = "font/otf";
 
 const UNITS_PER_EM = 1000;
-const ASCENDER = 800;
+const ASCENDER = 600;
 const DESCENDER = -200;
 const ADVANCE_WIDTH = 530;
 

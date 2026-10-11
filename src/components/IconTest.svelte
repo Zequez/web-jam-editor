@@ -39,7 +39,7 @@
       <div>{fontIconsName}</div>
       <div>
         {#each iconsToExtract as iconName}
-          <i class="icon-{prefix}-{iconName}"></i>
+          <i class="icon-{prefix}-{iconName} bg-red"></i>
         {/each}
       </div>
     </div>

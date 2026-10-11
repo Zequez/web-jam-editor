@@ -1,68 +1,42 @@
-mixin SeedBox(seed)
-  // This is only possible because Pug is compiled to HTML
-  // BEFORE UnoCSS parses it! Isn't it neat?
-  div[
-    flex-cc p1 w-full text-${seed}-300
-    [0_1.6px_0_0.8px] aspect-square bg-${seed}-400 bg-linear-to-br from-white/20 rounded-2 shadow-${seed}-600
-    duration-1000 transition-transform hover:(scale-110 duration-0)
-  ]
-    - svgPath = (() => { let h=[...seed].reduce((h,c)=>(h*31+c.charCodeAt(0))|0,0), n=5+(Math.abs(h)%6), p=[]; for(let i=0;i<n;i++){let a=i*2*Math.PI/n,r=35+Math.abs((h=h*1664525+1013904223|0))%20;p.push(`${50+Math.cos(a)*r} ${50+Math.sin(a)*r}`)} return `M${p.join(' L')}Z` })()
-    svg[h-full w-full](viewBox="0 0 100 100")
-      path(d=svgPath fill="currentColor")
+mixin EmojiFavicon(emoji)
+  link(
+    rel="icon"
+    type="image/svg+xml"
+    href=`data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">${emoji}</text></svg>`
+  )
 
-mixin Page(name)
+
+mixin Page(name="")
   html(name=name)
     head
-      title Webjam Example
-      meta(name="viewport" content="width=device-width, initial-scale=1")
-      link(rel="icon" type="image/webp" href="images/gaia/sm.webp")
-    body[bg-black text-white p6 text-center]
-      block
+      +EmojiFavicon("🌈")
+    body[flex-cc flex-col min-h-screen w-full bg-amber-200]
+      nav[flex-cc h-12 w-full font-bold uppercase text-white b-amber-400 b-b bg-amber-300 gap-3]
+        +Tab(name, "", "Home", "fa-house")
+        +Tab(name, "about", "About", "fa-user")
+      main[grow]
+        block
 
-+Page('')
-  main[mx-auto max-w-screen-sm space-y-6]
-    img[w-full](src="images/gaia/md.webp")
-    div[bg-white rounded-1 text-12 font-mono text-black]
-      | Hello world
-    div[text-7]
-      | Font Awesome 7 Icons available
-    div[text-24/12 space-x-2 pb6] 
-      i[icon-fa-house icon-fa-house]
-      i[icon-fa-house icon-fab-github]
-    div[text-7]
-      a[text-blue underline](href="./other-page") Go another page
-    div[grid gap-3 cols-7]
-      +SeedBox('red')
-      +SeedBox('orange')
-      +SeedBox('amber')
-      +SeedBox('yellow')
-      +SeedBox('lime')
-      +SeedBox('green')
-      +SeedBox('emerald')
-      +SeedBox('teal')
-      +SeedBox('cyan')
-      +SeedBox('sky')
-      +SeedBox('blue')
-      +SeedBox('indigo')
-      +SeedBox('violet')
-      +SeedBox('purple')
-      +SeedBox('fuchsia')
-      +SeedBox('pink')
-      +SeedBox('rose')
-      +SeedBox('slate')
-      +SeedBox('gray')
-      +SeedBox('mist')
-      +SeedBox('olive')
+mixin Tab(currentPath, tabPath, text, icon)
+  a[px2 py1 rounded-1 ${tabPath === currentPath ? "bg-white/20" : ""}](href=tabPath)
+    span[icon-${icon} text-2em mr2]
+    = text
 
++Page()
+  div[text-12] Hello world
+  a[block text-blue underline](href="about") About page
   
-    div[uppercase text-center mt12 tracking-wider text-12 font-serif]
-      | Visibility
-    p[mb-6 -mt6 text-center] For the steward, in service of the future of this project
-    div[sm:max-w-screen-sm sm:mx-0 sm:mx-auto relative]
-      iframe[w-full h-500px rounded-2](src="https://ezequielschwartzman.org")
 
++Page("about")
+  div[text-12] About you
+  p.
+    You are pretty cool; probably.
+  p
+    | Pss, 
+    a[text-blue underline](href="secret") enter here. 
+  p
+    a[text-blue underline text-8](href="https://ezequielschwartzman.org" target="_blank") Ezequiel was here
 
-+Page('other-page')
-  div You can actually have multiple pages.
-  div The URL on the preview doesn't update, I know.
-  a[text-blue block underline](href=".") Go Home
++Page("secret")
+  div[text-12] Super secret page
+  a[block text-blue underline](href=".") Go home
