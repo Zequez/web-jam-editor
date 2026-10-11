@@ -145,8 +145,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 652.3525188340539,
-			"y": 920.194688579851,
+			"x": -1289.1893956354097,
+			"y": 1640.1320223086836,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -438,6 +438,80 @@
 			"meta": {},
 			"id": "pointer:pointer",
 			"typeName": "pointer"
+		},
+		{
+			"x": 1212.1633950502348,
+			"y": 9.38394412814364,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:nIEf-ZO55FS-YW5LnbUbi",
+			"type": "geo",
+			"props": {
+				"w": 472,
+				"h": 107.57313088204397,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 44.42686911795603,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Images Engine"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Refactor the current images processor into it’s own store and globally available service system."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3GFlI",
+			"typeName": "shape"
 		},
 		{
 			"x": 1929.227443275831,
@@ -1937,12 +2011,63 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 5781.223977786822,
-			"y": 1301.0660085753052,
-			"z": 0.15494494646457802,
+			"x": 242.56529608664366,
+			"y": -285.41642329930704,
+			"z": 0.5319075599703633,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
+		},
+		{
+			"x": 2866.451008665572,
+			"y": 1502.1361423621454,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:DzE0aH3FhyGgSsDo-dLEe",
+			"type": "geo",
+			"props": {
+				"w": 446,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 24,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "grey",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Actually, I just applied for a free license for hobby and open source projects"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3FtCn",
+			"typeName": "shape"
 		},
 		{
 			"x": 31.509378384082652,
@@ -2775,8 +2900,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 231.5100929242563,
-			"y": -55.97784387006868,
+			"x": -41.88161458437952,
+			"y": -162.2715626955719,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -3840,6 +3965,74 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1316.252232642487,
+			"y": 1734.7857496402885,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:sTMdV3OJIl_J5URI1oi9e",
+			"type": "geo",
+			"props": {
+				"w": 353,
+				"h": 91.67757960819951,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 12.322420391800492,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Piano"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Make the piano work on mobile with touch"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3EFuv",
+			"typeName": "shape"
+		},
+		{
 			"x": 60.28804352550618,
 			"y": 54.6376747504238,
 			"rotation": 0,
@@ -4391,57 +4584,6 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 704.9559269565761,
-			"y": 1034.7313122704254,
-			"rotation": 0,
-			"isLocked": false,
-			"opacity": 1,
-			"meta": {},
-			"id": "shape:FNPPAsygczHY-wCigmWaS",
-			"type": "geo",
-			"props": {
-				"w": 386,
-				"h": 56,
-				"geo": "rectangle",
-				"dash": "draw",
-				"growY": 0,
-				"url": "",
-				"scale": 1,
-				"flipX": false,
-				"flipY": false,
-				"color": "grey",
-				"labelColor": "black",
-				"fill": "solid",
-				"size": "s",
-				"font": "draw",
-				"align": "start",
-				"verticalAlign": "start",
-				"richText": {
-					"type": "doc",
-					"attrs": {
-						"dir": "auto"
-					},
-					"content": [
-						{
-							"type": "paragraph",
-							"attrs": {
-								"dir": "auto"
-							},
-							"content": [
-								{
-									"type": "text",
-									"text": "There is just one tab right now"
-								}
-							]
-						}
-					]
-				}
-			},
-			"parentId": "page:page",
-			"index": "anAzw",
-			"typeName": "shape"
-		},
-		{
 			"x": 1831.1254375197905,
 			"y": 368.91603239917004,
 			"rotation": 0,
@@ -4862,8 +5004,10 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
-			"hoveredShapeId": null,
+			"selectedShapeIds": [
+				"shape:gdl3-1Qr6H46G7ppfuJ0f"
+			],
+			"hoveredShapeId": "shape:gdl3-1Qr6H46G7ppfuJ0f",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -4905,8 +5049,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1313.9538843825087,
-			"y": 875.2864864335969,
+			"x": 1234.8259526051665,
+			"y": 1128.9619272811437,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6232,6 +6376,74 @@
 			"typeName": "shape"
 		},
 		{
+			"x": -863.8753894460976,
+			"y": 1618.342876809169,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:2owdkGs-byizH7VEt6P3S",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Assets Box - Persisted State"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Assets box tabs state should be persisted between reloads"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3HzPR",
+			"typeName": "shape"
+		},
+		{
 			"x": 2.7161634612516536,
 			"y": 9.456381434485593,
 			"rotation": 0,
@@ -6322,8 +6534,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 925.726571453122,
-			"y": -5.726055345473242,
+			"x": 2723.1884800460693,
+			"y": 1389.542853373854,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -7653,6 +7865,69 @@
 			},
 			"parentId": "page:page",
 			"index": "aZ2Hb",
+			"typeName": "shape"
+		},
+		{
+			"x": 2952.0493323862374,
+			"y": 1845.9598817713998,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Ry1W2eVBigTtZBSCj4Cqe",
+			"type": "geo",
+			"props": {
+				"w": 446,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 24,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "grey",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "I added a syntax guide that includes Pug"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "and atomic CSS, so I’ll be icing this for now"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3J4mv",
 			"typeName": "shape"
 		},
 		{
@@ -8986,8 +9261,76 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1272.6053960828795,
-			"y": 1135.9123724087285,
+			"x": -1200.4232021479247,
+			"y": 1814.8269793600557,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:CUbLNO2v-PsfND0IniAkY",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Assets Box - Syntax"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Added a small syntax guide to the assets box"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3IuAn",
+			"typeName": "shape"
+		},
+		{
+			"x": 2898.2235559664605,
+			"y": 1692.1916630673088,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10479,7 +10822,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 920
+				"h": 945
 			},
 			"insets": [
 				false,
@@ -10496,7 +10839,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": null,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
