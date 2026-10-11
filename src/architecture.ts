@@ -32,6 +32,7 @@ function Roadmap() {
     "div",
     { className: "h-screen w-full" },
     createElement(Tldraw, {
+      licenseKey: import.meta.env.VITE_TLDRAW_LICENSE_KEY,
       onMount: (editor) => {
         void loadRoadmap(editor).catch((loadError: unknown) => {
           console.error(loadError);
