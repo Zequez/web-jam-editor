@@ -30,19 +30,32 @@
     ]}
   >
     <div>
-      <div class="grid gap-4 cols-2">
+      <div class="flex flex-wrap space-x-2">
         <a
-          href="/roadmap"
+          href="https://github.com/zequez/web-jam-editor"
           target="_blank"
           class="
         flex-cc mx-auto justify-self-right
         my6 p3
         font-mono font-bold text-4/6 uppercase text-center
         text-white text-shadow-[0_1px_0_#0007]
-        bg-yellow-400 hover:bg-yellow-300 bg-linear-to-br from-white/10
+        bg-green-400 hover:bg-green-300 bg-linear-to-br from-white/10
         rounded-1 b b-black/10
-        ">Web Jam Roadmap</a
+        ">Web Jam Source Code</a
         >
+        <a
+          href="https://github.com/zequez/web-jam-editor"
+          target="_blank"
+          class="
+        flex-cc mx-auto justify-self-right
+        my6 p3
+        font-mono font-bold text-4/6 uppercase text-center
+        text-white text-shadow-[0_1px_0_#0007]
+        bg-purple-400 hover:bg-purple-300 bg-linear-to-br from-white/10
+        rounded-1 b b-black/10
+        ">Web Jam Changelog</a
+        >
+
         <a
           href="/architecture"
           target="_blank"
@@ -54,6 +67,18 @@
         bg-blue-400 hover:bg-blue-300 bg-linear-to-br from-white/10
         rounded-1 b b-black/10
         ">Web Jam Architecture</a
+        >
+        <a
+          href="/roadmap"
+          target="_blank"
+          class="
+        flex-cc mx-auto justify-self-right
+        my6 p3
+        font-mono font-bold text-4/6 uppercase text-center
+        text-white text-shadow-[0_1px_0_#0007]
+        bg-yellow-400 hover:bg-yellow-300 bg-linear-to-br from-white/10
+        rounded-1 b b-black/10
+        ">Web Jam Roadmap</a
         >
       </div>
       <div class="markdown">
