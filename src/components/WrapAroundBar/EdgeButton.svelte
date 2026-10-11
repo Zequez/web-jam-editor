@@ -34,7 +34,7 @@
   const iconClasses = {
     "i-fa-eye": {
       hover: "group-hover:i-fa-eye",
-      openColor: "text-fuchsia-400",
+      openColor: "text-yellow-300",
     },
     "i-fa-heart": {
       hover: "group-hover:i-fa-heart",

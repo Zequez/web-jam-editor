@@ -4,8 +4,6 @@
   import ImagesProcessor from "./ImagesProcessor.svelte";
   import { onMount } from "svelte";
 
-  // http://localhost:5173/preview__/eafec662-0bc3-4d81-bd00-59281e3b0696/images/ezequiel/sm.webp
-
   let images = $state<{ [key: string]: string }>({});
   let imagesProcessor: ImagesProcessor;
 
@@ -40,9 +38,7 @@
     // Also, what happens if someone uploads an image
     // with the same name but different formats? foo.png + foo.jpg?
 
-    console.log(UPLOAD_PATH, "Hey");
     if (fs.existsSync(UPLOAD_PATH)) {
-      console.log("It exists");
       const files = fs.readdirSync(UPLOAD_PATH);
       for (const file of files) {
         const filePath = `${UPLOAD_PATH}/${file}`;

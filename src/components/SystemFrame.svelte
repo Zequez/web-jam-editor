@@ -134,7 +134,7 @@
         style={`width: calc(${codePanelSize * 100}% - 12px);`}
         class="shrink-0 h-full flex flex-col space-y-1.5"
       >
-        <div class="flex-shrink-0 w-full">
+        <div class="max-h-50% w-full">
           <AssetsFrame />
         </div>
         <div class="h-40% grow w-full">
