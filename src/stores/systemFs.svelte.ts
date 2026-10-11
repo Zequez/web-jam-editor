@@ -106,14 +106,14 @@ export function createSystemFs() {
   }
 
   async function createEmptyFilesystem() {
-    const indexedFs = await IndexedDB.create({ storeName: "default2" });
+    const indexedFs = await IndexedDB.create({ storeName: "empty" });
     await configureSingle(indexedFs);
 
     return fs;
   }
 
   async function createDefaultFilesystem() {
-    const indexedFs = await IndexedDB.create({ storeName: "default2" });
+    const indexedFs = await IndexedDB.create({ storeName: "scratchpad" });
     await configureSingle(indexedFs);
 
     if (!fs.existsSync("/assets")) {
