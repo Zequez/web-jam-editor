@@ -1937,9 +1937,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 5781.223977786822,
-			"y": 1301.0660085753052,
-			"z": 0.15494494646457802,
+			"x": 225.36729189765856,
+			"y": 1211.9312387635275,
+			"z": 0.5270416616495726,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -6010,6 +6010,74 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1698.681799910096,
+			"y": -204.55204093070324,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:XhgNzxlMrXNWZg8PNqUX8",
+			"type": "geo",
+			"props": {
+				"w": 472,
+				"h": 107.57313088204397,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 44.42686911795603,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "TLDraw Maps"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Render the TLDRaw documents, Architecture and Roadmap as pure SVG so that it does not require a license; otherwise the thing flashes out of existance as soon as it loads."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b39cQb",
+			"typeName": "shape"
+		},
+		{
 			"x": -112.2156322826354,
 			"y": 1870.0340784617324,
 			"rotation": 0,
@@ -10010,7 +10078,15 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {},
+			"stylesForNextShape": {
+				"tldraw:fill": "solid",
+				"tldraw:color": "black",
+				"tldraw:geo": "rectangle",
+				"tldraw:horizontalAlign": "start",
+				"tldraw:size": "s",
+				"tldraw:textAlign": "start",
+				"tldraw:font": "draw"
+			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -10025,7 +10101,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 920
+				"h": 945
 			},
 			"insets": [
 				false,
@@ -10042,7 +10118,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": null,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
