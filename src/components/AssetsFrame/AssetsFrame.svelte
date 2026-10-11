@@ -76,14 +76,42 @@
     const outputOriginalPath = `/www${routes.original}`;
     const outputDirPath = `/www${routes.dir}`;
 
-    console.log(outputOriginalPath);
-
     if (fs.existsSync(outputOriginalPath)) {
       console.log("REMOVING", outputOriginalPath);
       fs.rmSync(outputOriginalPath, { recursive: true });
     }
     if (fs.existsSync(outputDirPath)) {
       fs.rmSync(outputDirPath, { recursive: true });
+    }
+  }
+
+  function renameImage(imgFrom: string, imgTo: string) {
+    const fromDir = `/www/images/${imgFrom}`;
+    const outDir = `/www/images/${imgTo}`;
+    if (fs.existsSync(outDir)) {
+      console.error("Output name exists");
+      return;
+    }
+    console.log("Renamingaaa from", imgFrom, "to", imgTo);
+    const pathsToTry = [
+      `${UPLOAD_PATH}/${imgFrom}.jpg`,
+      `${UPLOAD_PATH}/${imgFrom}.png`,
+      `${UPLOAD_PATH}/${imgFrom}.webp`,
+      `${UPLOAD_PATH}/${imgFrom}.jpeg`,
+      `${UPLOAD_PATH}/${imgFrom}.gip`,
+    ];
+
+    for (const path of pathsToTry) {
+      if (fs.existsSync(path)) {
+        const extension = path.split(".").pop();
+        const replacementPath = `${UPLOAD_PATH}/${imgTo}.${extension}`;
+        fs.renameSync(path, replacementPath);
+        fs.renameSync(fromDir, outDir);
+        const newImages = { ...images, [imgTo]: outDir };
+        delete newImages[imgFrom];
+        images = newImages;
+        break;
+      }
     }
   }
 </script>
@@ -93,4 +121,6 @@
   onFilesAdded={handleFilesAdded}
   imagesList={Object.keys(images)}
   onDeleteImage={(name: string) => deleteImage(name)}
+  onRenameImage={(imgFrom: string, imgTo: string) =>
+    renameImage(imgFrom, imgTo)}
 />

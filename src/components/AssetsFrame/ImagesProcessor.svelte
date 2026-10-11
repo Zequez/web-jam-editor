@@ -24,7 +24,7 @@
   export function imageRoutes(name: string) {
     return {
       dir: `/images/${name}`,
-      original: `/images/${name}.webp`,
+      original: `/images/${name}/original.webp`,
       sm: `/images/${name}/sm.webp`,
       md: `/images/${name}/md.webp`,
       lg: `/images/${name}/lg.webp`,
@@ -46,7 +46,16 @@
   async function startProcessing() {
     while (queue.length) {
       const [filePath, outputFolder] = queue[0]!;
+      const startTime = Date.now();
       await processImage(filePath, outputFolder);
+      const endTime = Date.now();
+      console.log(
+        "Processed image ",
+        filePath,
+        outputFolder,
+        endTime - startTime,
+        "ms",
+      );
       queue.shift();
     }
   }
@@ -73,17 +82,16 @@
 
     const normalizedOutputFolder = outputFolder.replace(/\\/g, "/");
     fs.mkdirSync(normalizedOutputFolder, { recursive: true });
+    const variantFolder = `${normalizedOutputFolder}/${fileName}`;
+    fs.mkdirSync(variantFolder, { recursive: true });
 
-    const fullSizePath = `${normalizedOutputFolder}/${fileName}.webp`;
+    const fullSizePath = `${normalizedOutputFolder}/${fileName}/original.webp`;
     await exportImage(
       image,
       fullSizePath,
       image.naturalWidth,
       image.naturalHeight,
     );
-
-    const variantFolder = `${normalizedOutputFolder}/${fileName}`;
-    fs.mkdirSync(variantFolder, { recursive: true });
 
     for (const [variant, maxWidth] of Object.entries(sizes) as [
       string,
@@ -139,8 +147,6 @@
         return "image/webp";
       case "gif":
         return "image/gif";
-      case "bmp":
-        return "image/bmp";
       default:
         return null;
     }

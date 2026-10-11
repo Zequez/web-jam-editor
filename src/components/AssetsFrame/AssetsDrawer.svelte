@@ -22,10 +22,12 @@
     onFilesAdded,
     imagesList,
     onDeleteImage,
+    onRenameImage,
   }: {
     onFilesAdded: (files: File[]) => void;
     imagesList: string[];
     onDeleteImage: (name: string) => void;
+    onRenameImage: (imgFrom: string, imgTo: string) => void;
   } = $props();
 
   function openFilePicker() {
@@ -135,7 +137,7 @@
     >
       <div class="absolute left-2px right-4px top-1px h-1px bg-white/40"></div>
       {#if currentTab === "Images"}
-        <ImagesBox {imagesList} {onDeleteImage} />
+        <ImagesBox {imagesList} {onDeleteImage} {onRenameImage} />
       {:else if currentTab === "Icons"}
         <div class="p2">
           <div class=" tracking-wider">

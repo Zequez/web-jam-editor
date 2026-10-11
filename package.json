@@ -15,6 +15,7 @@
     "deploy": "gh-pages -d dist -b www",
     "publish": "bun run build && bun run deploy",
     "gen:icons": "bun run src-meta/setup-icons.ts && bun run src-meta/gen-icons-map.ts",
+    "gen:tldrawDocs": "tldraw export docs/Architecture.tldr docs/Roadmap.tldr --output public/maps",
     "postinstall": "bun run gen:icons"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@iconify-json/fa7-brands": "^1.2.4",
     "@iconify-json/fa7-solid": "^1.2.5",
+    "@kitschpatrol/tldraw-cli": "^6.1.0",
     "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@types/opentype.js": "^1.3.10",

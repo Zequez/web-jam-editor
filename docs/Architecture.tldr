@@ -634,9 +634,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -571.4571064762929,
-			"y": 1998.081916759171,
-			"z": 0.40975769934210665,
+			"x": -1809.7353436228811,
+			"y": 1613.3502274601344,
+			"z": 0.5203658630486571,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -792,6 +792,69 @@
 			},
 			"parentId": "page:page",
 			"index": "b0FAbX",
+			"typeName": "shape"
+		},
+		{
+			"x": 3630.893913456971,
+			"y": -1250.6565162994052,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ONHD4vHq_bxIB6DIEpKRE",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 24,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Droply"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Zhong"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0pA8A",
 			"typeName": "shape"
 		},
 		{
@@ -1116,9 +1179,9 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:NmX44ph7sMTBmJ73lfwtV"
+				"shape:ONHD4vHq_bxIB6DIEpKRE"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:ONHD4vHq_bxIB6DIEpKRE",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -2254,10 +2317,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:fill": "semi",
-				"tldraw:size": "s"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
