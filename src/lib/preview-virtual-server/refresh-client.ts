@@ -6,6 +6,7 @@ if (sessionId && "serviceWorker" in navigator) {
   navigator.serviceWorker.addEventListener(
     "message",
     (event: MessageEvent<unknown>) => {
+      console.log("Received message from service worker", event.data);
       if (
         isPreviewClientRefreshMessage(event.data) &&
         event.data.sessionId === sessionId

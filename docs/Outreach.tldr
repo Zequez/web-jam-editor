@@ -1,0 +1,2274 @@
+{
+	"tldrawFileFormatVersion": 1,
+	"schema": {
+		"schemaVersion": 2,
+		"sequences": {
+			"com.tldraw.store": 5,
+			"com.tldraw.asset": 1,
+			"com.tldraw.camera": 1,
+			"com.tldraw.document": 2,
+			"com.tldraw.instance": 26,
+			"com.tldraw.instance_page_state": 5,
+			"com.tldraw.page": 1,
+			"com.tldraw.instance_presence": 6,
+			"com.tldraw.pointer": 1,
+			"com.tldraw.shape": 4,
+			"com.tldraw.user": 1,
+			"com.tldraw.asset.image": 6,
+			"com.tldraw.asset.video": 5,
+			"com.tldraw.asset.bookmark": 2,
+			"com.tldraw.shape.group": 0,
+			"com.tldraw.shape.text": 4,
+			"com.tldraw.shape.bookmark": 2,
+			"com.tldraw.shape.draw": 5,
+			"com.tldraw.shape.geo": 12,
+			"com.tldraw.shape.note": 13,
+			"com.tldraw.shape.line": 5,
+			"com.tldraw.shape.frame": 1,
+			"com.tldraw.shape.arrow": 8,
+			"com.tldraw.shape.highlight": 4,
+			"com.tldraw.shape.embed": 4,
+			"com.tldraw.shape.image": 5,
+			"com.tldraw.shape.video": 4,
+			"com.tldraw.binding.arrow": 1
+		}
+	},
+	"records": [
+		{
+			"x": -427.38777372458617,
+			"y": -1438.0751977021514,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:lUGAe1N_IFhKzQ3OR_Rls",
+			"type": "geo",
+			"props": {
+				"w": 233,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 27.011346624303357,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Hacker News / Y Combinator"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0RUCY",
+			"typeName": "shape"
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"lastActivityTimestamp": 0,
+			"meta": {},
+			"id": "pointer:pointer",
+			"typeName": "pointer"
+		},
+		{
+			"x": -608.5819997878198,
+			"y": -1283.1100125645078,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:4IJaLsd2I5tJUu589RYQp",
+			"type": "geo",
+			"props": {
+				"w": 255,
+				"h": 67.78977404276611,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 54.21022595723389,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Transition Network"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "https://communitywaves.space",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "https://communitywaves.space"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0TdNf",
+			"typeName": "shape"
+		},
+		{
+			"x": -1430.2956621745693,
+			"y": -2335.8199903708746,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:77XoF3xLJchzVP3tuc4a3",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 190.15144013404063,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1.4746673333630536,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "“I made this”"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0zgAM",
+			"typeName": "shape"
+		},
+		{
+			"x": -1428.8047031447527,
+			"y": -1980.5462915445341,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:bsIdMgbU3RARBQTHQi0SA",
+			"type": "geo",
+			"props": {
+				"w": 479,
+				"h": 108.91904561423553,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 163.08095438576447,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "I present you <WebJam>: Pug + Atomic CSS Tailwind Preset + Automatic icon font generation from Font Awesome 7 glyphs + Special Atomic CSS brackets extension for Pug + Multi-page Pug extension from a single file + Images processing. Runs entirely as a static app on the browser. Live preview using a Service Worker that works accross tabs. CodeMirror based editor. Works with your local filesystem."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b11uw2",
+			"typeName": "shape"
+		},
+		{
+			"x": 1527.2570745922362,
+			"y": -837.9094221205271,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:BD9Twq7ZOq4QzDbWMcMv1",
+			"type": "geo",
+			"props": {
+				"w": 256.8727326160515,
+				"h": 87.87399717734388,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Cold Emails"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0XlxM",
+			"typeName": "shape"
+		},
+		{
+			"x": 2444.7292016540246,
+			"y": 1460.497681867421,
+			"z": 1.0735351904121857,
+			"meta": {},
+			"id": "camera:page:page",
+			"typeName": "camera"
+		},
+		{
+			"x": 1441.9113347820958,
+			"y": -1857.3051793098296,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:jpRHIz8daO8NZ__O3nqRL",
+			"type": "geo",
+			"props": {
+				"w": 279.50600703371856,
+				"h": 107.41640985314999,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "l",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Publishing Cycle"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0NQZQ",
+			"typeName": "shape"
+		},
+		{
+			"x": 1984.125459818354,
+			"y": -1102.729875040439,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ONHD4vHq_bxIB6DIEpKRE",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 24,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Droply"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Zhong"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0pA8A",
+			"typeName": "shape"
+		},
+		{
+			"x": 945.7710615470346,
+			"y": -175.6198004917993,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:r-VJZgOBQ75P2f1t6OW5_",
+			"type": "geo",
+			"props": {
+				"w": 198.24689807853065,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Patreon Profile"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0nBME",
+			"typeName": "shape"
+		},
+		{
+			"x": 1935.5038374727933,
+			"y": -981.9854629492042,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:FrYIAnS9u1nA_Ht8DhFNz",
+			"type": "geo",
+			"props": {
+				"w": 186,
+				"h": 80,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Free Software Foundation"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0fGdE",
+			"typeName": "shape"
+		},
+		{
+			"editingShapeId": "shape:-isdzz7S3XMbyA-HHsxD-",
+			"croppingShapeId": null,
+			"selectedShapeIds": [
+				"shape:-isdzz7S3XMbyA-HHsxD-"
+			],
+			"hoveredShapeId": "shape:-isdzz7S3XMbyA-HHsxD-",
+			"erasingShapeIds": [],
+			"hintingShapeIds": [],
+			"focusedGroupId": null,
+			"meta": {},
+			"id": "instance_page_state:page:page",
+			"pageId": "page:page",
+			"typeName": "instance_page_state"
+		},
+		{
+			"x": 1129.7928995446173,
+			"y": -844.4161635586822,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:KA0ecbU1oiJUjPMuvZpAR",
+			"type": "geo",
+			"props": {
+				"w": 279.50600703371856,
+				"h": 107.41640985314999,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "l",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Reports"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0MPm2",
+			"typeName": "shape"
+		},
+		{
+			"x": 13.432492718043022,
+			"y": -1092.47458819496,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 0.5,
+			"meta": {},
+			"id": "shape:NtTsolFnojxDYGgFYydZy",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "xl",
+				"w": 208.328125,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 2.4381382222522587,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Web Jam"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Outreach"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0qOvI",
+			"typeName": "shape"
+		},
+		{
+			"x": -875.1739852711306,
+			"y": -2201.5828713382125,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:rF_h63eu8HqKS_OEMyWWH",
+			"type": "geo",
+			"props": {
+				"w": 479,
+				"h": 369.6767808569498,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Hey, I’ve been one month absorbed creating <WebJam> and I want feedback. PLEASE GIVE ME FEEDBACK. I NEED HUMAN CONTACT."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "———-"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Hey everybody! My name is Ezequiel, I’m a free software developer looking to assert my "
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0ysbI",
+			"typeName": "shape"
+		},
+		{
+			"x": -1428.259093806894,
+			"y": -2266.5328345686294,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Rav31qJ0okePNcDu3CGes",
+			"type": "geo",
+			"props": {
+				"w": 479,
+				"h": 108.91904561423553,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 19.08095438576447,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "I present you <WebJam>: a free and open source web native environment for crafting multi-page websites WITH CODE. No servers or AI required."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0x3rn",
+			"typeName": "shape"
+		},
+		{
+			"x": 257.48491458840374,
+			"y": -73.67265603008298,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ADOJAL_xvQzsPTTWGTcJX",
+			"type": "geo",
+			"props": {
+				"w": 250.06493115754256,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Open Collective Profile"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0kS2Q",
+			"typeName": "shape"
+		},
+		{
+			"x": 698.798056371273,
+			"y": -1374.9233209721422,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:hpy6iOp-qCuzqkQdgB3lg",
+			"type": "geo",
+			"props": {
+				"w": 233,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 27.011346624303357,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Free Software Foundation"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0rPMz",
+			"typeName": "shape"
+		},
+		{
+			"x": -110.40453379763767,
+			"y": -1494.5799204320506,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:bjnm3w1CB-HM61uwN9vEl",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "s",
+				"w": 177.4921875,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Which subrreddits?"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0wmXv",
+			"typeName": "shape"
+		},
+		{
+			"x": 585.6924572499265,
+			"y": -442.32049765284455,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:X18zod0q_qC4O-N1RPfW-",
+			"type": "geo",
+			"props": {
+				"w": 276.06440196511306,
+				"h": 99.5201681500505,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "l",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Sustainers"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0HABj",
+			"typeName": "shape"
+		},
+		{
+			"x": -770.3451496099015,
+			"y": -1315.8114594166568,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:z8LVOvRHwNrGMfzFMndea",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "s",
+				"w": 122.59375,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Which space?"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0uaEr",
+			"typeName": "shape"
+		},
+		{
+			"x": 742.4766579114847,
+			"y": -1067.2522396266113,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:m1w8XyeaekrtRXkp9TMj7",
+			"type": "geo",
+			"props": {
+				"w": 254.99225497987345,
+				"h": 67.78977404276611,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 7.210225957233888,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "xl",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Internet"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0tM9U",
+			"typeName": "shape"
+		},
+		{
+			"x": -137.2910901741019,
+			"y": -1254.156145390891,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:DWz4GGTem-Va3mIbE6nIs",
+			"type": "geo",
+			"props": {
+				"w": 254.99225497987345,
+				"h": 67.78977404276611,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 50.21022595723389,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "xl",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Internet"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Channels"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0s4Tf",
+			"typeName": "shape"
+		},
+		{
+			"x": -125.8283457276583,
+			"y": -1450.39044770748,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:WrbYvoAHqenflBs5A-P5S",
+			"type": "geo",
+			"props": {
+				"w": 232.21162633131735,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Reddit"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0QYfn",
+			"typeName": "shape"
+		},
+		{
+			"x": -1428.1493689551244,
+			"y": -2145.0415684281515,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:h9UqFGVBuTFSjYJ6aBTv0",
+			"type": "geo",
+			"props": {
+				"w": 479,
+				"h": 108.91904561423553,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 43.08095438576447,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "I present you <WebJam>: my take on a community commons infrastructure for building websites. Runs entirely as a static browser app and uses no servers. Publishing is left out as an adjacent problem space."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b10CPz",
+			"typeName": "shape"
+		},
+		{
+			"name": "",
+			"color": "#11B3A3",
+			"imageUrl": "",
+			"meta": {},
+			"id": "user:d4WFWnrn4m5__GkqKwyyR",
+			"typeName": "user"
+		},
+		{
+			"x": -2096.937350947356,
+			"y": -1979.8234906760422,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:-isdzz7S3XMbyA-HHsxD-",
+			"type": "geo",
+			"props": {
+				"w": 639,
+				"h": 441.9346807174493,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 670.0653192825507,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Ezequiel’s Team Report"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Hello world!"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Over the past month I’ve been creatively absorbing myself into an exciting flow of code and design. I decided I’m a Free Software developer ("
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "https://www.gnu.org/philosophy/free-sw.en.html",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "free as in freedom"
+								},
+								{
+									"type": "text",
+									"text": "), and so I’m at peace with building software for the earth commons."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "While I have not been paid directly as a result of this work, I’m receiving the health benefits of having a focused creative practice in my daily schedule; which includes the joy of being alive and jumping gleefully out of bed in the morning so I can continue working. AND I cannot confirm or deny that the money I’ve been receiving lately isn’t ECCO finding alternative pathways to pay me for my work."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The project that has been receiving most of my creative juice lately is <WebJam>."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "bulletList",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "It’s a tool to craft websites by typing structured text."
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "It’s made as a free and open source web-based environment that needs no servers and no AI"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Can run offline and with your own files once loaded. "
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "It has a special easy to learn syntax and it’s evolving rapidly."
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "The system has no publishing included; there is no server-based platform."
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "You can open the latest version at "
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "https://webjam.space",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "https://webjam.space"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "And there is a visual "
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "https://webjam.space/roadmap",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "roadmap"
+								},
+								{
+									"type": "text",
+									"text": ", where I’ve been documenting what’s been done and what’s next."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "My hope is that I can sell the story of this as a powerful self-soverign community tool for crafting resilient and lightweight web-based infrastructure for earth centric cultures. And that as part of that story, I’m the current steward of this tool and then I get financial support from people and foundations. And so I can fearlessly pour myself into this project knowing I’m backed and my human needs are taken care of."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "It’s an ingenious plan that might just work; for me."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0vztD",
+			"typeName": "shape"
+		},
+		{
+			"x": 170.10127408357891,
+			"y": -1396.8653777218167,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:dOBZQsG1wUl0mx36sDC7U",
+			"type": "geo",
+			"props": {
+				"w": 233,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Possibility Village"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0U1iA",
+			"typeName": "shape"
+		},
+		{
+			"x": 1962.180565235316,
+			"y": -636.535249947817,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:6YZTDgbHb1wfKL28BpdeM",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Anthony Fu"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0iPfI",
+			"typeName": "shape"
+		},
+		{
+			"meta": {},
+			"id": "page:page",
+			"name": "Page 1",
+			"index": "a1",
+			"typeName": "page"
+		},
+		{
+			"gridSize": 10,
+			"name": "Roadmap",
+			"meta": {
+				"storageUsedPercentage": 1
+			},
+			"id": "document:document",
+			"typeName": "document"
+		},
+		{
+			"name": "Ezequiel Schwartzman",
+			"color": "#E34BA9",
+			"imageUrl": "",
+			"meta": {},
+			"id": "user:user_2tDNSL9pAtq0u7GAZgh1nsY8A6X",
+			"typeName": "user"
+		},
+		{
+			"followingUserId": null,
+			"opacityForNextShape": 1,
+			"stylesForNextShape": {
+				"tldraw:textAlign": "middle",
+				"tldraw:size": "xl",
+				"tldraw:fill": "solid",
+				"tldraw:color": "black",
+				"tldraw:geo": "rectangle",
+				"tldraw:horizontalAlign": "start",
+				"tldraw:verticalAlign": "start",
+				"tldraw:font": "draw"
+			},
+			"brush": null,
+			"scribbles": [],
+			"cursor": {
+				"type": "default",
+				"rotation": 0
+			},
+			"isFocusMode": false,
+			"exportBackground": true,
+			"isDebugMode": false,
+			"isToolLocked": false,
+			"screenBounds": {
+				"x": 0,
+				"y": 0,
+				"w": 1680,
+				"h": 945
+			},
+			"insets": [
+				false,
+				false,
+				true,
+				false
+			],
+			"zoomBrush": null,
+			"isGridMode": false,
+			"isPenMode": false,
+			"chatMessage": "",
+			"isChatting": false,
+			"highlightedUserIds": [],
+			"isFocused": true,
+			"devicePixelRatio": 2,
+			"isCoarsePointer": false,
+			"isHoveringCanvas": true,
+			"openMenus": [],
+			"isChangingStyle": false,
+			"isReadonly": false,
+			"meta": {},
+			"duplicateProps": null,
+			"cameraState": "idle",
+			"id": "instance:instance",
+			"currentPageId": "page:page",
+			"typeName": "instance"
+		},
+		{
+			"x": 1956.1168834181622,
+			"y": -853.0100962831444,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:YdaKkU8EcePzbJA3qA8vS",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Mozilla"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0e6xb",
+			"typeName": "shape"
+		},
+		{
+			"x": 1918.9247707734085,
+			"y": -559.0744464785569,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:-8U-a3w2rP2iR4fn4Ixmm",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Rich Harris"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0jo2U",
+			"typeName": "shape"
+		},
+		{
+			"x": -1895.061411298864,
+			"y": -2122.6966535987754,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:kAZJCyK1jfRFGGLoYXENr",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 242.4445262757195,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1.4746673333630536,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Possibility Village"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b12Gs6",
+			"typeName": "shape"
+		},
+		{
+			"x": -848.595189006536,
+			"y": -535.0137680183308,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:yaCNAUjps9cE-Xz-I6MCk",
+			"type": "geo",
+			"props": {
+				"w": 276.06440196511306,
+				"h": 99.5201681500505,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "xl",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Video demo"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b13VPf",
+			"typeName": "shape"
+		},
+		{
+			"x": 1983.624762520907,
+			"y": -734.187805062256,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:tFHryMddSp1hGFN0TBMqm",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Netlify"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0gChM",
+			"typeName": "shape"
+		},
+		{
+			"x": 675.4185430721416,
+			"y": -72.94342120186093,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:w_Pqw9slhL8SWPOftvoxt",
+			"type": "geo",
+			"props": {
+				"w": 212,
+				"h": 80,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Github Sponsors Profile"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0mIDr",
+			"typeName": "shape"
+		},
+		{
+			"x": 548.3362092428016,
+			"y": -229.01148985096552,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:0j9b8CYtUyjSV-kulJp9t",
+			"type": "geo",
+			"props": {
+				"w": 256.8727326160515,
+				"h": 87.87399717734388,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Sustainers Form"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0IRIj",
+			"typeName": "shape"
+		},
+		{
+			"x": 1642.4153757609915,
+			"y": -637.3531233974338,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:NmX44ph7sMTBmJ73lfwtV",
+			"type": "geo",
+			"props": {
+				"w": 233,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "IndieWeb"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0oBDQ",
+			"typeName": "shape"
+		},
+		{
+			"x": 950.3483143711269,
+			"y": -1729.9944084293809,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:OHHNybS3mtxSOlHlp7M4Q",
+			"type": "geo",
+			"props": {
+				"w": 232.21162633131735,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Newsletter"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b0S0Zj",
+			"typeName": "shape"
+		}
+	]
+}

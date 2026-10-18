@@ -145,8 +145,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1289.1893956354097,
-			"y": 1640.1320223086836,
+			"x": -1562.5783714672434,
+			"y": 1508.5223622528883,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -364,8 +364,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1781.1817308157467,
-			"y": 254.78670740213454,
+			"x": -2054.5707066475807,
+			"y": 123.17704734633935,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1136,8 +1136,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1422.679121389399,
-			"y": 596.516372599675,
+			"x": -1696.0680972212326,
+			"y": 464.90671254387985,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1691,8 +1691,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1313.9090218789738,
-			"y": 1049.4327231608265,
+			"x": -1587.2979977108075,
+			"y": 917.8230631050313,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2011,9 +2011,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 242.56529608664366,
-			"y": -285.41642329930704,
-			"z": 0.5319075599703633,
+			"x": 9372.923489219665,
+			"y": 1565.186098326633,
+			"z": 0.09451097612246064,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -2197,8 +2197,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -938.2496989369531,
-			"y": 480.1902367789023,
+			"x": -1211.6386747687868,
+			"y": 348.58057672310713,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2737,6 +2737,213 @@
 			"parentId": "page:page",
 			"index": "aJx4r",
 			"props": {},
+			"typeName": "shape"
+		},
+		{
+			"x": 1925.8485120350929,
+			"y": 6413.643106791772,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:xEZISF98lD25-EtckqWMk",
+			"type": "geo",
+			"props": {
+				"w": 430,
+				"h": 198.5191199441415,
+				"geo": "rectangle",
+				"dash": "solid",
+				"growY": 433.4808800558585,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "grey",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "I just got the "
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://webjam.site",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "webjam.site"
+								},
+								{
+									"type": "text",
+									"text": " domain."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Make it available to the community by crafting a Vercel based server that is able to receive a fully made website; zipped, source and built artifacts; and host it for X number of days at a randomly generated domain name."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The server gives back a deployment key that allows the user to erase the deployment, and to re-deploy the site on the same location."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "It can also take a website with a CNAME "
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://something.webjam.site",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "something.webjam.site"
+								},
+								{
+									"type": "text",
+									"text": " and it should attempt to use the subdomain if available."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Simple. Practical."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Turn it into a protocol so that anyone can host a "
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://webjam.site",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "webjam.site"
+								},
+								{
+									"type": "text",
+									"text": " hosting; and leave the inners an implementation detail. I know I can craft one on Vercel with wildcard domains for free because I’ve done it before for "
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://hoja.ar",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "hoja.ar"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3LBnQ",
 			"typeName": "shape"
 		},
 		{
@@ -4635,8 +4842,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1224.8140733996486,
-			"y": 1435.2760884758588,
+			"x": -1498.2030492314823,
+			"y": 1303.6664284200638,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4773,8 +4980,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1845.1891615853424,
-			"y": 403.88012931807486,
+			"x": -2118.578137417176,
+			"y": 272.2704692622797,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5005,9 +5212,9 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:gdl3-1Qr6H46G7ppfuJ0f"
+				"shape:ZK82qNr1-w5WNvskGaqow"
 			],
-			"hoveredShapeId": "shape:gdl3-1Qr6H46G7ppfuJ0f",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -5049,8 +5256,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1234.8259526051665,
-			"y": 1128.9619272811437,
+			"x": 777.7438698313522,
+			"y": 1317.4857607885922,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5342,6 +5549,57 @@
 			},
 			"parentId": "page:page",
 			"index": "b1tmKM",
+			"typeName": "shape"
+		},
+		{
+			"x": 398.170066399641,
+			"y": 451.87352771350356,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:8BLSTFNNPZcchIaUsOrpA",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "red",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Preview performance keeps dropping, sometimes it takes time to reload. Check this."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3OchX",
 			"typeName": "shape"
 		},
 		{
@@ -6039,8 +6297,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1342.9965166184306,
-			"y": 1241.1109905317214,
+			"x": -1616.3854924502643,
+			"y": 1109.5013304759264,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6308,8 +6566,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1372.282098720713,
-			"y": 396.97320585005605,
+			"x": -1645.6710745525468,
+			"y": 265.36354579426086,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6376,8 +6634,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -863.8753894460976,
-			"y": 1618.342876809169,
+			"x": -1137.2643652779313,
+			"y": 1486.7332167533737,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6781,7 +7039,7 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1993.4900551636606,
+			"x": -1983.1115057914342,
 			"y": -400.3549200715829,
 			"rotation": 0,
 			"isLocked": false,
@@ -6792,7 +7050,7 @@
 			"props": {
 				"color": "light-green",
 				"size": "xl",
-				"w": 563.3842433168701,
+				"w": 542.6271445724174,
 				"font": "draw",
 				"textAlign": "middle",
 				"autoSize": true,
@@ -6823,7 +7081,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "to 10 Oct 2026"
+									"text": "to 11 Oct 2026"
 								}
 							]
 						}
@@ -7685,6 +7943,60 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 2426.238481381224,
+			"y": 7273.714319742852,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:IW1PHmu8sTU9iLUxjPDNZ",
+			"type": "text",
+			"props": {
+				"color": "grey",
+				"size": "xl",
+				"w": 1432.7770036702914,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1.8495648923897425,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Make the whole compiler pipeline"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "work outside the browser"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3NqCM",
+			"typeName": "shape"
+		},
+		{
 			"x": 17.470500486498054,
 			"y": 5.645090093793442,
 			"rotation": 0,
@@ -7730,8 +8042,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1377.1038761629084,
-			"y": 842.3480271535765,
+			"x": -1650.492851994742,
+			"y": 710.7383670977813,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8218,6 +8530,60 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1802.3461128860915,
+			"y": 6168.883524645777,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ZK82qNr1-w5WNvskGaqow",
+			"type": "text",
+			"props": {
+				"color": "grey",
+				"size": "xl",
+				"w": 673.8196098587381,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1.8495648923897425,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Temporary"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Instant Hosting"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3KIHn",
+			"typeName": "shape"
+		},
+		{
 			"x": 530.9863892519047,
 			"y": -291.0502024987027,
 			"rotation": 0,
@@ -8441,8 +8807,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1871.6299005856974,
-			"y": 603.1054939106207,
+			"x": -2145.018876417531,
+			"y": 471.4958338548255,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9261,8 +9627,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1200.4232021479247,
-			"y": 1814.8269793600557,
+			"x": -1473.8121779797584,
+			"y": 1683.2173193042604,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9397,8 +9763,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -923.2161540771954,
-			"y": 1239.8749722460445,
+			"x": -1196.605129909029,
+			"y": 1108.2653121902495,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9657,8 +10023,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -761.7769291217198,
-			"y": 1100.664927656264,
+			"x": -1035.1659049535535,
+			"y": 969.0552676004687,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9686,6 +10052,60 @@
 			},
 			"parentId": "page:page",
 			"index": "b3B3Rv",
+			"typeName": "shape"
+		},
+		{
+			"x": 14.303213835342262,
+			"y": 7187.377742287876,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:IOCUpWm2iZOPeg5HFpNYp",
+			"type": "text",
+			"props": {
+				"color": "grey",
+				"size": "xl",
+				"w": 1121.255366834116,
+				"font": "draw",
+				"textAlign": "middle",
+				"autoSize": true,
+				"scale": 1.8495648923897425,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Custom Syntax Highlighter"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "using custom Lezer parser"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3MWP2",
 			"typeName": "shape"
 		},
 		{
@@ -10578,40 +10998,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 773.2433105667976,
-			"y": 683.5614277996474,
-			"rotation": 0,
-			"isLocked": false,
-			"opacity": 1,
-			"meta": {},
-			"id": "shape:gjVxZheAo0_r0QtSCWN2-",
-			"type": "draw",
-			"props": {
-				"segments": [
-					{
-						"type": "free",
-						"path": "AAAAAAAAAAAAvBQ8rr8fObi/KT0xxEhCLsMzPz3FM0BAxS5ATMjsPCPJJEHSynE9+slSQanLj0HSynZBqcuUQUDMqUHSyhdE0sp2QfrJUkFMyOE8TMjsQObGmkBAxU1CPcVIQl/H6URcx+lEXMchRlzHJEamyPhHf8hsRlzHIUZcxyRGwMWaRJzEwEUuwEBFM8A9RTPAQEWawOZGM8BARTPAPUUpvy5DM7xARTO8PUUAAEBFAADmRgAATEgAAExIAABMSB89I0kpPSNJUkH6SU1B+0lSQfpJTUH7SVJB+klSQftJ9kP6SbNDI0m4QyNJXENMSLNDI0nmQExIXENMSFxDTEjsQEpIH0EkSew8SkjsPExIAADpRgAATEgAACNJAAD6SQAAI0kAAPtJAAD6SY89qUt7PdJKAAD6SQAA0koAANJKmr2pS03B+klSvftJUr36SebATEjsvExIAADmRgAATEgAAExIAAAjSQAATEgAACNJAABMSAAATEgAAOZGAABMSAAATEgAAOZGHz0kSew8SkgkQSNJHz0kSSRBI0nsPExIH0EjSew8TEiaQOZGmjzpRpo85kaaPOlG7DxKSJpA6UaaPOZGpDzpRpo85kaaPOlGAABARQAA5kYAAEBFAAA9RQAAQEUAAD1FAABARQAAKUMAAC5DAAC4PwAAKUMAAC5DM8A9RSm9uD8pvy5DH7m4PxS4ADwAABQ4MzmuPwA4FDgAOAo8MzmuPwA4FDgKPAo8TUIxRDFETUIzRE1CPUVIQkxI7EBMSFxDI0kkQftJTUHRSnZB0kp2QalLjz2pS4890koAANJKAAD6SQAATEgAAOZGAADpRgAAQEUAAOZGAABMSAAA0kpxvdFKdsFBTEDEQEypwaxMw72pSwAA0UoAAPtJAAAjSQAATEgAAExIAABKSAAAJEkAAPpJAAD6SQAA+0kAAPpJAADSSgAA+0kAAPpJAAD6SVI9JEkfPUpI7DxMSOZAQEUzPD1FMzxARQAATEgAACNJAADRSgAAqksAAKxMAAAYTQAA700AABhNAACDTQAArEwAAEBMAABATK490kpxPfpJAAD7SQAA0koAANFKAACpSwAArEwAAKxMAABATAAAQEwAAEFMAACpSwAA0koAAPpJAAD6SQAA+0kAANJKdsGpS4/BQEyuvUBMqcGsTMO9QEypwdJKdsHSShfE+kn7wyNJs8PpRubCM0RNwjFETcIzRDHEmkTDxSRGXMelSKbIbEZ9yCRGX8dsRn3IbEZ/yCFFf8jsQubGH0EjySRFf8hPRfvJ+0P6yU9F+skkRSTJIUUjydJGI8qkRlHJJEUjyc9GI8r4RvfKF0gjyvhG98oUR8zLkkWpyxdHysuSRanL9kP7ybNDI8lcQ0zIXENMyLhDI8mzQyPJJEEjyU1B+sn7Q/vJH0EjySRBI8kpPSPJH0EjySRBJMlcQ0rIXENMyCRBI8kkQSPJHz0kyVJB+slSPfrJAABMyAAAI8kAACTJAAD6yXE90sopPSPJHz0jySRBI8kfPSPJAABMyAAAI8l2wdLKTcH6yfvD+8lPxfrJ+8P7ybPDI8nmwEzI5sLmxjPAQMXmwubG7MLpxlzDSshsxn/I+MemyJLJkskWy/bI6MvAyejLCMlQzFHIUMwux8zLF8epy5LF0cpzxdLKdsX7yfbD+slSwfrJUr0kyQAA0coAAEHMAAAYzQAAg80AAIPN4b1BzKnBqcuUwUrI5sDpxpq8LsMzv66/H7m4vx+9uL8zuWrI8cQ9xUjCM8RNwri/Kb2uvx+9FL4KvgC4CrwAuAq8M7m4vx+5rr8fubi/FLgKvAC4CrwAuAC4AAAAuDO5uL8fuy7D4cCDxR+5uL8pva6/Kb8uwx+9uL8KvAq8ALgAvBS4FLg=",
-						"dim": 2
-					}
-				],
-				"color": "grey",
-				"fill": "solid",
-				"dash": "draw",
-				"size": "m",
-				"isComplete": true,
-				"isClosed": false,
-				"isPen": false,
-				"scale": 1,
-				"scaleX": 1,
-				"scaleY": 1
-			},
-			"parentId": "page:page",
-			"index": "b21KCA",
-			"typeName": "shape"
-		},
-		{
-			"x": -796.7766525877116,
-			"y": 1089.6907092530805,
+			"x": -1070.1656284195453,
+			"y": 958.0810491972853,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10822,7 +11210,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 945
+				"h": 920
 			},
 			"insets": [
 				false,
@@ -10839,7 +11227,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": null,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -11254,8 +11642,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 864.0364618396789,
-			"y": 537.5164949395116,
+			"x": 777.1861185426742,
+			"y": 1183.7249356816278,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -11296,8 +11684,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 709.0791835548936,
-			"y": 1174.5960676930756,
+			"x": -1271.9597025502126,
+			"y": 1802.7131500507585,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
