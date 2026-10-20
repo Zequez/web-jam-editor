@@ -1,6 +1,5 @@
 <script lang="ts">
   import { persistedState } from "svelte-persisted-state";
-  import { getPreviewUrlStore } from "@/stores/previewUrlStore.svelte";
 
   import GlobalFilesDrop from "./GlobalFilesDrop.svelte";
   import BoxWrapper from "./BoxWrapper.svelte";
@@ -25,8 +24,6 @@
     order: ["Images", "Syntax", "Icons", "Documents"],
     tab: "Images",
   });
-
-  const { url: previewUrl } = getPreviewUrlStore();
 
   function setTab(tab: Tabs) {
     if (tab === config.current.tab) {

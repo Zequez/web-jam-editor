@@ -3,6 +3,7 @@ import { WebAccess, IndexedDB } from "@zenfs/dom";
 import { get, set } from "idb-keyval";
 import { onMount } from "svelte";
 import { defaultFiles } from "../lib/default-import";
+import type { Fs } from "@/lib/zen-fs-type";
 
 type FsState =
   | { status: "loading" }
@@ -10,12 +11,14 @@ type FsState =
   | {
       status: "ready";
       handler: FileSystemDirectoryHandle | null;
+      name: string;
       fsType: "web-access" | "indexed-db";
       fs: typeof fs;
     };
 
 export function createSystemFs() {
   let DIR: FsState = $state({ status: "loading" });
+  let sessionID = crypto.randomUUID();
 
   onMount(async () => {
     await restoreFilesystemFromSession();
@@ -29,6 +32,7 @@ export function createSystemFs() {
           status: "ready",
           handler: dir,
           fsType: "web-access",
+          name: dir.name,
           fs: await createFilesystem(dir),
         };
       } catch (e) {
@@ -63,6 +67,7 @@ export function createSystemFs() {
     DIR = {
       status: "ready",
       handler: dir,
+      name: dir.name,
       fs: await createFilesystem(dir),
       fsType: "web-access",
     };
@@ -92,30 +97,37 @@ export function createSystemFs() {
       status: "ready",
       handler: null,
       fsType: "indexed-db",
-      fs: await createEmptyFilesystem(),
+      name: "empty",
+      fs: await createEmptyFilesystem("empty"),
     };
   }
 
-  async function loadDefaultFilesystem() {
+  async function loadTemplateFilesystem(name = "default") {
+    const templateFs = await createEmptyFilesystem(name);
+
+    if (name === "default") {
+      await fillWithDefaultFiles(templateFs);
+    } else if (name === "foo") {
+      await templateFs.promises.writeFile("index.pug", "div Foo", "utf8");
+    }
+
     DIR = {
       status: "ready",
       handler: null,
+      name: name,
       fsType: "indexed-db",
-      fs: await createDefaultFilesystem(),
+      fs: templateFs,
     };
   }
 
-  async function createEmptyFilesystem() {
-    const indexedFs = await IndexedDB.create({ storeName: "empty" });
+  async function createEmptyFilesystem(name: string) {
+    const indexedFs = await IndexedDB.create({ storeName: name });
     await configureSingle(indexedFs);
 
     return fs;
   }
 
-  async function createDefaultFilesystem() {
-    const indexedFs = await IndexedDB.create({ storeName: "scratchpad" });
-    await configureSingle(indexedFs);
-
+  async function fillWithDefaultFiles(fs: Fs) {
     if (!fs.existsSync("/assets")) {
       await fs.promises.mkdir("/assets");
     }
@@ -159,7 +171,10 @@ export function createSystemFs() {
     pickSessionFolder,
     clearSession: clearSessionHandler,
     loadEmptyFilesystem,
-    loadDefaultFilesystem,
+    loadTemplateFilesystem,
+    get sessionID() {
+      return sessionID;
+    },
     get status() {
       return DIR.status;
     },
@@ -171,6 +186,9 @@ export function createSystemFs() {
     },
     get dirName() {
       return DIR.status === "ready" ? DIR.handler?.name : null;
+    },
+    get name() {
+      return DIR.status === "ready" ? DIR.name : null;
     },
   };
 }

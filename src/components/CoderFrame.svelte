@@ -106,9 +106,9 @@
     fs.writeFileSync(INPUT_FILE, content);
 
     console.log("Saved");
-    setTimeout(() => {
-      localStorage.removeItem(recoveryKey);
-    }, 500);
+    // setTimeout(() => {
+    //   localStorage.removeItem(recoveryKey);
+    // }, 500);
   }
 
   function handleAutobuildChange() {

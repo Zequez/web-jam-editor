@@ -10,13 +10,14 @@
     type FileReadResponse,
   } from "@/lib/preview-virtual-server/protocol";
   import Preview from "./Preview.svelte";
-  import { getPreviewUrlStore } from "@/stores/previewUrlStore.svelte";
 
   const {
     fs,
     servePath,
     hiddenMode,
-  }: { fs: Fs; servePath: string; hiddenMode: boolean } = $props();
+    sessionId,
+  }: { fs: Fs; servePath: string; hiddenMode: boolean; sessionId: string } =
+    $props();
 
   let previewEl: Preview;
 
@@ -25,7 +26,6 @@
 
   let initializationError = $state<string | null>(null);
   let refreshSession: (() => Promise<void>) | null = null;
-  let sessionId = createSessionId();
 
   export function refresh() {
     console.log("Refreshing preview");
@@ -114,10 +114,10 @@
     return `${location.origin}${PREVIEW_NAMESPACE}${encodeURIComponent(sessionId)}`;
   }
 
-  const { updateUrl } = getPreviewUrlStore();
-  $effect(() => {
-    updateUrl(generateUrl());
-  });
+  // const { updateUrl } = getPreviewUrlStore();
+  // $effect(() => {
+  //   updateUrl(generateUrl());
+  // });
 
   function reportInitializationError(error: unknown) {
     initializationError =
@@ -238,10 +238,6 @@
       port.postMessage(response);
     }
     port.close();
-  }
-
-  function createSessionId() {
-    return crypto.randomUUID();
   }
 </script>
 

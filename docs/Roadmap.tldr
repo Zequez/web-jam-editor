@@ -145,8 +145,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1562.5783714672434,
-			"y": 1508.5223622528883,
+			"x": -3024.744930128619,
+			"y": 1450.448361785608,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -364,8 +364,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -2054.5707066475807,
-			"y": 123.17704734633935,
+			"x": -3516.7372653089565,
+			"y": 65.1030468790591,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -926,8 +926,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 747.2994418579442,
-			"y": 245.8826502877981,
+			"x": -1649.5784879411435,
+			"y": 53.11697756623957,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1136,8 +1136,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1696.0680972212326,
-			"y": 464.90671254387985,
+			"x": -3158.2346558826084,
+			"y": 406.8327120765996,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1691,8 +1691,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1587.2979977108075,
-			"y": 917.8230631050313,
+			"x": -3049.4645563721833,
+			"y": 859.7490626377511,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1791,8 +1791,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3196.6127545888003,
-			"y": 891.7742950615825,
+			"x": -4658.779313250176,
+			"y": 833.7002945943022,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1874,8 +1874,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3703.69919364192,
-			"y": -457.4332114554751,
+			"x": -5165.865752303296,
+			"y": -515.5072119227553,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2011,9 +2011,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 9372.923489219665,
-			"y": 1565.186098326633,
-			"z": 0.09451097612246064,
+			"x": 78.15593649854395,
+			"y": 415.6635647614693,
+			"z": 0.9961961289035325,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -2134,6 +2134,74 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 639.4150767144354,
+			"y": 3221.7169949987037,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Ch-hUcJweD_kkLXdyIFsn",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "red",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Code Folding Improved"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Currently the code folding fails when the white padding is missing; This should not be."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3RxaI",
+			"typeName": "shape"
+		},
+		{
 			"x": 2606.3561506675296,
 			"y": 3966.1286252183527,
 			"rotation": 0,
@@ -2197,8 +2265,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1211.6386747687868,
-			"y": 348.58057672310713,
+			"x": -2673.805233430163,
+			"y": 290.5065762558269,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2620,8 +2688,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -4361.905680474298,
-			"y": -40.96739916349702,
+			"x": -5824.072239135674,
+			"y": -99.04139963077728,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -3463,8 +3531,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1853.6370325411938,
-			"y": -117.59151871064137,
+			"x": -3315.80359120257,
+			"y": -175.66551917792162,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4536,8 +4604,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3530.9833733385394,
-			"y": -613.0086226528169,
+			"x": -4993.149931999915,
+			"y": -671.0826231200972,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4689,8 +4757,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3206.1044199492853,
-			"y": 1053.804491331437,
+			"x": -4668.270978610661,
+			"y": 995.7304908641568,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4740,8 +4808,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3260.263244018807,
-			"y": 528.6692044824572,
+			"x": -4722.429802680183,
+			"y": 470.59520401517693,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4842,8 +4910,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1498.2030492314823,
-			"y": 1303.6664284200638,
+			"x": -2960.369607892858,
+			"y": 1245.5924279527835,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4916,8 +4984,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3849.879495160099,
-			"y": 437.3388244730984,
+			"x": -5312.046053821475,
+			"y": 379.2648240058181,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -4980,8 +5048,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -2118.578137417176,
-			"y": 272.2704692622797,
+			"x": -3580.744696078552,
+			"y": 214.19646879499942,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5138,6 +5206,120 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 947.8933825731713,
+			"y": 698.5979131507654,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:aCtD0pfQ6tVPF7altgFPQ",
+			"type": "geo",
+			"props": {
+				"w": 468,
+				"h": 235.59052807605505,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 36.40947192394495,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Assets Box - "
+								},
+								{
+									"type": "text",
+									"text": "Images"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The list of images should be available as the constant IMG[<name>][“original” | “sm” | “md” | “lg”]"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Images should be sorted alphabetically on the UI"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Update the images docs."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3U8hM",
+			"typeName": "shape"
+		},
+		{
 			"x": 11.174724014411822,
 			"y": 0.8295074268962708,
 			"rotation": 0,
@@ -5209,12 +5391,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:6iJHtO6DFp89HOmz7M3gv",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:ZK82qNr1-w5WNvskGaqow"
+				"shape:6iJHtO6DFp89HOmz7M3gv"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:6iJHtO6DFp89HOmz7M3gv",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -5224,8 +5406,8 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -4072.6727789024044,
-			"y": -475.4758769655041,
+			"x": -5534.839337563781,
+			"y": -533.5498774327843,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 0.5,
@@ -5256,8 +5438,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 777.7438698313522,
-			"y": 1317.4857607885922,
+			"x": 959.966438064893,
+			"y": 339.7429682511642,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5269,7 +5451,7 @@
 				"h": 235.59052807605505,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 0,
+				"growY": 60.40947192394495,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
@@ -5313,6 +5495,24 @@
 								{
 									"type": "text",
 									"text": "Dropping markdown files should move them to this tab. You should be able to rename them; and clicking them should open a new CodeMirror coder on top of the current one that has the markdown document and it’s own scroll bar and can be resized."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The documents list should be available as a constant. DOC[<name>] and DOC_MD[<name>] for the raw markdown. "
 								}
 							]
 						}
@@ -5388,8 +5588,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3204.1845276855383,
-			"y": 55.028281852778036,
+			"x": -4666.351086346915,
+			"y": -3.0457186145022206,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5671,8 +5871,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3919.228134423439,
-			"y": 1147.061072968394,
+			"x": -5381.394693084814,
+			"y": 1088.9870725011137,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5722,8 +5922,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -4426.48139736765,
-			"y": 1081.2605528200647,
+			"x": -5888.647956029026,
+			"y": 1023.1865523527845,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6297,8 +6497,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1616.3854924502643,
-			"y": 1109.5013304759264,
+			"x": -3078.55205111164,
+			"y": 1051.427330008646,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6566,8 +6766,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1645.6710745525468,
-			"y": 265.36354579426086,
+			"x": -3107.8376332139223,
+			"y": 207.2895453269806,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6634,8 +6834,64 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1137.2643652779313,
-			"y": 1486.7332167533737,
+			"x": 1575.7709928401594,
+			"y": 2757.318361538928,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:leLGoY9WzzGETfzR-D_LP",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Assets Icons Tab should have search function"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3TrpE",
+			"typeName": "shape"
+		},
+		{
+			"x": -2599.430923939307,
+			"y": 1428.6592162860934,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -6988,8 +7244,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -4427.36412160514,
-			"y": 1227.442465099202,
+			"x": -5889.530680266516,
+			"y": 1169.3684646319218,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -7039,8 +7295,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1983.1115057914342,
-			"y": -400.3549200715829,
+			"x": -3445.27806445281,
+			"y": -458.42892053886317,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -7523,6 +7779,38 @@
 			"typeName": "shape"
 		},
 		{
+			"x": -3677.701106602783,
+			"y": -347.6107505049465,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 0.5,
+			"meta": {},
+			"id": "shape:2sSmJlfVy2dZeD9XjtqRO",
+			"type": "draw",
+			"props": {
+				"segments": [
+					{
+						"type": "free",
+						"path": "AAAAAAAAAAAfKYVBAACpTAAACFAAAJpQAABOUgAA31IAAE5SAABJVAAAAVT0SXBTD0SSVBxEJFUAANtUAAAkVQAAklQAACRVAADbVAAA21QAAJJU8UNwU1xHmlDDQ05SAAC8UdpH31LDR05S0klOUsNHTlK8SbxRpUu8UYVLK1HZTNJRhUsrUYRLK1GFSytRXEuaUCxLCFBcS5pQXEuaUNpM0lG8TUJRvU1CUaNNs1CfSvdM8UIzRRRLQEgjTCNMJEz4TO5KEE5UTBFO7koQTlVMEU4yTTNNJEz3TDNNM00zTTNNM00zTfdMJEz4TCNM+EygSjNF7EITS6lBFEuuQddI10AzRfa+cT0AAHE9AACoTAAACVAuQ+5O7ELtTvFCqUwAAMxNAADLTQAA7k4AAMxNAADuTgAA7k4AAO5OAADuTgAAmlAAAJpQXMOaUFzDCFAuw+5O7sbuTuzCzE2fwsxNAAAIUC7Dy02fwu5O7sbMTZ/GqUypyBNLqcUUS6nFE0tAyNdI18SqST/IqUk/yNdI18QzRfHCcT1xvXE9ccGpRRTLqUiozCRM+MwjTCPMc1BN0z9IFMvxQjPFcT1xvddI18SpSanJOEapzDJJ7s73SMvNM0nuzixLCdDuRu7OYEkI0GFJCNDsRu7OYUkI0CxHCNCpQRTLAABxwexC7s7xQu7OXEea0ClDCNAsRwjQLEcI0CxHCdDuRu7On0LLzZ9GzM04QqnMOEKozJ9CzM0zQqjMAACpzAAAzM0AAMvNAADMzQAA7s4AAO7OAADuzgAA7s4AAO7OAADuzgAA7s4AAO7OAAAI0AAACNBcw5rQKcMI0CzHCdBcw5rQXMea0FzDmtBcx5rQXMea0O7G7s5cx5rQX8ea0CnHCNDuxu7OX8ea0CnHCNAsxwjQ18DXyAAAM8U2RqjMAACpzAAA7s4AAMzNOMKozOy+M8UAAKnM8cLuzjPCqMw4wqnMNsaozNfA18gAAHG9AABxvTPF7D5xvQAA18jXxOzCM8V2wXHB7MIzxXG9ccFxwXHBccFxwUPHQ8dDx0PHM8XswnHBAAAUywAAy834yCzPe8wI0CzLEc5UzEbORs7I0KbP0tHKzmLS5M1O0trMK9GDxyvRhctC0cjMs9CzzCTQmszuzu7KLM98zO7O7soQzlTM+MygyszNn8b3zJ/K18jXxHHBcb1xvQAAN8rEy6nJqck2ysTLqsmqyTbKxMvEyzbKxMs3yjPF7MJxvXG918DXyD/IqskzxezCQ8dDxxTLP8gTy6zF18jXxBTLqcFxvQAAcb0AANfIAADXyAAA1sgAABTLqcEUy6nBM8UAABPLAADMzQAA7s4AAO7OAADuzgAA7s4AAAjQAADuzgAAzM0AAMvNAACpzAAAqMwAAKnMAACozAAAzM0AAKnMAACozAAAqcwAABPLAAAzxQAA18gAADPFAADXyNdAM8XsPjPF9j5xvQAAM8XsPnG9cT1xwXE918jXQDPF7D5xwXFBM8X2PnHBcT02xew+ccFxPXHBcUFxwXE9ccFxQXHBcT1xwXFBM8X2PjPF7EJxwXFBccFxQXG9dkFxwXE9ccFxQXHBcT1xvXE9cb1xPXG9cT1xwXFBcb1xPXHBcUFxvXE9cb1xQQAAcT3XxNdI8cIzRfHCM0XXxNdI1MTWSPHCNkXxwjNFcb1xQXG9cT1xvXFBcb1xPQAAcT0AAHE9cb1xPXG9cT1xvXE97L4zRXG9cUFxvXFBcb1xQXG9cUFxvXFBcb1xQXG9cT0AAHE9AABxQQAAcUH2vjNFAABxPQAAcUHsvjNFcb1xQQAAcT32vjZFAABxQQAAcT0AAHE9AABxPQAAcT0AAHE9AABxQQAAcUEAAHE9",
+						"dim": 2
+					}
+				],
+				"color": "light-green",
+				"fill": "solid",
+				"dash": "draw",
+				"size": "xl",
+				"isComplete": true,
+				"isClosed": true,
+				"isPen": false,
+				"scale": 1,
+				"scaleX": 1,
+				"scaleY": 1
+			},
+			"parentId": "page:page",
+			"index": "Zx39r",
+			"typeName": "shape"
+		},
+		{
 			"x": -20.741863237117173,
 			"y": 825.0887066892647,
 			"rotation": 0,
@@ -7701,8 +7989,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3498.886421823727,
-			"y": -490.74037901199176,
+			"x": -4961.052980485103,
+			"y": -548.814379479272,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8042,8 +8330,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1650.492851994742,
-			"y": 710.7383670977813,
+			"x": -3112.659410656118,
+			"y": 652.664366630501,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8110,8 +8398,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3919.3496390303794,
-			"y": 1265.8665293491058,
+			"x": -5381.516197691755,
+			"y": 1207.7925288818255,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8311,6 +8599,74 @@
 			},
 			"parentId": "page:page",
 			"index": "b1iwLr",
+			"typeName": "shape"
+		},
+		{
+			"x": 1114.4483589641422,
+			"y": 3353.5357100259334,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:2_7R7VbryaoVfJiwljdOm",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Tutorial Publicar Github Pages"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "arst"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3SCgE",
 			"typeName": "shape"
 		},
 		{
@@ -8584,8 +8940,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 530.9863892519047,
-			"y": -291.0502024987027,
+			"x": -2620.192741584461,
+			"y": 67.08197309922383,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8597,15 +8953,15 @@
 				"h": 107.57313088204397,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 44.42686911795603,
+				"growY": 99.42686911795603,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
 				"flipY": false,
-				"color": "light-blue",
+				"color": "light-green",
 				"labelColor": "black",
 				"fill": "solid",
-				"size": "s",
+				"size": "l",
 				"font": "draw",
 				"align": "start",
 				"verticalAlign": "start",
@@ -8807,8 +9163,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -2145.018876417531,
-			"y": 471.4958338548255,
+			"x": -3607.1854350789067,
+			"y": 413.42183338754523,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9356,8 +9712,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3296.4661274780556,
-			"y": 340.8570345914202,
+			"x": -4758.632686139432,
+			"y": 282.78303412413993,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9627,8 +9983,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1473.8121779797584,
-			"y": 1683.2173193042604,
+			"x": -2935.978736641134,
+			"y": 1625.1433188369801,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9763,8 +10119,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1196.605129909029,
-			"y": 1108.2653121902495,
+			"x": -2658.771688570405,
+			"y": 1050.1913117229692,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -9837,8 +10193,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3787.6410869910737,
-			"y": 895.08552636166,
+			"x": -5249.8076456524495,
+			"y": 837.0115258943797,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10023,8 +10379,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1035.1659049535535,
-			"y": 969.0552676004687,
+			"x": -2497.332463614929,
+			"y": 910.9812671331885,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10109,8 +10465,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3854.927570661581,
-			"y": 188.74110506524175,
+			"x": -5317.094129322957,
+			"y": 130.6671045979615,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10178,8 +10534,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -4244.099063042508,
-			"y": -287.22963320987424,
+			"x": -5706.265621703884,
+			"y": -345.3036336771545,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10842,8 +11198,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3352.287391031678,
-			"y": 1349.652184654844,
+			"x": -4814.453949693054,
+			"y": 1291.5781841875637,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10893,8 +11249,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3454.714573570702,
-			"y": -179.23780752448505,
+			"x": -4916.881132232078,
+			"y": -237.3118079917653,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -10998,8 +11354,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1070.1656284195453,
-			"y": 958.0810491972853,
+			"x": -2532.3321870809214,
+			"y": 900.0070487300051,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -11134,8 +11490,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3915.252746523604,
-			"y": 1403.1853989508886,
+			"x": -5377.41930518498,
+			"y": 1345.1113984836084,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -11194,8 +11550,12 @@
 		},
 		{
 			"followingUserId": null,
-			"opacityForNextShape": 1,
-			"stylesForNextShape": {},
+			"opacityForNextShape": 0.5,
+			"stylesForNextShape": {
+				"tldraw:color": "light-green",
+				"tldraw:size": "xl",
+				"tldraw:fill": "solid"
+			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -11210,7 +11570,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 920
+				"h": 945
 			},
 			"insets": [
 				false,
@@ -11227,7 +11587,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": null,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -11275,6 +11635,57 @@
 			},
 			"parentId": "page:page",
 			"index": "b1jWJI",
+			"typeName": "shape"
+		},
+		{
+			"x": 520.0920482915064,
+			"y": 25.107833877942312,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:6iJHtO6DFp89HOmz7M3gv",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "red",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "The code errors don’t show up with the preview removed; should show up somewhere else."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3VRUL",
 			"typeName": "shape"
 		},
 		{
@@ -11642,8 +12053,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 777.1861185426742,
-			"y": 1183.7249356816278,
+			"x": 959.4086867762151,
+			"y": 205.98214314419982,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -11684,8 +12095,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1271.9597025502126,
-			"y": 1802.7131500507585,
+			"x": -2734.1262612115884,
+			"y": 1744.6391495834782,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -12001,8 +12412,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3830.7083440878255,
-			"y": 465.894032006559,
+			"x": -5292.874902749201,
+			"y": 407.8200315392787,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -12674,6 +13085,74 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1908.3434152772086,
+			"y": 2997.6544024495033,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:AEbzlufWdUqPjVXaS9gsd",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 93.74615478515622,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Atomic CSS"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Since we’re already transforming the Pug square brackets atomic CSS space, we could allow people to just use shadow-[0 0 3px #000] without the need to use shadow-[0_0_3px_#000] which is the current requirement."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3QvSA",
+			"typeName": "shape"
+		},
+		{
 			"x": 23.721394725556507,
 			"y": 6.180285236672262,
 			"rotation": 0,
@@ -12773,6 +13252,74 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1899.93444104247,
+			"y": 2332.499599221251,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:5SdI-HG2kD_SR_aMRWmR1",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Delight"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "When clicing a tab from the assets box, the tab should SLIDE to the left smoothly rather than jump."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3PkSv",
+			"typeName": "shape"
+		},
+		{
 			"x": 17.470500486498054,
 			"y": 5.645090093793442,
 			"rotation": 0,
@@ -12864,8 +13411,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -3825.4345652562656,
-			"y": 570.6482416878432,
+			"x": -5287.601123917641,
+			"y": 512.574241220563,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
