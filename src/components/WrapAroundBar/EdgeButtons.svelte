@@ -20,6 +20,14 @@
 
 <svelte:window on:keydown={tab === "none" ? undefined : handleEscKey} />
 
+{#if tab !== "none"}
+  <button
+    aria-label="Close"
+    class="fixed w-screen h-screen top-0 left-1/2 -translate-x-1/2 bg-black/0 z-10"
+    onclick={() => (tab = "none")}
+  ></button>
+{/if}
+
 <div class="h-full relative z-1000 flex-cc gap-0.8">
   <EdgeButton
     label="Awareness"
@@ -42,5 +50,7 @@
   <div></div>
   <!-- {/if} -->
 </div>
+<div></div>
+
 <SustainersFrame isOpen={tab === "sustainers"} />
 <AwarenessFrame isOpen={tab === "awareness"} />
