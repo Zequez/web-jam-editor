@@ -134,7 +134,7 @@ export function createSystemFs() {
 
     for (const [path, data] of Object.entries(defaultFiles)) {
       const awaitedData = await data;
-      console.log(path, data, awaitedData);
+      // console.log(path, data, awaitedData);
       await fs.promises.writeFile(
         path,
         awaitedData,

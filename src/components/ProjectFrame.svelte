@@ -5,14 +5,31 @@
     type CompileResult,
     type CompileError,
   } from "@/lib/pure-pug-compiler";
+  import { createImagesEngineStore } from "@/lib/images-engine.svelte.ts";
 
   import AssetsFrame from "./AssetsFrame";
   import CoderFrame from "./CoderFrame.svelte";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import BuildErrorDisplay from "./BuildErrorDisplay.svelte";
+  import { assetsDir, imagesDir, imagesSizes, outputDir } from "@/lib/CONSTS";
+  import { onMount } from "svelte";
 
   const { fs, sessionID, name }: { fs: Fs; sessionID: string; name: string } =
     $props();
+
+  const IMNG = createImagesEngineStore({
+    // Assuming the ProjectFrame component is fully dismounted before FS changes
+    // svelte-ignore state_referenced_locally
+    fs,
+    sourceDir: assetsDir,
+    outputDir: outputDir,
+    targetDir: imagesDir,
+    sizes: imagesSizes,
+  });
+
+  onMount(() => {
+    IMNG.scan();
+  });
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
 
@@ -67,6 +84,12 @@
   }
 
   const previewIsHidden = $derived(codePanelSize === 1);
+
+  async function handleFilesAdded(files: File[]) {
+    const undigestedFiles = await IMNG.digestImagesFromFiles(files);
+
+    console.log("Some files undigested; not uploaded", undigestedFiles);
+  }
 </script>
 
 {#if resizing}
@@ -79,7 +102,13 @@
     class="shrink-0 h-full flex flex-col space-y-1.5"
   >
     <div class="max-h-50% w-full">
-      <AssetsFrame />
+      <AssetsFrame
+        onFilesAdded={handleFilesAdded}
+        imagesList={Object.keys(IMNG.images)}
+        onDeleteImage={(name: string) => IMNG.remove(name)}
+        onRenameImage={(imgFrom: string, imgTo: string) =>
+          IMNG.rename(imgFrom, imgTo)}
+      />
     </div>
     <div class="h-40% grow w-full">
       <div

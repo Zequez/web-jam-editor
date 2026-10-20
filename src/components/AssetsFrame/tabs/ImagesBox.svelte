@@ -2,6 +2,7 @@
   import { fs } from "@zenfs/core";
   import { SvelteMap } from "svelte/reactivity";
   import { untrack } from "svelte";
+  import { imagesDir, outputDir } from "@/lib/CONSTS";
 
   const {
     imagesList,
@@ -29,7 +30,7 @@
 
     for (let img of images) {
       const buffer = await insistantReadFileWithTimeout(
-        `/www/images/${img}/sm.webp`,
+        `/${outputDir}/${imagesDir}/${img}/sm.webp`,
       );
 
       // Revoke an old URL if we're replacing it
