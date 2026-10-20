@@ -1,0 +1,9 @@
+# This file contains a list of WebJam projects
+# that show up on the Webjam app and can be loaded directly
+
+repos:
+  - gh:zequez/web-mates-club-webjam
+  - gh:zequez/ezequiel-redirects-webjam
+  - gh:zequez/pantour-webjam
+  - gh:zequez/casanami-webjam
+  - gh:zequez/gaia-webjam

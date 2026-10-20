@@ -2,7 +2,7 @@
   import { createSystemFs } from "@/stores/systemFs.svelte";
 
   import Loader from "./Loader.svelte";
-  import WebJamName from "./WebJamName.svelte";
+  import WebJamHeading from "./WebJamHeading.svelte";
   import WrapAroundBar from "./WrapAroundBar/WrapAroundBar.svelte";
   import ProjectFrame from "./ProjectFrame.svelte";
 
@@ -34,7 +34,7 @@
   </div>
   {#if systemFs.status === "loading"}
     <div class="bg-gray-200 rounded-1 size-full flex-cc flex-col">
-      <WebJamName />
+      <WebJamHeading />
       <div class="w-70 h-30 flex-cc">
         <Loader />
       </div>
@@ -42,9 +42,9 @@
   {:else if systemFs.status === "empty"}
     <div class="bg-gray-200 rounded-1 size-full overflow-auto">
       <div
-        class="py-6 md:py-24 px6 flex-cs flex-col space-y-3 max-w-screen-sm mx-auto text-center"
+        class="py-6 md:py-12 px6 flex-cs flex-col space-y-3 max-w-screen-sm mx-auto text-center"
       >
-        <WebJamName />
+        <WebJamHeading />
         <div class="flex flex-col space-y-3 w-100 max-w-full">
           <button
             class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"

@@ -29,8 +29,16 @@
       canvas.width = w;
       canvas.height = h;
       makeStars();
+      draw();
     }
-    window.addEventListener("resize", resize);
+
+    let timeout: number | null = null;
+    function debouncedResize() {
+      if (timeout) clearTimeout(timeout);
+      timeout = window.setTimeout(resize, 300);
+    }
+
+    window.addEventListener("resize", debouncedResize);
 
     function makeStars() {
       const count = Math.floor((w * h) / density); // density-based

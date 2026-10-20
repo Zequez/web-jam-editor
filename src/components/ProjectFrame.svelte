@@ -29,6 +29,25 @@
 
   onMount(() => {
     IMNG.scan();
+
+    if (fs.existsSync(assetsDir)) {
+      const files = fs.readdirSync(assetsDir);
+      for (const file of files) {
+        const ext = file.split(".").pop()?.toLowerCase();
+        if (ext === "js") {
+          fs.mkdirSync(`${outputDir}/scripts`, { recursive: true });
+          console.log(
+            "Copying",
+            `${assetsDir}/${file}`,
+            `${outputDir}/scripts/${file}`,
+          );
+          fs.copyFileSync(
+            `${assetsDir}/${file}`,
+            `${outputDir}/scripts/${file}`,
+          );
+        }
+      }
+    }
   });
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);

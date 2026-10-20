@@ -440,8 +440,8 @@
 			"typeName": "pointer"
 		},
 		{
-			"x": 1212.1633950502348,
-			"y": 9.38394412814364,
+			"x": -1297.2297292827425,
+			"y": 422.05359469328073,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -453,7 +453,7 @@
 				"h": 107.57313088204397,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 44.42686911795603,
+				"growY": 164.42686911795602,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
@@ -497,6 +497,24 @@
 								{
 									"type": "text",
 									"text": "Refactor the current images processor into it’s own store and globally available service system."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Moved image processing to images-engine; and optimized processing by storing the hashed images to skip processing if the hash matches"
 								}
 							]
 						},
@@ -2011,9 +2029,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 78.15593649854395,
-			"y": 415.6635647614693,
-			"z": 0.9961961289035325,
+			"x": 1439.3033824267889,
+			"y": 352.7672376475116,
+			"z": 0.5384257244556802,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -5391,12 +5409,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": "shape:6iJHtO6DFp89HOmz7M3gv",
+			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:6iJHtO6DFp89HOmz7M3gv"
+				"shape:nIEf-ZO55FS-YW5LnbUbi"
 			],
-			"hoveredShapeId": "shape:6iJHtO6DFp89HOmz7M3gv",
+			"hoveredShapeId": "shape:nIEf-ZO55FS-YW5LnbUbi",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -11047,6 +11065,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 524.9252525132865,
+			"y": -216.2261546128951,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:2xTHSkgKhKKs8e87tVV6a",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Clicking outside the Edge frames should close them. How did I miss this?"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3WJnX",
+			"typeName": "shape"
+		},
+		{
 			"x": 175.8743477453761,
 			"y": 24.245068876067307,
 			"rotation": 0,
@@ -11552,7 +11621,7 @@
 			"followingUserId": null,
 			"opacityForNextShape": 0.5,
 			"stylesForNextShape": {
-				"tldraw:color": "light-green",
+				"tldraw:color": "light-blue",
 				"tldraw:size": "xl",
 				"tldraw:fill": "solid"
 			},
