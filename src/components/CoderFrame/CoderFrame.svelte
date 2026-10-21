@@ -1,13 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import SingleFileCoder from "./SingleFileCoder";
-  import Loader from "./Loader.svelte";
+  import Loader from "@/components/Loader.svelte";
   import {
     INPUT_FILE,
     build,
     type CompileResult,
   } from "@/lib/pure-pug-compiler";
   import type { Fs } from "@/lib/zen-fs-type";
+
+  import SingleFileCoder from "../SingleFileCoder";
   import BuildProgressBar from "./BuildProgressBar.svelte";
   import PublishingNote from "./PublishingNote.svelte";
   import AutoBuildBtn from "./AutoBuildBtn.svelte";

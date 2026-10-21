@@ -8,7 +8,7 @@
   import { createImagesEngineStore } from "@/lib/images-engine.svelte.ts";
 
   import AssetsFrame from "./AssetsFrame";
-  import CoderFrame from "./CoderFrame.svelte";
+  import CoderFrame from "./CoderFrame";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import BuildErrorDisplay from "./BuildErrorDisplay.svelte";
   import { assetsDir, imagesDir, imagesSizes, outputDir } from "@/lib/CONSTS";

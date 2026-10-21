@@ -1,77 +1,86 @@
 <script lang="ts">
   import { createSystemFs } from "@/stores/systemFs.svelte";
+  import { createProjectsStorage } from "@/stores/projects-storage.svelte";
 
   import Loader from "./Loader.svelte";
-  import WebJamHeading from "./WebJamHeading.svelte";
-  import WrapAroundBar from "./WrapAroundBar/WrapAroundBar.svelte";
+  import WebJamHeading from "./StartFrame/WebJamHeading.svelte";
+  import WrapAroundBar from "./WrapAroundBar";
   import ProjectFrame from "./ProjectFrame.svelte";
+  import StartFrame from "./StartFrame";
 
-  const systemFs = createSystemFs();
+  const storedSessionID = sessionStorage.getItem("session-id");
+  // svelte-ignore non_reactive_update
+  let sessionID: string;
+  if (!storedSessionID) {
+    sessionID = crypto.randomUUID();
+    sessionStorage.setItem("session-id", sessionID);
+  } else {
+    sessionID = storedSessionID;
+  }
+
+  // const systemFs = createSystemFs();
+  const S = createProjectsStorage();
+
+  let currentProject = $state<null | string>(null);
+
+  function focusProject(name: string) {
+    currentProject = name;
+  }
+
+  function defocusProject() {
+    currentProject = null;
+  }
+  $effect(() => {
+    console.log("Change", S.state);
+  });
 </script>
 
 <WrapAroundBar>
   <div slot="menu">
-    {#if systemFs.status === "empty"}
-      <button
+    <!-- {#if systemFs.status === "empty"} -->
+    <!-- <button
         class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
         onclick={systemFs.pickSessionFolder}
       >
         <span class="i-fa-folder-open inline-block relative -bottom-2px"></span>
         Open Folder...
-      </button>
-    {:else if systemFs.status === "ready"}
+      </button> -->
+    {#if currentProject}
       <button
-        onclick={systemFs.clearSession}
+        onclick={() => defocusProject()}
         class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
       >
         <span class="i-fa-close inline-block relative -bottom-2px"></span>
         Close
       </button>
       <span class="px-2 font-mono">
-        {systemFs.name!}
+        /{currentProject}
       </span>
     {/if}
   </div>
-  {#if systemFs.status === "loading"}
+  {#snippet LoadScreen()}
     <div class="bg-gray-200 rounded-1 size-full flex-cc flex-col">
       <WebJamHeading />
       <div class="w-70 h-30 flex-cc">
         <Loader />
       </div>
     </div>
-  {:else if systemFs.status === "empty"}
-    <div class="bg-gray-200 rounded-1 size-full overflow-auto">
-      <div
-        class="py-6 md:py-12 px6 flex-cs flex-col space-y-3 max-w-screen-sm mx-auto text-center"
-      >
-        <WebJamHeading />
-        <div class="flex flex-col space-y-3 w-100 max-w-full">
-          <button
-            class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-            onclick={systemFs.pickSessionFolder}>Open a folder</button
-          >
-          <button
-            class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-            onclick={() => systemFs.loadEmptyFilesystem()}>Empty project</button
-          >
-          <button
-            class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-            onclick={() => systemFs.loadTemplateFilesystem("default")}
-            >Example project</button
-          >
-          <button
-            class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-            onclick={() => systemFs.loadTemplateFilesystem("foo")}
-            >Foo project</button
-          >
-        </div>
-      </div>
-    </div>
-  {:else if systemFs.status === "ready" && systemFs.fs}
-    <ProjectFrame
-      fs={systemFs.fs}
-      sessionID={systemFs.sessionID}
-      name={systemFs.name!}
-    />
+  {/snippet}
+  {#if S.state.type === "loading"}
+    {@render LoadScreen()}
+  {:else if S.state.type === "ready"}
+    {#if currentProject}
+      {#await S.focusFs(currentProject)}
+        {@render LoadScreen()}
+      {:then}
+        <ProjectFrame fs={S.fs} {sessionID} name={currentProject} />
+      {/await}
+    {:else}
+      <StartFrame
+        onFocusProject={(name) => focusProject(name)}
+        mountingMap={S.state.config}
+        onAddProject={(name, storage) => S.addProject(name, storage)}
+      />
+    {/if}
   {/if}
 </WrapAroundBar>

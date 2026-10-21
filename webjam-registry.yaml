@@ -2,8 +2,18 @@
 # that show up on the Webjam app and can be loaded directly
 
 repos:
-  - gh:zequez/web-mates-club-webjam
-  - gh:zequez/ezequiel-redirects-webjam
-  - gh:zequez/pantour-webjam
-  - gh:zequez/casanami-webjam
-  - gh:zequez/gaia-webjam
+  web-mates-club:
+    source: gh:zequez/web-mates-club-webjam
+    www: https://webmatesclub.ezequielschwartzman.org
+  ezequiel-redirects:
+    source: gh:zequez/ezequiel-redirects-webjam
+    www: https://re.ezequielschwartzman.org
+  pantour:
+    source: gh:zequez/pantour-webjam
+    www: https://pantour.webjam.space
+  casa-nami:
+    source: gh:zequez/casanami-webjam
+    www: https://casanami.art
+  gaia:
+    source: gh:zequez/gaia-webjam
+    www: https://gaia.webjam.space
