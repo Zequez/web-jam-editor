@@ -31,97 +31,25 @@ export function createProjectsStorage() {
   let state = $state<SystemState>({ type: "loading" });
 
   onMount(async () => {
-    const storedMap = await get(MAP_KEY);
-    let gottenMap: SvelteMap<string, LocalProject>;
-    if (storedMap) {
-      gottenMap = storedMap as SvelteMap<string, LocalProject>;
-    } else {
-      gottenMap = new SvelteMap();
-    }
-
-    // Check old storages and migrate them to the new store
-    // const databases = await indexedDB.databases();
-
-    // console.log(databases.map((db) => db.name));
-
-    // Remove after 1.0
-    async function migrateOldSystem() {
-      const migrate = ["default", "default2", "empty", "foo", "scratchpad"];
-
-      const databases = await indexedDB.databases();
-      databases
-        .map((db) => db.name)
-        .forEach((name) => {
-          if (migrate.includes(name!)) {
-            if (gottenMap.get(name!)) {
-              return;
-            }
-            gottenMap.set(name!, {
-              storage: {
-                type: "mem",
-                storeName: name!,
-              },
-              isMounted: false,
-              error: null,
-            });
-          }
-        });
-
-      const dirHandlesStored = (await keys()).filter((key) =>
-        key.toString().match(/[0-9]+$/),
-      );
-
-      for (let dirHandleKey of dirHandlesStored) {
-        const dirHandle = (await get(
-          dirHandleKey,
-        )) as FileSystemDirectoryHandle | null;
-
-        if (dirHandle) {
-          const isValid = await isValidDirectory(dirHandle);
-          if (isValid) {
-            const name = dirHandle.name;
-            gottenMap.set(name, {
-              storage: {
-                type: "dir",
-                handle: dirHandle,
-              },
-              isMounted: false,
-              error: null,
-            });
-            del(dirHandleKey);
-          } else {
-            console.log("Removing invalid directory handle");
-            del(dirHandleKey);
-          }
-        } else {
-          console.log("Removing empty entry");
-          del(dirHandleKey);
-        }
-      }
-      console.log(dirHandlesStored);
-
-      async function isValidDirectory(handle: FileSystemDirectoryHandle) {
-        try {
-          await handle.values().next();
-          return true;
-        } catch {
-          return false;
-        }
-      }
-    }
-
-    await migrateOldSystem();
-
-    state = { type: "ready", config: gottenMap };
+    const storedEntries = await get<[string, LocalProject][]>(MAP_KEY);
+    state = {
+      type: "ready",
+      config: new SvelteMap(storedEntries ?? []),
+    };
   });
 
   $effect(() => {
     console.log("STATE CHANGED!");
-    if (state.type === "ready") {
-      // JSON.stringify(state.config);
-      console.log("Setting state config map", state.config);
-      // set(MAP_KEY, state.config);
-    }
+    if (state.type !== "ready") return;
+    const entries = Array.from(state.config.entries()).map(([key, value]) => [
+      key,
+      $state.snapshot(value),
+    ]);
+    // Read a reactive property of the map to establish a dependency.
+    // config.size;
+
+    console.log("Setting state config map");
+    set(MAP_KEY, entries);
   });
   // });
 
@@ -145,33 +73,7 @@ export function createProjectsStorage() {
       isMounted: false,
       error: null,
     });
-
-    // set(MAP_KEY, state.config);
-
-    // let storageType: StorageType;
-
-    // if (storage.type === "dir") {
-    //   storageType = {
-    //     type: "dir",
-    //     handle: await openDirectoryPicker(),
-    //   };
-    // } else if (storage.type === "mem") {
-    //   storageType = {
-    //     type: "mem",
-    //     storeName: `${name}-${Math.random().toString(36).slice(2)}`,
-    //   };
-    // } else {
-    //   throw new Error("Unknown storage type");
-    // }
   }
-
-  // function addMemProject() {
-
-  // }
-
-  // function addDirProject() {
-
-  // }
 
   async function focusFs(projectName: string) {
     if (state.type !== "ready") {
