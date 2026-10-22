@@ -12,6 +12,7 @@ import {
   type ChildNode,
   type ParentNode,
   type Document,
+  Text,
 } from "domhandler";
 import { render } from "dom-serializer";
 import { generateIconsFontCss, scanForIcons } from "../icons-engine.ts";
@@ -130,9 +131,10 @@ export function buildCompiler(pug: typeof Pug) {
       if (iconsFileName) {
         outputRoot = injectStylesheetTagBeforeHead(outputRoot, iconsFileName);
       }
+      outputRoot = injectScriptShortcutsBeforeHead(outputRoot);
       const pageName =
         htmlparser2.DomUtils.getAttributeValue(outputRoot, "name") || "index";
-      const outputHtml = render(outputRoot);
+      const outputHtml = render(outputRoot, { encodeEntities: false });
 
       files[pageName === "index" ? "index.html" : `${pageName}/index.html`] =
         `<!DOCTYPE html>${outputHtml}`;
@@ -144,6 +146,33 @@ export function buildCompiler(pug: typeof Pug) {
 
     return { type: "success", files };
   };
+}
+
+function injectScriptShortcutsBeforeHead(root: Element) {
+  // Add a <script> tag that defines document.querySelector("...") shortcuts as $("...")
+  // And document.querySelectorAll("...") shortcuts as $$("...")
+
+  const head = root.children.find(
+    (child) => child instanceof Element && child.name === "head",
+  );
+
+  if (!head) {
+    throw new Error("Expected <head> to exist");
+  }
+
+  const script = new Element("script", {}, [
+    new Text(`
+      const $ = (selector, context = document) =>
+        context.querySelector(selector);
+
+      const $$ = (selector, context = document) =>
+        context.querySelectorAll(selector);
+    `),
+  ]);
+
+  htmlparser2.DomUtils.prependChild(head as ParentNode, script);
+
+  return root;
 }
 
 function injectStylesheetTagBeforeHead(root: Element, href: string) {
