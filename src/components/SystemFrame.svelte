@@ -7,6 +7,7 @@
   import WrapAroundBar from "./WrapAroundBar";
   import ProjectFrame from "./ProjectFrame.svelte";
   import StartFrame from "./StartFrame";
+  import { persistedState } from "svelte-persisted-state";
 
   const storedSessionID = sessionStorage.getItem("session-id");
   // svelte-ignore non_reactive_update
@@ -21,14 +22,16 @@
   // const systemFs = createSystemFs();
   const S = createProjectsStorage();
 
-  let currentProject = $state<null | string>(null);
+  let currentProject = persistedState<string | null>("currentProject", null, {
+    storage: "session",
+  });
 
   function focusProject(name: string) {
-    currentProject = name;
+    currentProject.current = name;
   }
 
   function defocusProject() {
-    currentProject = null;
+    currentProject.current = null;
   }
   $effect(() => {
     console.log("Change", S.state);
@@ -45,7 +48,7 @@
         <span class="i-fa-folder-open inline-block relative -bottom-2px"></span>
         Open Folder...
       </button> -->
-    {#if currentProject}
+    {#if currentProject.current}
       <button
         onclick={() => defocusProject()}
         class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
@@ -54,7 +57,7 @@
         Close
       </button>
       <span class="px-2 font-mono">
-        /{currentProject}
+        /{currentProject.current}
       </span>
     {/if}
   </div>
@@ -69,11 +72,11 @@
   {#if S.state.type === "loading"}
     {@render LoadScreen()}
   {:else if S.state.type === "ready"}
-    {#if currentProject}
-      {#await S.focusFs(currentProject)}
+    {#if currentProject.current}
+      {#await S.focusFs(currentProject.current)}
         {@render LoadScreen()}
       {:then}
-        <ProjectFrame fs={S.fs} {sessionID} name={currentProject} />
+        <ProjectFrame fs={S.fs} {sessionID} name={currentProject.current} />
       {/await}
     {:else}
       <StartFrame
