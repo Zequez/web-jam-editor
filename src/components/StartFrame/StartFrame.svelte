@@ -125,7 +125,7 @@
       <div
         class="bg-black/10 b b-black/10 rounded-2 p4 font-mono text-left flex flex-col gap-1"
       >
-        <div class="text-5">Explore Public Projects</div>
+        <div class="text-5">Commons</div>
         {#each Object.entries(parsedRegistry) as [suggestedPath, reg]}
           {@const host = HOSTS[reg.host]}
           <div class="flex gap-4">
@@ -178,5 +178,16 @@
         >Foo project</button
       >
     </div> -->
+    <div
+      class="font-mono mt-24 opacity-33 text-black text-shadow-[0_1px_0_#fff]"
+    >
+      Made with love and fury<br />
+      -
+      <a
+        href="https://ezequielschwartzman.org"
+        class="underline underline-0.5 underline-offset-2 hover:underline-1.5"
+        >Ezequiel</a
+      >
+    </div>
   </div>
 </div>

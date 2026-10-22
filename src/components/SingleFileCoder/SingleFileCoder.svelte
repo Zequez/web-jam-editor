@@ -1,7 +1,14 @@
 <script lang="ts">
+  import "./codemirror.css";
   import CodeMirror from "svelte-codemirror-editor";
   import { EditorView, keymap } from "@codemirror/view";
-  import { StreamLanguage } from "@codemirror/language";
+  import {
+    foldable,
+    foldEffect,
+    foldState,
+    StreamLanguage,
+    unfoldEffect,
+  } from "@codemirror/language";
   import { pug as langPug } from "@codemirror/legacy-modes/mode/pug";
   import { Prec } from "@codemirror/state";
   import { solarizedLight } from "thememirror";
@@ -17,24 +24,137 @@
   import { onMount } from "svelte";
   import { lex } from "@/lib/pure-pug-compiler/atomic-class-lexer";
   import { processAtomicClasses, renderPretty } from "./atomic-prettifier";
+  import { prettyfication } from "./doc-prettifycation";
 
   const codeMirrorPug = StreamLanguage.define(langPug);
 
-  let { onChange, initialValue, onTyping, onBuildAction } = $props<{
+  let {
+    onChange,
+    initialValue,
+    onTyping,
+    onBuildAction,
+    project,
+    file,
+  }: {
     onChange: (value: string) => void;
     onTyping: () => void;
     onBuildAction: () => void;
     initialValue: string;
-  }>();
+    project: string;
+    file: string;
+  } = $props();
 
   let content: string = $state(initialValue || "");
   let view: EditorView = $state(null!);
+
+  let storageKey = $derived(`folds:${project}:${file}`);
 
   function handleReady(gotView: EditorView) {
     view = gotView;
 
     lexPug();
+    restoreFoldingState();
   }
+
+  function restoreFoldingState() {
+    const saved = localStorage.getItem(storageKey);
+    if (!saved) return;
+
+    try {
+      console.log("Restored folding state");
+      const ranges: unknown = JSON.parse(saved);
+      if (
+        !Array.isArray(ranges) ||
+        ranges.length % 2 !== 0 ||
+        !ranges.every((n) => Number.isInteger(n))
+      )
+        return;
+
+      const effects = [];
+
+      for (let i = 0; i < ranges.length; i += 2) {
+        const from = ranges[i];
+        const to = ranges[i + 1];
+
+        if (from < 0 || to > view.state.doc.length || from >= to) continue;
+
+        const line = view.state.doc.lineAt(from);
+        const range = foldable(view.state, line.from, line.to);
+
+        if (range && range.from === from && range.to === to) {
+          effects.push(foldEffect.of(range));
+        }
+      }
+
+      if (effects.length) view.dispatch({ effects });
+    } catch {
+      // Ignore corrupted saved state.
+    }
+  }
+
+  // function syncFoldingState() {
+  //   // Restore saved folding state.
+  //   const saved = localStorage.getItem(storageKey);
+
+  //   console.log("Folds restored", saved);
+  //   if (saved) {
+  //     try {
+  //       const { fold: ranges } = JSON.parse(saved);
+
+  //       if (Array.isArray(ranges)) {
+  //         const effects = [];
+
+  //         for (let i = 0; i < ranges.length; i += 2) {
+  //           effects.push(
+  //             foldEffect.of({
+  //               from: ranges[i],
+  //               to: ranges[i + 1],
+  //             }),
+  //           );
+  //         }
+
+  //         // Requires an EditorView to dispatch effects.
+  //       }
+  //     } catch {
+  //       localStorage.removeItem(storageKey);
+  //     }
+  //   }
+  // }
+
+  function monitorAndSaveFolds() {
+    return EditorView.updateListener.of((update) => {
+      const foldingChanged = update.transactions.some((tr) =>
+        tr.effects.some(
+          (effect) => effect.is(foldEffect) || effect.is(unfoldEffect),
+        ),
+      );
+
+      if (!foldingChanged) return;
+
+      saveFoldingState();
+    });
+  }
+
+  import { foldedRanges } from "@codemirror/language";
+
+  function saveFoldingState() {
+    const ranges: number[] = [];
+
+    foldedRanges(view.state).between(0, view.state.doc.length, (from, to) => {
+      ranges.push(from, to);
+    });
+
+    console.log("Saved folding state", ranges);
+    localStorage.setItem(storageKey, JSON.stringify(ranges));
+  }
+
+  // ██╗     ███████╗██╗  ██╗    ██████╗ ██╗   ██╗ ██████╗
+  // ██║     ██╔════╝╚██╗██╔╝    ██╔══██╗██║   ██║██╔════╝
+  // ██║     █████╗   ╚███╔╝     ██████╔╝██║   ██║██║  ███╗
+  // ██║     ██╔══╝   ██╔██╗     ██╔═══╝ ██║   ██║██║   ██║
+  // ███████╗███████╗██╔╝ ██╗    ██║     ╚██████╔╝╚██████╔╝
+  // ╚══════╝╚══════╝╚═╝  ╚═╝    ╚═╝      ╚═════╝  ╚═════╝
+  // MARK: LEX
 
   function lexPug() {
     if (!view) return;
@@ -76,6 +196,14 @@
     }, 400);
   }
 
+  // ██╗███╗   ███╗███╗   ███╗███████╗██████╗ ██╗ █████╗ ████████╗███████╗
+  // ██║████╗ ████║████╗ ████║██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝██╔════╝
+  // ██║██╔████╔██║██╔████╔██║█████╗  ██║  ██║██║███████║   ██║   █████╗
+  // ██║██║╚██╔╝██║██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║   ██║   ██╔══╝
+  // ██║██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║   ██║   ███████╗
+  // ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+  // MARK: IMME
+
   const immediateChange = EditorView.updateListener.of((update) => {
     // console.log("Immediate change");
     if (update.docChanged) {
@@ -83,25 +211,34 @@
     }
   });
 
-  const debugKey = Prec.highest(
-    EditorView.domEventHandlers({
-      keydown(event) {
-        console.log({
-          key: event.key,
-          code: event.code,
-          altKey: event.altKey,
-          ctrlKey: event.ctrlKey,
-          shiftKey: event.shiftKey,
-          metaKey: event.metaKey,
-          defaultPrevented: event.defaultPrevented,
-        });
-        if (event.key === "Enter" && event.shiftKey) {
-          console.log("DOM Shift-Enter", event);
-        }
-        return false;
-      },
-    }),
-  );
+  // const debugKey = Prec.highest(
+  //   EditorView.domEventHandlers({
+  //     keydown(event) {
+  //       console.log({
+  //         key: event.key,
+  //         code: event.code,
+  //         altKey: event.altKey,
+  //         ctrlKey: event.ctrlKey,
+  //         shiftKey: event.shiftKey,
+  //         metaKey: event.metaKey,
+  //         defaultPrevented: event.defaultPrevented,
+  //       });
+  //       if (event.key === "Enter" && event.shiftKey) {
+  //         console.log("DOM Shift-Enter", event);
+  //       }
+  //       return false;
+  //     },
+  //   }),
+  // );
+
+  // ███████╗██╗  ██╗██╗███████╗████████╗███████╗███╗   ██╗████████╗███████╗██████╗
+  // ██╔════╝██║  ██║██║██╔════╝╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝██╔════╝██╔══██╗
+  // ███████╗███████║██║█████╗     ██║   █████╗  ██╔██╗ ██║   ██║   █████╗  ██████╔╝
+  // ╚════██║██╔══██║██║██╔══╝     ██║   ██╔══╝  ██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗
+  // ███████║██║  ██║██║██║        ██║   ███████╗██║ ╚████║   ██║   ███████╗██║  ██║
+  // ╚══════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+
+  // MARK: SHIFT
 
   const buildOnShiftEnter = Prec.highest(
     keymap.of([
@@ -116,63 +253,20 @@
     ]),
   );
 
+  // ███████╗ █████╗ ██╗   ██╗███████╗
+  // ██╔════╝██╔══██╗██║   ██║██╔════╝
+  // ███████╗███████║██║   ██║█████╗
+  // ╚════██║██╔══██║╚██╗ ██╔╝██╔══╝
+  // ███████║██║  ██║ ╚████╔╝ ███████╗
+  // ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝
+
+  // MARK: SAVE
+
   function onSave() {
-    const result = lex(content);
-    let prettified = "";
-
-    for (let i = 0; i < result.length; i++) {
-      const declaration = result[i]!;
-
-      if (declaration.type === "relevant") {
-        prettified += declaration.indentation;
-        prettified += declaration.elementPart;
-
-        const atomicClasses = declaration.atomicClassSegment.slice(1, -1);
-        const atomicUnits = processAtomicClasses(atomicClasses);
-
-        const atomicClassesPretty = renderPretty(
-          atomicUnits,
-          declaration.indentation.length,
-        );
-
-        prettified += `[${atomicClassesPretty}]`;
-        prettified += declaration.rest;
-      } else {
-        prettified += declaration.raw;
-      }
-    }
-
-    const current = view.state.doc.toString();
-
-    // Find the common prefix.
-    let from = 0;
-    while (
-      from < current.length &&
-      from < prettified.length &&
-      current[from] === prettified[from]
-    ) {
-      from++;
-    }
-
-    // Find the common suffix.
-    let currentEnd = current.length;
-    let prettyEnd = prettified.length;
-
-    while (
-      currentEnd > from &&
-      prettyEnd > from &&
-      current[currentEnd - 1] === prettified[prettyEnd - 1]
-    ) {
-      currentEnd--;
-      prettyEnd--;
-    }
-
+    const latestDoc = view.state.doc.toString();
+    const changes = prettyfication(latestDoc);
     view.dispatch({
-      changes: {
-        from,
-        to: currentEnd,
-        insert: prettified.slice(from, prettyEnd),
-      },
+      changes,
     });
 
     // handleOnChange();
@@ -187,6 +281,14 @@
       },
     },
   ]);
+
+  // ██████╗  ██████╗  ██████╗
+  // ██╔══██╗██╔═══██╗██╔════╝
+  // ██║  ██║██║   ██║██║
+  // ██║  ██║██║   ██║██║
+  // ██████╔╝╚██████╔╝╚██████╗
+  // ╚═════╝  ╚═════╝  ╚═════╝
+  // MARK: DOC
 </script>
 
 <CodeMirror
@@ -201,7 +303,7 @@
     // debugKey,
     buildOnShiftEnter,
     codeMirrorPug,
-    foldingOnIndent,
+    foldingOnIndent(),
     immediateChange,
     whitespaceTheme,
     indentWhitespacePlugin,
@@ -210,51 +312,6 @@
     duplicateLine,
     arbitraryStyleExtension,
     interceptSave,
+    monitorAndSaveFolds(),
   ]}
 />
-
-<style>
-  :global(.cm-editor) {
-    height: 100% !important;
-  }
-
-  /* :global(.cm-editor .cm-selectionBackground) {
-    background-color: #222 !important;
-  } */
-
-  :global(.cm-activeLine) {
-    background-color: #1111 !important;
-  }
-
-  :global(.cm-foldGutter) {
-    width: 20px;
-    padding: 0 1px;
-  }
-
-  :global(.cm-foldGutter .cm-gutterElement span) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #fff0;
-    border-radius: 4px;
-    position: relative;
-  }
-
-  :global(.cm-foldGutter .cm-gutterElement span[title="Fold line"]) {
-    background: #0003;
-  }
-
-  :global(.cm-foldGutter .cm-gutterElement span[title="Unfold line"]) {
-    background: hsla(24, 100%, 40%, 0.8);
-  }
-
-  :global(.cm-foldGutter .cm-gutterElement span[title="Unfold line"]::before) {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    border-radius: 2px;
-    /* background: red; */
-    border: 2px solid #fffa;
-  }
-</style>

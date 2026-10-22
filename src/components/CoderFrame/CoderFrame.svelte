@@ -175,6 +175,8 @@
         onChange={handleChange}
         onTyping={handleChanging}
         onBuildAction={doBuild}
+        {project}
+        file={"index.pug"}
       />
     </div>
   </div>
