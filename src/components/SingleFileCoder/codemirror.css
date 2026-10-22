@@ -11,7 +11,7 @@
   }
 
   .cm-foldGutter {
-    width: 20px;
+    width: 0px;
     padding: 0 1px;
   }
 
@@ -23,6 +23,21 @@
     color: #fff0;
     border-radius: 4px;
     position: relative;
+    border-radius: 4px 4px 30px 4px;
+  }
+
+  .cm-foldGutter .cm-gutterElement {
+    width: 0;
+
+  }
+
+  .cm-foldGutter .cm-gutterElement span {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 34px;
+    border: solid 2px #0007;
+    border-radius: 4px 4px 4px 4px;
   }
 
   .cm-foldGutter .cm-gutterElement span[title="Fold line"] {
@@ -30,7 +45,8 @@
   }
 
 .cm-foldGutter .cm-gutterElement span[title="Unfold line"] {
-    background: hsla(24, 100%, 40%, 0.8);
+    background: hsla(24, 100%, 40%, 0.4);
+    border-color: hsla(24, 100%, 10%, 0.4)
   }
 
 .cm-foldGutter .cm-gutterElement span[title="Unfold line"]::before {
@@ -39,5 +55,6 @@
     inset: 3px;
     border-radius: 2px;
     /* background: red; */
-    border: 2px solid #fffa;
+    /* border: 2px solid #fffa; */
+    border-radius: 4px 4px 4px 4px;
   }
