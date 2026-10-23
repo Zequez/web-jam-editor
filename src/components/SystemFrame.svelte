@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createSystemFs } from "@/stores/systemFs.svelte";
-  import { createProjectsStorage } from "@/stores/projects-storage.svelte";
+  import { projectsStorageService_ANCHOR } from "@/stores/projects-storage-service.svelte";
 
   import Loader from "./Loader.svelte";
   import WebJamHeading from "./StartFrame/WebJamHeading.svelte";
@@ -10,6 +10,7 @@
   import { persistedState } from "svelte-persisted-state";
 
   const storedSessionID = sessionStorage.getItem("session-id");
+
   // svelte-ignore non_reactive_update
   let sessionID: string;
   if (!storedSessionID) {
@@ -20,7 +21,7 @@
   }
 
   // const systemFs = createSystemFs();
-  const S = createProjectsStorage();
+  const S = projectsStorageService_ANCHOR();
 
   let currentProject = persistedState<string | null>("currentProject", null, {
     storage: "session",
@@ -82,7 +83,6 @@
       <StartFrame
         onFocusProject={(name) => focusProject(name)}
         mountingMap={S.state.config}
-        onAddProject={(name, storage) => S.addProject(name, storage)}
       />
     {/if}
   {/if}

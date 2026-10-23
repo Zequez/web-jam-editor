@@ -241,7 +241,7 @@ function fileResponse(
   const responseBody = isHeadRequest
     ? null
     : isHtml(contentType)
-      ? injectRefreshClient(body, sessionId)
+      ? injectStuff(body, sessionId)
       : body;
 
   return new Response(responseBody, {
@@ -253,28 +253,83 @@ function fileResponse(
   });
 }
 
-function injectRefreshClient(body: ArrayBuffer, sessionId: string): ArrayBuffer {
+function injectStuff(body: ArrayBuffer, sessionId: string): ArrayBuffer {
   const base = `<base href="${PREVIEW_NAMESPACE}${encodeURIComponent(sessionId)}/">`;
   const script = `<script type="module" src="${PREVIEW_REFRESH_CLIENT_PATH}"></script>`;
-  const html = new TextDecoder().decode(body);
-  const openingHead = /<head(?:\s[^>]*)?>/i;
+
+  let html = new TextDecoder().decode(body);
+
+  // const openingHead = /<head(?:\s[^>]*)?>/i;
+  const closingHead = /<\/head\s*>/i;
+  const closingBody = /<\/body\s*>/i;
+  const baseRegex = /<base href="([^"]+)">/;
+
+  let replacedBase = false;
+  [replacedBase, html] = replaceAtMatch(html, baseRegex, base);
+
+  if (!replacedBase) {
+    html = injectBeforeHeadOrBody(html, base);
+  }
+
+  html = injectBeforeHeadOrBody(html, script);
+
+  return new TextEncoder().encode(html).buffer;
+
+  // const currentBaseTagMatch = html.match(/<base href="([^"]+)">/);
+  // if (currentBaseTagMatch) {
+  //   const startPos = currentBaseTagMatch.index!;
+  //   const endPos = startPos + currentBaseTagMatch[0].length;
+
+  //   html = html.slice(0, startPos) + base + html.slice(endPos);
+  // } else {
+
+  // }
+
+  // if (closingHead.test(html)) {
+  //   const htmlWithBase = openingHead.test(html)
+  //     ? html.replace(openingHead, (head) => `${head}${base}`)
+  //     : html.replace(closingHead, `${base}</head>`);
+  //   return new TextEncoder().encode(
+  //     htmlWithBase.replace(closingHead, `${script}</head>`),
+  //   ).buffer;
+  // }
+  // if (closingBody.test(html)) {
+  //   return new TextEncoder().encode(
+  //     html.replace(closingBody, `${base}${script}</body>`),
+  //   ).buffer;
+  // }
+  // return new TextEncoder().encode(`${html}${base}${script}`).buffer;
+}
+
+function replaceAtMatch(
+  html: string,
+  regex: RegExp,
+  replacement: string,
+): [boolean, string] {
+  const currentBaseTagMatch = html.match(regex);
+  if (currentBaseTagMatch) {
+    const startPos = currentBaseTagMatch.index!;
+    const endPos = startPos + currentBaseTagMatch[0].length;
+
+    return [true, html.slice(0, startPos) + replacement + html.slice(endPos)];
+  }
+
+  return [false, html];
+}
+
+function injectBeforeHeadOrBody(html: string, what: string) {
   const closingHead = /<\/head\s*>/i;
   const closingBody = /<\/body\s*>/i;
 
   if (closingHead.test(html)) {
-    const htmlWithBase = openingHead.test(html)
-      ? html.replace(openingHead, (head) => `${head}${base}`)
-      : html.replace(closingHead, `${base}</head>`);
-    return new TextEncoder().encode(
-      htmlWithBase.replace(closingHead, `${script}</head>`),
-    ).buffer;
+    return html.replace(closingHead, `${what}</head>`);
   }
+
   if (closingBody.test(html)) {
-    return new TextEncoder().encode(
-      html.replace(closingBody, `${base}${script}</body>`),
-    ).buffer;
+    return html.replace(closingBody, `${what}</body>`);
   }
-  return new TextEncoder().encode(`${html}${base}${script}`).buffer;
+
+  return `${html}${what}`;
 }
 
 function isHtml(contentType: string): boolean {

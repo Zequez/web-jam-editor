@@ -479,8 +479,8 @@
 			"typeName": "pointer"
 		},
 		{
-			"x": -1297.2297292827425,
-			"y": 422.05359469328073,
+			"x": -1570.6486157850672,
+			"y": 391.66661794650884,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -568,6 +568,45 @@
 			},
 			"parentId": "page:page",
 			"index": "b3GFlI",
+			"typeName": "shape"
+		},
+		{
+			"x": 1409.5150035424986,
+			"y": 107.18122739386683,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:BVT2kTpv6ktfTjJz067_6",
+			"type": "geo",
+			"props": {
+				"w": 347.2277429949186,
+				"h": 40.143571392468345,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3w3MX",
 			"typeName": "shape"
 		},
 		{
@@ -715,6 +754,48 @@
 			},
 			"parentId": "page:page",
 			"index": "b0gMub",
+			"typeName": "shape"
+		},
+		{
+			"x": 1421.210846621249,
+			"y": -18.684883957933266,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:gc0s9Aae6qCBYXw6oEVQn",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 227.8203125,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "zequez/pantour-webjam"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3rPNE",
 			"typeName": "shape"
 		},
 		{
@@ -942,8 +1023,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1910.6149573385235,
-			"y": 1821.679047846625,
+			"x": 1925.947971772351,
+			"y": 2085.2572822948773,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2222,9 +2303,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -695.428552859721,
-			"y": 526.0039888611457,
-			"z": 0.9128562393653452,
+			"x": 603.6627156969171,
+			"y": -264.8299321182962,
+			"z": 0.4242645928372291,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -2345,8 +2426,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 639.4150767144354,
-			"y": 3221.7169949987037,
+			"x": -1357.6736223106782,
+			"y": 804.5099146054398,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2358,12 +2439,12 @@
 				"h": 130.25384521484378,
 				"geo": "rectangle",
 				"dash": "draw",
-				"growY": 0,
+				"growY": 45.74615478515622,
 				"url": "",
 				"scale": 1,
 				"flipX": false,
 				"flipY": false,
-				"color": "red",
+				"color": "light-blue",
 				"labelColor": "black",
 				"fill": "solid",
 				"size": "s",
@@ -2401,7 +2482,19 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Currently the code folding fails when the white padding is missing; This should not be."
+									"text": "Code folding now works flawlessly across all lines, and it folds the root elements."
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Additionally the folds are persisted upon reloading."
 								}
 							]
 						}
@@ -2637,6 +2730,45 @@
 			},
 			"parentId": "page:page",
 			"index": "b377zD",
+			"typeName": "shape"
+		},
+		{
+			"x": 0.5576109052540232,
+			"y": 0.2497954594784062,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:7_UuiTGS6VUiZltvcBbcE",
+			"type": "geo",
+			"props": {
+				"w": 89.61128929655808,
+				"h": 40.143571392468345,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "shape:8cN_2e0wkL4oTMFcOyGu6",
+			"index": "a1",
 			"typeName": "shape"
 		},
 		{
@@ -4460,6 +4592,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1710.5664677834598,
+			"y": 1163.8330662066735,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:89GMEaKQhcbTlykfb2uQL",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Preview on hover the project on the Codebase list"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3zugb",
+			"typeName": "shape"
+		},
+		{
 			"x": 11.444165283062603,
 			"y": 0.8240294909110162,
 			"rotation": 0,
@@ -4502,8 +4685,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1316.252232642487,
-			"y": 1734.7857496402885,
+			"x": 1055.4649370587363,
+			"y": 1646.9659133076423,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -5805,12 +5988,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:ZD01IvYmjejOh4yQJROEt",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:nE7JaC-mQyh8ProIlqvh2"
+				"shape:ZD01IvYmjejOh4yQJROEt"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:ZD01IvYmjejOh4yQJROEt",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -6475,6 +6658,48 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 22.917792414887117,
+			"y": 8.557478262960004,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ovIXyRX9GwpYHFYMhvpXw",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 52.75,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 0.9877078728488513,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Clone"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "shape:mSZqUE3Z37pyvvggs8uQq",
+			"index": "a2Dhj",
+			"typeName": "shape"
+		},
+		{
 			"x": 28.916958747599608,
 			"y": 16.140955112646225,
 			"rotation": 0,
@@ -6619,6 +6844,57 @@
 			},
 			"parentId": "page:page",
 			"index": "avpwX",
+			"typeName": "shape"
+		},
+		{
+			"x": 1698.1944161767074,
+			"y": 909.2060300040798,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ZD01IvYmjejOh4yQJROEt",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Show codebase in MRU order"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b40epj",
 			"typeName": "shape"
 		},
 		{
@@ -8173,8 +8449,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1907.0961087181847,
-			"y": 1685.5840469348718,
+			"x": 1922.4291231520122,
+			"y": 1949.162281383124,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -8782,6 +9058,45 @@
 				"scaleY": 0.6075921825487712
 			},
 			"parentId": "shape:m78txzF5f7DlNhYf_KgFO",
+			"index": "a1",
+			"typeName": "shape"
+		},
+		{
+			"x": 0.5576109052540232,
+			"y": 0.2497954594784062,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:dauxEGAM1oBkR2Zq6EoWM",
+			"type": "geo",
+			"props": {
+				"w": 89.61128929655808,
+				"h": 40.143571392468345,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "shape:mSZqUE3Z37pyvvggs8uQq",
 			"index": "a1",
 			"typeName": "shape"
 		},
@@ -10291,6 +10606,48 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1426.7472737712246,
+			"y": 114.90421176508818,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 0.5,
+			"meta": {},
+			"id": "shape:bL_L4v3AofAcneXICt5pA",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 87.9609375,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Repo URL"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3xm1v",
+			"typeName": "shape"
+		},
+		{
 			"x": 2936.5122219703635,
 			"y": 405.25322341753326,
 			"rotation": 0,
@@ -11147,6 +11504,20 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1769.2407334628526,
+			"y": -24.59576465887315,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:mSZqUE3Z37pyvvggs8uQq",
+			"type": "group",
+			"parentId": "page:page",
+			"index": "b3sMEv",
+			"props": {},
+			"typeName": "shape"
+		},
+		{
 			"x": 1198.7818379197608,
 			"y": -276.5415788719198,
 			"rotation": 0,
@@ -11983,8 +12354,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1176.705435254211,
-			"y": 210.5008318298392,
+			"x": -960.6059982623337,
+			"y": 474.6703332394717,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -12022,7 +12393,7 @@
 							"content": [
 								{
 									"type": "text",
-									"text": "Clicking outside the Edge frames should close them. How did I miss this?"
+									"text": "When clicking outside the edge frames it now closes the frames."
 								}
 							]
 						}
@@ -12536,18 +12907,57 @@
 			"typeName": "user"
 		},
 		{
+			"x": 22.917792414887117,
+			"y": 8.557478262960004,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:qNXq4n4u6vDcVmlXhu8u0",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "s",
+				"w": 52.75,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 0.9877078728488513,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Clone"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "shape:8cN_2e0wkL4oTMFcOyGu6",
+			"index": "a2Dhj",
+			"typeName": "shape"
+		},
+		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:color": "black",
-				"tldraw:size": "s",
-				"tldraw:fill": "solid",
-				"tldraw:geo": "rectangle"
+				"tldraw:color": "light-blue"
 			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "ns-resize",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -12803,6 +13213,74 @@
 			},
 			"parentId": "shape:GfHzvquN-St6zcd--1vMR",
 			"index": "aJzxg",
+			"typeName": "shape"
+		},
+		{
+			"x": 1665.318571990299,
+			"y": 1641.042990363918,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:k_CXbWh4EkaR1S2hCK0-Q",
+			"type": "geo",
+			"props": {
+				"w": 386,
+				"h": 130.25384521484378,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 21.74615478515622,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "Source Publishing"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "During dev compile into www0 and then you click on “Pact”, it creates www with both the www0 content and the source code as source.zip. "
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b3yAu2",
 			"typeName": "shape"
 		},
 		{
@@ -14051,6 +14529,20 @@
 			},
 			"parentId": "shape:m78txzF5f7DlNhYf_KgFO",
 			"index": "a3bW2",
+			"typeName": "shape"
+		},
+		{
+			"x": 1770.775948734689,
+			"y": 107.69390273797782,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:8cN_2e0wkL4oTMFcOyGu6",
+			"type": "group",
+			"parentId": "page:page",
+			"index": "b3uVrQ",
+			"props": {},
 			"typeName": "shape"
 		},
 		{

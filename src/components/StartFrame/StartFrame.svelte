@@ -4,18 +4,20 @@
   import type {
     MountingMap,
     StorageType,
-  } from "@/stores/projects-storage.svelte";
+  } from "@/stores/projects-storage-service.svelte";
   import ProjectAdder from "./ProjectAdder.svelte";
+  import ProjectAsListItem from "./ProjectAsListItem.svelte";
+  import { projectsStorageService } from "@/stores/projects-storage-service.svelte";
 
   const {
     mountingMap,
     onFocusProject,
-    onAddProject,
   }: {
     mountingMap: MountingMap;
     onFocusProject: (path: string) => void;
-    onAddProject: (name: string, storage: StorageType) => void;
   } = $props();
+
+  const S = projectsStorageService();
 
   type Registry = {
     source: string;
@@ -56,6 +58,20 @@
   const HOSTS: { [key: string]: string } = {
     gh: "https://github.com",
   };
+
+  function handleOnDeleteProject(pathName: string) {
+    console.log("DELETING");
+    S.deleteProject(pathName);
+  }
+
+  async function handleAddProject(pathName: string, storage: StorageType) {
+    await S.addProject(pathName, storage);
+    onFocusProject(pathName);
+  }
+
+  function handleOnRenameProject(fromPathName: string, toPathName: string) {
+    S.renameProject(fromPathName, toPathName);
+  }
 </script>
 
 <div
@@ -66,61 +82,28 @@
   >
     <WebJamHeading />
 
-    <div class="flex gap-4">
+    <div class="flex flex-col md:flex-row gap-4">
       <div
         class="bg-black/10 b b-black/10 text-black/80 rounded-2 p4 font-mono text-left flex flex-col gap-1"
       >
         <div class="text-5">Codebase</div>
-        {#snippet Project(
-          pathName: string,
-          storageType: "dir" | "mem",
-          storageTarget: string,
-        )}
-          <div class="flex-cs gap-2 relative">
-            <button
-              class="cursor-pointer hover:bg-gray-200 px-1 py0.5 rounded-1"
-              onclick={() => onFocusProject(pathName)}
-            >
-              /{pathName}
-            </button>
-            <i class="i i-fa-arrow-right inline-block size-4"></i>
-            <button
-              class="bg-black/20 px-1 px0.5 rounded-1 text-white text-3 uppercase"
-              >{storageType}</button
-            >
-            {storageTarget}
-            <button
-              class="bg-gray-400 b b-black/20 text-white flex-cc rounded-1 size-7 hover:bg-blue-400"
-              aria-label="Menu"
-            >
-              <i class="i i-fa-ellipsis-vertical text-1.3em"></i>
-            </button>
-            <div
-              class="absolute hidden left-100% top-0 w-40 -translate-x-7 bg-white py2 rounded-1 z-100 shadow-sm flex flex-col"
-            >
-              <button class="hover:bg-black/10 block px2 text-left"
-                >Rename</button
-              >
-              <button class="hover:bg-black/10 block px2 text-left"
-                >Move to MEM</button
-              >
-              <button class="hover:bg-black/10 block px2 text-left"
-                >Delete</button
-              >
-            </div>
-          </div>
-        {/snippet}
-        {#each mountingMap.entries() as [pathName, project]}
+        {#each mountingMap.entries() as [pathName, project] (pathName)}
           {@const storageName =
             project.storage.type === "dir"
               ? project.storage.handle.name
               : project.storage.storeName}
-          {@render Project(pathName, project.storage.type, storageName)}
+          <ProjectAsListItem
+            {pathName}
+            storageType={project.storage.type}
+            storageTarget={storageName}
+            {onFocusProject}
+            onDelete={handleOnDeleteProject}
+            onRename={(newPath: string) =>
+              handleOnRenameProject(pathName, newPath)}
+          />
         {/each}
         <div class="grow"></div>
-        <ProjectAdder
-          onAddProject={(name, storage) => onAddProject(name, storage)}
-        />
+        <ProjectAdder onAddProject={handleAddProject} />
       </div>
       <div
         class="bg-black/10 b b-black/10 rounded-2 p4 font-mono text-left flex flex-col gap-1"
@@ -144,40 +127,9 @@
             >
           </div>
         {/each}
-        <div class="flex gap-4 mt2">
-          <input
-            type="text"
-            class="block grow bg-white rounded-1 px-2 b b-black/40"
-            placeholder="...or load a Github URL"
-          />
-          <button
-            class="px1 bg-gray-400 b b-black/10 text-white rounded-1 hover:(bg-sky-500 text-white cursor-pointer)"
-            onclick={() => cloneCustom()}>Clone</button
-          >
-        </div>
       </div>
     </div>
-    <!-- <div class="flex flex-col space-y-3 w-100 max-w-full">
 
-      <button
-        class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-        onclick={systemFs.pickSessionFolder}>Open a folder</button
-      >
-      <button
-        class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-        onclick={() => systemFs.loadEmptyFilesystem()}>Empty project</button
-      >
-      <button
-        class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-        onclick={() => systemFs.loadTemplateFilesystem("default")}
-        >Example project</button
-      >
-      <button
-        class="uppercase bg-blue-400 hover:bg-blue-300 text-white font-semibold px-3 py1.5 rounded-1 b b-black/10 cursor-pointer"
-        onclick={() => systemFs.loadTemplateFilesystem("foo")}
-        >Foo project</button
-      >
-    </div> -->
     <div
       class="font-mono mt-24 opacity-33 text-black text-shadow-[0_1px_0_#fff]"
     >

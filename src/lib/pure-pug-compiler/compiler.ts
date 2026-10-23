@@ -127,9 +127,13 @@ export function buildCompiler(pug: typeof Pug) {
 
     for (const root of roots) {
       let outputRoot = ensureHeadAndBody(root as Element);
-      outputRoot = injectStylesheetTagBeforeHead(outputRoot, "style.css");
+      outputRoot = injectBaseAtBeginingOfHead(outputRoot);
+      outputRoot = injectStylesheetTagBeforeHeadEnd(outputRoot, "style.css");
       if (iconsFileName) {
-        outputRoot = injectStylesheetTagBeforeHead(outputRoot, iconsFileName);
+        outputRoot = injectStylesheetTagBeforeHeadEnd(
+          outputRoot,
+          iconsFileName,
+        );
       }
       outputRoot = injectScriptShortcutsBeforeHead(outputRoot);
       const pageName =
@@ -175,7 +179,7 @@ function injectScriptShortcutsBeforeHead(root: Element) {
   return root;
 }
 
-function injectStylesheetTagBeforeHead(root: Element, href: string) {
+function injectStylesheetTagBeforeHeadEnd(root: Element, href: string) {
   const head = root.children.find(
     (child) => child instanceof Element && child.name === "head",
   )!;
@@ -189,7 +193,34 @@ function injectStylesheetTagBeforeHead(root: Element, href: string) {
     href,
   });
 
-  htmlparser2.DomUtils.prependChild(head as ParentNode, link);
+  htmlparser2.DomUtils.appendChild(head as ParentNode, link);
+
+  return root;
+}
+
+function injectBaseAtBeginingOfHead(root: Element) {
+  const head = root.children.find(
+    (child) => child instanceof Element && child.name === "head",
+  )!;
+
+  if (!head) {
+    throw new Error("Expected <head> to exist");
+  }
+
+  // If there is a base tag, don't inject anything
+  const headChildren = (head as Element).children || [];
+  console.log("HEAD", headChildren);
+  if (
+    htmlparser2.DomUtils.getElementsByTagName("base", headChildren).length > 0
+  ) {
+    return root;
+  }
+
+  const el = new Element("base", {
+    href: "/",
+  });
+
+  htmlparser2.DomUtils.prependChild(head as ParentNode, el);
 
   return root;
 }

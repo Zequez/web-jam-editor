@@ -1,6 +1,6 @@
 import { SvelteMap } from "svelte/reactivity";
 import { get, set, keys, del } from "idb-keyval";
-import { onMount } from "svelte";
+import { getContext, onMount, setContext } from "svelte";
 import { IndexedDB, WebAccess } from "@zenfs/dom";
 import { configureSingle, fs } from "@zenfs/core";
 
@@ -17,8 +17,8 @@ export type MountingMap = SvelteMap<string, LocalProject>;
 
 type LocalProject = {
   storage: StorageType;
-  isMounted: boolean;
-  error: string | null;
+  isMounted: boolean; // Is not actually used
+  error: string | null; // Is not actually used yet
 };
 
 export type StorageType =
@@ -27,7 +27,7 @@ export type StorageType =
 
 const MAP_KEY = "PROJECTS_MOUNTING_MAP";
 
-export function createProjectsStorage() {
+export function createProjectsStorageService() {
   let state = $state<SystemState>({ type: "loading" });
 
   onMount(async () => {
@@ -102,14 +102,74 @@ export function createProjectsStorage() {
     return fs; // Let's pretend
   }
 
+  function deleteProject(pathName: string) {
+    if (state.type !== "ready") {
+      throw new Error("Not ready");
+    }
+
+    const project = state.config.get(pathName);
+    if (!project) {
+      throw new Error("Project not found");
+    }
+
+    // Ok this is placeholder stuff
+    if (project.isMounted) {
+      throw new Error("Project is mounted");
+    }
+
+    if (project.storage.type === "mem") {
+      // Clean up indexed DB
+      state.config.delete(pathName);
+      indexedDB.deleteDatabase(project.storage.storeName);
+    } else if (project.storage.type === "dir") {
+      // Delete the filesystem link, it does not delete the folder
+      state.config.delete(pathName);
+    }
+  }
+
+  function renameProject(fromPathName: string, toPathName: string) {
+    if (state.type !== "ready") {
+      throw new Error("Not ready");
+    }
+
+    const source = state.config.get(fromPathName);
+    if (!source) {
+      throw new Error("Project not found");
+    }
+
+    const target = state.config.get(toPathName);
+    if (target) {
+      throw new Error("Project already exists");
+    }
+
+    state.config.set(toPathName, source);
+    state.config.delete(fromPathName);
+  }
+
   return {
     get state() {
       return state;
     },
     addProject,
     focusFs,
+    deleteProject,
+    renameProject,
     get fs() {
       return fs;
     },
   };
+}
+
+export type ProjectsStorageService = ReturnType<
+  typeof createProjectsStorageService
+>;
+
+export function projectsStorageService_ANCHOR() {
+  const store = createProjectsStorageService();
+  setContext("projects-storage", store);
+  return store;
+}
+
+export function projectsStorageService() {
+  return getContext("projects-storage") as ProjectsStorageService;
 }

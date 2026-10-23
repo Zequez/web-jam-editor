@@ -36,6 +36,7 @@
         "svelte": "^5.57.0",
         "svelte-codemirror-editor": "^2.1.0",
         "svelte-persisted-state": "^1.4.1",
+        "svelte-portal": "^2.2.1",
         "thememirror": "^2.0.1",
         "tldraw": "^5.4.2",
         "unocss": "^66.10.5",
@@ -1045,6 +1046,8 @@
     "svelte-codemirror-editor": ["svelte-codemirror-editor@2.1.0", "", { "peerDependencies": { "codemirror": "^6.0.0", "svelte": "^5.0.0" } }, "sha512-WGkSsIYNpVcOVxaQPkmdBQhaGyKLmg6pgaS/b+7guRb4eikrbXYtvNFuW2AzKJi8ZbLhSngrf3SRiZOuwuskrQ=="],
 
     "svelte-persisted-state": ["svelte-persisted-state@1.4.1", "", { "peerDependencies": { "svelte": "^5.0.0-next.1" } }, "sha512-Dhk4MmHxzHA0X70PONoq4TE+rmNg41mRbVKTFdW3f3vex1jv/sCKsgnBTHadbVBcx1clAMo2ERfYoHSv7omEyw=="],
+
+    "svelte-portal": ["svelte-portal@2.2.1", "", {}, "sha512-uF7is5sM4aq5iN7QF/67XLnTUvQCf2iiG/B1BHTqLwYVY1dsVmTeXZ/LeEyU6dLjApOQdbEG9lkqHzxiQtOLEQ=="],
 
     "thememirror": ["thememirror@2.0.1", "", { "peerDependencies": { "@codemirror/language": "^6.0.0", "@codemirror/state": "^6.0.0", "@codemirror/view": "^6.0.0" } }, "sha512-d5i6FVvWWPkwrm4cHLI3t9AT1OrkAt7Ig8dtdYSofgF7C/eiyNuq6zQzSTusWTde3jpW9WLvA9J/fzNKMUsd0w=="],
 

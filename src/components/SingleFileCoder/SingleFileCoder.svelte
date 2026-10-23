@@ -52,6 +52,8 @@
   function handleReady(gotView: EditorView) {
     view = gotView;
 
+    view.focus();
+
     lexPug();
     restoreFoldingState();
   }
