@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { createSystemFs } from "@/stores/systemFs.svelte";
   import { projectsStorageService_ANCHOR } from "@/stores/projects-storage-service.svelte";
 
   import Loader from "./Loader.svelte";
@@ -20,7 +19,6 @@
     sessionID = storedSessionID;
   }
 
-  // const systemFs = createSystemFs();
   const S = projectsStorageService_ANCHOR();
 
   let currentProject = persistedState<string | null>("currentProject", null, {
@@ -41,14 +39,6 @@
 
 <WrapAroundBar>
   <div slot="menu">
-    <!-- {#if systemFs.status === "empty"} -->
-    <!-- <button
-        class="h-full px-2 uppercase font-semibold text-3/6 hover:bg-white/20 cursor-pointer"
-        onclick={systemFs.pickSessionFolder}
-      >
-        <span class="i-fa-folder-open inline-block relative -bottom-2px"></span>
-        Open Folder...
-      </button> -->
     {#if currentProject.current}
       <button
         onclick={() => defocusProject()}

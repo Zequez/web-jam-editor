@@ -2083,6 +2083,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 608.3222179488806,
+			"y": 1611.4775824103208,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Y4av0QtuLZ04SSHDCQIhj",
+			"type": "geo",
+			"props": {
+				"w": 353,
+				"h": 91.67757960819951,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 36.32242039180049,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "light-blue",
+				"labelColor": "black",
+				"fill": "solid",
+				"size": "s",
+				"font": "draw",
+				"align": "start",
+				"verticalAlign": "start",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Fun looking loader when you load a project that rapidly switches between evolving images that say ‘Web Jam’"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b43vW6",
+			"typeName": "shape"
+		},
+		{
 			"x": -4658.779313250176,
 			"y": 833.7002945943022,
 			"rotation": 0,
@@ -2303,9 +2354,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 2141.283670603857,
-			"y": -478.76630738061425,
-			"z": 0.617969127072222,
+			"x": 603.4680606002132,
+			"y": -1302.0883978008496,
+			"z": 0.7254574343391589,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -6012,13 +6063,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:Y4av0QtuLZ04SSHDCQIhj",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:6NNskkTLSbHUiigdcswHn",
-				"shape:EFX7OmLK7UvhHO1XWuq4a"
+				"shape:Y4av0QtuLZ04SSHDCQIhj"
 			],
-			"hoveredShapeId": "shape:6NNskkTLSbHUiigdcswHn",
+			"hoveredShapeId": "shape:Y4av0QtuLZ04SSHDCQIhj",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
