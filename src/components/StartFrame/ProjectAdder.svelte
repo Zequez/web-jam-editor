@@ -172,7 +172,9 @@
       <div class="flex gap-2">
         <input
           type="text"
-          class="block grow bg-white h8 rounded-1 px-2 b b-black/40"
+          class="block grow h8 px2 min-w-0 w-auto bg-white font-mono rounded-1
+          focus:(outline-2.5 outline-solid outline-sky-400/77 outline-offset-0)
+        outline-none shadow-[inset_0_0_2px_#0005] b-1 b-black/30 outline-offset-2"
           bind:value={sourceURL}
           placeholder="...or start from URL"
         />
