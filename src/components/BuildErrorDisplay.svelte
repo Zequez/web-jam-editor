@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type CompileError } from "@/lib/pure-pug-compiler";
+  import { type CompileError } from "@/lib/jam-compiler";
   const { buildError }: { buildError: CompileError } = $props();
 </script>
 
@@ -14,8 +14,8 @@
 >
   <div class="text-7">
     Error
-    {#if buildError.type === "pug-error"}
-      <span>on Pug code</span>
+    {#if buildError.type === "code-error"}
+      <span>on code</span>
     {/if}
   </div>
 

@@ -1,5 +1,5 @@
 import { getContext, setContext } from "svelte";
-import type { Fs } from "./zen-fs-type";
+import type { Fs } from "@/lib/zen-fs-type";
 
 const CONTEXT_ID = Symbol("images-engine");
 

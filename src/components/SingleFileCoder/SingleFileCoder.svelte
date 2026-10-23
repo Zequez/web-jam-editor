@@ -22,7 +22,7 @@
   } from "./whitespaceHighlighter";
   import { arbitraryStyleExtension, setStyledRanges } from "./arbitraryStyle";
   import { onMount } from "svelte";
-  import { lex } from "@/lib/pure-pug-compiler/atomic-class-lexer";
+  import { lex } from "@/lib/jam-compiler/lib/atomic-class-lexer";
   import { processAtomicClasses, renderPretty } from "./atomic-prettifier";
   import { prettyfication } from "./doc-prettifycation";
 

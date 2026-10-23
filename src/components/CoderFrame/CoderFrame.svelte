@@ -1,11 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Loader from "@/components/Loader.svelte";
-  import {
-    INPUT_FILE,
-    build,
-    type CompileResult,
-  } from "@/lib/pure-pug-compiler";
+  import { processFile, type CompileResult } from "@/lib/jam-compiler";
   import type { Fs } from "@/lib/zen-fs-type";
 
   import SingleFileCoder from "../SingleFileCoder";
@@ -18,17 +14,25 @@
   let loading = $state(true);
   let {
     fs,
+    filePath,
+    outputDir,
     project,
     onBuildEnds,
     onBuildError,
   }: {
     fs: Fs;
+    filePath: string;
+    outputDir: string;
     project: string;
     onBuildEnds: () => void;
     onBuildError: (
-      error: Extract<CompileResult, { type: "pug-error" }>,
+      error: Extract<CompileResult, { type: "code-error" }>,
     ) => void;
   } = $props();
+
+  let INPUT_FILE = $derived(filePath);
+  let OUTPUT_DIR = $derived(outputDir);
+
   let showPublishingNote = $state(false);
 
   let content = $state("");
@@ -120,9 +124,9 @@
 
   async function doBuild() {
     console.log("Doing build");
-    const result = await build();
+    const result = await processFile(INPUT_FILE, OUTPUT_DIR);
     if (!autobuild) buildScheduleProgress = 1;
-    if (result.type === "pug-error") {
+    if (result.type === "code-error") {
       onBuildError(result);
     } else if (result.type === "success") {
       onBuildEnds();

@@ -1,10 +1,10 @@
-import { generateIconFont } from "@/lib/font-icons-gen";
+import { generateIconFont } from "@/lib/jam-compiler/lib/font-icons-gen";
 
 import opentype from "opentype.js";
 
-import regular2 from "../../public/font-awesome/regular.json";
-import solid2 from "../../public/font-awesome/solid.json";
-import brands2 from "../../public/font-awesome/brands.json";
+import regular2 from "../../../../public/font-awesome/regular.json";
+import solid2 from "../../../../public/font-awesome/solid.json";
+import brands2 from "../../../../public/font-awesome/brands.json";
 
 const regular = regular2 as Record<string, string>;
 const solid = solid2 as Record<string, string>;

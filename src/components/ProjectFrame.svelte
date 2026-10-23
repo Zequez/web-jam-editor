@@ -1,11 +1,7 @@
 <script lang="ts">
   import { type Fs } from "@/lib/zen-fs-type";
-  import {
-    OUTPUT_DIR,
-    type CompileResult,
-    type CompileError,
-  } from "@/lib/pure-pug-compiler";
-  import { createImagesEngineStore } from "@/lib/images-engine.svelte.ts";
+  import { type CompileResult, type CompileError } from "@/lib/jam-compiler";
+  import { createImagesEngineStore } from "@/lib/assets-compiler/images-engine.svelte.ts";
 
   import AssetsFrame from "./AssetsFrame";
   import CoderFrame from "./CoderFrame";
@@ -138,6 +134,8 @@
           onBuildEnds={afterBuild}
           onBuildError={handleBuildError}
           project={name}
+          filePath="index.pug"
+          outputDir="www"
         />
       </div>
     </div>
@@ -165,7 +163,7 @@
       {fs}
       sessionId={sessionID}
       hiddenMode={codePanelSize === 1}
-      servePath={OUTPUT_DIR}
+      servePath="www"
       bind:this={previewHostFrameEl}
     />
     {#if currentBuildError}

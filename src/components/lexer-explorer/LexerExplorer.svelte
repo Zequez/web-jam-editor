@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import foo from "./tests/foo.pug?raw";
 
-  import { compile, type CompileResult } from "@/lib/pure-pug-compiler";
+  import { compile, type CompileResult } from "@/lib/jam-compiler";
 
   let fixValue = $state(localStorage.getItem("fix-value") === "true");
   $effect(() => {
@@ -47,8 +47,7 @@
   <textarea
     class="p2 font-mono size-full block bg-gray-100"
     {value}
-    oninput={(e) => handleChange(e.currentTarget.value)}
-  ></textarea>
+    oninput={(e) => handleChange(e.currentTarget.value)}></textarea>
 </div>
 <div class="font-mono relative p2 pt-4 w-full min-h-1/2 bg-gray-300">
   {#if result}

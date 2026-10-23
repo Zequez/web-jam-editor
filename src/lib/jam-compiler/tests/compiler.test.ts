@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import pug from "pug";
-import { buildCompiler } from "../compiler";
+import { buildCompiler } from "../process-code";
 import { parseHTML } from "linkedom";
 // import { fs } from "@zenfs/core";
 

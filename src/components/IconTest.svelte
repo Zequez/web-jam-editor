@@ -5,7 +5,7 @@
     type IconsAvailable,
     iconsPrefixes,
     iconsFontsNames,
-  } from "@/lib/icons-engine";
+  } from "@/lib/jam-compiler/lib/icons-engine";
 
   const iconsExtracts: Record<IconsAvailable, string[]> = {
     faSolid: ["heart", "bacterium"],

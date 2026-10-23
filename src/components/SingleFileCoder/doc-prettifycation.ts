@@ -1,4 +1,4 @@
-import { lex } from "@/lib/pure-pug-compiler/atomic-class-lexer";
+import { lex } from "@/lib/jam-compiler/lib/atomic-class-lexer";
 import { processAtomicClasses, renderPretty } from "./atomic-prettifier";
 
 export function prettyfication(doc: string) {
