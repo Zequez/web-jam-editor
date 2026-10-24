@@ -4,6 +4,22 @@ All notable changes to Web Jam are documented here.
 
 This project follows [Semantic Versioning](https://semver.org/). Before `1.0.0`, minor releases may introduce breaking changes.
 
+## [0.3.0] - The Codebase Management Update - 2026-10-24
+
+### Codebase Management
+
+* You can now create multiple projects in memory or linked to folders
+* You can rename and delete projects
+* Every web jam site now includes source.zip with the source code
+* You can import a public web jam site which will download the source code from source.zip
+* Preview now creates files on www0 and now there is a Pack to publish button that creates the www folder with the source.zip included
+* There is a list of example projects live on the Internet you can clone on the Codebase UI
+
+### Smaller things
+
+* Code folding now works flawlessly; enabled on the top level and it persist on reloading
+* Images engine now hashes the images so it doesn't re-process them if the source image didn't change
+
 ## [0.2.0] - 2026-10-18
 
 New features!

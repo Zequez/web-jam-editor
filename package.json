@@ -1,7 +1,7 @@
 {
   "name": "web-jam-editor",
   "author": "Ezequiel Adrián Schwartzman",
-  "version": "0.3.0-staging",
+  "version": "0.3.0",
   "contributors": ["Gaia"],
   "module": "index.ts",
   "type": "module",
