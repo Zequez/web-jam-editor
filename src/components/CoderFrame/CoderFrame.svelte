@@ -9,14 +9,16 @@
   import PublishingNote from "./PublishingNote.svelte";
   import AutoBuildBtn from "./AutoBuildBtn.svelte";
   import { processPackaging } from "@/lib/jam-compiler/process-packaging";
+  import PackForPublishBtn from "../AssetsFrame/PackForPublishBtn.svelte";
 
   const AUTO_SAVE_DEBOUNCE = 300;
 
   let loading = $state(true);
   let {
     fs,
-    filePath,
-    outputDir,
+    filePath: INPUT_FILE,
+    previewDir: PREVIEW_DIR,
+    outputDir: OUTPUT_DIR,
     project,
     onBuildEnds,
     onBuildError,
@@ -24,6 +26,7 @@
   }: {
     fs: Fs;
     filePath: string;
+    previewDir: string;
     outputDir: string;
     project: string;
     onBuildEnds: () => void;
@@ -32,9 +35,6 @@
     ) => void;
     fsType: "mem" | "dir";
   } = $props();
-
-  let INPUT_FILE = $derived(filePath);
-  let OUTPUT_DIR = $derived(outputDir);
 
   let showPublishingNote = $state(false);
 
@@ -127,7 +127,7 @@
 
   async function doBuild() {
     console.log("Doing build");
-    const result = await processFile(INPUT_FILE, OUTPUT_DIR);
+    const result = await processFile(INPUT_FILE, PREVIEW_DIR);
     if (!autobuild) buildScheduleProgress = 1;
     if (result.type === "code-error") {
       onBuildError(result);
@@ -151,15 +151,23 @@
     }
   }
 
+  let isPackaging = $state(false);
+  let justDonePackaging = $state(false);
   async function handlePackForPublishing() {
+    isPackaging = true;
     await processPackaging({
       sourceDir: "/",
-      inputDir: "www",
-      outputDir: "www2",
+      inputDir: PREVIEW_DIR,
+      outputDir: OUTPUT_DIR,
       projectName: project,
       projectVersion: null,
       downloadZip: fsType === "mem",
     });
+    isPackaging = false;
+    justDonePackaging = true;
+    setTimeout(() => {
+      justDonePackaging = false;
+    }, 2500);
   }
 </script>
 
@@ -186,10 +194,12 @@
         <PublishingNote onClose={() => (showPublishingNote = false)} />
       {/if}
 
-      <button
-        class="cursor-pointer hover:bg-white/20 px-2"
-        onclick={() => handlePackForPublishing()}>Pack for publishing</button
-      >
+      <PackForPublishBtn
+        onclick={handlePackForPublishing}
+        isLoading={isPackaging}
+        justDone={justDonePackaging}
+        doneMsg={fsType === "mem" ? "Done! Downloading..." : "Done! Check /www"}
+      />
     </div>
     <!-- <div class="h-20 shrink-0 bg-green-600"></div> -->
     <div class="flex-grow h-1">

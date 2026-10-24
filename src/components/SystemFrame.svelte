@@ -32,9 +32,9 @@
   function defocusProject() {
     currentProject.current = null;
   }
-  $effect(() => {
-    console.log("Change", S.state);
-  });
+  // $effect(() => {
+  // console.log("Change", S.state);
+  // });
 </script>
 
 <WrapAroundBar>

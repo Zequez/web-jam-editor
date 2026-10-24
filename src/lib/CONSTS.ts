@@ -1,4 +1,5 @@
 export const outputDir = "www";
+export const previewDir = "www0";
 export const assetsDir = "assets";
 export const imagesDir = "images";
 export const atomicStylesheet = "style.css";

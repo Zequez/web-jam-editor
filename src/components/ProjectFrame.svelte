@@ -7,7 +7,7 @@
   import CoderFrame from "./CoderFrame";
   import PreviewHostFrame from "./PreviewHostFrame.svelte";
   import BuildErrorDisplay from "./BuildErrorDisplay.svelte";
-  import { assetsDir, imagesDir, imagesSizes, outputDir } from "@/lib/CONSTS";
+  import { assetsDir, imagesDir, imagesSizes, previewDir } from "@/lib/CONSTS";
   import { onMount } from "svelte";
 
   const {
@@ -23,7 +23,7 @@
     // svelte-ignore state_referenced_locally
     fs,
     sourceDir: assetsDir,
-    outputDir: outputDir,
+    outputDir: previewDir,
     targetDir: imagesDir,
     sizes: imagesSizes,
   });
@@ -31,24 +31,24 @@
   onMount(() => {
     IMNG.scan();
 
-    if (fs.existsSync(assetsDir)) {
-      const files = fs.readdirSync(assetsDir);
-      for (const file of files) {
-        const ext = file.split(".").pop()?.toLowerCase();
-        if (ext === "js") {
-          fs.mkdirSync(`${outputDir}/scripts`, { recursive: true });
-          console.log(
-            "Copying",
-            `${assetsDir}/${file}`,
-            `${outputDir}/scripts/${file}`,
-          );
-          fs.copyFileSync(
-            `${assetsDir}/${file}`,
-            `${outputDir}/scripts/${file}`,
-          );
-        }
-      }
-    }
+    // if (fs.existsSync(assetsDir)) {
+    //   const files = fs.readdirSync(assetsDir);
+    //   for (const file of files) {
+    //     const ext = file.split(".").pop()?.toLowerCase();
+    //     if (ext === "js") {
+    //       fs.mkdirSync(`${outputDir}/scripts`, { recursive: true });
+    //       console.log(
+    //         "Copying",
+    //         `${assetsDir}/${file}`,
+    //         `${outputDir}/scripts/${file}`,
+    //       );
+    //       fs.copyFileSync(
+    //         `${assetsDir}/${file}`,
+    //         `${outputDir}/scripts/${file}`,
+    //       );
+    //     }
+    //   }
+    // }
   });
 
   let previewHostFrameEl: PreviewHostFrame | null = $state(null);
@@ -140,6 +140,7 @@
           onBuildError={handleBuildError}
           project={name}
           filePath="index.pug"
+          previewDir="www0"
           outputDir="www"
           {fsType}
         />
@@ -169,7 +170,7 @@
       {fs}
       sessionId={sessionID}
       hiddenMode={codePanelSize === 1}
-      servePath="www"
+      servePath="www0"
       bind:this={previewHostFrameEl}
     />
     {#if currentBuildError}
