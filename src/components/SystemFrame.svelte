@@ -67,7 +67,12 @@
       {#await S.focusFs(currentProject.current)}
         {@render LoadScreen()}
       {:then}
-        <ProjectFrame fs={S.fs} {sessionID} name={currentProject.current} />
+        <ProjectFrame
+          fs={S.fs}
+          {sessionID}
+          name={currentProject.current}
+          fsType={S.focusedProject!.storage.type}
+        />
       {/await}
     {:else}
       <StartFrame

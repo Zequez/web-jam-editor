@@ -58,7 +58,7 @@
               <div class="flex-cc w-full">
                 <img
                   class="block rounded-full bg-gray-400 h-24 w-24 b-3 b-green-600"
-                  src="./steward.webp"
+                  src="./steward2.webp"
                   alt="Steward face photography"
                 />
               </div>
@@ -106,18 +106,28 @@
           </div>
         </div>
       </div>
-      <div class="grow flex-shrink-0 flex-cc flex-col text-center text-4/6 p6">
+      <div
+        class="grow flex-shrink-0 flex-cc flex-col text-center text-4/6 p6 gap-2"
+      >
         <div>
-          Become the first backer
-          <br />
-          Your name or project could appear here.
+          Become a backer<br />and I'll add your<br />name and link here.
         </div>
+
+        <span>or just</span>
+        <a
+          href="https://patreon.ezequielschwartzman.org"
+          target="_blank"
+          class="cursor-pointer b b-black/10 hover:scale-105 bg-yellow-400 hover:bg-yellow-300 text-shadow-[0_1px_0_#0007] text-white uppercase font-semibold font-mono text-4/6 px3 py-1 rounded-full transition-all duration-100"
+        >
+          Support me on Patreon
+        </a>
+        <span>or</span>
         <a
           href="https://forms.gle/y6BLpC1Wz1QHopUL8"
           target="_blank"
-          class="mt3 cursor-pointer b b-black/10 hover:scale-105 bg-yellow-400 hover:bg-yellow-300 text-shadow-[0_1px_0_#0007] text-white uppercase font-semibold font-mono text-4/6 px3 py-1 rounded-full transition-all duration-100"
+          class="cursor-pointer b b-black/10 hover:scale-105 bg-yellow-400 hover:bg-yellow-300 text-shadow-[0_1px_0_#0007] text-white uppercase font-semibold font-mono text-4/6 px3 py-1 rounded-full transition-all duration-100"
         >
-          Commit
+          ...or something else?
         </a>
       </div>
     </div>

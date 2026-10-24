@@ -29,6 +29,12 @@ const MAP_KEY = "PROJECTS_MOUNTING_MAP";
 
 export function createProjectsStorageService() {
   let state = $state<SystemState>({ type: "loading" });
+  let focusedProjectName = $state<string | null>(null);
+  let focusedProject = $derived(
+    state.type === "ready" && focusedProjectName
+      ? state.config.get(focusedProjectName)
+      : null,
+  );
 
   onMount(async () => {
     const storedEntries = await get<[string, LocalProject][]>(MAP_KEY);
@@ -83,6 +89,9 @@ export function createProjectsStorageService() {
     if (!project) {
       throw new Error("Project not found");
     }
+
+    focusedProjectName = projectName;
+
     if (project.storage.type === "dir") {
       return await focusDir(project.storage.handle);
     } else if (project.storage.type === "mem") {
@@ -156,6 +165,9 @@ export function createProjectsStorageService() {
     renameProject,
     get fs() {
       return fs;
+    },
+    get focusedProject() {
+      return focusedProject;
     },
   };
 }

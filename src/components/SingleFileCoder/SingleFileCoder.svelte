@@ -146,7 +146,6 @@
       ranges.push(from, to);
     });
 
-    console.log("Saved folding state", ranges);
     localStorage.setItem(storageKey, JSON.stringify(ranges));
   }
 

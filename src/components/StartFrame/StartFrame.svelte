@@ -73,6 +73,10 @@
   function handleOnRenameProject(fromPathName: string, toPathName: string) {
     S.renameProject(fromPathName, toPathName);
   }
+
+  function cloneJam(src: string) {
+    console.log("Cloning jam!");
+  }
 </script>
 
 <div
@@ -119,13 +123,19 @@
           cloning one of these websites and editting them locally:
         </div>
         <div>
-          <div class="flex">
-            <a
-              class="underline underline-offset-2 hover:underline-2 text-sky-500 hover:text-sky-400"
-              href="https://ezequielschwartzman.org">ezequielschwartzman.org</a
-            >
+          <div class="flex-ss">
+            <div>
+              <a
+                class="block underline underline-offset-2 hover:underline-2 px-0.5 rounded-1 -ml0.5 text-sky-500 hover:(text-white bg-sky-500)"
+                href="https://ezequielschwartzman.org"
+                >ezequielschwartzman.org</a
+              >
+              <div class="text-3">Ezequiel's personal website</div>
+            </div>
+
             <div class="grow"></div>
             <button
+              onclick={() => cloneJam("https://ezequielschwartzman.org")}
               class="hover:(bg-sky-500 text-white) rounded-1 bg-black/0 px-1 py0.5 cursor-pointer"
               >CLONE</button
             >
@@ -135,6 +145,7 @@
           <span>
             -<a
               href="https://ezequielschwartzman.org"
+              target="_blank"
               class="underline underline-0.5 underline-offset-2 hover:underline-1.5"
               >Ezequiel</a
             >

@@ -8,6 +8,7 @@
   import BuildProgressBar from "./BuildProgressBar.svelte";
   import PublishingNote from "./PublishingNote.svelte";
   import AutoBuildBtn from "./AutoBuildBtn.svelte";
+  import { processPackaging } from "@/lib/jam-compiler/process-packaging";
 
   const AUTO_SAVE_DEBOUNCE = 300;
 
@@ -19,6 +20,7 @@
     project,
     onBuildEnds,
     onBuildError,
+    fsType,
   }: {
     fs: Fs;
     filePath: string;
@@ -28,6 +30,7 @@
     onBuildError: (
       error: Extract<CompileResult, { type: "code-error" }>,
     ) => void;
+    fsType: "mem" | "dir";
   } = $props();
 
   let INPUT_FILE = $derived(filePath);
@@ -147,6 +150,17 @@
       return Math.min(1, 1 - (savingAt - Date.now()) / AUTO_SAVE_DEBOUNCE);
     }
   }
+
+  async function handlePackForPublishing() {
+    await processPackaging({
+      sourceDir: "/",
+      inputDir: "www",
+      outputDir: "www2",
+      projectName: project,
+      projectVersion: null,
+      downloadZip: fsType === "mem",
+    });
+  }
 </script>
 
 {#if loading}
@@ -163,14 +177,19 @@
         onchange={handleAutobuildChange}
       />
       <span class="grow"></span>
-      <button
+      <!-- <button
         class="cursor-pointer hover:bg-white/20 px-2"
         onclick={() => (showPublishingNote = true)}>Publish</button
-      >
+      > -->
 
       {#if showPublishingNote}
         <PublishingNote onClose={() => (showPublishingNote = false)} />
       {/if}
+
+      <button
+        class="cursor-pointer hover:bg-white/20 px-2"
+        onclick={() => handlePackForPublishing()}>Pack for publishing</button
+      >
     </div>
     <!-- <div class="h-20 shrink-0 bg-green-600"></div> -->
     <div class="flex-grow h-1">

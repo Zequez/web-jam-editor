@@ -10,7 +10,12 @@
   import { assetsDir, imagesDir, imagesSizes, outputDir } from "@/lib/CONSTS";
   import { onMount } from "svelte";
 
-  const { fs, sessionID, name }: { fs: Fs; sessionID: string; name: string } =
+  const {
+    fs,
+    sessionID,
+    name,
+    fsType,
+  }: { fs: Fs; sessionID: string; name: string; fsType: "mem" | "dir" } =
     $props();
 
   const IMNG = createImagesEngineStore({
@@ -136,6 +141,7 @@
           project={name}
           filePath="index.pug"
           outputDir="www"
+          {fsType}
         />
       </div>
     </div>
