@@ -1,6 +1,7 @@
 <script lang="ts">
   import WebJamHeading from "./WebJamHeading.svelte";
   import registryRaw from "../../../webjam-registry.yaml";
+  import { version } from "../../../package.json";
   import type {
     MountingMap,
     StorageType,
@@ -78,8 +79,12 @@
   class="bg-gray-200 rounded-1 size-full overflow-auto shadow-sm b b-black/10"
 >
   <div
-    class="py-6 md:py-12 px6 flex-cs flex-col space-y-3 max-w-screen-lg mx-auto text-center"
+    class="py-6 md:py-12 relative px6 flex-cs flex-col space-y-3 max-w-screen-lg mx-auto text-center"
   >
+    <!-- {#if version.match(/staging/)}
+      <div class="font-mono text-3 absolute top-0 left-0">STAGING</div>
+    {/if} -->
+
     <WebJamHeading />
 
     <div class="flex w-full max-w-screen-sm">
@@ -165,7 +170,7 @@
     <!-- </div> -->
   </div>
   <div
-    class="font-mono flex-ee pr-2 pb-2 opacity-33 text-black text-shadow-[0_1px_0_#fff]"
+    class="font-mono relative flex-ee pr-2 pb-2 opacity-33 text-black text-shadow-[0_1px_0_#fff]"
   >
     <div class="text-right">
       Made with love<br />
@@ -181,5 +186,7 @@
         >Ezequiel</a
       >
     </div>
+
+    <div class="font-mono text-3 absolute left-1.5 bottom-1">v{version}</div>
   </div>
 </div>

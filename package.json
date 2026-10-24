@@ -1,13 +1,13 @@
 {
   "name": "web-jam-editor",
   "author": "Ezequiel Adrián Schwartzman",
-  "version": "0.2.0",
+  "version": "0.3.0-staging",
   "contributors": ["Gaia"],
   "module": "index.ts",
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "vite dev --port 3007",
+    "start": "vite dev --port 3007 --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
     "test": "bun test",
