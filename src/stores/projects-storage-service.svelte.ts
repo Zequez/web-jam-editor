@@ -3,6 +3,7 @@ import { get, set, keys, del } from "idb-keyval";
 import { getContext, onMount, setContext } from "svelte";
 import { IndexedDB, WebAccess } from "@zenfs/dom";
 import { configureSingle, fs } from "@zenfs/core";
+import JSZip from "jszip";
 
 type SystemState =
   | {
@@ -79,9 +80,32 @@ export function createProjectsStorageService() {
       isMounted: false,
       error: null,
     });
+
+    await focusFs(name);
   }
 
-  async function focusFs(projectName: string) {
+  async function unfoldZipIntoProjectAndFocus(projectName: string, zip: Blob) {
+    await preMount(projectName);
+
+    const archive = await JSZip.loadAsync(zip);
+
+    for (const [path, file] of Object.entries(archive.files)) {
+      if (file.dir) continue;
+
+      const contents = await file.async("uint8array");
+
+      await fs.promises.mkdir(path.slice(0, path.lastIndexOf("/")) || "/", {
+        recursive: true,
+      });
+
+      await fs.promises.writeFile(`/${path}`, contents);
+    }
+
+    console.log("Done unfolding zip");
+    focusedProjectName = projectName;
+  }
+
+  async function preMount(projectName: string) {
     if (state.type !== "ready") {
       throw new Error("Not ready");
     }
@@ -90,13 +114,17 @@ export function createProjectsStorageService() {
       throw new Error("Project not found");
     }
 
-    focusedProjectName = projectName;
-
     if (project.storage.type === "dir") {
       return await focusDir(project.storage.handle);
     } else if (project.storage.type === "mem") {
       return await focusMem(project.storage.storeName);
     }
+  }
+
+  async function focusFs(projectName: string) {
+    await preMount(projectName);
+
+    focusedProjectName = projectName;
   }
 
   async function focusDir(dir: FileSystemDirectoryHandle) {
@@ -163,6 +191,7 @@ export function createProjectsStorageService() {
     focusFs,
     deleteProject,
     renameProject,
+    unfoldZipIntoProjectAndFocus,
     get fs() {
       return fs;
     },
