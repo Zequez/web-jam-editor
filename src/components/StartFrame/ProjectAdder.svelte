@@ -329,6 +329,10 @@
     "pantour.webjam.space",
     "Fantasy website for a sports club center",
   )}
+  {@render ShowcaseWebjamProject(
+    "blog.webjam.space",
+    "A simple blog system I made for the Web Jam blog with one page for each post and an index page",
+  )}
   <!-- {@render ShowcaseWebjamProject(
     "gaia.webjam.space",
     "Gaia's personal site as interpreted by an AI",
