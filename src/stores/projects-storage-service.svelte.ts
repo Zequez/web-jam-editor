@@ -84,7 +84,7 @@ export function createProjectsStorageService() {
     await focusFs(name);
   }
 
-  async function unfoldZipIntoProjectAndFocus(projectName: string, zip: Blob) {
+  async function unfoldZipAndMount(projectName: string, zip: Blob) {
     await preMount(projectName);
 
     const archive = await JSZip.loadAsync(zip);
@@ -191,7 +191,7 @@ export function createProjectsStorageService() {
     focusFs,
     deleteProject,
     renameProject,
-    unfoldZipIntoProjectAndFocus,
+    unfoldZipIntoProjectAndFocus: unfoldZipAndMount,
     get fs() {
       return fs;
     },

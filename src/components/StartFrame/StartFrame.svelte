@@ -73,9 +73,9 @@
     await S.addProject(pathName, storage);
     if (zipBlob) {
       await S.unfoldZipIntoProjectAndFocus(pathName, zipBlob);
-    } else {
-      onFocusProject(pathName);
     }
+
+    onFocusProject(pathName);
   }
 
   function handleOnRenameProject(fromPathName: string, toPathName: string) {
