@@ -2542,9 +2542,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 5545.281759914634,
-			"y": 865.9056187368031,
-			"z": 0.22258189866265704,
+			"x": 2938.040501552072,
+			"y": -267.708294650153,
+			"z": 0.7583223269904719,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -6756,10 +6756,8 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:-UkQ6uCIsdYEfGxLVeHmK"
-			],
-			"hoveredShapeId": "shape:-UkQ6uCIsdYEfGxLVeHmK",
+			"selectedShapeIds": [],
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -14801,11 +14799,15 @@
 		},
 		{
 			"followingUserId": null,
-			"opacityForNextShape": 0.5,
+			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:color": "light-green",
+				"tldraw:color": "green",
+				"tldraw:geo": "rectangle",
+				"tldraw:fill": "solid",
 				"tldraw:size": "xl",
-				"tldraw:fill": "solid"
+				"tldraw:verticalAlign": "middle",
+				"tldraw:horizontalAlign": "middle",
+				"tldraw:textAlign": "middle"
 			},
 			"brush": null,
 			"scribbles": [],
@@ -14821,7 +14823,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1680,
-				"h": 921
+				"h": 946
 			},
 			"insets": [
 				false,

@@ -35,6 +35,18 @@
   // $effect(() => {
   // console.log("Change", S.state);
   // });
+
+  async function revalidateDirHandle() {
+    const handle = await window.showDirectoryPicker({
+      mode: "readwrite",
+    });
+    S.updateDirHandle(currentProject.current!, handle);
+    let current = currentProject.current;
+    defocusProject();
+    setTimeout(() => {
+      focusProject(current!);
+    }, 100);
+  }
 </script>
 
 <WrapAroundBar>
@@ -73,6 +85,13 @@
           name={currentProject.current}
           fsType={S.focusedProject!.storage.type}
         />
+      {:catch}
+        <div class="h-screen w-screen flex-cc">
+          <button
+            class="bg-red-400 hover:bg-red-500 text-white rounded-1 font-semibold px2 cursor-pointer"
+            onclick={revalidateDirHandle}>Re-validate directory access</button
+          >
+        </div>
       {/await}
     {:else}
       <StartFrame

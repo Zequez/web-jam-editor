@@ -161,7 +161,7 @@
       outputDir: OUTPUT_DIR,
       projectName: project,
       projectVersion: null,
-      downloadZip: fsType === "mem",
+      downloadZip: true, //fsType === "mem"
     });
     isPackaging = false;
     justDonePackaging = true;

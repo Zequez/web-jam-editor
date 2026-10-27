@@ -19,7 +19,7 @@ export type MountingMap = SvelteMap<string, LocalProject>;
 type LocalProject = {
   storage: StorageType;
   isMounted: boolean; // Is not actually used
-  error: string | null; // Is not actually used yet
+  error: "revalidate-dir" | null; // Is not actually used yet
 };
 
 export type StorageType =
@@ -115,21 +115,36 @@ export function createProjectsStorageService() {
     }
 
     if (project.storage.type === "dir") {
-      return await focusDir(project.storage.handle);
+      return await focusDir(project);
     } else if (project.storage.type === "mem") {
       return await focusMem(project.storage.storeName);
     }
   }
 
   async function focusFs(projectName: string) {
-    await preMount(projectName);
+    const focusedFs = await preMount(projectName);
 
-    focusedProjectName = projectName;
+    if (focusedFs) {
+      focusedProjectName = projectName;
+    } else {
+      focusedProjectName = null;
+    }
   }
 
-  async function focusDir(dir: FileSystemDirectoryHandle) {
-    const webAccessFs = await WebAccess.create({ handle: dir });
+  async function focusDir(project: LocalProject) {
+    if (project.storage.type !== "dir") {
+      throw new Error("Not a directory");
+    }
+    const dir = project.storage.handle;
+    let webAccessFs: Awaited<ReturnType<typeof WebAccess.create>>;
+    // try {
+    webAccessFs = await WebAccess.create({ handle: dir });
+    // } catch (e) {
+    // project.error = "revalidate-dir";
+    // return null;
+    // }
     await configureSingle(webAccessFs); // This actually sets the global filesystem
+    console.log("Cofnigurde");
     return fs; // Let's pretend
   }
 
@@ -183,6 +198,23 @@ export function createProjectsStorageService() {
     state.config.delete(fromPathName);
   }
 
+  function updateDirHandle(
+    projectName: string,
+    dirHandle: FileSystemDirectoryHandle,
+  ) {
+    if (state.type !== "ready") {
+      throw new Error("Not ready");
+    }
+    const project = state.config.get(projectName);
+    if (!project) {
+      throw new Error("Project not found");
+    }
+    if (project.storage.type !== "dir") {
+      throw new Error("Not a directory");
+    }
+    project.storage.handle = dirHandle;
+  }
+
   return {
     get state() {
       return state;
@@ -192,6 +224,7 @@ export function createProjectsStorageService() {
     deleteProject,
     renameProject,
     unfoldZipIntoProjectAndFocus: unfoldZipAndMount,
+    updateDirHandle,
     get fs() {
       return fs;
     },
