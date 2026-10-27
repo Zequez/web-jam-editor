@@ -87,9 +87,13 @@
         />
       {:catch}
         <div class="h-screen w-screen flex-cc">
+          <div>
+            The directory handler permission expired. You have to pick the
+            directory again.
+          </div>
           <button
             class="bg-red-400 hover:bg-red-500 text-white rounded-1 font-semibold px2 cursor-pointer"
-            onclick={revalidateDirHandle}>Re-validate directory access</button
+            onclick={revalidateDirHandle}>Select directory</button
           >
         </div>
       {/await}
