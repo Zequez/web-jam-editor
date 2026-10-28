@@ -56,10 +56,12 @@ export const arbitraryStyleExtension = [
   EditorView.baseTheme({
     ".atomic-class > span, .atomic-class ": {
       // backgroundColor: "rgba(255, 0, 0, 1)",
-      // borderRadius: "3px",
+      borderRadius: "2px",
       // purple
-      color: "#e092ea !important",
-      fontWeight: "normal !important",
+      color: "#f292ff !important",
+      backgroundColor: "rgba(0, 0, 0, 0.3) !important;",
+      fontWeight: "bold !important",
+      textShadow: "0.25px 1px 0 #0008,-0px -0.5px 0 #fff8",
     },
   }),
 ];
