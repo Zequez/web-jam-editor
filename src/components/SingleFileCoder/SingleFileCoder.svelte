@@ -16,6 +16,8 @@
   import { specialCommentExtension } from "./specialCommentExtension";
   import { mixinHighlightExtension } from "./mixinHighlightExtension";
   import { duplicateLine } from "./duplicateLineExtension";
+  import { wrappedLineIndent } from "codemirror-wrapped-line-indent";
+
   import {
     indentWhitespacePlugin,
     whitespaceTheme,
@@ -314,5 +316,7 @@
     arbitraryStyleExtension,
     interceptSave,
     monitorAndSaveFolds(),
+    EditorView.lineWrapping,
+    wrappedLineIndent,
   ]}
 />

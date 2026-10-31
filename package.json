@@ -1,7 +1,7 @@
 {
   "name": "web-jam-editor",
   "author": "Ezequiel Adrián Schwartzman",
-  "version": "0.3.0",
+  "version": "0.4.0-staging",
   "contributors": ["Gaia"],
   "module": "index.ts",
   "type": "module",
@@ -41,6 +41,7 @@
     "@zenfs/archives": "^1.5.0",
     "@zenfs/core": "^2.7.6",
     "@zenfs/dom": "^1.2.14",
+    "codemirror-wrapped-line-indent": "^1.0.9",
     "fflate": "^0.8.3",
     "gh-pages": "^6.3.0",
     "htmlparser2": "^12.0.0",

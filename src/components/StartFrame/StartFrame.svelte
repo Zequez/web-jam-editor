@@ -50,16 +50,6 @@
     };
   });
 
-  function cloneRepo(reg: string, pathTarget: string) {
-    console.log("Cloning repo");
-  }
-
-  function cloneCustom() {}
-
-  const HOSTS: { [key: string]: string } = {
-    gh: "https://github.com",
-  };
-
   function handleOnDeleteProject(pathName: string) {
     console.log("DELETING");
     S.deleteProject(pathName);
@@ -82,9 +72,12 @@
     S.renameProject(fromPathName, toPathName);
   }
 
-  function cloneJam(src: string) {
-    console.log("Cloning jam!");
-  }
+  let sortedProjects = $derived(
+    mountingMap
+      .entries()
+      .toArray()
+      .sort(([_, a], [_2, b]) => +(b.lastOpened || 0) - +(a.lastOpened || 0)),
+  );
 </script>
 
 <div
@@ -108,7 +101,7 @@
           {#if mountingMap.size === 0}
             <div class="size-full flex-cc opacity-60">No projects</div>
           {:else}
-            {#each mountingMap.entries() as [pathName, project] (pathName)}
+            {#each sortedProjects as [pathName, project] (pathName)}
               {@const storageName =
                 project.storage.type === "dir"
                   ? project.storage.handle.name

@@ -86,13 +86,13 @@
           fsType={S.focusedProject!.storage.type}
         />
       {:catch}
-        <div class="h-screen w-screen flex-cc">
-          <div>
+        <div class="h-screen w-screen flex-cc flex-col gap-4">
+          <div class="mx-auto max-w-100 text-center">
             The directory handler permission expired. You have to pick the
             directory again.
           </div>
           <button
-            class="bg-red-400 hover:bg-red-500 text-white rounded-1 font-semibold px2 cursor-pointer"
+            class="bg-red-400 hover:bg-red-500 text-white rounded-1 font-semibold px2 py1 cursor-pointer"
             onclick={revalidateDirHandle}>Select directory</button
           >
         </div>

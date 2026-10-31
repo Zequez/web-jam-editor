@@ -69,3 +69,8 @@
   box-shadow: 0 0 0.5px 0px #000,0 0 0px 20px #0001;
 }
 
+/* Selected text */
+.cm-editor .cm-selectionBackground {
+  background: #000d !important;
+}
+

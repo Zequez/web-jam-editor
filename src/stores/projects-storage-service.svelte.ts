@@ -20,6 +20,7 @@ type LocalProject = {
   storage: StorageType;
   isMounted: boolean; // Is not actually used
   error: "revalidate-dir" | null; // Is not actually used yet
+  lastOpened: Date | undefined;
 };
 
 export type StorageType =
@@ -60,6 +61,14 @@ export function createProjectsStorageService() {
   });
   // });
 
+  // ███████╗██╗   ██╗███╗   ██╗
+  // ██╔════╝██║   ██║████╗  ██║
+  // █████╗  ██║   ██║██╔██╗ ██║
+  // ██╔══╝  ██║   ██║██║╚██╗██║
+  // ██║     ╚██████╔╝██║ ╚████║
+  // ╚═╝      ╚═════╝ ╚═╝  ╚═══╝
+  // MARK: FUN
+
   async function addProject(name: string, storage: StorageType) {
     console.log("Gotten added project!", name, storage);
     if (state.type !== "ready") {
@@ -79,6 +88,7 @@ export function createProjectsStorageService() {
       storage: storage,
       isMounted: false,
       error: null,
+      lastOpened: new Date(),
     });
 
     await focusFs(name);
@@ -113,6 +123,9 @@ export function createProjectsStorageService() {
     if (!project) {
       throw new Error("Project not found");
     }
+
+    const newProject = { ...project, lastOpened: new Date() };
+    state.config.set(projectName, newProject);
 
     if (project.storage.type === "dir") {
       return await focusDir(project);
@@ -214,6 +227,15 @@ export function createProjectsStorageService() {
     }
     project.storage.handle = dirHandle;
   }
+
+  // ██╗███╗   ██╗████████╗███████╗██████╗ ███████╗ █████╗  ██████╗███████╗
+  // ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝
+  // ██║██╔██╗ ██║   ██║   █████╗  ██████╔╝█████╗  ███████║██║     █████╗
+  // ██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗██╔══╝  ██╔══██║██║     ██╔══╝
+  // ██║██║ ╚████║   ██║   ███████╗██║  ██║██║     ██║  ██║╚██████╗███████╗
+  // ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝
+
+  // MARK: INTER
 
   return {
     get state() {
