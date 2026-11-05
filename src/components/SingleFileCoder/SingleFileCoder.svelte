@@ -17,6 +17,7 @@
   import { mixinHighlightExtension } from "./mixinHighlightExtension";
   import { duplicateLine } from "./duplicateLineExtension";
   import { wrappedLineIndent } from "codemirror-wrapped-line-indent";
+  import { buildIndentMarkFoldingService } from "./plugins/indentMarkFoldingService";
 
   import {
     indentWhitespacePlugin,
@@ -45,6 +46,8 @@
     project: string;
     file: string;
   } = $props();
+
+  let indentMarkFoldingService = buildIndentMarkFoldingService(project);
 
   let content: string = $state(initialValue || "");
   let view: EditorView = $state(null!);
@@ -306,7 +309,7 @@
     // debugKey,
     buildOnShiftEnter,
     codeMirrorPug,
-    foldingOnIndent(),
+    indentMarkFoldingService,
     immediateChange,
     whitespaceTheme,
     indentWhitespacePlugin,
@@ -315,7 +318,6 @@
     duplicateLine,
     arbitraryStyleExtension,
     interceptSave,
-    monitorAndSaveFolds(),
     EditorView.lineWrapping,
     wrappedLineIndent,
   ]}

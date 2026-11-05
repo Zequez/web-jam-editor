@@ -44,9 +44,19 @@
     background: #0003;
   }
 
+  .cm-foldGutter .cm-gutterElement span[title="Fold line"]:hover {
+    background: #0006;
+  }
+
 .cm-foldGutter .cm-gutterElement span[title="Unfold line"] {
     background: hsla(24, 100%, 40%, 0.4);
-    border-color: hsla(24, 100%, 10%, 0.4)
+    border-color: hsla(24, 100%, 10%, 0.4);
+    height: 20px;
+  }
+
+  .cm-foldGutter .cm-gutterElement span[title="Unfold line"]:hover {
+    background: hsla(24, 100%, 40%, 0.7);
+    border-color: hsla(24, 100%, 10%, 0.7);
   }
 
 .cm-foldGutter .cm-gutterElement span[title="Unfold line"]::before {
