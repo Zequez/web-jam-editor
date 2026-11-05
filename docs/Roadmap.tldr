@@ -2612,9 +2612,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1385.3405002729148,
-			"y": -396.4410671747118,
-			"z": 0.32749710424824885,
+			"x": 10608.9261416689,
+			"y": 2413.1976392181873,
+			"z": 0.08652055561753473,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -6915,7 +6915,7 @@
 			"selectedShapeIds": [
 				"shape:mXGTLrWC295_vUY27YNVm"
 			],
-			"hoveredShapeId": "shape:mXGTLrWC295_vUY27YNVm",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -15507,11 +15507,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:size": "m",
-				"tldraw:geo": "rectangle",
-				"tldraw:color": "light-blue"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -15543,7 +15539,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": null,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,

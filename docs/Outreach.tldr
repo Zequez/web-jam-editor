@@ -210,6 +210,68 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1973.7224386144942,
+			"y": -312.6244357433655,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Toc9paElnqTqKgqcn5q3Z",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://ronen.peabirds.com/",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "Ronen Ness"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b14e8j",
+			"typeName": "shape"
+		},
+		{
 			"x": -1428.8047031447527,
 			"y": -1980.5462915445341,
 			"rotation": 0,
@@ -312,9 +374,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 2444.7292016540246,
-			"y": 1460.497681867421,
-			"z": 1.0735351904121857,
+			"x": -1574.6477278864124,
+			"y": 506.7430812403114,
+			"z": 1.1189179107680503,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -485,6 +547,68 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 2003.2437852799196,
+			"y": -113.91905880685562,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:L6ahcQl7wDaeja1AGr0po",
+			"type": "geo",
+			"props": {
+				"w": 209.57645881318876,
+				"h": 56,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "s",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "https://alexanderlaszlo.net/about-me/",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "Alexander Laszlo"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b16FSU",
+			"typeName": "shape"
+		},
+		{
 			"x": 1935.5038374727933,
 			"y": -981.9854629492042,
 			"rotation": 0,
@@ -536,12 +660,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": "shape:-isdzz7S3XMbyA-HHsxD-",
+			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:-isdzz7S3XMbyA-HHsxD-"
+				"shape:L6ahcQl7wDaeja1AGr0po"
 			],
-			"hoveredShapeId": "shape:-isdzz7S3XMbyA-HHsxD-",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -1079,6 +1203,57 @@
 			},
 			"parentId": "page:page",
 			"index": "b0tM9U",
+			"typeName": "shape"
+		},
+		{
+			"x": 1703.2789899350262,
+			"y": -162.9097769102703,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:exPTnkQv6NjYwy0cerd0X",
+			"type": "geo",
+			"props": {
+				"w": 233,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Researchers"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b17jhz",
 			"typeName": "shape"
 		},
 		{
@@ -1640,6 +1815,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1709.388735471448,
+			"y": -340.00937483640735,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:6T2e6vBrL9Uyg5Uwwk59k",
+			"type": "geo",
+			"props": {
+				"w": 233,
+				"h": 64.98865337569664,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "yellow",
+				"labelColor": "black",
+				"fill": "semi",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Devs"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b15I82",
+			"typeName": "shape"
+		},
+		{
 			"x": 170.10127408357891,
 			"y": -1396.8653777218167,
 			"rotation": 0,
@@ -1768,16 +1994,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:textAlign": "middle",
-				"tldraw:size": "xl",
-				"tldraw:fill": "solid",
-				"tldraw:color": "black",
-				"tldraw:geo": "rectangle",
-				"tldraw:horizontalAlign": "start",
-				"tldraw:verticalAlign": "start",
-				"tldraw:font": "draw"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -1791,8 +2008,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1680,
-				"h": 945
+				"w": 1071,
+				"h": 684
 			},
 			"insets": [
 				false,
