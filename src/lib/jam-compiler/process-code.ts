@@ -220,6 +220,15 @@ async function attemptCompilation(code: string) {
 
   files["style.css"] = css;
 
+  files["netlify.toml"] = `[[headers]]
+for = "/*"
+[headers.values]
+  Access-Control-Allow-Origin = "*"
+  Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"`;
+
+  console.log(files);
+
   CLOCK("END");
   let report = "Compilation Performance:\n";
   let total = 0;
